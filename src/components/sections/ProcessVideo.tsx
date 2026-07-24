@@ -1,7 +1,7 @@
 'use client'
 
 import { FadeUp } from '@/components/animations/FadeUp'
-import { CheckCircle2, PlayCircle } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 const STEPS = {
@@ -18,7 +18,7 @@ const STEPS = {
 }
 
 export function ProcessVideo() {
-  const { t, language } = useLanguage()
+  const { language } = useLanguage()
   const isES = language === 'es'
   const steps = STEPS[language as 'es' | 'en'] ?? STEPS.es
 
@@ -29,7 +29,7 @@ export function ProcessVideo() {
           
           {/* Video Area - Primer plano */}
           <FadeUp className="w-full">
-            <div className="relative aspect-video bg-[#111111] rounded shadow-xl overflow-hidden border-4 border-white w-full">
+            <div className="relative aspect-video bg-[#212121] rounded shadow-xl overflow-hidden border-4 border-white w-full">
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/qRC2kE065JY?list=PLx6iGfolA4F6-hDwpsTz_P1T9vOHconF7"
@@ -46,10 +46,10 @@ export function ProcessVideo() {
             <FadeUp delay={0.2}>
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
-                  <span className="text-[#ce1126] font-black uppercase tracking-wider text-xs">
+                  <span className="text-[#19D42B] font-black uppercase tracking-wider text-xs">
                     {isES ? 'Nuestro Método' : 'Our Method'}
                   </span>
-                  <h2 className="text-[#111111] font-black text-3xl md:text-4xl leading-[1.1] tracking-tight">
+                  <h2 className="text-[#212121] font-black text-3xl md:text-4xl leading-[1.1] tracking-tight">
                     {isES ? 'El Sistema MCS' : 'The MCS System'}
                   </h2>
                   <p className="text-[#5A6070] mt-2 leading-relaxed">
@@ -61,12 +61,12 @@ export function ProcessVideo() {
 
                 <div className="flex flex-col gap-4 mt-2">
                   {steps.map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-4 bg-white rounded border border-[#E5E8EC] shadow-sm hover:border-[#ce1126] transition-colors">
-                      <div className="bg-[#fdeaea] text-[#ce1126] rounded p-2 flex-shrink-0 mt-1">
+                    <div key={idx} className="flex items-start gap-4 p-4 bg-white rounded border border-[#E5E8EC] shadow-sm hover:border-[#19D42B] transition-colors">
+                      <div className="bg-[#E9FBEA] text-[#19D42B] rounded p-2 flex-shrink-0 mt-1">
                         <CheckCircle2 className="size-5" />
                       </div>
                       <div>
-                        <h4 className="font-black text-[#111111] text-lg">{step.title}</h4>
+                        <h4 className="font-black text-[#212121] text-lg">{step.title}</h4>
                         <p className="text-[#5A6070] text-sm leading-relaxed mt-1">{step.desc}</p>
                       </div>
                     </div>

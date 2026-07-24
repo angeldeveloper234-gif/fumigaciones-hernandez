@@ -1,5 +1,8 @@
 'use client'
 
+/* The initial effect intentionally synchronizes the client-only language preference. */
+/* eslint-disable react-hooks/set-state-in-effect */
+
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { translations } from '@/lib/translations'
 
@@ -12,6 +15,21 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+
+function resolveTranslation(language: Language, key: string): string | undefined {
+  const keys = key.split('.')
+  let result: unknown = translations[language]
+
+  for (const segment of keys) {
+    if (typeof result !== 'object' || result === null || !(segment in result)) {
+      return undefined
+    }
+
+    result = (result as Record<string, unknown>)[segment]
+  }
+
+  return typeof result === 'string' ? result : undefined
+}
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('es')
@@ -38,27 +56,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const t = (key: string): string => {
     // During SSR and until component is mounted, default to 'es' to avoid hydration mismatch
     const currentLang = mounted ? language : 'es'
-    const keys = key.split('.')
-    let result: any = translations[currentLang]
-
-    for (const k of keys) {
-      if (result && result[k] !== undefined) {
-        result = result[k]
-      } else {
-        // Fallback to Spanish if translation not found in current language
-        let fallback: any = translations['es']
-        for (const fk of keys) {
-          if (fallback && fallback[fk] !== undefined) {
-            fallback = fallback[fk]
-          } else {
-            fallback = key
-          }
-        }
-        return typeof fallback === 'string' ? fallback : key
-      }
-    }
-
-    return typeof result === 'string' ? result : key
+    return resolveTranslation(currentLang, key) ?? resolveTranslation('es', key) ?? key
   }
 
   return (

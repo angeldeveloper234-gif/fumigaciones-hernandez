@@ -29,11 +29,11 @@ export default function BlogIndexPage() {
         <div className="container">
           {/* Encabezado */}
           <div className="max-w-3xl mb-[3rem]">
-            <p className="text-[0.75rem] font-black uppercase tracking-[0.2em] text-[#ce1126] mb-3">
-              Blog MosquitoMEX
+            <p className="text-[0.75rem] font-black uppercase tracking-[0.2em] text-[#19D42B] mb-3">
+              Blog Fumcon
             </p>
-            <h1 className="text-h1 font-black tracking-tighter uppercase leading-[1.1] text-[#111111]">
-              Guías y consejos de <span className="text-[#ce1126]">control de plagas</span>
+            <h1 className="text-h1 font-black tracking-tighter uppercase leading-[1.1] text-[#212121]">
+              Guías y consejos de <span className="text-[#19D42B]">control de plagas</span>
             </h1>
             <p className="mt-[1rem] text-gray-600 text-[1rem] md:text-[1.125rem] leading-relaxed">
               Todo lo que necesitas saber para mantener tu hogar y tu negocio libres de mosquitos y
@@ -57,19 +57,19 @@ export default function BlogIndexPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <span className="absolute top-[0.75rem] left-[0.75rem] bg-[#ce1126] text-white text-[0.625rem] md:text-[0.6875rem] font-black uppercase tracking-widest px-[0.625rem] py-[0.25rem] select-none">
+                  <span className="absolute top-[0.75rem] left-[0.75rem] bg-[#19D42B] text-white text-[0.625rem] md:text-[0.6875rem] font-black uppercase tracking-widest px-[0.625rem] py-[0.25rem] select-none">
                     {post.category}
                   </span>
                 </div>
 
                 <div className="flex flex-col flex-grow p-[1.25rem] space-y-[0.75rem]">
-                  <h2 className="text-[1.125rem] font-black text-[#111111] uppercase tracking-tight group-hover:text-[#ce1126] transition-colors leading-[1.25] line-clamp-2">
+                  <h2 className="text-[1.125rem] font-black text-[#212121] uppercase tracking-tight group-hover:text-[#19D42B] transition-colors leading-[1.25] line-clamp-2">
                     {post.title}
                   </h2>
                   <p className="text-[0.875rem] text-gray-500 font-medium normal-case tracking-normal leading-relaxed line-clamp-3 flex-grow">
                     {post.summary}
                   </p>
-                  <div className="pt-[0.5rem] flex items-center gap-[0.5rem] text-[0.75rem] font-bold text-[#ce1126] uppercase tracking-wider">
+                  <div className="pt-[0.5rem] flex items-center gap-[0.5rem] text-[0.75rem] font-bold text-[#19D42B] uppercase tracking-wider">
                     <span>Leer artículo</span>
                     <ArrowRight className="size-[0.875rem] transition-transform duration-200 group-hover:translate-x-1" />
                   </div>

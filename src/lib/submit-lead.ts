@@ -41,7 +41,7 @@ export async function submitLead(
     body: JSON.stringify({
       access_key: accessKey,
       subject: opts.subject,
-      from_name: 'MosquitoMEX Web',
+      from_name: 'Fumcon Web',
       ...(opts.replyTo ? { replyto: opts.replyTo } : {}),
       ...fields,
     }),

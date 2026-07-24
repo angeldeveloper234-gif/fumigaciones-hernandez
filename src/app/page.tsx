@@ -3,7 +3,6 @@ import { WhyMosquito }  from '@/components/sections/WhyMosquito'
 import { Solutions }    from '@/components/sections/Solutions'
 import { Spaces }       from '@/components/sections/Spaces'
 import { HowItWorks }   from '@/components/sections/HowItWorks'
-import { Technology }   from '@/components/sections/Technology'
 import { About }        from '@/components/sections/About'
 import { Logos }        from '@/components/sections/Logos'
 import { Testimonials } from '@/components/sections/Testimonials'
@@ -24,7 +23,6 @@ export default function Home() {
       <Solutions />
       <Spaces />
       <HowItWorks />
-      {/* <Technology /> */}
       <About />
       <Logos />
       <Testimonials />

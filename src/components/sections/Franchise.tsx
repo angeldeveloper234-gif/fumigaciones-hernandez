@@ -42,19 +42,19 @@ export function Franchise({ mode = 'teaser' }: { mode?: 'teaser' | 'page' }) {
   ]
 
   const franchiseMailto = `mailto:${SITE.franchiseEmail}?subject=${encodeURIComponent(
-    isES ? 'Quiero información sobre franquicias MosquitoMEX' : 'MosquitoMEX Franchise Inquiry'
+    isES ? 'Quiero información sobre franquicias Fumcon' : 'Fumcon Franchise Inquiry'
   )}`
 
   return (
     <section
       id="franquicias"
-      className="section-padding relative overflow-hidden bg-gradient-to-br from-[#00543a] to-[#006847] text-white"
+      className="section-padding relative overflow-hidden bg-gradient-to-br from-[#D6A200] to-[#FBC02D] text-white"
     >
       {/* Franja tricolor decorativa superior */}
       <div className="absolute inset-x-0 top-0 h-1 flex">
-        <span className="flex-1 bg-[#006847]" />
+        <span className="flex-1 bg-[#FBC02D]" />
         <span className="flex-1 bg-white" />
-        <span className="flex-1 bg-[#ce1126]" />
+        <span className="flex-1 bg-[#19D42B]" />
       </div>
 
       <div className="container relative">
@@ -69,15 +69,15 @@ export function Franchise({ mode = 'teaser' }: { mode?: 'teaser' | 'page' }) {
 
               <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[1.1]">
                 {isES ? 'Abre tu Franquicia ' : 'Own a '}
-                <span className="text-[#ffd7db]">MosquitoMEX</span>
+                <span className="text-[#E9FBEA]">Fumcon</span>
               </h2>
 
-              <div className="w-24 h-1 bg-[#ce1126]" />
+              <div className="w-24 h-1 bg-[#19D42B]" />
 
               <p className="text-white/90 text-[1rem] md:text-[1.125rem] font-medium leading-relaxed">
                 {isES
-                  ? 'Súmate a la marca líder en control de plagas de México. Un modelo de negocio rentable, con respaldo total y demanda todo el año. Lleva MosquitoMEX a tu ciudad.'
-                  : 'Join Mexico’s leading pest control brand. A profitable business model with full support and year-round demand. Bring MosquitoMEX to your city.'}
+                  ? 'Súmate a la marca líder en control de plagas de México. Un modelo de negocio rentable, con respaldo total y demanda todo el año. Lleva Fumcon a tu ciudad.'
+                  : 'Join Mexico’s leading pest control brand. A profitable business model with full support and year-round demand. Bring Fumcon to your city.'}
               </p>
 
               {/* CTA + contacto */}
@@ -85,7 +85,7 @@ export function Franchise({ mode = 'teaser' }: { mode?: 'teaser' | 'page' }) {
                 {mode === 'page' ? (
                   <a
                     href="#franchise-form"
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#ce1126] hover:bg-[#a60d1e] text-white font-black text-sm px-8 py-4 rounded shadow-lg transition-all duration-200 uppercase tracking-wider group"
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#19D42B] hover:bg-[#13AA23] text-white font-black text-sm px-8 py-4 rounded shadow-lg transition-all duration-200 uppercase tracking-wider group"
                   >
                     <span>{isES ? 'Solicitar Información' : 'Request Information'}</span>
                     <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
@@ -93,7 +93,7 @@ export function Franchise({ mode = 'teaser' }: { mode?: 'teaser' | 'page' }) {
                 ) : (
                   <Link
                     href="/franquicias"
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#ce1126] hover:bg-[#a60d1e] text-white font-black text-sm px-8 py-4 rounded shadow-lg transition-all duration-200 uppercase tracking-wider group"
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#19D42B] hover:bg-[#13AA23] text-white font-black text-sm px-8 py-4 rounded shadow-lg transition-all duration-200 uppercase tracking-wider group"
                   >
                     <span>{isES ? 'Quiero mi Franquicia' : 'Own a Franchise'}</span>
                     <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
@@ -126,7 +126,7 @@ export function Franchise({ mode = 'teaser' }: { mode?: 'teaser' | 'page' }) {
                   key={i}
                   className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors duration-200"
                 >
-                  <div className="w-11 h-11 rounded bg-[#ce1126] flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded bg-[#19D42B] flex items-center justify-center mb-4">
                     <Icon className="size-5 text-white" />
                   </div>
                   <h3 className="text-white font-black uppercase text-base tracking-tight mb-2">

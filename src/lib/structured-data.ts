@@ -15,7 +15,21 @@ export function localBusinessSchema() {
     description: SITE.description,
     telephone: SITE.phone,
     email: SITE.email,
-    areaServed: { '@type': 'Country', name: SITE.areaServed },
+    address: {
+      '@type': 'PostalAddress',
+      ...SITE.address,
+    },
+    areaServed: SITE.areaServed.map((name) => ({
+      '@type': 'AdministrativeArea',
+      name,
+    })),
+    openingHours: SITE.openingHours,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: SITE.rating.value,
+      reviewCount: SITE.rating.count,
+      bestRating: 5,
+    },
     priceRange: '$$',
     ...(SITE.socials.length ? { sameAs: SITE.socials } : {}),
   }

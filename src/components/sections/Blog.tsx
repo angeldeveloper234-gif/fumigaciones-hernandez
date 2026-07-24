@@ -28,8 +28,8 @@ export function Blog() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-[3rem]">
           <FadeUp>
-            <h2 className="text-h2 font-black tracking-tighter uppercase leading-[1.15] text-[#111111] dark:text-slate-100">
-              {t('blog.titlePre')}<span className="text-[#ce1126]">{t('blog.titleHighlight')}</span>
+            <h2 className="text-h2 font-black tracking-tighter uppercase leading-[1.15] text-[#212121] dark:text-slate-100">
+              {t('blog.titlePre')}<span className="text-[#19D42B]">{t('blog.titleHighlight')}</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
@@ -56,21 +56,21 @@ export function Blog() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <span className="absolute top-[0.75rem] left-[0.75rem] bg-[#ce1126] text-white text-[0.625rem] md:text-[0.6875rem] font-black uppercase tracking-widest px-[0.625rem] py-[0.25rem] select-none rounded-none">
+                  <span className="absolute top-[0.75rem] left-[0.75rem] bg-[#19D42B] text-white text-[0.625rem] md:text-[0.6875rem] font-black uppercase tracking-widest px-[0.625rem] py-[0.25rem] select-none rounded-none">
                     {article.category}
                   </span>
                 </div>
 
                 {/* Card Info Section */}
                 <div className="flex flex-col flex-grow p-[1.25rem] space-y-[0.75rem]">
-                  <h3 className="text-[1.125rem] font-black text-[#111111] dark:text-slate-100 uppercase tracking-tight group-hover:text-[#ce1126] transition-colors leading-[1.25] line-clamp-2">
+                  <h3 className="text-[1.125rem] font-black text-[#212121] dark:text-slate-100 uppercase tracking-tight group-hover:text-[#19D42B] transition-colors leading-[1.25] line-clamp-2">
                     {article.title}
                   </h3>
                   <p className="text-[0.875rem] text-gray-500 dark:text-slate-400 font-medium normal-case tracking-normal leading-relaxed line-clamp-3 flex-grow">
                     {article.summary}
                   </p>
 
-                  <div className="pt-[0.5rem] flex items-center gap-[0.5rem] text-[0.75rem] font-bold text-[#ce1126] uppercase tracking-wider group/link">
+                  <div className="pt-[0.5rem] flex items-center gap-[0.5rem] text-[0.75rem] font-bold text-[#19D42B] uppercase tracking-wider group/link">
                     <span>{t('blog.readMore')}</span>
                     <ArrowRight className="size-[0.875rem] transition-transform duration-200 group-hover/link:translate-x-1" />
                   </div>
@@ -84,7 +84,7 @@ export function Blog() {
         <div className="mt-[3rem] flex justify-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#ce1126] text-white font-black text-[0.8125rem] px-7 py-3.5 uppercase tracking-wide transition-colors"
+            className="inline-flex items-center gap-2 bg-[#212121] hover:bg-[#19D42B] text-white font-black text-[0.8125rem] px-7 py-3.5 uppercase tracking-wide transition-colors"
           >
             {t('blog.viewAll')}
             <ArrowRight className="size-4" />

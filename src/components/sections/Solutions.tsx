@@ -97,14 +97,14 @@ export function Solutions() {
 
         <FadeUp>
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-[#ce1126] text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-4">
-              <span className="w-5 h-px bg-[#ce1126]" />
+            <div className="inline-flex items-center gap-2 text-[#19D42B] text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-4">
+              <span className="w-5 h-px bg-[#19D42B]" />
               {c.eyebrow}
-              <span className="w-5 h-px bg-[#ce1126]" />
+              <span className="w-5 h-px bg-[#19D42B]" />
             </div>
-            <h2 className="text-h2 font-black tracking-tighter uppercase text-[#111111] leading-[1.1]">
+            <h2 className="text-h2 font-black tracking-tighter uppercase text-[#212121] leading-[1.1]">
               {c.title}{' '}
-              <span className="text-[#ce1126]">{c.titleHighlight}</span>
+              <span className="text-[#19D42B]">{c.titleHighlight}</span>
             </h2>
           </div>
         </FadeUp>
@@ -112,20 +112,20 @@ export function Solutions() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {c.items.map((item, i) => (
             <FadeUp key={i} delay={i * 0.1}>
-              <div className="group relative flex flex-col gap-4 p-6 rounded border border-[#E5E8EC] bg-white hover:bg-[#ce1126] hover:border-transparent hover:-translate-y-1 transition-all duration-200 h-full cursor-default">
+              <div className="group relative flex flex-col gap-4 p-6 rounded border border-[#E5E8EC] bg-white hover:bg-[#19D42B] hover:border-transparent hover:-translate-y-1 transition-all duration-200 h-full cursor-default">
                 {item.badge && (
                   <span
                     className={`absolute top-4 right-4 text-white text-[0.6rem] font-black uppercase tracking-wider px-2 py-0.5 rounded ${
-                      item.badgeDark ? 'bg-[#111111]' : 'bg-[#ce1126] group-hover:bg-[#111111] group-hover:text-white'
+                      item.badgeDark ? 'bg-[#212121]' : 'bg-[#19D42B] group-hover:bg-[#212121] group-hover:text-white'
                     } transition-colors`}
                   >
                     {item.badge}
                   </span>
                 )}
-                <div className="size-11 rounded bg-[#fdeaea] group-hover:bg-white/20 flex items-center justify-center transition-colors flex-shrink-0">
-                  <item.Icon className="size-5 text-[#ce1126] group-hover:text-white transition-colors" />
+                <div className="size-11 rounded bg-[#E9FBEA] group-hover:bg-white/20 flex items-center justify-center transition-colors flex-shrink-0">
+                  <item.Icon className="size-5 text-[#19D42B] group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-black text-[#111111] group-hover:text-white uppercase tracking-tight text-[0.9rem] transition-colors">
+                <h3 className="font-black text-[#212121] group-hover:text-white uppercase tracking-tight text-[0.9rem] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-[#5A6070] group-hover:text-white/80 text-sm leading-relaxed flex-1 transition-colors">
@@ -134,7 +134,7 @@ export function Solutions() {
                 <div className="pt-2">
                   <a
                     href="#appointment"
-                    className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#ce1126] group-hover:text-white hover:underline cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#19D42B] group-hover:text-white hover:underline cursor-pointer"
                   >
                     <span>{language === 'es' ? 'Cotizar servicio' : 'Quote service'}</span>
                     <span className="text-base leading-none">→</span>

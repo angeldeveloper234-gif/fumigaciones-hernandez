@@ -151,8 +151,8 @@ export function Appointment() {
       [L('Mensaje', 'Message')]: contact.message || '—',
     }
     const subject = L(
-      `Nueva cotización MosquitoMEX – ${contact.name}`,
-      `New MosquitoMEX quote – ${contact.name}`
+      `Nueva cotización Fumcon – ${contact.name}`,
+      `New Fumcon quote – ${contact.name}`
     )
 
     setSubmitError(false)
@@ -174,7 +174,7 @@ export function Appointment() {
         <div className="bg-white dark:bg-black border border-gray-200/50 shadow-sm overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[500px]">
           
           {/* Info Panel */}
-          <div className="md:col-span-4 p-8 md:p-12 bg-[#ce1126] text-white flex flex-col justify-between">
+          <div className="md:col-span-4 p-8 md:p-12 bg-[#19D42B] text-white flex flex-col justify-between">
             <div className="space-y-6">
               <span className="text-white/70 text-xs font-black uppercase tracking-widest">
                 {isES ? 'Cotización Rápida' : 'Quick Quote'}
@@ -199,7 +199,7 @@ export function Appointment() {
                 <div key={s.num} className="flex items-center gap-3">
                   <div className={`h-8 w-8 flex items-center justify-center shrink-0 border transition-all duration-300 ${
                     step === s.num 
-                      ? 'bg-white text-[#ce1126] border-white' 
+                      ? 'bg-white text-[#19D42B] border-white'
                       : step > s.num 
                         ? 'bg-white/20 text-white border-transparent' 
                         : 'border-white/30 text-white/50'
@@ -222,7 +222,7 @@ export function Appointment() {
             {/* Progress Bar */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gray-100 dark:bg-slate-800">
               <div 
-                className="h-full bg-[#ce1126] transition-all duration-300"
+                className="h-full bg-[#19D42B] transition-all duration-300"
                 style={{ width: `${isSuccess ? 100 : (step / 3) * 100}%` }}
               />
             </div>
@@ -233,7 +233,7 @@ export function Appointment() {
                   <div className="size-16 bg-green-100 dark:bg-green-950 text-green-600 rounded flex items-center justify-center shadow-lg">
                     <CheckCircle2 className="size-10" />
                   </div>
-                  <h3 className="text-2xl font-black text-[#111111] dark:text-white uppercase tracking-tight">
+                  <h3 className="text-2xl font-black text-[#212121] dark:text-white uppercase tracking-tight">
                     {isES ? '¡Solicitud Recibida!' : 'Request Received!'}
                   </h3>
                   <p className="text-[#5A6070] text-sm max-w-[40ch] leading-relaxed">
@@ -266,7 +266,7 @@ export function Appointment() {
                     <div className="space-y-6">
                       {/* Property Type */}
                       <div className="space-y-3">
-                        <label className="text-xs font-black uppercase tracking-wider text-[#111111] dark:text-slate-300">
+                        <label className="text-xs font-black uppercase tracking-wider text-[#212121] dark:text-slate-300">
                           {isES ? '1. ¿Dónde necesitas el servicio?' : '1. Where do you need the service?'}
                         </label>
                         <div className="grid grid-cols-2 gap-4">
@@ -284,7 +284,7 @@ export function Appointment() {
                             }}
                             className={`flex flex-col items-center justify-center p-6 border transition-all duration-200 gap-3 group rounded ${
                               propertyType === 'residencial'
-                                ? 'border-[#ce1126] bg-[#fdeaea]/10 text-[#ce1126]'
+                                ? 'border-[#19D42B] bg-[#E9FBEA]/10 text-[#19D42B]'
                                 : 'border-gray-200 dark:border-slate-800 hover:border-gray-300 hover:bg-gray-50'
                             }`}
                           >
@@ -308,7 +308,7 @@ export function Appointment() {
                             }}
                             className={`flex flex-col items-center justify-center p-6 border transition-all duration-200 gap-3 group rounded ${
                               propertyType === 'comercial'
-                                ? 'border-[#ce1126] bg-[#fdeaea]/10 text-[#ce1126]'
+                                ? 'border-[#19D42B] bg-[#E9FBEA]/10 text-[#19D42B]'
                                 : 'border-gray-200 dark:border-slate-800 hover:border-gray-300 hover:bg-gray-50'
                             }`}
                           >
@@ -323,7 +323,7 @@ export function Appointment() {
 
                       {/* Pest Selection */}
                       <div className="space-y-3">
-                        <label className="text-xs font-black uppercase tracking-wider text-[#111111] dark:text-slate-300">
+                        <label className="text-xs font-black uppercase tracking-wider text-[#212121] dark:text-slate-300">
                           {isES ? '2. ¿Con qué plaga podemos ayudarte?' : '2. What pest can we help you with?'}
                         </label>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -336,8 +336,8 @@ export function Appointment() {
                                 onClick={() => handlePestToggle(pest.id)}
                                 className={`py-3 px-2 border text-xs font-bold uppercase tracking-wide rounded transition-all duration-150 ${
                                   isSelected
-                                    ? 'bg-[#ce1126] text-white border-transparent'
-                                    : 'bg-white dark:bg-slate-950 border-gray-200 dark:border-slate-800 text-[#111111] dark:text-slate-300 hover:bg-gray-50'
+                                    ? 'bg-[#19D42B] text-white border-transparent'
+                                    : 'bg-white dark:bg-slate-950 border-gray-200 dark:border-slate-800 text-[#212121] dark:text-slate-300 hover:bg-gray-50'
                                 }`}
                               >
                                 {pest.label}
@@ -355,13 +355,13 @@ export function Appointment() {
                 {step === 2 && (
                   <FadeUp>
                     <div className="space-y-4">
-                      <label className="text-xs font-black uppercase tracking-wider text-[#111111] dark:text-slate-300 block mb-2">
+                      <label className="text-xs font-black uppercase tracking-wider text-[#212121] dark:text-slate-300 block mb-2">
                         {isES ? '¿Cuál es la dirección del servicio?' : 'What is the service address?'}
                       </label>
                       
                       <div className="space-y-3">
                         <div>
-                          <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                          <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                             {isES ? 'Calle y Número' : 'Street Address'}
                           </label>
                           <Input
@@ -375,7 +375,7 @@ export function Appointment() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
-                            <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                            <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                               {isES ? 'Colonia' : 'Neighborhood'}
                             </label>
                             <Input
@@ -388,7 +388,7 @@ export function Appointment() {
                           </div>
                           
                           <div>
-                            <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                            <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                               {isES ? 'Delegación o Municipio' : 'Municipality / City'}
                             </label>
                             <Input
@@ -403,7 +403,7 @@ export function Appointment() {
 
                         <div className="grid grid-cols-2 gap-3">
                           <div>
-                            <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                            <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                               {isES ? 'Estado' : 'State'}
                             </label>
                             <Input
@@ -416,7 +416,7 @@ export function Appointment() {
                           </div>
                           
                           <div>
-                            <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                            <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                               {isES ? 'Código Postal' : 'ZIP / Postal Code'}
                             </label>
                             <Input
@@ -438,13 +438,13 @@ export function Appointment() {
                 {step === 3 && (
                   <FadeUp>
                     <div className="space-y-4">
-                      <label className="text-xs font-black uppercase tracking-wider text-[#111111] dark:text-slate-300 block mb-2">
+                      <label className="text-xs font-black uppercase tracking-wider text-[#212121] dark:text-slate-300 block mb-2">
                         {isES ? '¿Cómo te contactamos?' : 'How do we contact you?'}
                       </label>
 
                       <div className="space-y-3">
                         <div>
-                          <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                          <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                             {isES ? 'Nombre Completo' : 'Full Name'}
                           </label>
                           <Input
@@ -458,7 +458,7 @@ export function Appointment() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
-                            <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                            <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                               {isES ? 'Teléfono (10 dígitos)' : 'Phone Number'}
                             </label>
                             <Input
@@ -472,7 +472,7 @@ export function Appointment() {
                           </div>
 
                           <div>
-                            <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                            <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                               {isES ? 'Correo Electrónico' : 'Email Address'}
                             </label>
                             <Input
@@ -487,7 +487,7 @@ export function Appointment() {
                         </div>
 
                         <div>
-                          <label className="text-[0.6875rem] font-black uppercase text-[#111111] dark:text-slate-400 block mb-1">
+                          <label className="text-[0.6875rem] font-black uppercase text-[#212121] dark:text-slate-400 block mb-1">
                             {isES ? 'Mensaje o Detalles Adicionales (Opcional)' : 'Message / Details (Optional)'}
                           </label>
                           <Textarea
@@ -508,7 +508,7 @@ export function Appointment() {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="inline-flex items-center gap-2 text-[#111111] dark:text-white font-bold text-xs uppercase hover:text-[#ce1126] transition-colors"
+                      className="inline-flex items-center gap-2 text-[#212121] dark:text-white font-bold text-xs uppercase hover:text-[#19D42B] transition-colors"
                     >
                       <ArrowLeft className="size-4" />
                       {isES ? 'Anterior' : 'Back'}
@@ -542,7 +542,7 @@ export function Appointment() {
                 </div>
 
                 {submitError && (
-                  <p className="text-center text-[0.8125rem] text-[#ce1126] font-bold">
+                  <p className="text-center text-[0.8125rem] text-[#19D42B] font-bold">
                     {isES ? 'No se pudo enviar. Inténtalo de nuevo o escríbenos a ' : 'Could not send. Please try again or write to us at '}
                     <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>.
                   </p>

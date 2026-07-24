@@ -50,7 +50,7 @@ export const translations = {
     features: {
       titlePre: "Soluciones Integrales para ",
       titleHighlight: "Vida Exterior",
-      description: "Desde control de plagas hasta diseño de patios, en Mosquitomex somos los expertos locales.",
+      description: "Desde control de plagas hasta diseño de patios, en Fumcon somos los expertos locales.",
       items: {
         mosquito: {
           title: "Control de Mosquitos",
@@ -89,12 +89,12 @@ export const translations = {
     middleCta: {
       titlePre: "¿TU JARDÍN ESTÁ ",
       titleHighlight: "LISTO?",
-      description: "No dejes que los mosquitos controlen tu exterior. Recupera tu espacio hoy mismo con Mosquitomex.",
+      description: "No dejes que los mosquitos controlen tu exterior. Recupera tu espacio hoy mismo con Fumcon.",
     },
     about: {
       titlePre: "Expertos en Vida Exterior ",
       titleHighlight: "Desde 2003",
-      action: "Mosquitomex en Acción",
+      action: "Fumcon en Acción",
       p1: "Establecidos en 2003, fuimos los pioneros en especializarnos en sistemas automatizados de control de insectos en exteriores.",
       p2: "En 2010, evolucionamos para ofrecer sistemas de enfriamiento por niebla, convirtiéndonos en los líderes indiscutibles de la región. Para 2018, añadimos calefacción exterior e iluminación decorativa a nuestra lista de servicios premium.",
       benefits: [
@@ -106,12 +106,12 @@ export const translations = {
     },
     testimonials: {
       titlePre: "Por qué amamos ",
-      titleHighlight: "Mosquitomex",
+      titleHighlight: "Fumcon",
       reviews: [
         {
           name: "Bo Spencer",
           role: "Cliente por 5+ años",
-          text: "He tenido este sistema por más de 5 años y lo amo. Mosquitomex hace un gran trabajo con el servicio periódico y el mantenimiento."
+          text: "He tenido este sistema por más de 5 años y lo amo. Fumcon hace un gran trabajo con el servicio periódico y el mantenimiento."
         },
         {
           name: "Baron Von Anderson",
@@ -253,7 +253,7 @@ export const translations = {
     features: {
       titlePre: "Complete Solutions for ",
       titleHighlight: "Outdoor Living",
-      description: "From pest control to backyard design, at Mosquitomex we are your local experts.",
+      description: "From pest control to backyard design, at Fumcon we are your local experts.",
       items: {
         mosquito: {
           title: "Mosquito Control",
@@ -292,12 +292,12 @@ export const translations = {
     middleCta: {
       titlePre: "IS YOUR YARD ",
       titleHighlight: "READY?",
-      description: "Don't let mosquitoes control your outdoors. Reclaim your space today with Mosquitomex.",
+      description: "Don't let mosquitoes control your outdoors. Reclaim your space today with Fumcon.",
     },
     about: {
       titlePre: "Outdoor Living Experts ",
       titleHighlight: "Since 2003",
-      action: "Mosquitomex in Action",
+      action: "Fumcon in Action",
       p1: "Established in 2003, we were the pioneers in specializing in automated outdoor insect control systems.",
       p2: "In 2010, we evolved to offer mist cooling systems, becoming the undisputed leaders in the region. By 2018, we added outdoor heating and decorative lighting to our list of premium services.",
       benefits: [
@@ -309,12 +309,12 @@ export const translations = {
     },
     testimonials: {
       titlePre: "Why we love ",
-      titleHighlight: "Mosquitomex",
+      titleHighlight: "Fumcon",
       reviews: [
         {
           name: "Bo Spencer",
           role: "Customer for 5+ years",
-          text: "I have had this system for over 5 years and I love it. Mosquitomex does a great job with periodic service and maintenance."
+          text: "I have had this system for over 5 years and I love it. Fumcon does a great job with periodic service and maintenance."
         },
         {
           name: "Baron Von Anderson",

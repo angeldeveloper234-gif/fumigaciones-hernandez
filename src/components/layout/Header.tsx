@@ -65,17 +65,17 @@ export function Header() {
   return (
     <>
       {/* ── TOP BAR ─────────────────────────────────────────── */}
-      <div className="w-full bg-[#111111]">
+      <div className="w-full bg-[#212121]">
         <div className="container flex items-center justify-between py-2 gap-4">
           <span className="hidden md:block text-white/50 text-xs font-medium">
             {language === 'es'
-              ? 'Expertos en control de plagas · Servicio en todo México'
-              : 'Pest control experts · Service across Mexico'}
+              ? 'Control de plagas 24/7 · Yucatán y Quintana Roo'
+              : '24/7 pest control · Yucatán and Quintana Roo'}
           </span>
           <div className="flex items-center gap-2 ml-auto md:ml-0">
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-1.5 bg-[#006847] hover:bg-[#00543a] text-white font-black text-[0.7rem] px-3 py-1.5 rounded transition-colors"
+              className="inline-flex items-center gap-1.5 bg-[#FBC02D] hover:bg-[#D6A200] text-white font-black text-[0.7rem] px-3 py-1.5 rounded transition-colors"
             >
               <Phone className="size-3" />
               {PHONE}
@@ -99,27 +99,27 @@ export function Header() {
 
           {/* Logo */}
           <div className="flex shrink-0 items-center">
-            <Link href="/" className="flex items-center select-none" aria-label="MosquitoMEX — Control de Plagas">
+            <Link href="/" className="flex items-center select-none" aria-label={`${SITE.name} — Control de Plagas`}>
               <Image
-                src="/mosquitos-mx.png"
-                alt="MosquitoMEX — Control de Plagas"
-                width={500}
-                height={500}
+                src={SITE.logo}
+                alt={`${SITE.legalName} — Control de Plagas`}
+                width={1408}
+                height={293}
                 priority
-                className="h-20 w-auto md:h-24"
+                className="h-12 w-auto md:h-14"
               />
             </Link>
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6 text-[0.8125rem] font-bold uppercase tracking-wider text-[#111111]">
+          <nav className="hidden lg:flex items-center gap-6 text-[0.8125rem] font-bold uppercase tracking-wider text-[#212121]">
             {/* ── PLAGAS DROPDOWN ── */}
             <div
               className="relative py-2"
               onMouseEnter={() => setActiveDropdown(99)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 cursor-pointer hover:text-[#ce1126] transition-colors leading-[1.2]">
+              <button className="flex items-center gap-1 cursor-pointer hover:text-[#19D42B] transition-colors leading-[1.2]">
                 {language === 'es' ? 'Plagas' : 'Pests'}
                 <ChevronDown className={`size-3.5 transition-transform duration-200 ${activeDropdown === 99 ? 'rotate-180' : ''}`} />
               </button>
@@ -137,10 +137,10 @@ export function Header() {
                         key={i}
                         href={pest.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="group flex items-center gap-3 px-4 py-2.5 hover:bg-[#fdeaea] transition-colors"
+                        className="group flex items-center gap-3 px-4 py-2.5 hover:bg-[#E9FBEA] transition-colors"
                       >
                         <span className="text-xl leading-none select-none">{pest.emoji}</span>
-                        <span className="text-[0.8125rem] font-bold text-[#111111] group-hover:text-[#ce1126] transition-colors normal-case tracking-normal">
+                        <span className="text-[0.8125rem] font-bold text-[#212121] group-hover:text-[#19D42B] transition-colors normal-case tracking-normal">
                           {pest.label}
                         </span>
                       </Link>
@@ -157,12 +157,12 @@ export function Header() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {item.children ? (
-                  <button className="flex items-center gap-1 cursor-pointer hover:text-[#ce1126] transition-colors leading-[1.2]">
+                  <button className="flex items-center gap-1 cursor-pointer hover:text-[#19D42B] transition-colors leading-[1.2]">
                     {t(item.labelKey)}
                     <ChevronDown className={`size-3.5 transition-transform duration-200 ${activeDropdown === index ? 'rotate-180' : ''}`} />
                   </button>
                 ) : (
-                  <Link href={item.href || '#'} className="hover:text-[#ce1126] transition-colors leading-[1.2]">
+                  <Link href={item.href || '#'} className="hover:text-[#19D42B] transition-colors leading-[1.2]">
                     {t(item.labelKey)}
                   </Link>
                 )}
@@ -183,7 +183,7 @@ export function Header() {
                           onClick={() => setActiveDropdown(null)}
                           className="group flex flex-col gap-1 p-2 hover:bg-gray-50 transition-colors"
                         >
-                          <span className="text-[0.8125rem] font-black text-[#111111] group-hover:text-[#ce1126] transition-colors">
+                          <span className="text-[0.8125rem] font-black text-[#212121] group-hover:text-[#19D42B] transition-colors">
                             {t(child.labelKey)}
                           </span>
                           {child.descKey && (
@@ -206,7 +206,7 @@ export function Header() {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center gap-2 font-black text-[0.8125rem] text-[#111111] hover:text-[#ce1126]"
+              className="flex items-center gap-2 font-black text-[0.8125rem] text-[#212121] hover:text-[#19D42B]"
             >
               <Globe className="size-4" />
               <span>{language === 'es' ? 'EN' : 'ES'}</span>
@@ -222,7 +222,7 @@ export function Header() {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden flex items-center justify-center w-11 h-11 text-[#111111] hover:text-[#ce1126] transition-colors focus:outline-none"
+              className="lg:hidden flex items-center justify-center w-11 h-11 text-[#212121] hover:text-[#19D42B] transition-colors focus:outline-none"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -251,10 +251,10 @@ export function Header() {
               className="fixed right-0 top-0 bottom-0 w-full max-w-[20rem] bg-white z-50 p-6 flex flex-col gap-6 shadow-2xl lg:hidden overflow-y-auto"
             >
               <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                <span className="text-xl font-black uppercase text-[#111111] tracking-tight">Menu</span>
+                <span className="text-xl font-black uppercase text-[#212121] tracking-tight">Menu</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center w-10 h-10 text-[#111111] hover:text-[#ce1126] transition-colors"
+                  className="flex items-center justify-center w-10 h-10 text-[#212121] hover:text-[#19D42B] transition-colors"
                 >
                   <X className="size-6" />
                 </button>
@@ -265,7 +265,7 @@ export function Header() {
                 <div className="border-b border-gray-100 pb-3">
                   <button
                     onClick={() => toggleAccordion(99)}
-                    className="flex items-center justify-between w-full text-left font-black uppercase text-sm text-[#111111] py-3 hover:text-[#ce1126] transition-colors"
+                    className="flex items-center justify-between w-full text-left font-black uppercase text-sm text-[#212121] py-3 hover:text-[#19D42B] transition-colors"
                   >
                     <span>{language === 'es' ? 'Plagas' : 'Pests'}</span>
                     <ChevronDown className={`size-4 transition-transform duration-200 ${mobileAccordions[99] ? 'rotate-180' : ''}`} />
@@ -284,7 +284,7 @@ export function Header() {
                             key={i}
                             href={pest.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="group flex items-center gap-3 py-2.5 text-[0.8125rem] font-bold text-[#111111] hover:text-[#ce1126] transition-colors"
+                            className="group flex items-center gap-3 py-2.5 text-[0.8125rem] font-bold text-[#212121] hover:text-[#19D42B] transition-colors"
                           >
                             <span className="text-lg leading-none select-none">{pest.emoji}</span>
                             <span>{pest.label}</span>
@@ -301,7 +301,7 @@ export function Header() {
                       <div className="flex flex-col">
                         <button
                           onClick={() => toggleAccordion(index)}
-                          className="flex items-center justify-between w-full text-left font-black uppercase text-sm text-[#111111] py-3 hover:text-[#ce1126] transition-colors"
+                          className="flex items-center justify-between w-full text-left font-black uppercase text-sm text-[#212121] py-3 hover:text-[#19D42B] transition-colors"
                         >
                           <span>{t(item.labelKey)}</span>
                           <ChevronDown className={`size-4 transition-transform duration-200 ${mobileAccordions[index] ? 'rotate-180' : ''}`} />
@@ -320,7 +320,7 @@ export function Header() {
                                   key={childIdx}
                                   href={child.href}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="py-3 text-[0.8125rem] font-bold text-[#111111] hover:text-[#ce1126] transition-colors block uppercase"
+                                  className="py-3 text-[0.8125rem] font-bold text-[#212121] hover:text-[#19D42B] transition-colors block uppercase"
                                 >
                                   {t(child.labelKey)}
                                 </Link>
@@ -333,7 +333,7 @@ export function Header() {
                       <Link
                         href={item.href || '#'}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block py-3 font-black uppercase text-sm text-[#111111] hover:text-[#ce1126] transition-colors"
+                        className="block py-3 font-black uppercase text-sm text-[#212121] hover:text-[#19D42B] transition-colors"
                       >
                         {t(item.labelKey)}
                       </Link>
@@ -346,7 +346,7 @@ export function Header() {
                 {/* btn teléfono (verde = confianza/contacto) — siempre visible en mobile */}
                 <a
                   href={PHONE_HREF}
-                  className="w-full flex items-center justify-center gap-2 bg-[#006847] hover:bg-[#00543a] text-white font-black text-sm py-3 rounded transition-colors uppercase tracking-wide"
+                  className="w-full flex items-center justify-center gap-2 bg-[#FBC02D] hover:bg-[#D6A200] text-white font-black text-sm py-3 rounded transition-colors uppercase tracking-wide"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Phone className="size-4" />
@@ -355,7 +355,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   onClick={toggleLanguage}
-                  className="w-full flex items-center justify-center gap-2 font-black text-sm text-[#111111]"
+                  className="w-full flex items-center justify-center gap-2 font-black text-sm text-[#212121]"
                 >
                   <Globe className="size-4" />
                   <span>{language === 'es' ? 'English (EN)' : 'Español (ES)'}</span>

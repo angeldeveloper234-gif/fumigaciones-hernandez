@@ -64,23 +64,23 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #111111;
+  --foreground: #212121;
   --card: #ffffff;
-  --card-foreground: #111111;
+  --card-foreground: #212121;
   --popover: #ffffff;
-  --popover-foreground: #111111;
-  --primary: #ce1126;
-  --primary-foreground: #ffffff;
-  --secondary: #006847;
-  --secondary-foreground: #ffffff;
+  --popover-foreground: #212121;
+  --primary: #19D42B;
+  --primary-foreground: #212121;
+  --secondary: #FBC02D;
+  --secondary-foreground: #212121;
   --muted: #f5f5f5;
   --muted-foreground: #5a6070;
-  --accent: #ce1126;
-  --accent-foreground: #ffffff;
+  --accent: #FBC02D;
+  --accent-foreground: #212121;
   --destructive: oklch(0.577 0.245 27.325);
   --border: #e5e8ec;
   --input: #e5e8ec;
-  --ring: #ce1126;
+  --ring: #19D42B;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -88,24 +88,24 @@
   --chart-5: oklch(0.269 0 0);
   --radius: 0.75rem; /* 12px default */
 
-  /* ── Design System v2 Tokens (MosquitoMex) ── */
-  --ds-brand-green: #006847;
-  --ds-brand-red: #ce1126;
-  --ds-text-main: #111111;
+  /* ── Design System Tokens (Fumcon) ── */
+  --ds-brand-green: #19D42B;
+  --ds-brand-yellow: #FBC02D;
+  --ds-brand-red: #FBC02D;
+  --ds-text-main: #212121;
   --ds-bg-main: #ffffff;
-  --ds-900: #111111;
+  --ds-900: #212121;
   --ds-800: #1a1a1a;
-  --ds-700: #ce1126;
-  --ds-600: #a60d1e;
-  --ds-500: #f04454;
-  --ds-100: #fdeaea;
-  --ds-50:  #fff5f6;
-  /* Verde institucional (confianza / contacto) — reemplaza al ámbar fuera de marca */
-  --ds-green:    #006847;
-  --ds-green-dk: #00543a;
-  --ds-green-50: #e6f0ed;
+  --ds-700: #19D42B;
+  --ds-600: #13AA23;
+  --ds-500: #5FE66B;
+  --ds-100: #E9FBEA;
+  --ds-50:  #F5FFF6;
+  --ds-green:    #19D42B;
+  --ds-green-dk: #13AA23;
+  --ds-green-50: #E9FBEA;
   --ds-off:    #F8F8F8;
-  --ds-text:   #111111;
+  --ds-text:   #212121;
   --ds-muted:  #5A6070;
   --ds-border: #E5E8EC;
   /* Fluid type scale */
@@ -118,13 +118,13 @@
   --fs-3xl: clamp(2.25rem,   5vw,   3rem);
   --fs-4xl: clamp(2.75rem,   6vw,   4rem);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: #111111;
-  --sidebar-primary: #ce1126;
+  --sidebar-foreground: #212121;
+  --sidebar-primary: #19D42B;
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: #ce1126;
+  --sidebar-accent-foreground: #212121;
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: #ce1126;
+  --sidebar-ring: #19D42B;
 }
 
 .dark {
