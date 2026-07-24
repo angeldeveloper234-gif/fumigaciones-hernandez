@@ -1,74 +1,97 @@
-'use client'
+import {
+  BadgeCheck,
+  Building2,
+  Clock3,
+  HeartHandshake,
+  ShieldCheck,
+} from 'lucide-react'
+import { FUMCON_HOME } from '@/lib/translations'
+import { SITE, whatsappUrl } from '@/lib/site'
 
-import Image from 'next/image'
-import { FadeUp } from '@/components/animations/FadeUp'
-import { CheckCircle2 } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
-import { translations } from '@/lib/translations'
+const copy = FUMCON_HOME.es.about
+
+const credentials = [
+  {
+    icon: BadgeCheck,
+    label: 'Licencia sanitaria',
+    value: SITE.license,
+  },
+  {
+    icon: ShieldCheck,
+    label: 'Productos certificados',
+    value: 'COFEPRIS / EPA',
+  },
+  {
+    icon: HeartHandshake,
+    label: 'Aplicación responsable',
+    value: 'No tóxicos y biodegradables',
+  },
+  {
+    icon: Clock3,
+    label: 'Respuesta operativa',
+    value: '24 horas, todos los días',
+  },
+] as const
 
 export function About() {
-  const { t, language } = useLanguage()
-  
-  // Cast benefits to string array for mapping
-  const benefitsList = translations[language].about.benefits as string[]
-
   return (
-    <section id="about" className="section-padding bg-white dark:bg-slate-950 overflow-hidden">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
-          <FadeUp>
-            <div className="relative group max-w-xl mx-auto lg:mx-0">
-              {/* Decorative offset background block */}
-              <div className="absolute -inset-1.5 bg-[#19D42B] opacity-10 group-hover:opacity-20 transition-opacity duration-500 -z-10" />
-              
-              <div className="relative aspect-[3/2] w-full overflow-hidden border border-slate-200/80 dark:border-slate-800/80 shadow-xl bg-slate-50 dark:bg-slate-900">
-                <Image
-                  src="/images/about-image1.jpg"
-                  alt={t('about.action')}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  priority
-                />
-                
-                {/* Modern subtle gradient overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#212121]/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                
-                {/* Elegant overlay text banner and brand tag */}
-                <div className="absolute bottom-0 inset-x-0 p-[1.5rem] flex items-end justify-between">
-                  <span className="text-white font-black italic uppercase text-[1.125rem] tracking-wider drop-shadow-md">
-                    {t('about.action')}
-                  </span>
-                  <span className="bg-[#19D42B] text-white text-[0.75rem] font-black uppercase tracking-wider px-[0.75rem] py-[0.25rem] select-none">
-                    M.X.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </FadeUp>
-          <FadeUp delay={0.2}>
-            <div className="space-y-[1.5rem]">
-              <h2 className="text-h2 font-black tracking-tighter uppercase leading-[1.15] text-[#212121] dark:text-slate-100">
-                {t('about.titlePre')}<span className="text-[#19D42B]">{t('about.titleHighlight')}</span>
-              </h2>
-              <div className="space-y-[1rem] text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
-                <p className="max-w-[65ch] text-[1rem] md:text-[1.125rem]">{t('about.p1')}</p>
-                <p className="max-w-[65ch] text-[1rem] md:text-[1.125rem]">{t('about.p2')}</p>
-              </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-[1rem] pt-[1rem]">
-                {benefitsList.map((benefit, i) => (
-                  <li key={i} className="flex items-center gap-[0.75rem] text-[1rem] font-bold uppercase text-[#212121] dark:text-slate-200">
-                    <CheckCircle2 className="text-[#19D42B] size-4 flex-shrink-0" />
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </FadeUp>
+    <section className="bg-[#F4F7F4] py-20 md:py-28">
+      <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+        <div>
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#118F1D]">
+            {copy.eyebrow}
+          </p>
+          <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
+            {copy.title}
+          </h2>
+          <p className="mt-6 text-base leading-7 text-[#4F5B52]">
+            {copy.description}
+          </p>
+          <p className="mt-4 text-base leading-7 text-[#4F5B52]">
+            {copy.secondary}
+          </p>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {copy.audiences.map((audience) => (
+              <span
+                key={audience}
+                className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-2 text-xs font-bold text-[#334036]"
+              >
+                <Building2 className="size-3.5 text-[#118F1D]" />
+                {audience}
+              </span>
+            ))}
+          </div>
+          <a
+            href={whatsappUrl(
+              'Hola, quiero saber qué tratamiento recomienda Fumcon para mi propiedad.',
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#212121] px-6 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#118F1D] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
+          >
+            Hablar con un especialista
+          </a>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {credentials.map((item, index) => (
+            <article
+              key={item.label}
+              className={`rounded-[1.5rem] border border-black/8 p-6 shadow-[0_12px_30px_rgba(16,36,20,0.06)] ${
+                index === 0
+                  ? 'bg-[#19D42B] text-[#102414]'
+                  : 'bg-white text-[#212121]'
+              }`}
+            >
+              <item.icon className="size-7" />
+              <p className="mt-8 text-xs font-black uppercase tracking-[0.14em] opacity-65">
+                {item.label}
+              </p>
+              <p className="mt-2 text-lg font-black leading-6">{item.value}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   )
 }
-
-

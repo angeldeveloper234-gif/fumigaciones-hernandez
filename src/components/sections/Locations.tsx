@@ -1,68 +1,65 @@
-'use client'
+import Link from 'next/link'
+import { ArrowRight, MapPin, Navigation } from 'lucide-react'
+import { FUMCON_HOME } from '@/lib/translations'
+import { whatsappUrl } from '@/lib/site'
 
-import { FadeUp } from '@/components/animations/FadeUp'
-import { useLanguage } from '@/context/LanguageContext'
-import { ArrowRight } from 'lucide-react'
-
-// Principales ciudades donde operamos — ejemplos de nuestra cobertura nacional
-const AREAS = [
-  'Ciudad de México', 'Estado de México', 'Guadalajara', 'Monterrey',
-  'Puebla', 'Querétaro', 'Cuernavaca', 'León',
-  'Mérida', 'Cancún', 'Tijuana', 'Toluca',
-  'Aguascalientes', 'San Luis Potosí', 'Veracruz', 'Y todo el país'
-]
+const copy = FUMCON_HOME.es.coverage
 
 export function Locations() {
-  const { language } = useLanguage()
-  const isES = language === 'es'
-
-  const scrollToContact = () => {
-    document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <section className="section-padding bg-[#F8F9FA] border-t border-[#E5E8EC]" id="cobertura">
-      <div className="container max-w-4xl">
-        
-        <FadeUp>
-          <div className="text-center mb-10">
-            <h2 className="text-[#212121] text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4 leading-tight">
-              {isES ? 'Cobertura Nacional' : 'Nationwide Coverage'}
-            </h2>
-            <div className="w-48 h-0.5 bg-[#19D42B] mx-auto mb-6" />
-            <p className="text-[#19D42B] italic font-medium text-sm md:text-base max-w-[70ch] mx-auto leading-relaxed">
-              {isES
-                ? 'Atendemos hogares y empresas en todo México. Sin importar dónde te encuentres, llevamos nuestro servicio profesional de control de plagas hasta tu puerta.'
-                : 'We serve homes and businesses across all of Mexico. Wherever you are, we bring our professional pest control service right to your door.'}
-            </p>
+    <section className="relative overflow-hidden bg-[#102414] py-20 text-white md:py-28">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:22px_22px]"
+      />
+      <div className="container relative grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-start lg:gap-20">
+        <div className="lg:sticky lg:top-32">
+          <div className="flex size-14 items-center justify-center rounded-2xl bg-[#19D42B] text-[#102414]">
+            <Navigation className="size-7" />
           </div>
-        </FadeUp>
+          <p className="mt-7 text-xs font-black uppercase tracking-[0.18em] text-[#78ED84]">
+            {copy.eyebrow}
+          </p>
+          <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.04] tracking-[-0.035em]">
+            {copy.title}
+          </h2>
+          <p className="mt-5 text-base leading-7 text-white/62">
+            {copy.description}
+          </p>
+          <a
+            href={whatsappUrl(
+              'Hola, quiero confirmar la cobertura de Fumcon en mi zona.',
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full border border-white/22 px-5 text-sm font-extrabold transition hover:border-[#19D42B] hover:bg-[#19D42B] hover:text-[#102414] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FBC02D]"
+          >
+            {copy.cta}
+            <ArrowRight className="size-4" />
+          </a>
+        </div>
 
-        {/* Areas List Grid */}
-        <FadeUp delay={0.1}>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-3 mb-10 max-w-3xl mx-auto pl-4 md:pl-0">
-            {AREAS.map((area, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm text-[#5A6070]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#19D42B] shrink-0" />
-                <span className="font-semibold">{area}</span>
-              </div>
-            ))}
-          </div>
-        </FadeUp>
-
-        {/* CTA Button */}
-        <FadeUp delay={0.2}>
-          <div className="text-center">
-            <button
-              onClick={scrollToContact}
-              className="inline-flex items-center gap-2.5 bg-[#19D42B] hover:bg-[#13AA23] text-white font-black text-sm px-8 py-4 rounded shadow-lg transition-all duration-200 uppercase tracking-wider group cursor-pointer"
+        <div className="grid gap-3 sm:grid-cols-2">
+          {copy.areas.map((area, index) => (
+            <Link
+              key={area.slug}
+              href={`/cobertura/${area.slug}`}
+              prefetch={false}
+              className="group flex min-h-24 items-center gap-4 rounded-[1.25rem] border border-white/12 bg-white/[0.055] p-5 transition hover:-translate-y-0.5 hover:border-[#19D42B]/60 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
             >
-              <span>{isES ? 'Iniciar mi Cotización' : 'Start a Quote'}</span>
-              <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </FadeUp>
-
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#19D42B]/12 text-[#78ED84] transition group-hover:bg-[#19D42B] group-hover:text-[#102414]">
+                <MapPin className="size-5" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-[#FBC02D]">
+                  Zona {String(index + 1).padStart(2, '0')}
+                </p>
+                <p className="mt-1 font-black">{area.name}</p>
+              </div>
+              <ArrowRight className="ml-auto size-4 shrink-0 text-white/35 transition group-hover:translate-x-1 group-hover:text-[#78ED84]" />
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   )

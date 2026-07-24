@@ -56,3 +56,7 @@ export const SITE = {
 
 export const absoluteUrl = (path = '') =>
   `${SITE.url}${path.startsWith('/') ? path : `/${path}`}`
+
+export const whatsappUrl = (
+  message = 'Hola, necesito una cotización para control de plagas.',
+) => `${SITE.whatsappHref}?text=${encodeURIComponent(message)}`

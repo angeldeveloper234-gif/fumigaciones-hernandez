@@ -406,3 +406,240 @@ export const translations = {
     }
   }
 }
+
+/**
+ * Copy aprobado para la Home de Fumcon.
+ *
+ * El motor i18n se conserva, pero durante el lanzamiento solo existe la
+ * variante completa en español. Cuando `language === "en"`, la interfaz usa
+ * este contenido como fallback hasta que se apruebe una traducción real.
+ */
+export const FUMCON_HOME = {
+  es: {
+    hero: {
+      eyebrow: 'Desinfección y control de plagas · Atención 24/7',
+      title: 'Control de plagas seguro, rápido y garantizado',
+      highlight: 'en el sureste',
+      description:
+        'Protegemos hogares y negocios en Yucatán y Quintana Roo con tratamientos profesionales, productos certificados y respuesta inmediata.',
+      primaryCta: 'Solicitar inspección sin costo',
+      secondaryCta: 'Ver servicios',
+      review: '5.0 · 19 opiniones en Google',
+      assurances: [
+        'Productos COFEPRIS / EPA',
+        'No tóxicos y biodegradables',
+        'Licencia sanitaria AP050271',
+      ],
+    },
+    pests: {
+      eyebrow: 'Control por tipo de plaga',
+      title: 'Detectamos el origen. Eliminamos el problema.',
+      description:
+        'Aplicamos el método correcto según la plaga, el nivel de actividad y las condiciones de tu propiedad.',
+      cta: 'Ver tratamiento',
+      items: [
+        {
+          slug: 'cucarachas',
+          name: 'Cucarachas',
+          description: 'Eliminación total garantizada.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/cucaracha.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vY3VjYXJhY2hhLmpwZyIsImlhdCI6MTc2OTIwMDY5OCwiZXhwIjoxODAwNzM2Njk4fQ.vrba2_grNgq86ULycxqxYFtCOy44l4oSj8gzEt6nHbE',
+        },
+        {
+          slug: 'roedores',
+          name: 'Roedores',
+          description: 'Control de ratas y ratones con seguimiento.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/ratas.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vcmF0YXMuanBnIiwiaWF0IjoxNzY5MjAwNzM0LCJleHAiOjE4MDA3MzY3MzR9.jhRz-KHBKwnrxWBTvywY9yg1_kR1twDGhpGmnHuY3js',
+        },
+        {
+          slug: 'termitas',
+          name: 'Termitas',
+          description: 'Protección para madera y estructuras.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/termitas.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vdGVybWl0YXMuanBnIiwiaWF0IjoxNzY5MjAwNzU0LCJleHAiOjE4MDA3MzY3NTR9.SvfTGup5HLIPLubYeOCyTdXBQJUZHHpvxfss5ji4PsI',
+        },
+        {
+          slug: 'mosquitos',
+          name: 'Mosquitos',
+          description: 'Reducción de criaderos y control de adultos.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/enjambre-mosquitos.avif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vZW5qYW1icmUtbW9zcXVpdG9zLmF2aWYiLCJpYXQiOjE3NjkyMDA3MDcsImV4cCI6MTgwMDczNjcwN30.BkZIY_o6cW31prGwh_nUfRUMh4nkg75MP7Coqv_rhKM',
+        },
+        {
+          slug: 'alacranes',
+          name: 'Alacranes',
+          description: 'Barrera perimetral y tratamiento de grietas.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/alacranes.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vYWxhY3JhbmVzLmpwZyIsImlhdCI6MTc2OTIwMDU5NywiZXhwIjoxODAwNzM2NTk3fQ.Wu62ZvypCzAq112Ik8CFfz27j7h1qMyew_bMTkEqjA8',
+        },
+        {
+          slug: 'hormigas',
+          name: 'Hormigas',
+          description: 'Tratamiento del nido, no solo del rastro.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/hormigas.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vaG9ybWlnYXMuanBnIiwiaWF0IjoxNzY5MjA0MzM0LCJleHAiOjE4MDA3NDAzMzR9.CKFh6VGr1id9RWg_rXxrKE9MWQSJmFX_PBTnZ69XGh8',
+        },
+        {
+          slug: 'aranas',
+          name: 'Arañas',
+          description: 'Control en rincones, techos y perímetros.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/spider.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vc3BpZGVyLnBuZyIsImlhdCI6MTc2OTIwMDc0NCwiZXhwIjoxODAwNzM2NzQ0fQ.xqmsOdTRLHYopkmFrnlpmkYQyyK7G1A-7xJs6LNzWAI',
+        },
+        {
+          slug: 'garrapatas',
+          name: 'Garrapatas',
+          description: 'Protección de patios y zonas de mascotas.',
+          image:
+            'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/garrapata.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vZ2FycmFwYXRhLmpwZyIsImlhdCI6MTc2OTIwMDcxOSwiZXhwIjoxODAwNzM2NzE5fQ.q81Su61d156_Tv0725kMDQhr1RtwzYSnM_2yi0LU1GE',
+        },
+      ],
+    },
+    methods: {
+      eyebrow: 'Métodos profesionales',
+      title: 'El tratamiento exacto para cada escenario',
+      description:
+        'La inspección define dónde y cómo intervenir. Así controlamos la plaga sin aplicar producto de más.',
+      items: [
+        {
+          title: 'Aspersión',
+          description:
+            'Aplicación líquida perimetral para barreras químicas efectivas.',
+          icon: 'spray',
+        },
+        {
+          title: 'Gel Activo',
+          description:
+            'Cebos de alta atracción para control focalizado de cucarachas y hormigas.',
+          icon: 'target',
+        },
+        {
+          title: 'Nebulización',
+          description:
+            'Microgotas que alcanzan áreas difíciles y espacios aéreos.',
+          icon: 'wind',
+        },
+        {
+          title: 'Polvos Residuales',
+          description:
+            'Tratamiento de grietas y hendiduras para protección duradera.',
+          icon: 'shield',
+        },
+        {
+          title: 'Termonebulización',
+          description:
+            'Niebla térmica de alta penetración para áreas de difícil acceso y techos elevados.',
+          icon: 'cloud',
+        },
+      ],
+    },
+    about: {
+      eyebrow: 'Fumcon del Sureste',
+      title: 'Control profesional, sin improvisaciones',
+      description:
+        'Atendemos casas, oficinas, comercios, locales, hospitales y gimnasios con protocolos claros, personal capacitado y tratamientos adaptados a cada propiedad.',
+      secondary:
+        'Nuestra base operativa está en Mérida y desplegamos servicio en Yucatán y Quintana Roo, las 24 horas, los 7 días de la semana.',
+      audiences: ['Hogares', 'Comercios', 'Oficinas', 'Hospitales', 'Gimnasios'],
+    },
+    promotion: {
+      badge: 'Promoción vigente',
+      title: '3 sesiones al precio de 2',
+      description:
+        'Protección extendida para tu hogar o negocio. Incluye inspección inicial sin costo y garantía de servicio.',
+      priceLabel: 'Fumigación desde',
+      price: '$750',
+      currency: 'MXN',
+      benefits: [
+        'Inspección inicial sin costo',
+        'Productos seguros y certificados',
+        'Seguimiento profesional',
+      ],
+      cta: 'Quiero aprovechar la promoción',
+    },
+    testimonials: {
+      eyebrow: 'Opiniones verificadas',
+      title: 'Clientes que ya recuperaron su tranquilidad',
+      badge: '5.0 · 19 opiniones en Google',
+      items: [
+        {
+          name: 'Jessie Regalado',
+          role: 'Cliente de Fumcon',
+          text: 'Desde el primer contacto fueron muy profesionales, puntuales y claros al explicar el proceso. Realizaron una inspección detallada y aplicaron el tratamiento adecuado. Lo que más me gustó fue su responsabilidad y el uso de productos seguros para mi familia y mis mascotas. Además, dejaron todo limpio y ordenado.',
+        },
+        {
+          name: 'TintaMax Chetumal',
+          role: 'Cliente de Fumcon',
+          text: 'Buen servicio, resolviendo problema con plaga de ratas, con resultados a corto plazo y siempre atentos a cualquier duda. Cuidan de tus mascotas con recomendaciones.',
+        },
+        {
+          name: 'Julianne P',
+          role: 'Local Guide',
+          text: 'Excelentes servicios y buena atención. Lo recomiendo sólidamente si quieres resolver plagas.',
+        },
+      ],
+    },
+    coverage: {
+      eyebrow: 'Cobertura regional',
+      title: 'Llegamos donde nos necesitas',
+      description:
+        'Unidades móviles equipadas para responder en Yucatán y Quintana Roo con el mismo estándar de servicio.',
+      cta: 'Consultar disponibilidad',
+      areas: [
+        { name: 'Mérida', slug: 'merida' },
+        { name: 'Cancún', slug: 'cancun' },
+        { name: 'Playa del Carmen', slug: 'playa-del-carmen' },
+        { name: 'Tulum', slug: 'tulum' },
+        { name: 'Chetumal', slug: 'chetumal' },
+        { name: 'Bacalar', slug: 'bacalar' },
+        { name: 'José María Morelos', slug: 'jose-maria-morelos' },
+        {
+          name: 'Felipe Carrillo Puerto',
+          slug: 'felipe-carrillo-puerto',
+        },
+      ],
+    },
+    blog: {
+      eyebrow: 'Guías para el sureste',
+      title: 'Prevención útil, explicada sin rodeos',
+      description:
+        'Aprende a reconocer señales, reducir riesgos y saber cuándo llamar a un profesional.',
+      cta: 'Ver todas las guías',
+      articles: [
+        {
+          category: 'Alacranes',
+          title: 'Alacranes en Yucatán: cómo prevenir picaduras en casa',
+          summary:
+            'Dónde se esconden, qué revisar y cómo reducir el riesgo para niños y mascotas.',
+        },
+        {
+          category: 'Cucarachas',
+          title: 'Cómo eliminar cucarachas en clima cálido y húmedo',
+          summary:
+            'Las señales de actividad que conviene atender antes de que la colonia crezca.',
+        },
+        {
+          category: 'Mosquitos',
+          title:
+            'Temporada de mosquitos en Quintana Roo: dengue y prevención',
+          summary:
+            'Medidas prácticas para patios, jardines y recipientes con agua estancada.',
+        },
+      ],
+    },
+    contact: {
+      eyebrow: 'Atención inmediata 24/7',
+      title: 'La solución empieza con un mensaje',
+      description:
+        'Cuéntanos qué plaga viste y en qué zona estás. Un especialista de Fumcon te orientará y coordinará la inspección.',
+      whatsappCta: 'Escribir por WhatsApp',
+      phoneCta: 'Llamar ahora',
+    },
+  },
+} as const
+
+export function getFumconHomeCopy(language: 'es' | 'en') {
+  // Inglés queda como fallback al español hasta contar con copy aprobado.
+  return language === 'es' ? FUMCON_HOME.es : FUMCON_HOME.es
+}

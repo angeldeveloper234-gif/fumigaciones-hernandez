@@ -1,77 +1,68 @@
-'use client'
-
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 import { FadeUp } from '@/components/animations/FadeUp'
-import { useLanguage } from '@/context/LanguageContext'
-import { ArrowRight } from 'lucide-react'
+import { FUMCON_HOME } from '@/lib/translations'
 
-const PESTS = [
-  { emoji: '🦟', labels: { es: 'Mosquitos',          en: 'Mosquitoes'    } },
-  { emoji: '🪳', labels: { es: 'Cucarachas',          en: 'Cockroaches'   } },
-  { emoji: '🕷️', labels: { es: 'Arañas',              en: 'Spiders'       } },
-  { emoji: '🪰', labels: { es: 'Moscas',              en: 'Flies'         } },
-  { emoji: '🐀', labels: { es: 'Ratas y Ratones',     en: 'Rats & Mice'   } },
-  { emoji: '🐜', labels: { es: 'Hormigas y Termitas', en: 'Ants & Termites' } },
-  { emoji: '🐝', labels: { es: 'Abejas y Avispas',    en: 'Bees & Wasps'  } },
-]
+const copy = FUMCON_HOME.es.pests
 
 export function PestGrid() {
-  const { language } = useLanguage()
-  const isES = language === 'es'
-  const lang = language as 'es' | 'en'
-
-  const scrollToContact = () => {
-    document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <section className="section-padding bg-white" id="plagas">
+    <section id="servicios" className="bg-white py-20 md:py-28">
       <div className="container">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#118F1D]">
+            {copy.eyebrow}
+          </p>
+          <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
+            {copy.title}
+          </h2>
+          <p className="mx-auto mt-5 text-base leading-7 text-[#5A6070]">
+            {copy.description}
+          </p>
+        </div>
 
-        <FadeUp>
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-[#19D42B] text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-4">
-              <span className="block w-5 h-px bg-[#19D42B]" />
-              {isES ? 'Control de Plagas' : 'Pest Control'}
-              <span className="block w-5 h-px bg-[#19D42B]" />
-            </div>
-            <h2 className="text-h2 font-black tracking-tighter uppercase text-[#212121] leading-[1.15]">
-              {isES ? '¿Qué plaga te está afectando?' : 'What pest is bothering you?'}
-            </h2>
-            <p className="text-[#5A6070] mt-3 text-base max-w-[50ch] mx-auto">
-              {isES
-                ? 'Selecciona la plaga para obtener una cotización inmediata sin costo'
-                : 'Select your pest to get an immediate free quote'}
-            </p>
-          </div>
-        </FadeUp>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {PESTS.map((pest, i) => (
-            <FadeUp key={pest.labels.es} delay={i * 0.06}>
-              <button
-                onClick={scrollToContact}
-                className="group w-full flex flex-col items-center gap-3 p-6 bg-[#F8F8F8] border border-[#E5E8EC] rounded hover:bg-[#19D42B] hover:border-transparent hover:-translate-y-1 transition-all duration-200 cursor-pointer text-center"
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {copy.items.map((pest, index) => (
+            <FadeUp key={pest.slug} delay={Math.min(index * 0.04, 0.2)}>
+              <Link
+                href={`/servicios/${pest.slug}`}
+                prefetch={false}
+                className="group block h-full overflow-hidden rounded-[1.5rem] border border-black/8 bg-[#F7F9F7] shadow-[0_12px_32px_rgba(16,36,20,0.06)] transition hover:-translate-y-1 hover:border-[#19D42B]/60 hover:shadow-[0_18px_42px_rgba(16,36,20,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
               >
-                <div className="text-4xl leading-none bg-[#E9FBEA] p-3 rounded group-hover:bg-white/20 transition-colors duration-200 select-none">
-                  {pest.emoji}
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#E9FBEA]">
+                  <Image
+                    src={pest.image}
+                    alt={`${pest.name}: servicio profesional de control de plagas en el sureste`}
+                    fill
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-transparent" />
+                  <span className="absolute left-4 top-4 rounded-full bg-[#FBC02D] px-3 py-1 text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#212121]">
+                    Solución garantizada
+                  </span>
                 </div>
-                <span className="text-sm font-bold uppercase tracking-wide text-[#212121] group-hover:text-white transition-colors">
-                  {pest.labels[lang]}
-                </span>
-                <ArrowRight className="size-3.5 text-[#19D42B] group-hover:text-white/70 transition-colors" />
-              </button>
+                <div className="flex min-h-36 flex-col p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-xl font-black tracking-[-0.02em] text-[#212121]">
+                      {pest.name}
+                    </h3>
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#E9FBEA] text-[#118F1D] transition group-hover:bg-[#19D42B] group-hover:text-[#102414]">
+                      <ArrowUpRight className="size-4" />
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-[#5A6070]">
+                    {pest.description}
+                  </p>
+                  <span className="mt-auto pt-4 text-xs font-black uppercase tracking-[0.12em] text-[#118F1D]">
+                    {copy.cta}
+                  </span>
+                </div>
+              </Link>
             </FadeUp>
           ))}
         </div>
-
-        <FadeUp delay={0.55}>
-          <p className="text-center text-[#5A6070] text-sm mt-8">
-            {isES
-              ? 'Haz clic en cualquier plaga para solicitar cotización gratuita'
-              : 'Click any pest to request a free quote'}
-          </p>
-        </FadeUp>
-
       </div>
     </section>
   )

@@ -1,19 +1,17 @@
-'use client'
-
-import Link from 'next/link'
 import Image from 'next/image'
-import { Mail, Phone, MapPin } from 'lucide-react'
-import { SITE } from '@/lib/site'
-import { useLanguage } from '@/context/LanguageContext'
+import Link from 'next/link'
+import { Clock3, Mail, MapPin, Phone } from 'lucide-react'
+import { FUMCON_HOME } from '@/lib/translations'
+import { SITE, whatsappUrl } from '@/lib/site'
+
+const serviceLinks = FUMCON_HOME.es.pests.items.slice(0, 4)
 
 export function Footer() {
-  const { t } = useLanguage()
-
   return (
-    <footer className="w-full border-t border-[#212121]/10 bg-[#212121] text-white">
-      <div className="container py-[3rem] md:py-[4rem]">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-[2rem]">
-          <div className="space-y-[1rem]">
+    <footer className="bg-[#102414] text-white">
+      <div className="container py-14 md:py-18">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.25fr_0.8fr_0.8fr_1.25fr]">
+          <div>
             <Image
               src={SITE.logo}
               alt={SITE.legalName}
@@ -21,70 +19,122 @@ export function Footer() {
               height={293}
               className="h-12 w-auto brightness-0 invert"
             />
-            <p className="text-[1rem] text-slate-300 font-medium leading-relaxed max-w-[65ch]">
-              {t('footer.tagline')}
+            <p className="mt-5 max-w-sm text-sm leading-6 text-white/68">
+              Desinfección y control profesional de plagas para hogares y
+              negocios en Yucatán y Quintana Roo.
             </p>
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#19D42B]/35 bg-[#19D42B]/10 px-3 py-1.5 text-xs font-bold text-[#78ED84]">
+              Licencia sanitaria {SITE.license}
+            </div>
           </div>
-          <div className="space-y-[1rem]">
-            <h4 className="text-[0.75rem] font-black uppercase tracking-[0.2em] text-[#19D42B]">
-              {t('footer.quickLinks')}
-            </h4>
-            <ul className="space-y-[0.5rem] text-[0.875rem] font-bold uppercase">
-              <li><Link href="/" className="text-slate-300 hover:text-white transition-colors">{t('common.home')}</Link></li>
-              <li><Link href="#" className="text-slate-300 hover:text-white transition-colors">{t('common.services')}</Link></li>
-              <li><Link href="#" className="text-slate-300 hover:text-white transition-colors">{t('common.about')}</Link></li>
-              <li><Link href="#" className="text-slate-300 hover:text-white transition-colors">{t('common.contact')}</Link></li>
+
+          <div>
+            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#FBC02D]">
+              Navegación
+            </h2>
+            <ul className="mt-5 space-y-3 text-sm">
+              {[
+                ['Inicio', '/'],
+                ['Nosotros', '/nosotros'],
+                ['Servicios', '/servicios'],
+                ['Cobertura', '/cobertura'],
+                ['Blog', '/blog'],
+                ['Contacto', '/contacto'],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    prefetch={
+                      href === '/servicios' || href === '/cobertura'
+                        ? false
+                        : undefined
+                    }
+                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="space-y-[1rem]">
-            <h4 className="text-[0.75rem] font-black uppercase tracking-[0.2em] text-[#19D42B]">
-              {t('footer.ourServices')}
-            </h4>
-            <ul className="space-y-[0.5rem] text-[0.875rem] font-bold uppercase">
-              <li><Link href="#" className="text-slate-300 hover:text-white transition-colors">{t('footer.servicesList.misting')}</Link></li>
-              <li><Link href="#" className="text-slate-300 hover:text-white transition-colors">{t('footer.servicesList.spiderFly')}</Link></li>
-              <li><Link href="#" className="text-slate-300 hover:text-white transition-colors">{t('footer.servicesList.heating')}</Link></li>
-              <li><Link href="#" className="text-slate-300 hover:text-white transition-colors">{t('footer.servicesList.patioDesign')}</Link></li>
+
+          <div>
+            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#FBC02D]">
+              Plagas
+            </h2>
+            <ul className="mt-5 space-y-3 text-sm">
+              {serviceLinks.map((pest) => (
+                <li key={pest.slug}>
+                  <Link
+                    href={`/servicios/${pest.slug}`}
+                    prefetch={false}
+                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
+                  >
+                    {pest.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/servicios"
+                  prefetch={false}
+                  className="font-bold text-[#78ED84] transition-colors hover:text-[#A1F6A9]"
+                >
+                  Ver los 8 servicios →
+                </Link>
+              </li>
             </ul>
           </div>
-          <div className="space-y-[1rem]">
-            <h4 className="text-[0.75rem] font-black uppercase tracking-[0.2em] text-[#19D42B]">
-              {t('footer.contact')}
-            </h4>
-            <ul className="space-y-[0.75rem] text-[0.875rem] font-bold">
-              <li className="flex items-center gap-[0.5rem] text-slate-300">
-                <Phone className="size-4 text-[#19D42B]" />
-                <a href={SITE.phoneHref} className="hover:text-white transition-colors">{SITE.phone}</a>
+
+          <div>
+            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#FBC02D]">
+              Contacto
+            </h2>
+            <ul className="mt-5 space-y-4 text-sm text-white/68">
+              <li className="flex items-start gap-3">
+                <Phone className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
+                <a href={SITE.phoneHref} className="hover:text-white">
+                  {SITE.phone}
+                </a>
               </li>
-              <li className="flex items-center gap-[0.5rem] text-slate-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 text-[#19D42B]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
+              <li className="flex items-start gap-3">
+                <Mail className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="break-all hover:text-white"
+                >
+                  {SITE.email}
+                </a>
               </li>
-              <li className="flex items-center gap-[0.5rem] text-slate-300">
-                <Mail className="size-4 text-[#19D42B]" />
-                <a href={`mailto:${SITE.email}`} className="hover:text-white transition-colors">{SITE.email}</a>
+              <li className="flex items-start gap-3">
+                <Clock3 className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
+                Atención 24/7
               </li>
-              <li className="flex items-start gap-[0.5rem] text-slate-300">
-                <MapPin className="size-4 text-[#19D42B] mt-[0.25rem] flex-shrink-0" />
-                <span className="leading-relaxed">
-                  {SITE.address.streetAddress}, {SITE.address.neighborhood},{' '}
-                  {SITE.address.postalCode} {SITE.address.addressLocality},{' '}
-                  {SITE.address.addressRegion}
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
+                <span>
+                  Calle 44 572A x 29 y 29A, Los Pinos, 97138 Mérida, Yucatán
                 </span>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-[3rem] border-t border-white/10 pt-[2rem] flex flex-col md:flex-row justify-between items-center gap-[1rem]">
-          <p className="text-[0.75rem] uppercase font-bold tracking-widest text-slate-400">
-            &copy; {new Date().getFullYear()} {SITE.legalName}. {t('footer.copyright')}
+
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {SITE.legalName}. Todos los derechos
+            reservados.
           </p>
-          <p className="text-[0.75rem] uppercase font-bold tracking-widest text-slate-400">
-            {t('footer.madeBy')} <Link href="https://www.angelstudio.design/" className="hover:text-white underline underline-offset-4">Angel Design Studio</Link>
-          </p>
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-white/70 hover:text-white"
+          >
+            Atención inmediata por WhatsApp
+          </a>
         </div>
       </div>
     </footer>
   )
 }
-

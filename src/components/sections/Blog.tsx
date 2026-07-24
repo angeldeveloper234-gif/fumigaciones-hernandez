@@ -1,94 +1,65 @@
-'use client'
-
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
-import { translations } from '@/lib/translations'
-import { FadeUp } from '@/components/animations/FadeUp'
+import { ArrowRight, BookOpen, Clock3 } from 'lucide-react'
+import { FUMCON_HOME } from '@/lib/translations'
 
-interface Article {
-  id: string
-  title: string
-  summary: string
-  content: string
-  image: string
-  category: string
-}
+const copy = FUMCON_HOME.es.blog
 
 export function Blog() {
-  const { t, language } = useLanguage()
-
-  // Extrae la lista traducida o cae al español por defecto.
-  const articles = (translations[language]?.blog?.articles || translations['es']?.blog?.articles) as Article[]
-
   return (
-    <section id="blog" className="section-padding bg-slate-50 dark:bg-slate-900 border-t border-b border-gray-100 dark:border-slate-800/60 overflow-hidden">
+    <section className="bg-white py-20 md:py-28">
       <div className="container">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-[3rem]">
-          <FadeUp>
-            <h2 className="text-h2 font-black tracking-tighter uppercase leading-[1.15] text-[#212121] dark:text-slate-100">
-              {t('blog.titlePre')}<span className="text-[#19D42B]">{t('blog.titleHighlight')}</span>
-            </h2>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <p className="mt-[1rem] mx-auto text-gray-600 dark:text-slate-400 text-[1rem] md:text-[1.125rem] leading-relaxed">
-              {t('blog.description')}
+        <div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#118F1D]">
+              {copy.eyebrow}
             </p>
-          </FadeUp>
-        </div>
-
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2rem]">
-          {articles.map((article, index) => (
-            <FadeUp key={article.id} delay={index * 0.1}>
-              <Link
-                href={`/blog/${article.id}`}
-                className="group flex flex-col h-full bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800/80 rounded-none shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden transform hover:-translate-y-1"
-              >
-                {/* Article Image Container */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <span className="absolute top-[0.75rem] left-[0.75rem] bg-[#19D42B] text-white text-[0.625rem] md:text-[0.6875rem] font-black uppercase tracking-widest px-[0.625rem] py-[0.25rem] select-none rounded-none">
-                    {article.category}
-                  </span>
-                </div>
-
-                {/* Card Info Section */}
-                <div className="flex flex-col flex-grow p-[1.25rem] space-y-[0.75rem]">
-                  <h3 className="text-[1.125rem] font-black text-[#212121] dark:text-slate-100 uppercase tracking-tight group-hover:text-[#19D42B] transition-colors leading-[1.25] line-clamp-2">
-                    {article.title}
-                  </h3>
-                  <p className="text-[0.875rem] text-gray-500 dark:text-slate-400 font-medium normal-case tracking-normal leading-relaxed line-clamp-3 flex-grow">
-                    {article.summary}
-                  </p>
-
-                  <div className="pt-[0.5rem] flex items-center gap-[0.5rem] text-[0.75rem] font-bold text-[#19D42B] uppercase tracking-wider group/link">
-                    <span>{t('blog.readMore')}</span>
-                    <ArrowRight className="size-[0.875rem] transition-transform duration-200 group-hover/link:translate-x-1" />
-                  </div>
-                </div>
-              </Link>
-            </FadeUp>
-          ))}
-        </div>
-
-        {/* Ver todo el blog */}
-        <div className="mt-[3rem] flex justify-center">
+            <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
+              {copy.title}
+            </h2>
+            <p className="mt-5 text-base leading-7 text-[#5A6070]">
+              {copy.description}
+            </p>
+          </div>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 bg-[#212121] hover:bg-[#19D42B] text-white font-black text-[0.8125rem] px-7 py-3.5 uppercase tracking-wide transition-colors"
+            className="inline-flex min-h-12 w-fit items-center gap-2 rounded-full border border-black/12 px-5 text-sm font-extrabold text-[#212121] transition hover:border-[#19D42B] hover:bg-[#E9FBEA] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
           >
-            {t('blog.viewAll')}
+            {copy.cta}
             <ArrowRight className="size-4" />
           </Link>
+        </div>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {copy.articles.map((article) => (
+            <article
+              key={article.title}
+              className="group flex min-h-72 flex-col rounded-[1.5rem] border border-black/8 bg-[#F7F9F7] p-6 transition hover:-translate-y-1 hover:border-[#19D42B]/60 hover:shadow-[0_18px_42px_rgba(16,36,20,0.09)] sm:p-7"
+            >
+              <div className="flex items-center justify-between">
+                <span className="rounded-full bg-[#FBC02D] px-3 py-1 text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#212121]">
+                  {article.category}
+                </span>
+                <span className="flex items-center gap-1.5 text-xs text-[#6A746C]">
+                  <Clock3 className="size-3.5" />5 min
+                </span>
+              </div>
+              <BookOpen className="mt-8 size-8 text-[#118F1D]" />
+              <h3 className="mt-5 text-xl font-black leading-6 tracking-[-0.02em] text-[#212121]">
+                {article.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-[#5A6070]">
+                {article.summary}
+              </p>
+              <Link
+                href="/blog"
+                aria-label={`Leer más sobre ${article.title}`}
+                className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-black uppercase tracking-[0.12em] text-[#118F1D] focus-visible:outline-2 focus-visible:outline-[#19D42B]"
+              >
+                Leer guía
+                <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+              </Link>
+            </article>
+          ))}
         </div>
       </div>
     </section>
