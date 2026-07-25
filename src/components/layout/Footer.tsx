@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock3, Mail, MapPin, Phone } from 'lucide-react'
-import { FUMCON_HOME } from '@/lib/translations'
 import { SITE, whatsappUrl } from '@/lib/site'
+import { PEST_SERVICES } from '@/lib/services'
 
-const serviceLinks = FUMCON_HOME.es.pests.items.slice(0, 4)
+const serviceLinks = PEST_SERVICES.slice(0, 4)
 
 export function Footer() {
   return (
@@ -45,9 +45,7 @@ export function Footer() {
                   <Link
                     href={href}
                     prefetch={
-                      href === '/servicios' || href === '/cobertura'
-                        ? false
-                        : undefined
+                      href === '/cobertura' ? false : undefined
                     }
                     className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
                   >
@@ -67,7 +65,6 @@ export function Footer() {
                 <li key={pest.slug}>
                   <Link
                     href={`/servicios/${pest.slug}`}
-                    prefetch={false}
                     className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
                   >
                     {pest.name}
@@ -77,7 +74,6 @@ export function Footer() {
               <li>
                 <Link
                   href="/servicios"
-                  prefetch={false}
                   className="font-bold text-[#78ED84] transition-colors hover:text-[#A1F6A9]"
                 >
                   Ver los 8 servicios →

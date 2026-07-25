@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { FadeUp } from '@/components/animations/FadeUp'
 import { FUMCON_HOME } from '@/lib/translations'
+import { PEST_SERVICES } from '@/lib/services'
 
 const copy = FUMCON_HOME.es.pests
 
@@ -23,11 +24,10 @@ export function PestGrid() {
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {copy.items.map((pest, index) => (
+          {PEST_SERVICES.map((pest, index) => (
             <FadeUp key={pest.slug} delay={Math.min(index * 0.04, 0.2)}>
               <Link
                 href={`/servicios/${pest.slug}`}
-                prefetch={false}
                 className="group block h-full overflow-hidden rounded-[1.5rem] border border-black/8 bg-[#F7F9F7] shadow-[0_12px_32px_rgba(16,36,20,0.06)] transition hover:-translate-y-1 hover:border-[#19D42B]/60 hover:shadow-[0_18px_42px_rgba(16,36,20,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#E9FBEA]">
@@ -53,7 +53,7 @@ export function PestGrid() {
                     </span>
                   </div>
                   <p className="mt-3 text-sm leading-6 text-[#5A6070]">
-                    {pest.description}
+                    {pest.cardDescription}
                   </p>
                   <span className="mt-auto pt-4 text-xs font-black uppercase tracking-[0.12em] text-[#118F1D]">
                     {copy.cta}

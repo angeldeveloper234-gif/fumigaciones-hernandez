@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { SITE } from '@/lib/site'
 import { getAllPosts } from '@/lib/blog'
+import { PEST_SERVICES } from '@/lib/services'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
@@ -17,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${SITE.url}/servicios`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${SITE.url}/contacto`,
@@ -39,5 +46,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...blogRoutes]
+  const serviceRoutes: MetadataRoute.Sitemap = PEST_SERVICES.map(
+    (service) => ({
+      url: `${SITE.url}/servicios/${service.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    }),
+  )
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes]
 }

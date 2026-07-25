@@ -8,13 +8,14 @@ import {
   Star,
 } from 'lucide-react'
 import { FUMCON_HOME } from '@/lib/translations'
+import { PEST_SERVICES } from '@/lib/services'
 import { whatsappUrl } from '@/lib/site'
 
 const copy = FUMCON_HOME.es
 const heroImages = [
-  copy.pests.items[4],
-  copy.pests.items[0],
-  copy.pests.items[3],
+  PEST_SERVICES[4],
+  PEST_SERVICES[0],
+  PEST_SERVICES[3],
 ] as const
 
 export function Hero() {
@@ -78,7 +79,6 @@ export function Hero() {
             </a>
             <Link
               href="/servicios"
-              prefetch={false}
               className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-white/28 px-7 text-sm font-extrabold text-white transition hover:border-white/60 hover:bg-white/8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FBC02D]"
             >
               {copy.hero.secondaryCta}

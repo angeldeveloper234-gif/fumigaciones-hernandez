@@ -1,5 +1,6 @@
 import { SITE, absoluteUrl } from './site'
 import type { BlogPost } from './blog'
+import type { PestService } from './services'
 
 /** Negocio local de control de plagas — para la home. */
 export function localBusinessSchema() {
@@ -83,6 +84,45 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
       position: i + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  }
+}
+
+/** Servicio individual de control de plagas. */
+export function serviceSchema(service: PestService) {
+  const url = absoluteUrl(`/servicios/${service.slug}`)
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${url}#service`,
+    name: service.h1,
+    description: service.metaDescription,
+    url,
+    image: service.image,
+    serviceType: `Control profesional de ${service.name.toLowerCase()}`,
+    areaServed: SITE.areaServed.map((name) => ({
+      '@type': 'AdministrativeArea',
+      name,
+    })),
+    provider: { '@id': `${SITE.url}/#business` },
+  }
+}
+
+/** Preguntas frecuentes visibles en una página. */
+export function faqSchema(
+  faqs: readonly { question: string; answer: string }[],
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
     })),
   }
 }
