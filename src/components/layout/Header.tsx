@@ -81,9 +81,6 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                prefetch={
-                  item.href === '/cobertura' ? false : undefined
-                }
                 className="rounded-sm text-[0.78rem] font-extrabold uppercase tracking-[0.08em] text-[#212121] transition-colors hover:text-[#118F1D] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
               >
                 {item.label}
@@ -173,9 +170,6 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    prefetch={
-                      item.href === '/cobertura' ? false : undefined
-                    }
                     onClick={closeMenu}
                     className="border-b border-black/7 py-4 text-sm font-extrabold uppercase tracking-[0.08em] text-[#212121] hover:text-[#118F1D] focus-visible:outline-2 focus-visible:outline-[#19D42B]"
                   >

@@ -1,6 +1,7 @@
 import { SITE, absoluteUrl } from './site'
 import type { BlogPost } from './blog'
 import type { PestService } from './services'
+import type { CoverageArea } from './locations'
 
 /** Negocio local de control de plagas — para la home. */
 export function localBusinessSchema() {
@@ -124,5 +125,29 @@ export function faqSchema(
         text: faq.answer,
       },
     })),
+  }
+}
+
+/** Servicio local de Fumcon en una zona de cobertura. */
+export function areaServiceSchema(area: CoverageArea) {
+  const url = absoluteUrl(`/cobertura/${area.slug}`)
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${url}#service`,
+    name: area.h1,
+    description: area.metaDescription,
+    url,
+    serviceType: 'Fumigación y control profesional de plagas',
+    areaServed: {
+      '@type': 'City',
+      name: area.name,
+      containedInPlace: {
+        '@type': 'State',
+        name: area.state,
+      },
+    },
+    provider: { '@id': `${SITE.url}/#business` },
   }
 }

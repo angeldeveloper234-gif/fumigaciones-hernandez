@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, MapPin, Navigation } from 'lucide-react'
 import { FUMCON_HOME } from '@/lib/translations'
 import { whatsappUrl } from '@/lib/site'
+import { COVERAGE_AREAS } from '@/lib/locations'
 
 const copy = FUMCON_HOME.es.coverage
 
@@ -40,11 +41,10 @@ export function Locations() {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {copy.areas.map((area, index) => (
+          {COVERAGE_AREAS.map((area, index) => (
             <Link
               key={area.slug}
               href={`/cobertura/${area.slug}`}
-              prefetch={false}
               className="group flex min-h-24 items-center gap-4 rounded-[1.25rem] border border-white/12 bg-white/[0.055] p-5 transition hover:-translate-y-0.5 hover:border-[#19D42B]/60 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#19D42B]/12 text-[#78ED84] transition group-hover:bg-[#19D42B] group-hover:text-[#102414]">

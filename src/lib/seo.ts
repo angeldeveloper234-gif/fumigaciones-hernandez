@@ -10,6 +10,7 @@ export function generatePageMetadata({
   type = 'website',
   publishedTime,
   noIndex = false,
+  absoluteTitle = false,
 }: {
   title: string
   description: string
@@ -19,12 +20,13 @@ export function generatePageMetadata({
   type?: 'website' | 'article'
   publishedTime?: string
   noIndex?: boolean
+  absoluteTitle?: boolean
 }): Metadata {
   const url = absoluteUrl(path)
   const ogImage = image.startsWith('http') ? image : absoluteUrl(image)
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     keywords: keywords ?? [...SITE.keywords],
     alternates: { canonical: url },

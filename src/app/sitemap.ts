@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { SITE } from '@/lib/site'
 import { getAllPosts } from '@/lib/blog'
 import { PEST_SERVICES } from '@/lib/services'
+import { COVERAGE_AREAS } from '@/lib/locations'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE.url}/servicios`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE.url}/cobertura`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -55,5 +62,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   )
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes]
+  const coverageRoutes: MetadataRoute.Sitemap = COVERAGE_AREAS.map((area) => ({
+    url: `${SITE.url}/cobertura/${area.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...coverageRoutes,
+    ...blogRoutes,
+  ]
 }

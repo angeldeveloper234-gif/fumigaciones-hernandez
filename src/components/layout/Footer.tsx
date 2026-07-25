@@ -44,9 +44,6 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    prefetch={
-                      href === '/cobertura' ? false : undefined
-                    }
                     className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
                   >
                     {label}
