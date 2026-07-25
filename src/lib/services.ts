@@ -14,6 +14,8 @@ export type ControlMethod =
   | 'Nebulización'
   | 'Polvos Residuales'
   | 'Termonebulización'
+  | 'Estaciones de cebo'
+  | 'Sellado de accesos'
 
 export interface PestService {
   slug: ServiceSlug
@@ -49,6 +51,10 @@ export const CONTROL_METHODS = {
     'Tratamiento de grietas y hendiduras que conserva su acción en refugios de difícil acceso.',
   'Termonebulización':
     'Niebla térmica de alta penetración para áreas difíciles, exteriores amplios y techos elevados.',
+  'Estaciones de cebo':
+    'Dispositivos protegidos y ubicados en rutas estratégicas para controlar y monitorear la actividad de roedores.',
+  'Sellado de accesos':
+    'Corrección de aberturas y pasos detectados para reducir el ingreso de nuevos ejemplares a la propiedad.',
 } as const
 
 export const PEST_SERVICES: readonly PestService[] = [
@@ -132,7 +138,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     ],
     treatmentIntro:
       'Instalamos estaciones de cebo seguras en rutas estratégicas y empleamos dispositivos de monitoreo según el entorno. Después identificamos puntos de acceso y recomendamos o ejecutamos el sellado necesario para reducir nuevas entradas.',
-    methods: ['Aspersión'],
+    methods: ['Estaciones de cebo', 'Sellado de accesos'],
     recommendations: [
       'Cerrar alimentos, retirar residuos diariamente y mantener contenedores con tapa.',
       'Podar vegetación pegada a muros y despejar bodegas para facilitar la inspección.',
