@@ -1,21 +1,35 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, MessageCircle } from 'lucide-react'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { About } from '@/components/sections/About'
 import { Methods } from '@/components/sections/Methods'
 import { Contact } from '@/components/sections/Contact'
+import { generatePageMetadata } from '@/lib/seo'
 import { whatsappUrl } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
+export const metadata = generatePageMetadata({
   title: 'Nosotros — Control Profesional de Plagas',
   description:
     'Conoce a Fumcon del Sureste, su licencia sanitaria, métodos de aplicación y cobertura profesional en Yucatán y Quintana Roo.',
-  alternates: { canonical: '/nosotros' },
-}
+  path: '/nosotros',
+  keywords: [
+    'Fumcon del Sureste',
+    'empresa de fumigación',
+    'control profesional de plagas',
+    'licencia sanitaria fumigación',
+  ],
+})
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Inicio', path: '/' },
+          { name: 'Nosotros', path: '/nosotros' },
+        ])}
+      />
       <section className="relative overflow-hidden bg-[#102414] py-18 text-white md:py-24">
         <div
           aria-hidden="true"

@@ -13,7 +13,7 @@ export const SITE = {
   slogan: 'Desinfección y control de plagas en el sureste',
   logo: '/fumcon-logo.png',
   favicon: '/fumcon-fav.png',
-  ogImage: '/fumcon-logo.png',
+  ogImage: '/images/og/fumcon-og.webp',
   phone: '+52 999 737 9510',
   phoneHref: 'tel:+529997379510',
   whatsappHref: 'https://wa.me/529997379510',

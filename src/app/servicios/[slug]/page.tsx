@@ -17,6 +17,7 @@ import {
   PEST_SERVICES,
   getPestService,
   getRelatedServices,
+  getServiceOgImage,
 } from '@/lib/services'
 import {
   breadcrumbSchema,
@@ -55,7 +56,7 @@ export async function generateMetadata({
     title: service.metaTitle,
     description: service.metaDescription,
     path: `/servicios/${service.slug}`,
-    image: '/fumcon-logo.png',
+    image: getServiceOgImage(service.slug),
     keywords: [
       `control de ${service.name.toLowerCase()} Mérida`,
       `fumigación ${service.name.toLowerCase()} Yucatán`,

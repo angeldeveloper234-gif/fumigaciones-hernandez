@@ -9,7 +9,7 @@ export function localBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'PestControlService',
     '@id': `${SITE.url}/#business`,
-    name: SITE.name,
+    name: 'FUMCON del Sureste',
     legalName: SITE.legalName,
     url: SITE.url,
     image: absoluteUrl(SITE.logo),
@@ -22,7 +22,7 @@ export function localBusinessSchema() {
       ...SITE.address,
     },
     areaServed: SITE.areaServed.map((name) => ({
-      '@type': 'AdministrativeArea',
+      '@type': 'City',
       name,
     })),
     openingHours: SITE.openingHours,
@@ -115,7 +115,7 @@ export function serviceSchema(service: PestService) {
     name: service.h1,
     description: service.metaDescription,
     url,
-    image: service.image,
+    image: absoluteUrl(service.image),
     serviceType: `Control profesional de ${service.name.toLowerCase()}`,
     areaServed: SITE.areaServed.map((name) => ({
       '@type': 'AdministrativeArea',

@@ -14,6 +14,7 @@ import {
 import {
   getAllPosts,
   getPostBySlug,
+  getPostOgImage,
   getRelatedPosts,
 } from '@/lib/blog'
 import { generatePageMetadata } from '@/lib/seo'
@@ -50,7 +51,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.summary,
     path: `/blog/${post.slug}`,
-    image: '/fumcon-logo.png',
+    image: getPostOgImage(post),
     type: 'article',
     publishedTime: post.datePublished,
     keywords: [

@@ -18,7 +18,6 @@ export const metadata = generatePageMetadata({
   description:
     'Tratamientos profesionales para cucarachas, roedores, termitas, mosquitos, alacranes, hormigas, arañas y garrapatas en Yucatán y Quintana Roo.',
   path: '/servicios',
-  image: '/fumcon-logo.png',
   keywords: [
     'servicios de fumigación Mérida',
     'control de plagas Yucatán',

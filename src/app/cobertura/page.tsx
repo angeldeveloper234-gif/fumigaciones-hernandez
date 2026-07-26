@@ -21,7 +21,6 @@ export const metadata = generatePageMetadata({
   description:
     'Fumcon ofrece control profesional de plagas 24/7 en Mérida, Cancún, Playa del Carmen, Tulum, Chetumal, Bacalar, José María Morelos y Felipe Carrillo Puerto.',
   path: '/cobertura',
-  image: '/fumcon-logo.png',
   keywords: [
     'fumigación Yucatán',
     'fumigación Quintana Roo',

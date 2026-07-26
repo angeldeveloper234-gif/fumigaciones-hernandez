@@ -1,18 +1,32 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Clock3 } from 'lucide-react'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { Contact } from '@/components/sections/Contact'
+import { generatePageMetadata } from '@/lib/seo'
+import { breadcrumbSchema } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
+export const metadata = generatePageMetadata({
   title: 'Contacto — Atención de Plagas 24/7',
   description:
     'Contacta a Fumcon del Sureste para una inspección de plagas en Yucatán y Quintana Roo. Atención por teléfono y WhatsApp las 24 horas.',
-  alternates: { canonical: '/contacto' },
-}
+  path: '/contacto',
+  keywords: [
+    'contacto Fumcon',
+    'fumigación 24 horas',
+    'inspección de plagas',
+    'fumigadora Yucatán Quintana Roo',
+  ],
+})
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Inicio', path: '/' },
+          { name: 'Contacto', path: '/contacto' },
+        ])}
+      />
       <section className="relative overflow-hidden bg-[#102414] py-18 text-white md:py-24">
         <div
           aria-hidden="true"

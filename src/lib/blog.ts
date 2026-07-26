@@ -1,4 +1,8 @@
-import { getPestService, type ServiceSlug } from './services'
+import {
+  getPestService,
+  getServiceOgImage,
+  type ServiceSlug,
+} from './services'
 
 export interface BlogSection {
   heading: string
@@ -26,6 +30,14 @@ function pestImage(slug: ServiceSlug) {
   const service = getPestService(slug)
   if (!service) throw new Error(`No existe el servicio ${slug}`)
   return service.image
+}
+
+export function getPostOgImage(post: BlogPost) {
+  const serviceSlug = post.serviceHref.split('/').at(-1)
+
+  return serviceSlug && getPestService(serviceSlug)
+    ? getServiceOgImage(serviceSlug as ServiceSlug)
+    : '/images/og/fumcon-og.webp'
 }
 
 export const BLOG_POSTS: readonly BlogPost[] = [

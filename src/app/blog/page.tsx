@@ -18,7 +18,6 @@ export const metadata = generatePageMetadata({
   description:
     'Guías prácticas sobre alacranes, cucarachas, mosquitos, termitas y fumigación preventiva para hogares y negocios del sureste.',
   path: '/blog',
-  image: '/fumcon-logo.png',
   keywords: [
     'blog control de plagas',
     'prevención de plagas Yucatán',

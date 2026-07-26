@@ -62,8 +62,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'cucarachas',
     name: 'Cucarachas',
     cardDescription: 'Eliminación total garantizada.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/cucaracha.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vY3VjYXJhY2hhLmpwZyIsImlhdCI6MTc2OTIwMDY5OCwiZXhwIjoxODAwNzM2Njk4fQ.vrba2_grNgq86ULycxqxYFtCOy44l4oSj8gzEt6nHbE',
+    image: '/images/pests/cucarachas.webp',
     imageAlt:
       'Cucaracha sobre una superficie durante una inspección de control de plagas',
     h1: 'Control de Cucarachas en Mérida y el Sureste',
@@ -115,8 +114,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'roedores',
     name: 'Roedores',
     cardDescription: 'Control de ratas y ratones con seguimiento.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/ratas.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vcmF0YXMuanBnIiwiaWF0IjoxNzY5MjAwNzM0LCJleHAiOjE4MDA3MzY3MzR9.jhRz-KHBKwnrxWBTvywY9yg1_kR1twDGhpGmnHuY3js',
+    image: '/images/pests/roedores.webp',
     imageAlt:
       'Roedor identificado para un servicio profesional de control de ratas y ratones',
     h1: 'Control de Roedores (Ratas y Ratones) en el Sureste',
@@ -168,8 +166,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'termitas',
     name: 'Termitas',
     cardDescription: 'Protección para madera y estructuras.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/termitas.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vdGVybWl0YXMuanBnIiwiaWF0IjoxNzY5MjAwNzU0LCJleHAiOjE4MDA3MzY3NTR9.SvfTGup5HLIPLubYeOCyTdXBQJUZHHpvxfss5ji4PsI',
+    image: '/images/pests/termitas.webp',
     imageAlt:
       'Termitas sobre madera examinadas durante una inspección especializada',
     h1: 'Control de Termitas en Casas de Madera del Sureste',
@@ -221,8 +218,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'mosquitos',
     name: 'Mosquitos',
     cardDescription: 'Reducción de criaderos y control de adultos.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/enjambre-mosquitos.avif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vZW5qYW1icmUtbW9zcXVpdG9zLmF2aWYiLCJpYXQiOjE3NjkyMDA3MDcsImV4cCI6MTgwMDczNjcwN30.BkZIY_o6cW31prGwh_nUfRUMh4nkg75MP7Coqv_rhKM',
+    image: '/images/pests/mosquitos.webp',
     imageAlt:
       'Mosquitos en vuelo para servicio de fumigación en patios y jardines',
     h1: 'Fumigación contra Mosquitos en Yucatán y Quintana Roo',
@@ -274,8 +270,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'alacranes',
     name: 'Alacranes',
     cardDescription: 'Barrera perimetral y tratamiento de grietas.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/alacranes.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vYWxhY3JhbmVzLmpwZyIsImlhdCI6MTc2OTIwMDU5NywiZXhwIjoxODAwNzM2NTk3fQ.Wu62ZvypCzAq112Ik8CFfz27j7h1qMyew_bMTkEqjA8',
+    image: '/images/pests/alacranes.webp',
     imageAlt:
       'Alacrán localizado para tratamiento perimetral profesional',
     h1: 'Control de Alacranes en Yucatán y Quintana Roo',
@@ -326,8 +321,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'hormigas',
     name: 'Hormigas',
     cardDescription: 'Tratamiento del nido, no solo del rastro.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/hormigas.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vaG9ybWlnYXMuanBnIiwiaWF0IjoxNzY5MjA0MzM0LCJleHAiOjE4MDA3NDAzMzR9.CKFh6VGr1id9RWg_rXxrKE9MWQSJmFX_PBTnZ69XGh8',
+    image: '/images/pests/hormigas.webp',
     imageAlt:
       'Hormigas siguiendo un rastro hacia el área que requiere tratamiento',
     h1: 'Control de Hormigas en el Sureste',
@@ -379,8 +373,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'aranas',
     name: 'Arañas',
     cardDescription: 'Control en rincones, techos y perímetros.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/spider.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vc3BpZGVyLnBuZyIsImlhdCI6MTc2OTIwMDc0NCwiZXhwIjoxODAwNzM2NzQ0fQ.xqmsOdTRLHYopkmFrnlpmkYQyyK7G1A-7xJs6LNzWAI',
+    image: '/images/pests/aranas.webp',
     imageAlt:
       'Araña y telaraña identificadas para control en rincones y perímetros',
     h1: 'Control de Arañas en el Sureste',
@@ -432,8 +425,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'garrapatas',
     name: 'Garrapatas',
     cardDescription: 'Protección de patios y zonas de mascotas.',
-    image:
-      'https://nmnofwinjufyyykyaelc.supabase.co/storage/v1/object/sign/Fumcon/garrapata.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNzRlMzZmMy0wZDFhLTQ5NWMtYWMwMS0zNjMzMDY0Y2YwZTIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGdW1jb24vZ2FycmFwYXRhLmpwZyIsImlhdCI6MTc2OTIwMDcxOSwiZXhwIjoxODAwNzM2NzE5fQ.q81Su61d156_Tv0725kMDQhr1RtwzYSnM_2yi0LU1GE',
+    image: '/images/pests/garrapatas.webp',
     imageAlt:
       'Garrapata observada para tratamiento de patios y zonas de mascotas',
     h1: 'Control de Garrapatas en el Sureste',
@@ -485,6 +477,10 @@ export const PEST_SERVICES: readonly PestService[] = [
 
 export function getPestService(slug: string) {
   return PEST_SERVICES.find((service) => service.slug === slug)
+}
+
+export function getServiceOgImage(slug: ServiceSlug) {
+  return `/images/og/pests/${slug}.webp`
 }
 
 export function getRelatedServices(service: PestService) {

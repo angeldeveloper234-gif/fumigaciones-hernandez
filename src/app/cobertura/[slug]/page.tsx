@@ -16,6 +16,7 @@ import {
   ALL_AREA_SERVICES,
   COVERAGE_AREAS,
   getAreaCommonPests,
+  getCoverageOgImage,
   getCoverageArea,
   getRelatedAreas,
 } from '@/lib/locations'
@@ -55,7 +56,7 @@ export async function generateMetadata({
     title: area.metaTitle,
     description: area.metaDescription,
     path: `/cobertura/${area.slug}`,
-    image: '/fumcon-logo.png',
+    image: getCoverageOgImage(area),
     absoluteTitle: true,
     keywords: [
       `fumigación ${area.name}`,

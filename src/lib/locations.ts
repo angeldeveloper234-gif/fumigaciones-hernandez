@@ -1,6 +1,7 @@
 import {
   PEST_SERVICES,
   getPestService,
+  getServiceOgImage,
   type PestService,
   type ServiceSlug,
 } from './services'
@@ -201,6 +202,10 @@ export function getAreaCommonPests(area: CoverageArea) {
   return area.commonPestSlugs
     .map((slug) => getPestService(slug))
     .filter((service): service is PestService => Boolean(service))
+}
+
+export function getCoverageOgImage(area: CoverageArea) {
+  return getServiceOgImage(area.commonPestSlugs[0])
 }
 
 export function getRelatedAreas(area: CoverageArea) {

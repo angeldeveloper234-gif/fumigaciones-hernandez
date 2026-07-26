@@ -1,8 +1,11 @@
 import { MetadataRoute } from 'next'
-import { SITE } from '@/lib/site'
-import { getAllPosts } from '@/lib/blog'
-import { PEST_SERVICES } from '@/lib/services'
-import { COVERAGE_AREAS } from '@/lib/locations'
+import { SITE, absoluteUrl } from '@/lib/site'
+import { getAllPosts, getPostOgImage } from '@/lib/blog'
+import { PEST_SERVICES, getServiceOgImage } from '@/lib/services'
+import {
+  COVERAGE_AREAS,
+  getCoverageOgImage,
+} from '@/lib/locations'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
@@ -13,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 1,
+      images: [absoluteUrl(SITE.ogImage)],
     },
     {
       url: `${SITE.url}/nosotros`,
@@ -51,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.dateModified),
     changeFrequency: 'monthly',
     priority: 0.7,
+    images: [absoluteUrl(getPostOgImage(post))],
   }))
 
   const serviceRoutes: MetadataRoute.Sitemap = PEST_SERVICES.map(
@@ -59,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.85,
+      images: [absoluteUrl(getServiceOgImage(service.slug))],
     }),
   )
 
@@ -67,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.8,
+    images: [absoluteUrl(getCoverageOgImage(area))],
   }))
 
   return [
