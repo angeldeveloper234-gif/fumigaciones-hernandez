@@ -54,14 +54,29 @@ export function websiteSchema() {
 /** Artículo de blog. */
 export function articleSchema(post: BlogPost) {
   const url = absoluteUrl(`/blog/${post.slug}`)
+  const image = post.image.startsWith('http')
+    ? post.image
+    : absoluteUrl(post.image)
+  const wordCount = [
+    post.summary,
+    ...post.sections.flatMap((section) => [
+      ...section.paragraphs,
+      ...(section.bullets ?? []),
+    ]),
+  ]
+    .join(' ')
+    .trim()
+    .split(/\s+/).length
+
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     '@id': `${url}#article`,
     headline: post.title,
     description: post.summary,
-    image: absoluteUrl(post.image),
+    image,
     articleSection: post.category,
+    wordCount,
     datePublished: post.datePublished,
     dateModified: post.dateModified,
     inLanguage: SITE.lang,
