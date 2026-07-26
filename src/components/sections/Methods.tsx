@@ -51,7 +51,7 @@ export function Methods() {
                   <p className="mt-7 text-xs font-black tracking-[0.14em] text-[#FBC02D]">
                     0{index + 1}
                   </p>
-                  <h3 className="mt-2 text-xl font-black tracking-[-0.02em]">
+                  <h3 className="mt-2 text-[clamp(0.9375rem,calc(1.05rem-0.125vw),1rem)] font-black leading-tight tracking-[-0.02em] [hyphens:auto] [overflow-wrap:break-word]">
                     {method.title}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-white/60">

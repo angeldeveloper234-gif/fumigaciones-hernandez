@@ -154,7 +154,7 @@ export default async function ServicePage({
                   <span className="size-2 rounded-full bg-[#FBC02D]" />
                   Servicio especializado 24/7
                 </div>
-                <h1 className="mt-6 max-w-4xl text-[clamp(2.45rem,6vw,4.75rem)] font-black leading-[0.96] tracking-[-0.045em]">
+                <h1 className="mt-6 max-w-4xl text-[clamp(2.45rem,6vw,4.75rem)] font-black leading-[0.96] tracking-[-0.045em] [hyphens:auto] [overflow-wrap:break-word]">
                   {service.h1}
                 </h1>
                 <p className="mt-6 max-w-2xl border-l-2 border-[#FBC02D] pl-5 text-base leading-7 text-white/72 md:text-lg">
@@ -278,7 +278,9 @@ export default async function ServicePage({
                       Método Fumcon
                     </span>
                   </div>
-                  <h3 className="mt-6 text-2xl font-black">{method}</h3>
+                  <h3 className="mt-6 text-2xl font-black [hyphens:auto] [overflow-wrap:break-word]">
+                    {method}
+                  </h3>
                   <p className="mt-3 text-sm leading-6 text-white/65">
                     {CONTROL_METHODS[method]}
                   </p>

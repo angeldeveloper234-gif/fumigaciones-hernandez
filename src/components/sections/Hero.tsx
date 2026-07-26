@@ -37,7 +37,7 @@ export function Hero() {
             {copy.hero.eyebrow}
           </div>
 
-          <h1 className="mt-7 max-w-4xl text-[clamp(2.65rem,7vw,5rem)] font-black leading-[0.98] tracking-[-0.045em] text-white">
+          <h1 className="mt-7 max-w-4xl text-[clamp(2.65rem,7vw,5rem)] font-black leading-[0.98] tracking-[-0.045em] text-white [hyphens:auto] [overflow-wrap:break-word]">
             {copy.hero.title}{' '}
             <span className="text-[#19D42B]">{copy.hero.highlight}</span>
           </h1>
