@@ -151,8 +151,8 @@ export function Appointment() {
       [L('Mensaje', 'Message')]: contact.message || '—',
     }
     const subject = L(
-      `Nueva cotización Fumcon – ${contact.name}`,
-      `New Fumcon quote – ${contact.name}`
+      `Nueva cotización Fumigaciones Hernández – ${contact.name}`,
+      `New Fumigaciones Hernández quote – ${contact.name}`
     )
 
     setSubmitError(false)
@@ -174,7 +174,7 @@ export function Appointment() {
         <div className="bg-white dark:bg-black border border-gray-200/50 shadow-sm overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[500px]">
           
           {/* Info Panel */}
-          <div className="md:col-span-4 p-8 md:p-12 bg-[#19D42B] text-white flex flex-col justify-between">
+          <div className="md:col-span-4 p-8 md:p-12 bg-[#FFDF00] text-white flex flex-col justify-between">
             <div className="space-y-6">
               <span className="text-white/70 text-xs font-black uppercase tracking-widest">
                 {isES ? 'Cotización Rápida' : 'Quick Quote'}
@@ -199,7 +199,7 @@ export function Appointment() {
                 <div key={s.num} className="flex items-center gap-3">
                   <div className={`h-8 w-8 flex items-center justify-center shrink-0 border transition-all duration-300 ${
                     step === s.num 
-                      ? 'bg-white text-[#19D42B] border-white'
+                      ? 'bg-white text-[#FFDF00] border-white'
                       : step > s.num 
                         ? 'bg-white/20 text-white border-transparent' 
                         : 'border-white/30 text-white/50'
@@ -222,7 +222,7 @@ export function Appointment() {
             {/* Progress Bar */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gray-100 dark:bg-slate-800">
               <div 
-                className="h-full bg-[#19D42B] transition-all duration-300"
+                className="h-full bg-[#FFDF00] transition-all duration-300"
                 style={{ width: `${isSuccess ? 100 : (step / 3) * 100}%` }}
               />
             </div>
@@ -284,7 +284,7 @@ export function Appointment() {
                             }}
                             className={`flex flex-col items-center justify-center p-6 border transition-all duration-200 gap-3 group rounded ${
                               propertyType === 'residencial'
-                                ? 'border-[#19D42B] bg-[#E9FBEA]/10 text-[#19D42B]'
+                                ? 'border-[#FFDF00] bg-[#FFF8DC]/10 text-[#FFDF00]'
                                 : 'border-gray-200 dark:border-slate-800 hover:border-gray-300 hover:bg-gray-50'
                             }`}
                           >
@@ -308,7 +308,7 @@ export function Appointment() {
                             }}
                             className={`flex flex-col items-center justify-center p-6 border transition-all duration-200 gap-3 group rounded ${
                               propertyType === 'comercial'
-                                ? 'border-[#19D42B] bg-[#E9FBEA]/10 text-[#19D42B]'
+                                ? 'border-[#FFDF00] bg-[#FFF8DC]/10 text-[#FFDF00]'
                                 : 'border-gray-200 dark:border-slate-800 hover:border-gray-300 hover:bg-gray-50'
                             }`}
                           >
@@ -336,7 +336,7 @@ export function Appointment() {
                                 onClick={() => handlePestToggle(pest.id)}
                                 className={`py-3 px-2 border text-xs font-bold uppercase tracking-wide rounded transition-all duration-150 ${
                                   isSelected
-                                    ? 'bg-[#19D42B] text-white border-transparent'
+                                    ? 'bg-[#FFDF00] text-white border-transparent'
                                     : 'bg-white dark:bg-slate-950 border-gray-200 dark:border-slate-800 text-[#212121] dark:text-slate-300 hover:bg-gray-50'
                                 }`}
                               >
@@ -407,7 +407,7 @@ export function Appointment() {
                               {isES ? 'Estado' : 'State'}
                             </label>
                             <Input
-                              placeholder={isES ? 'Ej. CDMX' : 'e.g. CDMX'}
+                              placeholder={isES ? 'Ej. Altamira' : 'e.g. Altamira'}
                               value={address.state}
                               onChange={e => setAddress({ ...address, state: e.target.value })}
                               className="h-11 rounded"
@@ -508,7 +508,7 @@ export function Appointment() {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="inline-flex items-center gap-2 text-[#212121] dark:text-white font-bold text-xs uppercase hover:text-[#19D42B] transition-colors"
+                      className="inline-flex items-center gap-2 text-[#212121] dark:text-white font-bold text-xs uppercase hover:text-[#FFDF00] transition-colors"
                     >
                       <ArrowLeft className="size-4" />
                       {isES ? 'Anterior' : 'Back'}
@@ -542,7 +542,7 @@ export function Appointment() {
                 </div>
 
                 {submitError && (
-                  <p className="text-center text-[0.8125rem] text-[#19D42B] font-bold">
+                  <p className="text-center text-[0.8125rem] text-[#FFDF00] font-bold">
                     {isES ? 'No se pudo enviar. Inténtalo de nuevo o escríbenos a ' : 'Could not send. Please try again or write to us at '}
                     <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>.
                   </p>

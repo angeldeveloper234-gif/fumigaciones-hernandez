@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Clock3 } from 'lucide-react'
-import { FUMCON_HOME } from '@/lib/translations'
+import { HERNANDEZ_HOME } from '@/lib/translations'
 import { getAllPosts } from '@/lib/blog'
 
-const copy = FUMCON_HOME.es.blog
+const copy = HERNANDEZ_HOME.es.blog
 const featuredPosts = getAllPosts().slice(0, 3)
 
 export function Blog() {
@@ -12,7 +12,7 @@ export function Blog() {
       <div className="container">
         <div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#118F1D]">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
               {copy.eyebrow}
             </p>
             <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
@@ -24,7 +24,7 @@ export function Blog() {
           </div>
           <Link
             href="/blog"
-            className="inline-flex min-h-12 w-fit items-center gap-2 rounded-full border border-black/12 px-5 text-sm font-extrabold text-[#212121] transition hover:border-[#19D42B] hover:bg-[#E9FBEA] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
+            className="inline-flex min-h-12 w-fit items-center gap-2 rounded-full border border-black/12 px-5 text-sm font-extrabold text-[#212121] transition hover:border-[#FFDF00] hover:bg-[#FFF8DC] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFDF00]"
           >
             {copy.cta}
             <ArrowRight className="size-4" />
@@ -35,18 +35,18 @@ export function Blog() {
           {featuredPosts.map((article) => (
             <article
               key={article.slug}
-              className="group flex min-h-72 flex-col rounded-[1.5rem] border border-black/8 bg-[#F7F9F7] p-6 transition hover:-translate-y-1 hover:border-[#19D42B]/60 hover:shadow-[0_18px_42px_rgba(16,36,20,0.09)] sm:p-7"
+              className="group flex min-h-72 flex-col rounded-[1.5rem] border border-black/8 bg-[#F6F9FC] p-6 transition hover:-translate-y-1 hover:border-[#FFDF00]/60 hover:shadow-[0_18px_42px_rgba(28,50,102,0.09)] sm:p-7"
             >
               <div className="flex items-center justify-between">
-                <span className="rounded-full bg-[#FBC02D] px-3 py-1 text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#212121]">
+                <span className="rounded-full bg-[#F07070] px-3 py-1 text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#212121]">
                   {article.category}
                 </span>
-                <span className="flex items-center gap-1.5 text-xs text-[#6A746C]">
+                <span className="flex items-center gap-1.5 text-xs text-[#6A7280]">
                   <Clock3 className="size-3.5" />
                   {article.readingTime}
                 </span>
               </div>
-              <BookOpen className="mt-8 size-8 text-[#118F1D]" />
+              <BookOpen className="mt-8 size-8 text-[#B41B1E]" />
               <h3 className="mt-5 text-xl font-black leading-6 tracking-[-0.02em] text-[#212121]">
                 {article.title}
               </h3>
@@ -56,7 +56,7 @@ export function Blog() {
               <Link
                 href={`/blog/${article.slug}`}
                 aria-label={`Leer más sobre ${article.title}`}
-                className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-black uppercase tracking-[0.12em] text-[#118F1D] focus-visible:outline-2 focus-visible:outline-[#19D42B]"
+                className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-black uppercase tracking-[0.12em] text-[#B41B1E] focus-visible:outline-2 focus-visible:outline-[#FFDF00]"
               >
                 Leer guía
                 <ArrowRight className="size-4 transition group-hover:translate-x-1" />

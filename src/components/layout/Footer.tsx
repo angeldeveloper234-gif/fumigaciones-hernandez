@@ -1,35 +1,39 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock3, Mail, MapPin, Phone } from 'lucide-react'
-import { SITE, whatsappUrl } from '@/lib/site'
+import { SITE, formattedAddress, whatsappUrl } from '@/lib/site'
 import { PEST_SERVICES } from '@/lib/services'
 
 const serviceLinks = PEST_SERVICES.slice(0, 4)
 
 export function Footer() {
   return (
-    <footer className="bg-[#102414] text-white">
+    <footer className="bg-[#1C3266] text-white">
       <div className="container py-14 md:py-18">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.25fr_0.8fr_0.8fr_1.25fr]">
           <div>
             <Image
               src={SITE.logo}
               alt={SITE.legalName}
-              width={1408}
-              height={293}
-              className="h-12 w-auto brightness-0 invert"
+              width={640}
+              height={640}
+              className="h-16 w-auto"
             />
             <p className="mt-5 max-w-sm text-sm leading-6 text-white/68">
-              Desinfección y control profesional de plagas para hogares y
-              negocios en Yucatán y Quintana Roo.
+              Somos una empresa mexicana originaria de Tampico, Tamaulipas,
+              dedicada al control y exterminio de plagas. Personal con años de
+              experiencia nos respalda para brindarle el mejor servicio y su
+              completa satisfacción.
             </p>
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#19D42B]/35 bg-[#19D42B]/10 px-3 py-1.5 text-xs font-bold text-[#78ED84]">
-              Licencia sanitaria {SITE.license}
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#FFDF00]/35 bg-[#FFDF00]/10 px-3 py-1.5 text-xs font-bold text-[#FFE95C]">
+              {SITE.license
+                ? `Licencia sanitaria ${SITE.license}`
+                : SITE.openingHoursLabel}
             </div>
           </div>
 
           <div>
-            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#FBC02D]">
+            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#F07070]">
               Navegación
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
@@ -44,7 +48,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
+                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFDF00]"
                   >
                     {label}
                   </Link>
@@ -54,7 +58,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#FBC02D]">
+            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#F07070]">
               Plagas
             </h2>
             <ul className="mt-5 space-y-3 text-sm">
@@ -62,7 +66,7 @@ export function Footer() {
                 <li key={pest.slug}>
                   <Link
                     href={`/servicios/${pest.slug}`}
-                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#19D42B]"
+                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFDF00]"
                   >
                     {pest.name}
                   </Link>
@@ -71,27 +75,27 @@ export function Footer() {
               <li>
                 <Link
                   href="/servicios"
-                  className="font-bold text-[#78ED84] transition-colors hover:text-[#A1F6A9]"
+                  className="font-bold text-[#FFE95C] transition-colors hover:text-[#FFF0A0]"
                 >
-                  Ver los 8 servicios →
+                  Ver las {PEST_SERVICES.length} plagas →
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#FBC02D]">
+            <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#F07070]">
               Contacto
             </h2>
             <ul className="mt-5 space-y-4 text-sm text-white/68">
               <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
+                <Phone className="mt-0.5 size-4 shrink-0 text-[#FFDF00]" />
                 <a href={SITE.phoneHref} className="hover:text-white">
                   {SITE.phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
+                <Mail className="mt-0.5 size-4 shrink-0 text-[#FFDF00]" />
                 <a
                   href={`mailto:${SITE.email}`}
                   className="break-all hover:text-white"
@@ -100,14 +104,12 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Clock3 className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
-                Atención 24/7
+                <Clock3 className="mt-0.5 size-4 shrink-0 text-[#FFDF00]" />
+                {SITE.openingHoursLabel}
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-[#19D42B]" />
-                <span>
-                  Calle 44 572A x 29 y 29A, Los Pinos, 97138 Mérida, Yucatán
-                </span>
+                <MapPin className="mt-0.5 size-4 shrink-0 text-[#FFDF00]" />
+                <span>{formattedAddress()}</span>
               </li>
             </ul>
           </div>

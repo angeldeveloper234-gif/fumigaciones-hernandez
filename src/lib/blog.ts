@@ -4,6 +4,14 @@ import {
   type ServiceSlug,
 } from './services'
 
+/**
+ * Blog de captación.
+ *
+ * Cada artículo ataca una consulta real de búsqueda con intención comercial cercana y
+ * enlaza a su landing de servicio. La geografía es deliberada: Tampico, Ciudad Madero,
+ * Altamira y la zona conurbada del sur de Tamaulipas. Un artículo que menciona otra
+ * región manda una señal geográfica contradictoria y debilita todo el dominio.
+ */
 export interface BlogSection {
   heading: string
   paragraphs: readonly string[]
@@ -37,461 +45,413 @@ export function getPostOgImage(post: BlogPost) {
 
   return serviceSlug && getPestService(serviceSlug)
     ? getServiceOgImage(serviceSlug as ServiceSlug)
-    : '/images/og/fumcon-og.webp'
+    : '/images/og/hernandez-og.webp'
 }
 
 export const BLOG_POSTS: readonly BlogPost[] = [
   {
-    slug: 'alacranes-en-yucatan-prevenir-picaduras',
-    title: 'Alacranes en Yucatán: cómo prevenir picaduras en casa',
+    slug: 'moscos-en-tampico-criaderos',
+    title: 'Moscos en Tampico: cómo acabar con los criaderos de tu patio',
     summary:
-      'Aprende dónde suelen ocultarse, qué revisar cada semana y cómo reducir el riesgo para niños y mascotas sin depender de remedios improvisados.',
-    image: pestImage('alacranes'),
-    imageAlt: 'Alacrán localizado durante una inspección preventiva en Yucatán',
-    category: 'Alacranes',
-    datePublished: '2026-07-18',
-    dateModified: '2026-07-18',
+      'Dónde se esconde el agua que no ves, por qué nebulizar sin eliminar criaderos solo dura unos días y qué revisar después de cada lluvia.',
+    image: pestImage('moscos'),
+    imageAlt: 'Inspección de un patio en busca de criaderos de moscos',
+    category: 'Moscos',
+    datePublished: '2026-07-20',
+    dateModified: '2026-07-20',
     readingTime: '7 min',
+    serviceHref: '/servicios/moscos',
+    serviceLabel: 'Fumigación profesional de moscos',
+    sections: [
+      {
+        heading: 'Por qué en la zona conurbada nunca se van del todo',
+        paragraphs: [
+          'Tampico, Ciudad Madero y Altamira reúnen todo lo que un mosco necesita: calor durante casi todo el año, humedad alta, lagunas, esteros y el río Pánuco. A diferencia del centro del país, aquí no hay un invierno que corte el ciclo, así que la población nunca se reinicia desde cero.',
+          'La temporada de lluvias multiplica el problema, pero el mosco no necesita una inundación. Le basta con la cantidad de agua que cabe en un plato de maceta. Y esa agua está repartida por todos los patios de la ciudad.',
+          'Hay además un motivo sanitario para tomárselo en serio: el *Aedes aegypti*, vector de dengue, zika y chikungunya, está presente en toda la región y se reproduce precisamente en esos recipientes pequeños alrededor de la casa.',
+        ],
+      },
+      {
+        heading: 'El agua que no ves',
+        paragraphs: [
+          'Cuando pedimos a un cliente que revise su patio, casi siempre dice que no hay agua estancada. Y casi siempre encontramos varios criaderos activos. Estos son los que más se repiten:',
+        ],
+        bullets: [
+          'Platos bajo las macetas: el criadero número uno, y el que más se pasa por alto.',
+          'Llantas viejas, cubetas y tambos destapados en el patio o la azotea.',
+          'Canaletas con hojas que retienen agua después de la lluvia.',
+          'Registros y coladeras de patio con agua detenida.',
+          'Bebederos de mascotas y floreros que no se cambian cada tercer día.',
+          'Tinacos y cisternas sin tapa o con la tapa rota.',
+          'Lonas, juguetes y cualquier objeto cóncavo olvidado a la intemperie.',
+        ],
+      },
+      {
+        heading: 'Por qué nebulizar solo no alcanza',
+        paragraphs: [
+          'La nebulización abate a los moscos adultos que están volando en ese momento. El efecto es inmediato y muy visible, y por eso se contrata. Pero no toca a las larvas que ya están desarrollándose en el agua.',
+          'En un clima como el nuestro, esas larvas se convierten en adultos en pocos días. Si el criadero sigue activo, en una semana el patio vuelve a estar como antes y la sensación es que "el servicio no sirvió".',
+          'El sol y la lluvia de la región acortan además el efecto residual del producto. Por eso el control sostenido es siempre la suma de dos cosas: nebulizar para bajar la población adulta y eliminar físicamente los criaderos para que no se reponga.',
+        ],
+      },
+      {
+        heading: 'La rutina de después de cada lluvia',
+        paragraphs: [
+          'La costumbre más útil que puede adoptar una casa en esta zona es una revisión de cinco minutos al día siguiente de cada lluvia fuerte. Es cuando aparecen los criaderos nuevos.',
+        ],
+        bullets: [
+          'Voltear o vaciar todo lo que haya juntado agua, sin excepción.',
+          'Revisar la azotea: es donde más se acumulan objetos olvidados.',
+          'Destapar canaletas y comprobar que drenen.',
+          'Cambiar el agua de bebederos y floreros.',
+          'Revisar también el patio del lado que colinda: si el vecino tiene criaderos, los moscos cruzan.',
+        ],
+      },
+      {
+        heading: 'Cuándo llamar a un profesional',
+        paragraphs: [
+          'Si la actividad es constante pese a haber eliminado el agua visible, si hay vegetación densa donde los moscos pasan el día, o si el patio es amplio y colinda con terreno baldío o zonas de agua, el tratamiento profesional marca la diferencia.',
+          'Aplicamos termonebulización o nebulización en frío según el espacio, tratamos la vegetación y las zonas de reposo, y durante la inspección señalamos cada criadero que encontramos para que puedas eliminarlo. Atendemos Tampico, Ciudad Madero, Altamira y la zona conurbada las 24 horas.',
+        ],
+      },
+    ],
+    relatedSlugs: [
+      'cucarachas-del-drenaje',
+      'termitas-clima-golfo',
+      'cada-cuanto-fumigar-casa',
+    ],
+  },
+  {
+    slug: 'cucarachas-del-drenaje',
+    title: 'Cucarachas del drenaje: por qué pasa y cómo se corta',
+    summary:
+      'No es falta de limpieza. Suben por las tuberías, sobre todo después de las lluvias, y hay una forma concreta de cerrarles el paso.',
+    image: pestImage('cucarachas'),
+    imageAlt: 'Cucaracha americana saliendo de una coladera durante la noche',
+    category: 'Cucarachas',
+    datePublished: '2026-07-19',
+    dateModified: '2026-07-19',
+    readingTime: '7 min',
+    serviceHref: '/servicios/cucarachas',
+    serviceLabel: 'Fumigación profesional de cucarachas',
+    sections: [
+      {
+        heading: 'Lo primero: no es culpa de tu limpieza',
+        paragraphs: [
+          'Es la frase que más repetimos en las visitas. La cucaracha americana —la grande, la que vuela— no vive dentro de la casa: vive en el drenaje, y sube. Puedes tener la cocina impecable y aun así encontrarte una en la tarja a medianoche.',
+          'El sistema de drenaje le ofrece exactamente lo que necesita: humedad, calor, materia orgánica y oscuridad. Y en la zona conurbada, con el clima que tenemos y buena parte de la red con años encima, esas condiciones son permanentes.',
+          'Por eso el problema no se resuelve limpiando más. Se resuelve cerrando la vía de entrada y tratando el punto por donde suben.',
+        ],
+      },
+      {
+        heading: 'Por qué empeora después de las lluvias',
+        paragraphs: [
+          'Cuando llueve fuerte, el sistema de drenaje se satura y las cucarachas que viven en él buscan salida hacia arriba. Es la razón de que muchas familias noten un pico de actividad justo en los días siguientes a una tormenta.',
+          'A eso se suma que la humedad ambiental sube y las condiciones dentro de la casa se vuelven más parecidas a las del drenaje, así que una vez dentro les resulta más fácil quedarse.',
+        ],
+      },
+      {
+        heading: 'Las tres cosas que sí funcionan',
+        paragraphs: [
+          'Contra la cucaracha de drenaje hay medidas concretas y baratas que cambian mucho el resultado:',
+        ],
+        bullets: [
+          'Tapar coladeras y desagües por la noche, que es cuando suben. Un tapón de rosca o una rejilla con contrapeso bastan.',
+          'Mantener con agua los sifones que no se usan: un sifón seco es una puerta abierta.',
+          'Sellar el hueco alrededor de las tuberías bajo la tarja y el lavabo, que suele estar sin tapar.',
+          'Revisar el registro del patio y mantenerlo cerrado.',
+        ],
+      },
+      {
+        heading: 'Por qué el aerosol empeora las cosas',
+        paragraphs: [
+          'El insecticida en aerosol tiene efecto repelente. Cuando lo aplicas sobre un punto de actividad, las cucarachas que no reciben dosis letal huyen hacia otros refugios de la casa. Un problema localizado en la cocina se reparte por toda la vivienda.',
+          'Además no toca las ootecas, que son las cápsulas donde la hembra deposita entre 15 y 40 huevos. Esas cápsulas resisten los insecticidas de contacto, así que a los pocos días eclosionan y la actividad regresa.',
+          'El gel activo funciona al revés: la cucaracha se alimenta del cebo y lo transporta al refugio, donde alcanza a los ejemplares que nunca salen. Tarda más en dar sensación de resultado, pero es lo que corta la colonia.',
+        ],
+      },
+      {
+        heading: 'Cómo es el tratamiento profesional',
+        paragraphs: [
+          'Aplicamos gel activo en los puntos protegidos donde se alimentan y se refugian, aspersión dirigida en rutas de paso y polvos residuales en registros eléctricos, donde no llega el líquido. Y tratamos específicamente coladeras, drenajes y registros, que en esta zona son la vía de entrada principal.',
+          'La actividad baja de forma notoria durante la primera semana. En infestaciones altas programamos una revisión de refuerzo. Atendemos Tampico, Ciudad Madero y Altamira las 24 horas.',
+        ],
+      },
+    ],
+    relatedSlugs: [
+      'moscos-en-tampico-criaderos',
+      'ratas-en-casa-senales-y-que-hacer',
+      'cada-cuanto-fumigar-casa',
+    ],
+  },
+  {
+    slug: 'termitas-clima-golfo',
+    title: 'Termitas: por qué el clima del Golfo las favorece',
+    summary:
+      'Las señales que aparecen mucho antes del daño visible, qué revisar en construcción con madera y por qué aquí el riesgo es mayor que en otras regiones.',
+    image: pestImage('termitas'),
+    imageAlt: 'Túneles de tierra de termitas sobre un muro',
+    category: 'Termitas',
+    datePublished: '2026-07-17',
+    dateModified: '2026-07-17',
+    readingTime: '7 min',
+    serviceHref: '/servicios/termitas',
+    serviceLabel: 'Control profesional de termitas',
+    sections: [
+      {
+        heading: 'Por qué aquí hay más termitas que en otras partes',
+        paragraphs: [
+          'La termita subterránea necesita humedad para sobrevivir, y la costa del Golfo se la da todo el año. En regiones con estación seca marcada su actividad se frena; en Tampico, Ciudad Madero y Altamira no.',
+          'A eso se suma el parque construido. El centro histórico de Tampico conserva mucha edificación con estructura, entrepisos y detalles de madera, y en toda la zona conurbada son comunes los marcos, rodapiés y closets empotrados de madera en contacto con muros húmedos.',
+          'La consecuencia práctica es que aquí la termita no es una plaga excepcional que le toca a alguien con mala suerte. Es endémica, y conviene revisar de forma preventiva.',
+        ],
+      },
+      {
+        heading: 'El daño avanza mucho antes de verse',
+        paragraphs: [
+          'La termita consume la madera desde el interior y deja intacta una capa superficial delgada. Por fuera la pieza parece perfecta. Cuando alguien nota que un marco suena hueco o que un rodapié cede al pisarlo, el daño acumulado suele llevar meses o años progresando.',
+          'Por eso las señales indirectas valen tanto: son lo único que aparece a tiempo.',
+        ],
+        bullets: [
+          'Túneles de tierra sobre muros, zócalos o cimentación: son autopistas que construyen para desplazarse.',
+          'Madera que suena hueca al golpearla con los nudillos.',
+          'Alas desprendidas cerca de ventanas o lámparas después de un enjambre.',
+          'Serrín muy fino o pequeños orificios en marcos y muebles.',
+          'Pintura abombada o superficies que ceden con presión ligera.',
+        ],
+      },
+      {
+        heading: 'Lo que hace que se instalen',
+        paragraphs: [
+          'Casi siempre encontramos detrás de una infestación alguna de estas condiciones, y todas son corregibles:',
+        ],
+        bullets: [
+          'Filtraciones o humedad en muros y pisos que mantienen la madera húmeda.',
+          'Contacto directo de madera o muebles con el suelo.',
+          'Muebles empotrados contra muros con humedad.',
+          'Madera almacenada o leña apilada contra la construcción.',
+          'Jardineras pegadas al muro con riego frecuente.',
+        ],
+      },
+      {
+        heading: 'Un error que conviene evitar',
+        paragraphs: [
+          'Si encuentras túneles de tierra sobre un muro, la reacción natural es limpiarlos. Es mejor no hacerlo antes de la inspección: esos túneles indican por dónde se desplazan y hacia dónde van, y son información útil para localizar el foco.',
+          'Lo mismo con las alas desprendidas tras un enjambre: dicen que hay una colonia madura cerca y ayudan a orientar la revisión.',
+        ],
+      },
+      {
+        heading: 'Cómo es el tratamiento',
+        paragraphs: [
+          'Primero una inspección estructural que determine la extensión real: marcos, rodapiés, vigas y puntos de contacto con el suelo. A partir de ahí se define si basta el tratamiento dirigido o hay que contemplar reparación.',
+          'El tratamiento combina inyección puntual con jeringa en la madera afectada, aspersión dirigida y barrera perimetral en los puntos de contacto con el suelo. Se aplica mediante orificios milimétricos, sin manchar ni afectar el acabado.',
+          'Atendemos Tampico, Ciudad Madero, Altamira y la zona conurbada. Si sospechas de termitas, la inspección temprana es lo que evita una reparación cara.',
+        ],
+      },
+    ],
+    relatedSlugs: [
+      'cucarachas-del-drenaje',
+      'moscos-en-tampico-criaderos',
+      'cada-cuanto-fumigar-casa',
+    ],
+  },
+  {
+    slug: 'ratas-en-casa-senales-y-que-hacer',
+    title: 'Ratas y ratones en casa: señales y qué hacer',
+    summary:
+      'Cómo reconocer la actividad real, por qué envenenar sin sellar no funciona y cuándo el problema ya requiere intervención profesional.',
+    image: pestImage('ratas'),
+    imageAlt:
+      'Estación de cebo cerrada instalada durante un servicio de control de ratas',
+    category: 'Ratas',
+    datePublished: '2026-07-15',
+    dateModified: '2026-07-15',
+    readingTime: '7 min',
+    serviceHref: '/servicios/ratas',
+    serviceLabel: 'Control profesional de ratas y ratones',
+    sections: [
+      {
+        heading: 'Las señales que confirman actividad',
+        paragraphs: [
+          'Las ratas son nocturnas y discretas: cuando ves una de día, la población suele llevar tiempo establecida. Las señales indirectas aparecen mucho antes y permiten actuar a tiempo.',
+        ],
+        bullets: [
+          'Excremento oscuro con forma de grano de arroz junto a muros o tras electrodomésticos.',
+          'Ruidos de carrera o roedura en plafones y entretechos durante la noche.',
+          'Marcas de grasa a lo largo de rodapiés: recorren siempre la misma ruta pegadas al muro.',
+          'Empaques, costales o cableado roídos.',
+          'Olor amoniacal persistente en espacios cerrados o bodegas.',
+          'Nerviosismo inusual de las mascotas frente a un muro o mueble concreto.',
+        ],
+      },
+      {
+        heading: 'Por qué la presión es alta en esta zona',
+        paragraphs: [
+          'La conurbación tiene condiciones que mantienen una población de roedores constante: actividad portuaria y logística, canales y cuerpos de agua, drenaje con años de servicio y movimiento continuo de mercancía.',
+          'En Altamira, con el puerto industrial y sus bodegas, la entrada de roedores por contenedores y carga es un riesgo permanente que solo se contiene con programa continuo y no con intervenciones puntuales.',
+        ],
+      },
+      {
+        heading: 'Por qué envenenar sin sellar no resuelve',
+        paragraphs: [
+          'Es el error más común. Colocar veneno reduce la población presente, pero no cambia las condiciones que la atrajeron. Si el acceso sigue abierto y hay alimento disponible, en pocas semanas llega una nueva camada desde el exterior.',
+          'A eso se suma un problema práctico: el roedor envenenado suele morir dentro de muros o plafones, donde no se puede retirar. Con el calor de la región, el olor de descomposición es especialmente intenso y puede durar semanas.',
+          'Un ratón entra por una abertura del tamaño de una moneda y una rata por la de un puño. Sin sellado, el ciclo no se rompe.',
+        ],
+      },
+      {
+        heading: 'Qué puedes hacer desde hoy',
+        paragraphs: [
+          'Reducir alimento y refugio disponible mejora mucho el resultado del tratamiento y a veces evita que la población llegue a establecerse.',
+        ],
+        bullets: [
+          'Guardar granos, croquetas y abarrotes en contenedores rígidos con tapa, nunca en costal al piso.',
+          'Separar la estiba de los muros y elevarla del suelo para poder inspeccionar detrás.',
+          'Cerrar las bolsas de basura y no dejarlas en el patio durante la noche.',
+          'Revisar y sellar huecos nuevos por obra, humedad o paso de tuberías.',
+          'Colocar rejilla en coladeras y guardas en la parte baja de las puertas.',
+        ],
+      },
+      {
+        heading: 'Cuándo dejar de intentarlo por tu cuenta',
+        paragraphs: [
+          'Si escuchas actividad en plafones, si encuentras excremento en más de una habitación, si hay cableado roído o si aparece un ejemplar de día, la población ya está establecida y las trampas de supermercado no van a alcanzarla.',
+          'El servicio profesional combina estaciones de cebo cerradas y rotuladas sobre las rutas detectadas, trampeo para medir la actividad real y sellado de accesos, que es lo que evita que vuelva a formarse. Atendemos casas, comercios, bodegas y naves industriales en toda la zona conurbada.',
+        ],
+      },
+    ],
+    relatedSlugs: [
+      'cucarachas-del-drenaje',
+      'cada-cuanto-fumigar-casa',
+      'alacranes-en-tamaulipas',
+    ],
+  },
+  {
+    slug: 'cada-cuanto-fumigar-casa',
+    title: '¿Cada cuánto hay que fumigar una casa en Tampico?',
+    summary:
+      'Por qué en la costa la frecuencia es distinta que en el centro del país, y qué factores del entorno acortan el intervalo.',
+    image: pestImage('hormigas'),
+    imageAlt:
+      'Aplicación preventiva de control de plagas en el perímetro de una vivienda',
+    category: 'Prevención',
+    datePublished: '2026-07-12',
+    dateModified: '2026-07-12',
+    readingTime: '6 min',
+    serviceHref: '/servicios/cucarachas',
+    serviceLabel: 'Servicio programado de fumigación',
+    sections: [
+      {
+        heading: 'Aquí no aplica la regla del centro del país',
+        paragraphs: [
+          'Muchas guías recomiendan fumigar cada seis meses. Esa frecuencia se calcula para climas con estación fría, donde la actividad de las plagas baja durante meses y da un respiro natural.',
+          'En Tampico, Ciudad Madero y Altamira ese respiro no existe. El calor y la humedad se mantienen buena parte del año y las plagas siguen reproduciéndose, así que el intervalo razonable es más corto: normalmente entre 3 y 4 meses en vivienda.',
+          'El efecto residual de los productos también dura menos aquí, porque el sol intenso y las lluvias frecuentes lo degradan más rápido, sobre todo en aplicaciones exteriores.',
+        ],
+      },
+      {
+        heading: 'Los factores que acortan el intervalo',
+        paragraphs: [
+          'Si tu vivienda cumple varios de estos puntos, conviene acercarse a los 3 meses en lugar de los 4:',
+        ],
+        bullets: [
+          'Cercanía a lagunas, esteros, canales o el río: presión constante de moscos.',
+          'Patio con vegetación densa o jardín amplio.',
+          'Terreno baldío, monte u obra en curso en la manzana.',
+          'Drenaje antiguo o coladeras sin rejilla.',
+          'Mascotas con acceso al patio o a la calle.',
+          'Construcción con elementos de madera o humedad en muros.',
+          'Historial de infestaciones previas en la propiedad.',
+        ],
+      },
+      {
+        heading: 'Prevenir cuesta menos que corregir',
+        paragraphs: [
+          'La diferencia de costo entre un servicio programado y un tratamiento correctivo no es pequeña. Una infestación establecida requiere más visitas, más producto y más tiempo, y en el intervalo puede haber daño material: alimentos perdidos, cableado roído, madera afectada por termitas.',
+          'En un negocio la cuenta incluye además el riesgo sanitario y el daño de imagen que supone que un cliente vea una cucaracha en el local.',
+          'El servicio programado tiene otra ventaja menos obvia: genera histórico. Sabemos qué se detectó la visita anterior, qué se corrigió y qué se repite, lo que permite atacar la causa en lugar de repetir siempre la misma aplicación.',
+        ],
+      },
+      {
+        heading: 'Señales para no esperar a la siguiente visita',
+        paragraphs: [
+          'Entre aplicaciones hay hallazgos que justifican adelantar el servicio: ver cucarachas de día, encontrar excremento de roedor, detectar túneles de tierra en un muro, notar picaduras al despertar o ver actividad en una habitación donde antes no la había.',
+          'En cualquiera de esos casos conviene una revisión anticipada. Atender un foco temprano casi siempre significa una intervención más corta y más barata.',
+        ],
+      },
+    ],
+    relatedSlugs: [
+      'moscos-en-tampico-criaderos',
+      'termitas-clima-golfo',
+      'cucarachas-del-drenaje',
+    ],
+  },
+  {
+    slug: 'alacranes-en-tamaulipas',
+    title: 'Alacranes en Tamaulipas: cómo prevenirlos en casa',
+    summary:
+      'Dónde se refugian, qué revisar cada semana y cómo reducir el riesgo para niños y mascotas sin depender de remedios improvisados.',
+    image: pestImage('alacranes'),
+    imageAlt:
+      'Alacrán localizado durante una inspección preventiva de grietas y accesos',
+    category: 'Alacranes',
+    datePublished: '2026-07-10',
+    dateModified: '2026-07-10',
+    readingTime: '6 min',
     serviceHref: '/servicios/alacranes',
     serviceLabel: 'Control profesional de alacranes',
     sections: [
       {
-        heading: 'Por qué aparecen alacranes dentro de una vivienda',
+        heading: 'Por qué entran a la vivienda',
         paragraphs: [
-          'El clima cálido de Yucatán permite que los alacranes mantengan actividad durante buena parte del año. No buscan a las personas: entran porque encuentran refugios secos, insectos para alimentarse y accesos pequeños. Un espacio bajo la puerta, una grieta alrededor de una tubería o materiales apilados junto al muro pueden conectar el patio con el interior.',
-          'Durante el día permanecen ocultos y por la noche salen a buscar alimento. Por eso un avistamiento en baño, cocina o recámara no siempre indica dónde está el foco. Conviene revisar el perímetro completo, especialmente registros, cuartos de servicio, jardineras, acumulaciones de piedra, leña y cajas que llevan tiempo sin moverse.',
+          'El alacrán no busca a las personas. Entra porque encuentra tres cosas: refugio, humedad e insectos de los que alimentarse. Un hueco bajo la puerta, una grieta alrededor de una tubería o material apilado contra el muro conectan el exterior con el interior.',
+          'En la periferia de la conurbación, en Altamira, Aldama y las zonas donde la vivienda colinda con monte o terreno sin construir, la probabilidad de ingreso es bastante mayor. Las obras en curso y el escombro acumulado aceleran el proceso.',
+          'Durante el día permanece oculto y sale de noche a cazar. Por eso un avistamiento en el baño o la recámara no indica necesariamente dónde está el refugio.',
         ],
       },
       {
         heading: 'Los puntos que conviene revisar cada semana',
         paragraphs: [
-          'Una rutina breve ayuda a detectar condiciones antes de encontrar un ejemplar. Haz la revisión con buena iluminación y calzado cerrado; no introduzcas las manos en huecos que no puedas ver. Si mueves objetos almacenados, utiliza guantes resistentes y sepáralos del muro para inspeccionar detrás.',
+          'Una rutina breve permite detectar las condiciones antes de encontrarte un ejemplar. Hazla con buena iluminación y calzado cerrado, y no metas las manos en huecos que no puedas ver. Si mueves objetos almacenados, usa guantes resistentes.',
         ],
         bullets: [
           'Sacude zapatos, toallas y ropa que hayan quedado sobre el piso.',
           'Revisa zoclos, marcos, pasos de instalaciones y grietas visibles.',
           'Mantén despejados registros, bodegas y cuartos de lavado.',
-          'Retira hojas, escombro, madera y piedras pegadas a la construcción.',
-          'Comprueba que mosquiteros y sellos inferiores de puertas estén completos.',
+          'Retira escombro, madera, piedra y macetas pegadas a la construcción.',
+          'Comprueba que los sellos inferiores de las puertas estén completos.',
         ],
       },
       {
         heading: 'Cómo proteger a niños y mascotas',
         paragraphs: [
-          'En hogares con niños pequeños, evita dejar juguetes, cobijas o calzado en patios y pisos durante la noche. Las camas y cunas no deben quedar pegadas a muros con grietas. Enseña a los niños a no tocar alacranes, aunque parezcan inmóviles, y mantén una linterna accesible para revisar antes de recoger objetos en exteriores.',
-          'Las mascotas también pueden acercarse por curiosidad. Mantén limpias sus zonas de descanso, revisa camas y recipientes, y evita que jueguen entre materiales acumulados. No apliques insecticidas domésticos en su cama ni combines productos: además del riesgo de exposición, la mezcla puede dispersar la actividad sin crear una barrera efectiva.',
+          'En hogares con niños pequeños, evita dejar juguetes, cobijas o calzado sobre el piso durante la noche. Las camas y cunas no deben quedar pegadas a muros con grietas, y conviene retirar los faldones que lleguen al suelo: son un puente de acceso.',
+          'Enseña a los niños a no tocar un alacrán aunque parezca inmóvil, y ten una linterna a mano para revisar antes de recoger objetos en el patio.',
+          'Con las mascotas, mantén limpias sus zonas de descanso y evita que jueguen entre material acumulado. No apliques insecticidas domésticos en su cama ni mezcles productos.',
         ],
       },
       {
         heading: 'Qué hacer ante un hallazgo o una picadura',
         paragraphs: [
-          'Si encuentras un alacrán, mantén distancia y evita capturarlo con las manos. Aísla el área, aleja a niños y mascotas y registra dónde y a qué hora apareció; esa información ayuda durante la inspección. No destruyas de inmediato todas las señales del entorno, porque las rutas y refugios permiten orientar el tratamiento.',
-          'Ante una picadura, busca atención médica inmediata y sigue las indicaciones del personal de salud. No realices cortes, succiones ni coloques sustancias caseras sobre la zona. El control de plagas atiende la propiedad, pero no sustituye la valoración médica ni debe retrasarla.',
+          'Si encuentras un alacrán, mantén distancia y no lo captures con las manos. Aísla el área, aleja a niños y mascotas, y anota dónde y a qué hora apareció: esa información orienta la inspección posterior.',
+          'Ante una picadura, busca atención médica de inmediato y sigue las indicaciones del personal de salud. No hagas cortes ni succiones, y no apliques sustancias caseras sobre la zona. El control de plagas atiende la propiedad, pero no sustituye la valoración médica ni debe retrasarla.',
         ],
       },
       {
-        heading: 'Cuándo conviene solicitar control profesional',
+        heading: 'Cuándo conviene el control profesional',
         paragraphs: [
-          'Un avistamiento recurrente, la presencia en habitaciones o cualquier hallazgo en una propiedad con niños y mascotas justifica una inspección. El técnico revisa refugios, entradas y actividad de otros insectos; después puede aplicar una barrera por aspersión y polvos residuales en grietas seleccionadas.',
-          'La aplicación funciona mejor cuando se acompaña con orden, retiro de materiales y sellado de accesos. Fumcon explica la preparación, el tiempo de reingreso y el seguimiento necesario. La meta no es rociar toda la casa, sino reducir las condiciones que permiten que el alacrán entre y permanezca.',
-        ],
-      },
-      {
-        heading: 'Una rutina nocturna para reducir encuentros',
-        paragraphs: [
-          'Antes de dormir, despeja recorridos, guarda el calzado y revisa con luz los baños o patios donde ya hubo actividad. Cierra puertas exteriores y no dejes ropa húmeda, cajas o juguetes sobre el piso. La rutina toma pocos minutos y reduce la posibilidad de tocar un ejemplar oculto al levantarse.',
-          'Anota cada avistamiento con fecha y lugar en vez de confiar en la memoria. Si dos o más hallazgos se concentran en el mismo sector, el técnico podrá revisar primero ese recorrido. Mantén estas medidas después del tratamiento, porque el control químico y las barreras físicas funcionan mejor cuando se sostienen juntos.',
-        ],
-        bullets: [
-          'Usa calzado cerrado al caminar por patios durante la noche.',
-          'Separa camas y cunas de muros con grietas o humedad.',
-          'No muevas trampas ni aplicaciones colocadas por el técnico.',
-          'Informa de inmediato si aparece actividad en una habitación.',
+          'Un avistamiento recurrente, la presencia en habitaciones o cualquier hallazgo en una vivienda con niños pequeños justifica una inspección. El técnico revisa refugios, accesos y actividad de otros insectos, y aplica polvos residuales en grietas seleccionadas junto con tratamiento perimetral.',
+          'La aplicación rinde mucho más acompañada de orden, retiro de material acumulado y sellado de accesos. El objetivo no es rociar la casa entera, sino eliminar las condiciones que permiten que el alacrán entre y se quede.',
         ],
       },
     ],
     relatedSlugs: [
-      'temporada-mosquitos-quintana-roo',
-      'eliminar-cucarachas-clima-calido-humedo',
-      'cada-cuanto-fumigar-regla-cuatro-meses',
+      'cada-cuanto-fumigar-casa',
+      'ratas-en-casa-senales-y-que-hacer',
+      'moscos-en-tampico-criaderos',
     ],
   },
-  {
-    slug: 'eliminar-cucarachas-clima-calido-humedo',
-    title: 'Cómo eliminar cucarachas en clima cálido y húmedo',
-    summary:
-      'Una guía para reconocer la especie, cortar alimento y humedad, y entender por qué tratar la colonia es más efectivo que perseguir ejemplares.',
-    image: pestImage('cucarachas'),
-    imageAlt: 'Cucaracha en una superficie de cocina en clima cálido y húmedo',
-    category: 'Cucarachas',
-    datePublished: '2026-07-05',
-    dateModified: '2026-07-09',
-    readingTime: '8 min',
-    serviceHref: '/servicios/cucarachas',
-    serviceLabel: 'Tratamiento contra cucarachas',
-    sections: [
-      {
-        heading: 'Por qué el sureste favorece una infestación',
-        paragraphs: [
-          'El calor y la humedad de Yucatán y Quintana Roo aceleran el ciclo de las cucarachas. En una vivienda pueden encontrar agua debajo del fregadero, alimento detrás de electrodomésticos y refugio en bisagras, grietas o cartón. En edificios y comercios también se desplazan por drenajes, ductos y pasos compartidos de instalaciones.',
-          'Las dos situaciones más comunes son diferentes. La cucaracha alemana suele concentrarse en cocinas y es pequeña; la americana es mayor y aparece con frecuencia cerca de drenajes, patios y registros. Reconocer hábitos y tamaño orienta la inspección, porque una estrategia útil para una no necesariamente resuelve el origen de la otra.',
-        ],
-      },
-      {
-        heading: 'Señales que aparecen antes de ver muchas',
-        paragraphs: [
-          'Ver una cucaracha de noche ya indica actividad, pero existen rastros que permiten actuar antes. Busca puntos oscuros parecidos a pimienta dentro de alacenas, cápsulas de huevos en esquinas, pieles mudadas y un olor persistente en espacios cerrados. Una aparición durante el día puede indicar que los refugios están saturados.',
-        ],
-        bullets: [
-          'Excrementos en cajones, motores de refrigeradores y uniones de muebles.',
-          'Ootecas adheridas a cartón, bisagras o superficies protegidas.',
-          'Actividad al encender la luz durante la madrugada.',
-          'Ejemplares pequeños cerca de fregaderos y electrodomésticos.',
-          'Ingreso de cucarachas grandes por coladeras o puertas de patio.',
-        ],
-      },
-      {
-        heading: 'Limpieza útil: quitar recursos, no solo rastros',
-        paragraphs: [
-          'La limpieza ayuda cuando reduce alimento y agua, pero por sí sola no alcanza una colonia dentro de una pared o un equipo. Guarda harina, cereales y alimento para mascotas en recipientes cerrados. Retira grasa de laterales y parte inferior de estufas, vacía residuos cada noche y evita dejar platos con agua.',
-          'Repara fugas, seca el fregadero y revisa bandejas de refrigeradores o aires acondicionados. El cartón corrugado ofrece refugio y puede transportar ootecas, así que conviene desempacar mercancía y retirarlo. No selles una grieta con actividad evidente antes de evaluar el foco: podrías desviar el recorrido hacia otro punto.',
-        ],
-      },
-      {
-        heading: 'Por qué los aerosoles suelen dar un resultado corto',
-        paragraphs: [
-          'Un aerosol mata el ejemplar que recibe el producto, pero no necesariamente llega a huevos, ninfas y adultos ocultos. Algunas formulaciones de uso doméstico son repelentes y pueden dispersar la colonia, dificultando que un cebo sea aceptado. Mezclar productos aumenta riesgos y hace más difícil interpretar el resultado.',
-          'El Gel Activo se coloca en puntos pequeños y protegidos para que los insectos lo consuman y lo lleven hacia refugios. La aspersión perimetral puede complementar el control en entradas o recorridos definidos. La ubicación, la dosis y la compatibilidad entre métodos son más importantes que aplicar una gran cantidad.',
-        ],
-      },
-      {
-        heading: 'Seguimiento y prevención después del tratamiento',
-        paragraphs: [
-          'La actividad debería disminuir de manera progresiva, no siempre desaparecer en unas horas. Durante ese periodo no retires el gel ni rocíes otros químicos cerca. Registra dónde continúan los avistamientos para que el técnico determine si existe otro foco, un ingreso externo o condiciones que deben corregirse.',
-          'Una inspección profesional incluye diagnóstico, aplicación, revisión de resultados y garantía según el servicio. Mantén las rutinas de almacenamiento, humedad y residuos después de la visita. El objetivo es cortar el ciclo actual y hacer que la propiedad ofrezca cada vez menos alimento, agua y refugio.',
-        ],
-      },
-      {
-        heading: 'Plan de siete días después de detectar actividad',
-        paragraphs: [
-          'Durante la primera semana, registra cada avistamiento sin aplicar productos adicionales. Revisa alacenas por secciones, limpia grasa y migas, controla fugas y retira cartón. No cambies todos los objetos de lugar al mismo tiempo: conservar el orden permite reconocer si el recorrido disminuye o se desplaza.',
-          'Comparte el registro con el técnico durante el seguimiento. La hora, el tamaño del ejemplar y el punto exacto ayudan a decidir si el tratamiento está alcanzando la colonia o si existe un segundo foco. Una disminución progresiva acompañada por menos ninfas suele aportar más información que un solo día sin actividad.',
-        ],
-        bullets: [
-          'No retires el gel ni limpies directamente sobre sus puntos.',
-          'Mantén comida, residuos y alimento de mascotas cerrados.',
-          'Revisa de noche con una linterna sin rociar aerosoles.',
-          'Solicita revisión si la actividad no muestra una reducción clara.',
-        ],
-      },
-    ],
-    relatedSlugs: [
-      'cada-cuanto-fumigar-regla-cuatro-meses',
-      'fumigacion-restaurantes-hospitales-cofepris',
-      'senales-termitas-casas-madera',
-    ],
-  },
-  {
-    slug: 'temporada-mosquitos-quintana-roo',
-    title: 'Temporada de mosquitos en Quintana Roo: dengue y prevención',
-    summary:
-      'Medidas prácticas para reducir criaderos, proteger patios y saber cuándo una nebulización profesional puede complementar la prevención.',
-    image: pestImage('mosquitos'),
-    imageAlt: 'Mosquitos activos durante la temporada de lluvias en Quintana Roo',
-    category: 'Mosquitos',
-    datePublished: '2026-06-22',
-    dateModified: '2026-06-25',
-    readingTime: '8 min',
-    serviceHref: '/servicios/mosquitos',
-    serviceLabel: 'Control profesional de mosquitos',
-    sections: [
-      {
-        heading: 'Lluvia, calor y un ciclo que puede ser muy rápido',
-        paragraphs: [
-          'En Quintana Roo, la combinación de temperatura alta y lluvia crea oportunidades constantes para la reproducción de mosquitos. No hace falta un estanque: una cubeta, un plato de maceta, una canaleta obstruida o una lona con agua pueden sostener larvas. El problema suele crecer después de varios días sin revisar esos puntos.',
-          'Algunas especies pueden transmitir dengue, zika y chikungunya. La prevención en casa no sustituye las acciones de salud pública, pero sí reduce criaderos dentro de la propiedad. El paso más importante es interrumpir el ciclo acuático; matar únicamente adultos ofrece alivio temporal si siguen emergiendo desde recipientes cercanos.',
-        ],
-      },
-      {
-        heading: 'Una revisión de diez minutos cada semana',
-        paragraphs: [
-          'Recorre patio, azotea, jardín y áreas de servicio. Vacía el agua, cepilla el interior del recipiente y colócalo boca abajo o bajo techo. El cepillado importa porque algunos huevos pueden permanecer adheridos a la pared por encima del nivel del agua y activarse cuando el recipiente vuelve a llenarse.',
-        ],
-        bullets: [
-          'Limpia canaletas, coladeras exteriores y desagües con poca pendiente.',
-          'Tapa depósitos y revisa que mosquiteros no tengan aberturas.',
-          'Cambia el agua de floreros y bebederos con frecuencia.',
-          'Perfora o retira objetos que acumulen lluvia sin una función.',
-          'Mantén podada la vegetación densa donde descansan mosquitos adultos.',
-        ],
-      },
-      {
-        heading: 'Cómo reducir picaduras dentro y fuera de casa',
-        paragraphs: [
-          'Instala o repara mosquiteros en ventanas y puertas, utiliza ropa que cubra la piel durante horas de mayor actividad y aplica repelente siguiendo la etiqueta. Los ventiladores ayudan en espacios de convivencia porque dificultan el vuelo, pero no eliminan criaderos ni sustituyen la protección personal.',
-          'En propiedades con huéspedes, clientes o niños, comunica las medidas a todos. Dejar una puerta abierta, mover un recipiente o suspender la limpieza de canaletas puede reactivar el problema. Una lista semanal asignada a una persona concreta suele funcionar mejor que una revisión ocasional cuando la molestia ya es intensa.',
-        ],
-      },
-      {
-        heading: 'Cuándo considerar nebulización o termonebulización',
-        paragraphs: [
-          'La nebulización distribuye microgotas en vegetación, perímetros y áreas donde descansan adultos. La termonebulización puede utilizarse en exteriores amplios o zonas de difícil acceso. El método se elige según el tamaño del espacio, la actividad, el clima y la cercanía de personas, mascotas, alimentos o cuerpos de agua.',
-          'Antes de aplicar, el técnico revisa criaderos y explica preparación y reingreso. Una lluvia inmediata o viento fuerte puede modificar el programa, por lo que la coordinación importa. El objetivo no es formar una nube visible por sí misma, sino colocar el tratamiento en puntos útiles con condiciones adecuadas.',
-        ],
-      },
-      {
-        heading: 'Qué hacer si la actividad continúa',
-        paragraphs: [
-          'Si después de eliminar recipientes siguen apareciendo muchos mosquitos, revisa propiedades colindantes, drenajes, vegetación y espacios que no se inspeccionan con frecuencia. Registra horarios y zonas con mayor presencia. Esa información permite diferenciar un criadero cercano de adultos que llegan desde un área más amplia.',
-          'Fumcon combina revisión, aplicación y recomendaciones para patios, jardines, viviendas y negocios. Ante síntomas compatibles con dengue u otra enfermedad, busca atención médica; el control ambiental ayuda a reducir exposición, pero no diagnostica ni trata problemas de salud.',
-        ],
-      },
-      {
-        heading: 'Un plan familiar para la temporada de lluvias',
-        paragraphs: [
-          'Asigna un día fijo para revisar agua acumulada y reparte zonas entre quienes viven en la propiedad. Una persona puede revisar azotea y canaletas; otra, patio, macetas y recipientes. El hábito semanal evita depender de una limpieza extraordinaria cuando las picaduras ya aumentaron.',
-          'Guarda repelente, revisa mosquiteros y acuerda qué hacer ante fiebre, dolor intenso u otros síntomas: buscar orientación médica y no automedicarse. En alojamientos o negocios, comunica el protocolo al personal y registra las áreas tratadas para mantener continuidad entre turnos.',
-        ],
-        bullets: [
-          'Programa la revisión después de cada lluvia importante.',
-          'Incluye áreas poco usadas, lotes interiores y cuartos de servicio.',
-          'Pide a vecinos y mantenimiento revisar fuentes compartidas.',
-          'Conserva las indicaciones entregadas después de la nebulización.',
-        ],
-      },
-    ],
-    relatedSlugs: [
-      'alacranes-en-yucatan-prevenir-picaduras',
-      'cada-cuanto-fumigar-regla-cuatro-meses',
-      'fumigacion-restaurantes-hospitales-cofepris',
-    ],
-  },
-  {
-    slug: 'senales-termitas-casas-madera',
-    title: 'Señales de termitas en casas de madera del sureste',
-    summary:
-      'Cómo distinguir indicios de actividad, revisar zonas húmedas y evitar reparaciones superficiales antes de una inspección especializada.',
-    image: pestImage('termitas'),
-    imageAlt: 'Termitas y daño visible en madera de una vivienda del sureste',
-    category: 'Termitas',
-    datePublished: '2026-06-08',
-    dateModified: '2026-06-12',
-    readingTime: '8 min',
-    serviceHref: '/servicios/termitas',
-    serviceLabel: 'Inspección y control de termitas',
-    sections: [
-      {
-        heading: 'El daño puede avanzar sin verse desde fuera',
-        paragraphs: [
-          'Las termitas consumen celulosa y pueden desplazarse dentro de madera, muros o suelo sin quedar expuestas. En el sureste, la humedad, las filtraciones y el contacto de elementos de madera con tierra crean condiciones favorables. Una superficie pintada puede conservar su aspecto mientras el interior pierde resistencia.',
-          'No todo insecto en la madera es termita. Hay especies que dejan polvo, perforaciones o galerías distintas. Identificar el tipo de actividad evita gastar en un tratamiento que no corresponde. La inspección considera el residuo, la forma del daño, la humedad, la ubicación y la conexión con otras partes de la propiedad.',
-        ],
-      },
-      {
-        heading: 'Cinco señales que justifican una revisión',
-        paragraphs: [
-          'Haz una inspección visual en marcos, puertas, muebles fijos, vigas, zoclos y piezas cercanas a baños o cocinas. Presiona con cuidado únicamente zonas que ya parezcan dañadas; no perfores elementos estructurales ni retires tubos antes de documentarlos.',
-        ],
-        bullets: [
-          'Madera que suena hueca o cede con una presión ligera.',
-          'Tubos de lodo que suben desde el suelo por muros o cimientos.',
-          'Alas descartadas cerca de ventanas después de una salida de reproductores.',
-          'Pintura abombada, superficies deformadas o uniones debilitadas.',
-          'Polvo, pequeñas perforaciones o galerías visibles al mover una pieza.',
-        ],
-      },
-      {
-        heading: 'Humedad y contacto con suelo: dos factores clave',
-        paragraphs: [
-          'Repara fugas de tuberías, filtraciones de techo y drenajes que mantienen madera húmeda. Mejora la ventilación debajo de muebles, pisos y espacios cerrados. Separa leña, cartón y sobrantes de construcción de la vivienda; además de aportar celulosa, dificultan detectar actividad nueva.',
-          'Evita que marcos, postes o recubrimientos queden directamente sobre tierra sin una protección diseñada para ello. Estas medidas no eliminan una colonia activa, pero reducen condiciones favorables y permiten que la inspección y el tratamiento tengan mejores resultados.',
-        ],
-      },
-      {
-        heading: 'Errores comunes al descubrir una zona dañada',
-        paragraphs: [
-          'Pintar, rellenar o reemplazar de inmediato la pieza visible puede ocultar el recorrido sin controlar el origen. Tampoco conviene rociar combustible, cloro ni mezclas caseras: representan un riesgo, pueden dañar materiales y no crean una estrategia de protección para el resto de la estructura.',
-          'Toma fotografías, señala la fecha y evita alterar los indicios principales hasta la visita. Si la madera soporta peso o muestra pérdida importante de resistencia, limita el uso del área y consulta a un profesional de construcción. El control de termitas detiene actividad biológica; no recupera la capacidad estructural perdida.',
-        ],
-      },
-      {
-        heading: 'Qué incluye una estrategia profesional',
-        paragraphs: [
-          'El técnico delimita el daño, revisa madera y suelo y define si corresponde un tratamiento localizado, protección de elementos o una barrera. Los polvos residuales pueden alcanzar grietas; la aspersión o los tratamientos de suelo se reservan para condiciones donde realmente aportan control.',
-          'Después se programa seguimiento y se indican correcciones de humedad, almacenamiento o contacto con tierra. Fumcon explica el alcance y la garantía del servicio antes de aplicar. Una revisión temprana suele permitir una intervención más focalizada y decisiones de reparación mejor informadas.',
-        ],
-      },
-      {
-        heading: 'Cómo vigilar la madera después de una intervención',
-        paragraphs: [
-          'Marca discretamente los límites del daño fotografiado y revisa la zona con la frecuencia indicada. Busca tubos reconstruidos, nuevas alas, residuos recientes o cambios en la superficie. No confundas polvo antiguo que cae durante una reparación con actividad nueva; compara siempre con imágenes fechadas.',
-          'Mantén accesibles los puntos tratados y comunica al técnico cualquier obra, filtración o reemplazo de madera. Si un carpintero retira una pieza, pide conservar una muestra o fotografías del interior. La coordinación entre control, mantenimiento y reparación permite comprobar el resultado sin ocultar señales importantes.',
-        ],
-        bullets: [
-          'Registra humedad o filtraciones que reaparezcan.',
-          'No cubras las zonas de revisión con muebles o cajas.',
-          'Conserva el reporte y la fecha del tratamiento.',
-          'Solicita valoración estructural cuando una pieza haya perdido resistencia.',
-        ],
-      },
-    ],
-    relatedSlugs: [
-      'eliminar-cucarachas-clima-calido-humedo',
-      'cada-cuanto-fumigar-regla-cuatro-meses',
-      'fumigacion-restaurantes-hospitales-cofepris',
-    ],
-  },
-  {
-    slug: 'cada-cuanto-fumigar-regla-cuatro-meses',
-    title: '¿Cada cuánto fumigar? La regla de los 4 meses',
-    summary:
-      'Qué significa una frecuencia preventiva, cuándo debe ajustarse y por qué una inspección vale más que aplicar por calendario sin revisar.',
-    image: '/hero/1.jpg',
-    imageAlt: 'Técnico preparando un servicio preventivo de fumigación',
-    category: 'Prevención',
-    datePublished: '2026-05-21',
-    dateModified: '2026-05-28',
-    readingTime: '7 min',
-    serviceHref: '/servicios',
-    serviceLabel: 'Consultar todos los servicios',
-    sections: [
-      {
-        heading: 'La frecuencia es una referencia, no una receta universal',
-        paragraphs: [
-          'Programar una revisión cada cuatro meses es una referencia práctica para muchas viviendas y pequeños negocios del sureste. Permite observar cambios entre temporadas, reforzar barreras y detectar actividad antes de que sea evidente. Sin embargo, la frecuencia adecuada depende de la plaga, el inmueble y el nivel de exposición.',
-          'Una casa ordenada con accesos sellados no tiene el mismo riesgo que un restaurante con entregas diarias, una bodega junto a vegetación o un alojamiento con alta rotación. Aplicar por calendario sin inspeccionar puede llevar a tratar áreas innecesarias o a ignorar un problema específico que requiere otro método.',
-        ],
-      },
-      {
-        heading: 'Cuándo cuatro meses puede ser un buen punto de partida',
-        paragraphs: [
-          'La regla funciona mejor como programa preventivo después de controlar una actividad inicial. En cada visita se revisan señales, se comparan puntos críticos y se decide si hace falta aplicar, monitorear o corregir condiciones. El registro de hallazgos ayuda a ajustar el intervalo con evidencia.',
-        ],
-        bullets: [
-          'Viviendas en clima cálido con patios, drenajes y vegetación cercana.',
-          'Locales que almacenan alimentos o reciben mercancía con frecuencia.',
-          'Propiedades que ya tuvieron cucarachas, hormigas o plagas perimetrales.',
-          'Espacios que necesitan demostrar una rutina documentada de revisión.',
-          'Temporadas de lluvia que aumentan humedad y actividad de insectos.',
-        ],
-      },
-      {
-        heading: 'Casos que pueden requerir otro intervalo',
-        paragraphs: [
-          'Una infestación activa puede necesitar seguimiento en días o semanas, no esperar cuatro meses. Roedores requieren monitoreo de estaciones y sellado; garrapatas pueden necesitar aplicaciones relacionadas con su ciclo; termitas se controlan con un plan específico y revisiones de la zona tratada.',
-          'En el extremo contrario, una propiedad sin señales y con buenas barreras quizá solo necesite inspección periódica y acciones preventivas. El técnico debe explicar por qué recomienda una fecha, qué indicadores se evaluarán y qué condiciones obligarían a adelantar la visita.',
-        ],
-      },
-      {
-        heading: 'Qué hacer entre una visita y la siguiente',
-        paragraphs: [
-          'Mantén una bitácora sencilla con fecha, lugar y tipo de señal. Revisa humedad, residuos, alimentos, cartón, grietas y vegetación. Estos cambios cotidianos influyen tanto como la aplicación. Si aparece actividad nueva, informa antes de utilizar aerosoles o mover estaciones para no alterar el diagnóstico.',
-          'En negocios, asigna responsables para cocina, almacén, residuos y exteriores. Una lista breve y repetible funciona mejor que una limpieza extraordinaria antes de la fumigación. El objetivo es que cada visita encuentre menos condiciones favorables y permita usar intervenciones más focalizadas.',
-        ],
-      },
-      {
-        heading: 'Cómo construir un plan preventivo responsable',
-        paragraphs: [
-          'Un plan comienza con inspección y una línea base: plagas encontradas, riesgos, métodos y recomendaciones. A partir de ahí se acuerda una frecuencia, pero puede ajustarse según resultados, clima, cambios en la operación o nuevas obras. La garantía también debe relacionarse con el tratamiento realizado.',
-          'Fumcon ofrece atención para hogares y negocios en Yucatán y Quintana Roo. La regla de cuatro meses ayuda a recordar la prevención, pero la mejor decisión surge de observar la propiedad. Consulta antes si detectas excrementos, telarañas recurrentes, picaduras, madera dañada o actividad nocturna.',
-        ],
-      },
-      {
-        heading: 'Qué preguntar antes de contratar un plan',
-        paragraphs: [
-          'Pide que la propuesta indique plaga objetivo, áreas incluidas, método, preparación, seguimiento y garantía. También debe aclarar si cada visita implica una aplicación o si primero se inspecciona. Un programa responsable puede concluir que una zona solo necesita monitoreo o una corrección física.',
-          'Confirma quién atenderá reportes entre visitas y qué información debes conservar. El precio importa, pero no reemplaza una explicación clara. Compara propuestas por alcance, frecuencia y evidencia, no solo por cantidad de producto o promesas generales de mantener cualquier plaga fuera durante meses.',
-        ],
-        bullets: [
-          'Pregunta qué señales harán adelantar la siguiente visita.',
-          'Solicita indicaciones específicas para personas y mascotas.',
-          'Verifica que el teléfono y la garantía queden por escrito.',
-          'Guarda reportes para comparar tendencias entre temporadas.',
-        ],
-      },
-    ],
-    relatedSlugs: [
-      'eliminar-cucarachas-clima-calido-humedo',
-      'temporada-mosquitos-quintana-roo',
-      'senales-termitas-casas-madera',
-    ],
-  },
-  {
-    slug: 'fumigacion-restaurantes-hospitales-cofepris',
-    title: 'Fumigación para restaurantes y hospitales: normativa COFEPRIS',
-    summary:
-      'Principios para organizar un programa profesional, documentar el servicio y proteger alimentos, pacientes, personal y áreas sensibles.',
-    image: '/hero/2.jpg',
-    imageAlt: 'Técnico de Fumcon realizando control profesional en una instalación',
-    category: 'Negocios',
-    datePublished: '2026-05-02',
-    dateModified: '2026-05-14',
-    readingTime: '9 min',
-    serviceHref: '/servicios',
-    serviceLabel: 'Servicios para negocios e instituciones',
-    sections: [
-      {
-        heading: 'Control de plagas como parte de una operación sanitaria',
-        paragraphs: [
-          'En restaurantes y hospitales, fumigar no consiste en una visita aislada para aplicar producto. El control debe integrarse con limpieza, manejo de residuos, mantenimiento, almacenamiento y documentación. Una plaga puede contaminar superficies, afectar alimentos, dañar equipos o comprometer áreas donde la continuidad del servicio es crítica.',
-          'COFEPRIS regula productos y prácticas sanitarias aplicables a distintos establecimientos. Los requisitos concretos dependen del giro, los procesos y la autoridad que inspecciona. Por eso el responsable del inmueble debe conservar sus procedimientos internos y solicitar asesoría regulatoria cuando corresponda; una empresa de control aporta diagnóstico, aplicación y evidencia del servicio.',
-        ],
-      },
-      {
-        heading: 'Qué debe revisarse antes de programar una aplicación',
-        paragraphs: [
-          'El recorrido inicial debe incluir recepción de mercancías, almacenes, cocinas, comedores, cuartos de residuos, drenajes, plafones y exteriores. En hospitales se añaden áreas sensibles, circulación de pacientes, equipos, medicamentos y protocolos de acceso. El mapa de riesgos define dónde monitorear y qué zonas requieren autorización especial.',
-        ],
-        bullets: [
-          'Señales y especies observadas, no solo una descripción general de “insectos”.',
-          'Horarios con menor impacto para alimentos, pacientes, clientes y personal.',
-          'Productos autorizados, ficha técnica e indicaciones de preparación y reingreso.',
-          'Puntos de monitoreo numerados y responsables internos de revisión.',
-          'Acciones correctivas de limpieza, sellado, humedad y manejo de residuos.',
-        ],
-      },
-      {
-        heading: 'Elegir métodos según el área',
-        paragraphs: [
-          'El Gel Activo permite un control focalizado de cucarachas y hormigas en puntos protegidos. Las estaciones de roedores facilitan monitoreo sin dejar cebos expuestos. La aspersión, nebulización o polvos residuales se reservan para zonas y condiciones compatibles con su etiqueta y con la operación.',
-          'No debe aplicarse un producto sobre alimentos, utensilios, medicamentos o equipos expuestos. Antes del servicio se protegen o retiran objetos y se define quién autoriza el reingreso. En áreas sensibles, una intervención pequeña y bien colocada puede ser más apropiada que una aplicación extensa.',
-        ],
-      },
-      {
-        heading: 'La documentación que conviene conservar',
-        paragraphs: [
-          'Cada visita debería dejar fecha, técnico, áreas inspeccionadas, plaga objetivo, producto y método, hallazgos, recomendaciones y próxima revisión. También conviene conservar fichas técnicas, registros de estaciones y evidencia de correcciones. La información permite demostrar continuidad y detectar tendencias.',
-          'Si una estación muestra actividad repetida o un drenaje acumula incidencias, el registro orienta mantenimiento y evita repetir la misma respuesta. Un documento sin seguimiento sirve poco: los responsables internos deben cerrar acciones y comunicar cambios en obra, proveedores, almacenamiento o limpieza.',
-        ],
-      },
-      {
-        heading: 'Cómo evaluar a un proveedor de control de plagas',
-        paragraphs: [
-          'Confirma datos de contacto, licencia sanitaria, productos registrados, alcance de la garantía y capacidad de explicar el tratamiento. Fumcon opera con licencia AP050271 y utiliza productos certificados por COFEPRIS y EPA, siguiendo preparación y reingreso definidos para cada caso.',
-          'Solicita una inspección antes de aceptar un programa genérico. El proveedor debe poder adaptar horarios, describir riesgos y señalar qué corresponde a su equipo y qué debe resolver el establecimiento. En un restaurante u hospital, el mejor control surge de la coordinación constante entre mantenimiento, limpieza, operación y técnicos.',
-        ],
-      },
-      {
-        heading: 'Preparación interna el día del servicio',
-        paragraphs: [
-          'Designa a una persona responsable para acompañar el recorrido y confirmar que alimentos, utensilios, medicamentos y equipos estén protegidos. Comunica al personal qué áreas quedarán restringidas, durante cuánto tiempo y quién autoriza la reapertura. Los cambios de turno no deben perder esta información.',
-          'Después de la aplicación, verifica que el reporte coincida con las zonas atendidas y distribuye las acciones correctivas a mantenimiento, limpieza o almacén. La fumigación no compensa una puerta sin sello, residuos abiertos o una fuga permanente. Cerrar esas tareas forma parte del control y debe quedar documentado.',
-        ],
-        bullets: [
-          'Confirma el horario y la lista de áreas antes de comenzar.',
-          'Protege productos y retira objetos según la indicación técnica.',
-          'Señaliza accesos y respeta el tiempo de reingreso.',
-          'Registra responsables y fechas para cada corrección pendiente.',
-        ],
-      },
-    ],
-    relatedSlugs: [
-      'cada-cuanto-fumigar-regla-cuatro-meses',
-      'eliminar-cucarachas-clima-calido-humedo',
-      'senales-termitas-casas-madera',
-    ],
-  },
-] as const
+]
 
 export function getAllPosts(): BlogPost[] {
   return [...BLOG_POSTS]

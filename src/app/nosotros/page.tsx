@@ -9,12 +9,12 @@ import { whatsappUrl } from '@/lib/site'
 import { breadcrumbSchema } from '@/lib/structured-data'
 
 export const metadata = generatePageMetadata({
-  title: 'Nosotros — Control Profesional de Plagas',
+  title: 'Nosotros — +30 Años en Plagas',
   description:
-    'Conoce a Fumcon del Sureste, su licencia sanitaria, métodos de aplicación y cobertura profesional en Yucatán y Quintana Roo.',
+    'Conoce a Fumigaciones Hernández: expertos en fumigación originarios de Tampico, con servicio en toda la zona conurbada de Tamaulipas.',
   path: '/nosotros',
   keywords: [
-    'Fumcon del Sureste',
+    'Fumigaciones Hernández',
     'empresa de fumigación',
     'control profesional de plagas',
     'licencia sanitaria fumigación',
@@ -30,7 +30,7 @@ export default function AboutPage() {
           { name: 'Nosotros', path: '/nosotros' },
         ])}
       />
-      <section className="relative overflow-hidden bg-[#102414] py-18 text-white md:py-24">
+      <section className="relative overflow-hidden bg-[#1C3266] py-18 text-white md:py-24">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:24px_24px]"
@@ -44,12 +44,12 @@ export default function AboutPage() {
               Inicio
             </Link>
             <ArrowRight className="size-3" />
-            <span className="text-[#78ED84]">Nosotros</span>
+            <span className="text-[#FFE95C]">Nosotros</span>
           </nav>
           <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#78ED84]">
-                FUMCON del Sureste S.A. de C.V.
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
+                Fumigaciones Hernández
               </p>
               <h1 className="mt-4 max-w-4xl text-[clamp(2.7rem,7vw,5rem)] font-black leading-[0.95] tracking-[-0.05em]">
                 Oficio, método y responsabilidad en cada servicio
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#19D42B] px-6 text-sm font-black text-[#102414] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#FFDF00] px-6 text-sm font-black text-[#1C3266] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 <MessageCircle className="size-5" />
                 Consultar a un especialista

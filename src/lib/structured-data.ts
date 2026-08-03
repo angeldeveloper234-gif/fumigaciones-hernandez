@@ -1,38 +1,119 @@
 import { SITE, absoluteUrl } from './site'
 import type { BlogPost } from './blog'
-import type { PestService } from './services'
+import { PEST_SERVICES, type PestService } from './services'
 import type { CoverageArea } from './locations'
 
-/** Negocio local de control de plagas — para la home. */
+/**
+ * Negocio local de control de plagas — para la home.
+ *
+ * `PestControlService` es un subtipo de LocalBusiness, así que es elegible para el
+ * paquete local y el panel de conocimiento. Cuanto más completo y consistente sea con
+ * el Google Business Profile, mejor. Deliberadamente NO se emite `aggregateRating`:
+ * marcar reseñas que no existen es motivo de acción manual.
+ */
 export function localBusinessSchema() {
+  const { address, geo } = SITE
+
   return {
     '@context': 'https://schema.org',
     '@type': 'PestControlService',
     '@id': `${SITE.url}/#business`,
-    name: 'FUMCON del Sureste',
+    name: SITE.name,
+    alternateName: SITE.shortName,
     legalName: SITE.legalName,
     url: SITE.url,
     image: absoluteUrl(SITE.logo),
     logo: absoluteUrl(SITE.logo),
     description: SITE.description,
+    slogan: SITE.slogan,
+    foundingDate: String(SITE.foundedYear),
     telephone: SITE.phone,
     email: SITE.email,
     address: {
       '@type': 'PostalAddress',
-      ...SITE.address,
+      streetAddress: `${address.streetAddress}, ${address.neighborhood}`,
+      addressLocality: address.addressLocality,
+      addressRegion: address.addressRegion,
+      postalCode: address.postalCode,
+      addressCountry: address.addressCountry,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: geo.latitude,
+      longitude: geo.longitude,
     },
     areaServed: SITE.areaServed.map((name) => ({
-      '@type': 'City',
+      '@type': 'AdministrativeArea',
       name,
     })),
-    openingHours: SITE.openingHours,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: SITE.rating.value,
-      reviewCount: SITE.rating.count,
-      bestRating: 5,
-    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+        ],
+        opens: '08:00',
+        closes: '17:00',
+      },
+    ],
+    paymentAccepted: SITE.paymentAccepted.join(', '),
+    currenciesAccepted: 'MXN',
     priceRange: '$$',
+    knowsAbout: [
+      'Control y exterminio de plagas',
+      'Fumigación de casas',
+      'Fumigación de comercios',
+      'Fumigación de industrias',
+      'Control de moscos',
+      'Control de termitas',
+      'Desratización',
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de control de plagas',
+      itemListElement: PEST_SERVICES.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: `Control de ${service.name.toLowerCase()}`,
+          url: absoluteUrl(`/servicios/${service.slug}`),
+        },
+      })),
+    },
+    ...(SITE.socials.length ? { sameAs: SITE.socials } : {}),
+  }
+}
+
+/** Organización — respalda al negocio local y consolida la marca. */
+export function organizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE.url}/#organization`,
+    name: SITE.name,
+    legalName: SITE.legalName,
+    url: SITE.url,
+    logo: {
+      '@type': 'ImageObject',
+      url: absoluteUrl(SITE.logo),
+      width: 692,
+      height: 577,
+    },
+    foundingDate: String(SITE.foundedYear),
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: SITE.phone,
+        contactType: 'customer service',
+        areaServed: 'MX',
+        availableLanguage: ['Spanish'],
+      },
+    ],
     ...(SITE.socials.length ? { sameAs: SITE.socials } : {}),
   }
 }
@@ -143,7 +224,7 @@ export function faqSchema(
   }
 }
 
-/** Servicio local de Fumcon en una zona de cobertura. */
+/** Servicio local de Fumigaciones Hernández en una zona de cobertura. */
 export function areaServiceSchema(area: CoverageArea) {
   const url = absoluteUrl(`/cobertura/${area.slug}`)
 
@@ -155,14 +236,23 @@ export function areaServiceSchema(area: CoverageArea) {
     description: area.metaDescription,
     url,
     serviceType: 'Fumigación y control profesional de plagas',
-    areaServed: {
-      '@type': 'City',
-      name: area.name,
-      containedInPlace: {
-        '@type': 'State',
-        name: area.state,
+    areaServed: [
+      {
+        '@type': 'City',
+        name: area.name,
+        containedInPlace: {
+          '@type': 'State',
+          name: area.state,
+        },
       },
-    },
+      // Las colonias dan señal local granular y capturan búsquedas de cola larga
+      // del tipo "fumigación en <colonia>".
+      ...area.neighborhoods.map((name) => ({
+        '@type': 'Place' as const,
+        name,
+        containedInPlace: { '@type': 'City' as const, name: area.name },
+      })),
+    ],
     provider: { '@id': `${SITE.url}/#business` },
   }
 }

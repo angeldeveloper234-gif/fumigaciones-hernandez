@@ -87,8 +87,8 @@ export function FranchiseForm() {
       [L('Mensaje', 'Message')]: form.message || '—',
     }
     const subject = L(
-      `Solicitud de Franquicia Fumcon – ${form.city}, ${form.state}`,
-      `Fumcon Franchise Application – ${form.city}, ${form.state}`
+      `Solicitud de Franquicia Fumigaciones Hernández – ${form.city}, ${form.state}`,
+      `Fumigaciones Hernández Franchise Application – ${form.city}, ${form.state}`
     )
 
     setSubmitError(false)
@@ -110,8 +110,8 @@ export function FranchiseForm() {
   }
 
   const labelCls = 'text-[0.6875rem] font-black uppercase tracking-wide text-[#212121] dark:text-slate-300 block mb-1.5'
-  const selectCls = 'h-8 w-full rounded-none border border-input bg-transparent px-2.5 text-base outline-none focus-visible:border-[#FBC02D] focus-visible:ring-3 focus-visible:ring-[#FBC02D]/30 transition-colors'
-  const errCls = 'text-[#19D42B] text-[0.6875rem] font-bold mt-1'
+  const selectCls = 'h-8 w-full rounded-none border border-input bg-transparent px-2.5 text-base outline-none focus-visible:border-[#F07070] focus-visible:ring-3 focus-visible:ring-[#F07070]/30 transition-colors'
+  const errCls = 'text-[#FFDF00] text-[0.6875rem] font-bold mt-1'
 
   if (isSuccess) {
     return (
@@ -119,7 +119,7 @@ export function FranchiseForm() {
         <div className="container max-w-2xl">
           <FadeUp>
             <div className="text-center py-12 flex flex-col items-center gap-4 bg-white dark:bg-slate-900 border border-[#E5E8EC] dark:border-slate-800 p-8 md:p-12 rounded-lg shadow-sm">
-              <div className="size-16 bg-[#FBC02D]/10 text-[#FBC02D] rounded-full flex items-center justify-center">
+              <div className="size-16 bg-[#F07070]/10 text-[#F07070] rounded-full flex items-center justify-center">
                 <CheckCircle2 className="size-8" />
               </div>
               <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-[#212121] dark:text-white">
@@ -128,7 +128,7 @@ export function FranchiseForm() {
               <p className="text-[#5A6070] dark:text-slate-400 max-w-md leading-relaxed">
                 {t('Se abrió tu correo con la solicitud lista para enviar. Si no se abrió, escríbenos directamente a ',
                   'Your email opened with the application ready to send. If it didn’t open, write to us directly at ')}
-                <a href={`mailto:${SITE.franchiseEmail}`} className="text-[#FBC02D] font-bold underline underline-offset-2">{SITE.franchiseEmail}</a>.
+                <a href={`mailto:${SITE.franchiseEmail}`} className="text-[#F07070] font-bold underline underline-offset-2">{SITE.franchiseEmail}</a>.
               </p>
               <p className="text-[#5A6070] dark:text-slate-400 text-sm">
                 {t('Nuestro equipo de expansión te contactará a la brevedad.',
@@ -149,7 +149,7 @@ export function FranchiseForm() {
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase text-[#212121] dark:text-white mb-3">
               {t('Solicita tu Franquicia', 'Apply for a Franchise')}
             </h2>
-            <div className="w-24 h-1 bg-[#FBC02D] mx-auto mb-4" />
+            <div className="w-24 h-1 bg-[#F07070] mx-auto mb-4" />
             <p className="text-[#5A6070] dark:text-slate-400 max-w-lg mx-auto leading-relaxed">
               {t('Completa el formulario y nuestro equipo de expansión evaluará tu solicitud. Todos los campos con * son obligatorios.',
                 'Fill out the form and our expansion team will review your application. Fields marked * are required.')}
@@ -164,7 +164,7 @@ export function FranchiseForm() {
           >
             {/* Datos de contacto */}
             <fieldset className="space-y-4">
-              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#FBC02D] mb-3">
+              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#F07070] mb-3">
                 {t('1. Datos de Contacto', '1. Contact Details')}
               </legend>
               <div>
@@ -191,7 +191,7 @@ export function FranchiseForm() {
 
             {/* Zona de interés */}
             <fieldset className="space-y-4">
-              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#FBC02D] mb-3">
+              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#F07070] mb-3">
                 {t('2. Zona de Interés', '2. Area of Interest')}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -212,7 +212,7 @@ export function FranchiseForm() {
 
             {/* Perfil de inversión */}
             <fieldset className="space-y-4">
-              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#FBC02D] mb-3">
+              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#F07070] mb-3">
                 {t('3. Perfil de Inversión', '3. Investment Profile')}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -251,10 +251,10 @@ export function FranchiseForm() {
 
             {/* Mensaje */}
             <fieldset>
-              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#FBC02D] mb-3">
+              <legend className="text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#F07070] mb-3">
                 {t('4. Cuéntanos más', '4. Tell us more')}
               </legend>
-              <label className={labelCls}>{t('¿Por qué te interesa Fumcon? (opcional)', 'Why are you interested in Fumcon? (optional)')}</label>
+              <label className={labelCls}>{t('¿Por qué te interesa Fumigaciones Hernández? (opcional)', 'Why are you interested in Fumigaciones Hernández? (optional)')}</label>
               <Textarea rows={4} value={form.message} onChange={e => set('message', e.target.value)}
                 placeholder={t('Escribe tu mensaje…', 'Write your message…')} />
             </fieldset>
@@ -262,7 +262,7 @@ export function FranchiseForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full inline-flex items-center justify-center gap-2.5 bg-[#FBC02D] hover:bg-[#D6A200] disabled:opacity-70 disabled:cursor-not-allowed text-white font-black text-sm px-8 py-4 rounded shadow-lg transition-all duration-200 uppercase tracking-wider group"
+              className="w-full inline-flex items-center justify-center gap-2.5 bg-[#F07070] hover:bg-[#B39B00] disabled:opacity-70 disabled:cursor-not-allowed text-white font-black text-sm px-8 py-4 rounded shadow-lg transition-all duration-200 uppercase tracking-wider group"
             >
               {isSubmitting ? (
                 <><Loader2 className="size-4 animate-spin" /><span>{t('Enviando…', 'Sending…')}</span></>
@@ -271,7 +271,7 @@ export function FranchiseForm() {
               )}
             </button>
             {submitError && (
-              <p className="text-center text-[0.8125rem] text-[#19D42B] font-bold">
+              <p className="text-center text-[0.8125rem] text-[#FFDF00] font-bold">
                 {t('No se pudo enviar. Inténtalo de nuevo o escríbenos a ', 'Could not send. Please try again or write to us at ')}
                 <a href={`mailto:${SITE.franchiseEmail}`} className="underline">{SITE.franchiseEmail}</a>.
               </p>
@@ -304,8 +304,8 @@ function YesNo({ label, value, onChange, isES, labelCls }: {
             onClick={() => onChange(o.v)}
             className={`flex-1 h-9 border text-sm font-bold rounded transition-colors ${
               value === o.v
-                ? 'bg-[#FBC02D] border-[#FBC02D] text-white'
-                : 'bg-transparent border-input text-[#5A6070] hover:border-[#FBC02D]'
+                ? 'bg-[#F07070] border-[#F07070] text-white'
+                : 'bg-transparent border-input text-[#5A6070] hover:border-[#F07070]'
             }`}
           >
             {o.l}

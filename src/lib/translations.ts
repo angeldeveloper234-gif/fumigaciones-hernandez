@@ -50,7 +50,7 @@ export const translations = {
     features: {
       titlePre: "Soluciones Integrales para ",
       titleHighlight: "Vida Exterior",
-      description: "Desde control de plagas hasta diseño de patios, en Fumcon somos los expertos locales.",
+      description: "Desde control de plagas hasta diseño de patios, en Fumigaciones Hernández somos los expertos locales.",
       items: {
         mosquito: {
           title: "Control de Mosquitos",
@@ -89,12 +89,12 @@ export const translations = {
     middleCta: {
       titlePre: "¿TU JARDÍN ESTÁ ",
       titleHighlight: "LISTO?",
-      description: "No dejes que los mosquitos controlen tu exterior. Recupera tu espacio hoy mismo con Fumcon.",
+      description: "No dejes que los mosquitos controlen tu exterior. Recupera tu espacio hoy mismo con Fumigaciones Hernández.",
     },
     about: {
       titlePre: "Expertos en Vida Exterior ",
       titleHighlight: "Desde 2003",
-      action: "Fumcon en Acción",
+      action: "Fumigaciones Hernández en Acción",
       p1: "Establecidos en 2003, fuimos los pioneros en especializarnos en sistemas automatizados de control de insectos en exteriores.",
       p2: "En 2010, evolucionamos para ofrecer sistemas de enfriamiento por niebla, convirtiéndonos en los líderes indiscutibles de la región. Para 2018, añadimos calefacción exterior e iluminación decorativa a nuestra lista de servicios premium.",
       benefits: [
@@ -106,12 +106,12 @@ export const translations = {
     },
     testimonials: {
       titlePre: "Por qué amamos ",
-      titleHighlight: "Fumcon",
+      titleHighlight: "Fumigaciones Hernández",
       reviews: [
         {
           name: "Bo Spencer",
           role: "Cliente por 5+ años",
-          text: "He tenido este sistema por más de 5 años y lo amo. Fumcon hace un gran trabajo con el servicio periódico y el mantenimiento."
+          text: "He tenido este sistema por más de 5 años y lo amo. Fumigaciones Hernández hace un gran trabajo con el servicio periódico y el mantenimiento."
         },
         {
           name: "Baron Von Anderson",
@@ -253,7 +253,7 @@ export const translations = {
     features: {
       titlePre: "Complete Solutions for ",
       titleHighlight: "Outdoor Living",
-      description: "From pest control to backyard design, at Fumcon we are your local experts.",
+      description: "From pest control to backyard design, at Fumigaciones Hernández we are your local experts.",
       items: {
         mosquito: {
           title: "Mosquito Control",
@@ -292,12 +292,12 @@ export const translations = {
     middleCta: {
       titlePre: "IS YOUR YARD ",
       titleHighlight: "READY?",
-      description: "Don't let mosquitoes control your outdoors. Reclaim your space today with Fumcon.",
+      description: "Don't let mosquitoes control your outdoors. Reclaim your space today with Fumigaciones Hernández.",
     },
     about: {
       titlePre: "Outdoor Living Experts ",
       titleHighlight: "Since 2003",
-      action: "Fumcon in Action",
+      action: "Fumigaciones Hernández in Action",
       p1: "Established in 2003, we were the pioneers in specializing in automated outdoor insect control systems.",
       p2: "In 2010, we evolved to offer mist cooling systems, becoming the undisputed leaders in the region. By 2018, we added outdoor heating and decorative lighting to our list of premium services.",
       benefits: [
@@ -309,12 +309,12 @@ export const translations = {
     },
     testimonials: {
       titlePre: "Why we love ",
-      titleHighlight: "Fumcon",
+      titleHighlight: "Fumigaciones Hernández",
       reviews: [
         {
           name: "Bo Spencer",
           role: "Customer for 5+ years",
-          text: "I have had this system for over 5 years and I love it. Fumcon does a great job with periodic service and maintenance."
+          text: "I have had this system for over 5 years and I love it. Fumigaciones Hernández does a great job with periodic service and maintenance."
         },
         {
           name: "Baron Von Anderson",
@@ -408,230 +408,273 @@ export const translations = {
 }
 
 /**
- * Copy aprobado para la Home de Fumcon.
+ * Copy aprobado para la Home de Fumigaciones Hernández.
  *
  * El motor i18n se conserva, pero durante el lanzamiento solo existe la
  * variante completa en español. Cuando `language === "en"`, la interfaz usa
  * este contenido como fallback hasta que se apruebe una traducción real.
  */
-export const FUMCON_HOME = {
+/**
+ * Copy de la Home de Fumigaciones Hernández.
+ *
+ * Construido sobre lo que el negocio declara realmente en sus propios dominios
+ * (ver `hernandez_copy.md`) y optimizado para la intención de búsqueda local:
+ * el H1 que forman `hero.title` + `hero.highlight` contiene la keyword principal.
+ *
+ * El motor i18n se conserva, pero solo existe la variante en español.
+ */
+/**
+ * Copy de la Home de Fumigaciones Hernández (Tampico, Tamaulipas).
+ *
+ * Construido sobre el copy real del negocio recuperado de sus sitios 2017-2019
+ * (`_archivo-original/wayback/`), conservando sus frases propias: "Expertos en
+ * fumigación", "Eliminamos todas las plagas", "el mejor servicio de la zona conurbada"
+ * y "los mejores precios de la zona".
+ *
+ * El H1 lo forman `hero.title` + `hero.highlight` y contiene la keyword principal.
+ */
+export const HERNANDEZ_HOME = {
   es: {
     hero: {
-      eyebrow: 'Desinfección y control de plagas · Atención 24/7',
-      title: 'Control de plagas seguro, rápido y garantizado',
-      highlight: 'en el sureste',
+      eyebrow: 'Tampico · Ciudad Madero · Altamira — Atención 24 horas',
+      title: 'Fumigación y control de plagas',
+      highlight: 'en Tampico',
       description:
-        'Protegemos hogares y negocios en Yucatán y Quintana Roo con tratamientos profesionales, productos certificados y respuesta inmediata.',
-      primaryCta: 'Solicitar inspección sin costo',
+        'Expertos en fumigación en la zona conurbada. Eliminamos moscos, cucarachas, termitas, ratas, hormigas, pulgas y arañas en hogares, comercios e industrias.',
+      primaryCta: 'Llamar ahora',
       secondaryCta: 'Ver servicios',
-      review: '5.0 · 19 opiniones en Google',
+      review: 'Los mejores precios de la zona',
       assurances: [
-        'Productos COFEPRIS / EPA',
-        'No tóxicos y biodegradables',
-        'Licencia sanitaria AP050271',
+        'Atención las 24 horas',
+        'El mejor equipo y productos del mercado',
+        'Personal con años de experiencia',
       ],
     },
     pests: {
-      eyebrow: 'Control por tipo de plaga',
-      title: 'Detectamos el origen. Eliminamos el problema.',
+      eyebrow: 'Eliminamos todas las plagas',
+      title: 'Moscos, cucarachas, termitas y más',
       description:
-        'Aplicamos el método correcto según la plaga, el nivel de actividad y las condiciones de tu propiedad.',
+        'Nos especializamos en controlar y exterminar plagas para que su hogar, negocio, oficina o industria se encuentre libre de plaga y pueda tener un ambiente limpio y saludable.',
       cta: 'Ver tratamiento',
       items: [
         {
-          slug: 'cucarachas',
-          name: 'Cucarachas',
-          description: 'Eliminación total garantizada.',
-          image: '/images/pests/cucarachas.webp',
+          slug: 'moscos',
+          name: 'Moscos',
+          description: 'Nebulización y eliminación de criaderos.',
+          image: '/images/pests/moscos.webp',
         },
         {
-          slug: 'roedores',
-          name: 'Roedores',
-          description: 'Control de ratas y ratones con seguimiento.',
-          image: '/images/pests/roedores.webp',
+          slug: 'cucarachas',
+          name: 'Cucarachas',
+          description: 'Eliminamos la colonia, no solo lo que ves.',
+          image: '/images/pests/cucarachas.webp',
         },
         {
           slug: 'termitas',
           name: 'Termitas',
-          description: 'Protección para madera y estructuras.',
+          description: 'Protección de madera y estructuras.',
           image: '/images/pests/termitas.webp',
         },
         {
-          slug: 'mosquitos',
-          name: 'Mosquitos',
-          description: 'Reducción de criaderos y control de adultos.',
-          image: '/images/pests/mosquitos.webp',
-        },
-        {
-          slug: 'alacranes',
-          name: 'Alacranes',
-          description: 'Barrera perimetral y tratamiento de grietas.',
-          image: '/images/pests/alacranes.webp',
+          slug: 'ratas',
+          name: 'Ratas y ratones',
+          description: 'Estaciones seguras y sellado de accesos.',
+          image: '/images/pests/ratas.webp',
         },
         {
           slug: 'hormigas',
           name: 'Hormigas',
-          description: 'Tratamiento del nido, no solo del rastro.',
+          description: 'Cebo que alcanza a la reina y a la colonia.',
           image: '/images/pests/hormigas.webp',
+        },
+        {
+          slug: 'alacranes',
+          name: 'Alacranes',
+          description: 'Tratamiento de grietas y sellado perimetral.',
+          image: '/images/pests/alacranes.webp',
+        },
+        {
+          slug: 'pulgas',
+          name: 'Pulgas',
+          description: 'Tratamiento de pisos, textiles y mascota.',
+          image: '/images/pests/pulgas.webp',
         },
         {
           slug: 'aranas',
           name: 'Arañas',
-          description: 'Control en rincones, techos y perímetros.',
+          description: 'Control perimetral y retiro de telarañas.',
           image: '/images/pests/aranas.webp',
-        },
-        {
-          slug: 'garrapatas',
-          name: 'Garrapatas',
-          description: 'Protección de patios y zonas de mascotas.',
-          image: '/images/pests/garrapatas.webp',
         },
       ],
     },
     methods: {
-      eyebrow: 'Métodos profesionales',
-      title: 'El tratamiento exacto para cada escenario',
+      eyebrow: 'Cómo trabajamos',
+      title: 'La técnica correcta para cada espacio',
       description:
-        'La inspección define dónde y cómo intervenir. Así controlamos la plaga sin aplicar producto de más.',
+        'Contamos con el mejor equipo y productos del mercado. Aplicamos el método que corresponde según la plaga y las condiciones de la propiedad.',
       items: [
         {
-          title: 'Aspersión',
+          title: 'Aspersión dirigida',
           description:
-            'Aplicación líquida perimetral para barreras químicas efectivas.',
-          icon: 'spray',
+            'Aplicación uniforme con equipo profesional en rutas de paso y refugios.',
+          icon: 'target',
         },
         {
           title: 'Gel Activo',
           description:
-            'Cebos de alta atracción para control focalizado de cucarachas y hormigas.',
+            'Cebo que la colonia transporta a su nido, sin saturar el ambiente.',
           icon: 'target',
         },
         {
-          title: 'Nebulización',
+          title: 'Nebulización en frío (ULV)',
           description:
-            'Microgotas que alcanzan áreas difíciles y espacios aéreos.',
+            'Partículas finas distribuidas de forma homogénea, sin residuos excesivos.',
           icon: 'wind',
-        },
-        {
-          title: 'Polvos Residuales',
-          description:
-            'Tratamiento de grietas y hendiduras para protección duradera.',
-          icon: 'shield',
         },
         {
           title: 'Termonebulización',
           description:
-            'Niebla térmica de alta penetración para áreas de difícil acceso y techos elevados.',
+            'Niebla caliente de alta penetración para patios, jardines y bodegas.',
           icon: 'cloud',
+        },
+        {
+          title: 'Polvos Residuales',
+          description:
+            'Grietas, hendiduras y registros eléctricos con acción prolongada.',
+          icon: 'shield',
+        },
+        {
+          title: 'Estaciones de cebo',
+          description:
+            'Control de ratas con dispositivos cerrados, seguros con niños y mascotas.',
+          icon: 'shield',
+        },
+        {
+          title: 'Aplicación con jeringa',
+          description:
+            'Tratamiento milimétrico en costuras y uniones donde se alojan los huevos.',
+          icon: 'target',
+        },
+        {
+          title: 'Sellado de accesos',
+          description:
+            'Cerramos las vías de entrada para que la plaga no vuelva a instalarse.',
+          icon: 'wind',
         },
       ],
     },
     about: {
-      eyebrow: 'Fumcon del Sureste',
-      title: 'Control profesional, sin improvisaciones',
+      eyebrow: 'Fumigaciones Hernández',
+      title: 'Expertos en fumigación de la zona conurbada',
       description:
-        'Atendemos casas, oficinas, comercios, locales, hospitales y gimnasios con protocolos claros, personal capacitado y tratamientos adaptados a cada propiedad.',
+        'Somos una empresa mexicana originaria de Tampico, Tamaulipas, dedicada al control y exterminio de plagas. Personal con años de experiencia nos respalda para brindarle el mejor servicio y su completa satisfacción.',
       secondary:
-        'Nuestra base operativa está en Mérida y desplegamos servicio en Yucatán y Quintana Roo, las 24 horas, los 7 días de la semana.',
-      audiences: ['Hogares', 'Comercios', 'Oficinas', 'Hospitales', 'Gimnasios'],
+        'Brindamos servicio en las ciudades de Tampico, Ciudad Madero, Altamira y ciudades cercanas a la región. Contamos con el mejor equipo y productos del mercado para hogares, negocios, oficinas e industrias.',
+      audiences: [
+        'Hogares',
+        'Comercios',
+        'Restaurantes',
+        'Oficinas',
+        'Bodegas',
+        'Industrias',
+      ],
     },
     promotion: {
-      badge: 'Promoción vigente',
-      title: '3 sesiones al precio de 2',
+      badge: 'Antes de contratar',
+      title: 'Cotización sin costo',
       description:
-        'Protección extendida para tu hogar o negocio. Incluye inspección inicial sin costo y garantía de servicio.',
-      priceLabel: 'Fumigación desde',
-      price: '$750',
-      currency: 'MXN',
+        'Revisamos el inmueble, identificamos la plaga y su foco, y le decimos con claridad qué tratamiento necesita y por qué. Los mejores precios de la zona.',
+      // TODO(cliente): en 2018 el claim era "los mejores precios de la zona" pero nunca
+      // se publicó una tarifa. Un rango real convierte mejor que ocultarlo.
+      priceLabel: 'Cotización',
+      price: 'Sin costo',
+      currency: '',
       benefits: [
-        'Inspección inicial sin costo',
-        'Productos seguros y certificados',
-        'Seguimiento profesional',
+        'Diagnóstico de la plaga y su foco',
+        'Presupuesto antes de aplicar',
+        'Atención las 24 horas',
       ],
-      cta: 'Quiero aprovechar la promoción',
+      cta: 'Solicitar cotización',
     },
+    // Misión, visión y valores recuperados del sitio de 2019.
+    // TODO(cliente): al reunir reseñas reales en Google, sustituir por testimonios y
+    // activar `aggregateRating` en los datos estructurados.
     testimonials: {
-      eyebrow: 'Opiniones verificadas',
-      title: 'Clientes que ya recuperaron su tranquilidad',
-      badge: '5.0 · 19 opiniones en Google',
+      eyebrow: 'Lo que nos define',
+      title: 'Tu satisfacción es nuestra prioridad',
+      badge: 'Franqueza · Puntualidad · Servicio · Voluntad',
       items: [
         {
-          name: 'Jessie Regalado',
-          role: 'Cliente de Fumcon',
-          text: 'Desde el primer contacto fueron muy profesionales, puntuales y claros al explicar el proceso. Realizaron una inspección detallada y aplicaron el tratamiento adecuado. Lo que más me gustó fue su responsabilidad y el uso de productos seguros para mi familia y mis mascotas. Además, dejaron todo limpio y ordenado.',
+          name: 'Misión',
+          role: 'Por qué trabajamos',
+          text: 'Atender a cada uno de nuestros clientes basándonos en sus intereses y preocupaciones en fumigaciones, para que su hogar, negocio, oficina o industria se encuentre libre de plaga y pueda tener un ambiente limpio y saludable.',
         },
         {
-          name: 'TintaMax Chetumal',
-          role: 'Cliente de Fumcon',
-          text: 'Buen servicio, resolviendo problema con plaga de ratas, con resultados a corto plazo y siempre atentos a cualquier duda. Cuidan de tus mascotas con recomendaciones.',
+          name: 'Visión',
+          role: 'Hacia dónde vamos',
+          text: 'Convertirnos en referentes de la industria de la fumigación en la zona conurbada de Tampico, Ciudad Madero y Altamira, con el mejor servicio y los mejores precios de la región.',
         },
         {
-          name: 'Julianne P',
-          role: 'Local Guide',
-          text: 'Excelentes servicios y buena atención. Lo recomiendo sólidamente si quieres resolver plagas.',
+          name: 'Valores',
+          role: 'Cómo lo hacemos',
+          text: 'Franqueza, puntualidad, servicio y voluntad. Personal con años de experiencia nos respalda para brindarle el mejor servicio y su completa satisfacción en cada visita.',
         },
       ],
     },
     coverage: {
-      eyebrow: 'Cobertura regional',
-      title: 'Llegamos donde nos necesitas',
+      eyebrow: 'Zona de cobertura',
+      title: 'Tampico, Madero y Altamira',
       description:
-        'Unidades móviles equipadas para responder en Yucatán y Quintana Roo con el mismo estándar de servicio.',
+        'Nuestra base está en la Col. Obrera, Ciudad Madero. Brindamos servicio en toda la zona conurbada y en ciudades cercanas a la región.',
       cta: 'Consultar disponibilidad',
       areas: [
-        { name: 'Mérida', slug: 'merida' },
-        { name: 'Cancún', slug: 'cancun' },
-        { name: 'Playa del Carmen', slug: 'playa-del-carmen' },
-        { name: 'Tulum', slug: 'tulum' },
-        { name: 'Chetumal', slug: 'chetumal' },
-        { name: 'Bacalar', slug: 'bacalar' },
-        { name: 'José María Morelos', slug: 'jose-maria-morelos' },
-        {
-          name: 'Felipe Carrillo Puerto',
-          slug: 'felipe-carrillo-puerto',
-        },
+        { name: 'Tampico', slug: 'tampico' },
+        { name: 'Ciudad Madero', slug: 'ciudad-madero' },
+        { name: 'Altamira', slug: 'altamira' },
+        { name: 'Pueblo Viejo', slug: 'pueblo-viejo' },
+        { name: 'Pánuco', slug: 'panuco' },
+        { name: 'Aldama', slug: 'aldama' },
       ],
     },
     blog: {
-      eyebrow: 'Guías para el sureste',
-      title: 'Prevención útil, explicada sin rodeos',
+      eyebrow: 'Guías de prevención',
+      title: 'Aprende a detectarlo antes de que crezca',
       description:
-        'Aprende a reconocer señales, reducir riesgos y saber cuándo llamar a un profesional.',
+        'Cómo reconocer las señales tempranas, qué hacer mientras llega el servicio y cuándo un problema ya requiere tratamiento profesional.',
       cta: 'Ver todas las guías',
       articles: [
         {
-          category: 'Alacranes',
-          title: 'Alacranes en Yucatán: cómo prevenir picaduras en casa',
+          category: 'Moscos',
+          title: 'Moscos en Tampico: cómo acabar con los criaderos de tu patio',
           summary:
-            'Dónde se esconden, qué revisar y cómo reducir el riesgo para niños y mascotas.',
+            'Dónde se esconde el agua que no ves y por qué nebulizar sin eliminar criaderos solo dura unos días.',
+        },
+        {
+          category: 'Termitas',
+          title: 'Termitas en la costa: por qué el clima del Golfo las favorece',
+          summary:
+            'Las señales que aparecen antes del daño visible y qué revisar en construcción con madera.',
         },
         {
           category: 'Cucarachas',
-          title: 'Cómo eliminar cucarachas en clima cálido y húmedo',
+          title: 'Cucarachas que salen del drenaje: por qué pasa y cómo se corta',
           summary:
-            'Las señales de actividad que conviene atender antes de que la colonia crezca.',
-        },
-        {
-          category: 'Mosquitos',
-          title:
-            'Temporada de mosquitos en Quintana Roo: dengue y prevención',
-          summary:
-            'Medidas prácticas para patios, jardines y recipientes con agua estancada.',
+            'No es falta de limpieza. Suben por las tuberías, sobre todo después de las lluvias.',
         },
       ],
     },
     contact: {
-      eyebrow: 'Atención inmediata 24/7',
-      title: 'La solución empieza con un mensaje',
+      eyebrow: 'Te atendemos 24 horas',
+      title: 'Pásate o llama',
       description:
-        'Cuéntanos qué plaga viste y en qué zona estás. Un especialista de Fumcon te orientará y coordinará la inspección.',
+        'Cuéntanos qué plaga viste y en qué zona estás. Estamos en Centenario 503, Col. Obrera, Ciudad Madero, y atendemos toda la zona conurbada.',
       whatsappCta: 'Escribir por WhatsApp',
       phoneCta: 'Llamar ahora',
     },
   },
 } as const
 
-export function getFumconHomeCopy(language: 'es' | 'en') {
+export function getHernandezHomeCopy(language: 'es' | 'en') {
   // Inglés queda como fallback al español hasta contar con copy aprobado.
-  return language === 'es' ? FUMCON_HOME.es : FUMCON_HOME.es
+  return language === 'es' ? HERNANDEZ_HOME.es : HERNANDEZ_HOME.es
 }

@@ -14,15 +14,16 @@ import { breadcrumbSchema } from '@/lib/structured-data'
 import { whatsappUrl } from '@/lib/site'
 
 export const metadata = generatePageMetadata({
-  title: 'Blog de Control de Plagas y Prevención',
+  title: 'Blog de Prevención de Plagas',
   description:
-    'Guías prácticas sobre alacranes, cucarachas, mosquitos, termitas y fumigación preventiva para hogares y negocios del sureste.',
+    'Guías prácticas sobre alacranes, cucarachas, mosquitos, termitas y fumigación preventiva para hogares y negocios del Valle de México.',
   path: '/blog',
   keywords: [
     'blog control de plagas',
-    'prevención de plagas Yucatán',
-    'consejos fumigación Quintana Roo',
-    'Fumcon blog',
+    'prevención de plagas Tampico',
+    'consejos fumigación Tamaulipas',
+    'cómo eliminar chinches',
+    'Fumigaciones Hernández blog',
   ],
 })
 
@@ -34,7 +35,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-MX', {
 })
 
 const quoteUrl = whatsappUrl(
-  'Hola, leí una guía de Fumcon y quiero solicitar una inspección.',
+  'Hola, leí una guía de Fumigaciones Hernández y quiero solicitar una inspección.',
 )
 
 export default function BlogIndexPage() {
@@ -51,7 +52,7 @@ export default function BlogIndexPage() {
       />
 
       <div>
-        <section className="relative isolate overflow-hidden bg-[#102414] py-18 text-white md:py-24">
+        <section className="relative isolate overflow-hidden bg-[#1C3266] py-18 text-white md:py-24">
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
@@ -65,13 +66,13 @@ export default function BlogIndexPage() {
                 Inicio
               </Link>
               <ArrowRight className="size-3" />
-              <span className="text-[#78ED84]">Blog</span>
+              <span className="text-[#FFE95C]">Blog</span>
             </nav>
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.55fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#78ED84]">
-                  Guías para el sureste
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
+                  Guías para el Valle de México
                 </p>
                 <h1 className="mt-4 max-w-5xl text-[clamp(2.7rem,7vw,5.25rem)] font-black leading-[0.95] tracking-[-0.05em]">
                   Prevención de plagas, explicada sin rodeos
@@ -86,13 +87,13 @@ export default function BlogIndexPage() {
         </section>
 
         {featured && (
-          <section className="bg-[#F4F8F4] py-18 md:py-24">
+          <section className="bg-[#F5F8FC] py-18 md:py-24">
             <div className="container">
               <Link
                 href={`/blog/${featured.slug}`}
-                className="group grid overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-[0_24px_65px_rgba(16,36,20,0.1)] transition hover:-translate-y-1 hover:shadow-[0_30px_75px_rgba(16,36,20,0.14)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B] lg:grid-cols-[1.05fr_0.95fr]"
+                className="group grid overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-[0_24px_65px_rgba(28,50,102,0.1)] transition hover:-translate-y-1 hover:shadow-[0_30px_75px_rgba(28,50,102,0.14)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00] lg:grid-cols-[1.05fr_0.95fr]"
               >
-                <div className="relative min-h-[22rem] overflow-hidden bg-[#E9FBEA] lg:min-h-[31rem]">
+                <div className="relative min-h-[22rem] overflow-hidden bg-[#FFF8DC] lg:min-h-[31rem]">
                   <Image
                     src={featured.image}
                     alt={featured.imageAlt}
@@ -101,15 +102,15 @@ export default function BlogIndexPage() {
                     sizes="(max-width: 1023px) 100vw, 52vw"
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#102414]/55 via-transparent to-transparent" />
-                  <span className="absolute left-5 top-5 rounded-full bg-[#FBC02D] px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.13em] text-[#212121]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C3266]/55 via-transparent to-transparent" />
+                  <span className="absolute left-5 top-5 rounded-full bg-[#F07070] px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.13em] text-[#212121]">
                     Artículo destacado
                   </span>
                 </div>
 
                 <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
                   <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#6B746C]">
-                    <span className="rounded-full bg-[#E9FBEA] px-3 py-1.5 font-black uppercase tracking-[0.11em] text-[#118F1D]">
+                    <span className="rounded-full bg-[#FFF8DC] px-3 py-1.5 font-black uppercase tracking-[0.11em] text-[#B41B1E]">
                       {featured.category}
                     </span>
                     <span className="flex items-center gap-1.5">
@@ -129,7 +130,7 @@ export default function BlogIndexPage() {
                   <p className="mt-5 text-base leading-7 text-[#5A6070]">
                     {featured.summary}
                   </p>
-                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-black text-[#118F1D]">
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-black text-[#B41B1E]">
                     Leer guía completa
                     <ArrowRight className="size-4 transition group-hover:translate-x-1" />
                   </span>
@@ -143,8 +144,8 @@ export default function BlogIndexPage() {
           <div className="container">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#118F1D]">
-                  Biblioteca Fumcon
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
+                  Biblioteca Fumigaciones Hernández
                 </p>
                 <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
                   Todas las guías
@@ -161,9 +162,9 @@ export default function BlogIndexPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-black/8 bg-[#F7F9F7] transition hover:-translate-y-1 hover:border-[#19D42B]/60 hover:shadow-[0_18px_42px_rgba(16,36,20,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
+                  className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-black/8 bg-[#F6F9FC] transition hover:-translate-y-1 hover:border-[#FFDF00]/60 hover:shadow-[0_18px_42px_rgba(28,50,102,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-[#E9FBEA]">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[#FFF8DC]">
                     <Image
                       src={post.image}
                       alt={post.imageAlt}
@@ -171,7 +172,7 @@ export default function BlogIndexPage() {
                       sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                       className="object-cover transition duration-700 group-hover:scale-105"
                     />
-                    <span className="absolute left-4 top-4 rounded-full bg-[#FBC02D] px-3 py-1.5 text-[0.64rem] font-black uppercase tracking-[0.12em] text-[#212121]">
+                    <span className="absolute left-4 top-4 rounded-full bg-[#F07070] px-3 py-1.5 text-[0.64rem] font-black uppercase tracking-[0.12em] text-[#212121]">
                       {post.category}
                     </span>
                   </div>
@@ -188,13 +189,13 @@ export default function BlogIndexPage() {
                         {post.readingTime}
                       </span>
                     </div>
-                    <h3 className="mt-5 text-xl font-black leading-6 tracking-[-0.02em] text-[#212121] transition group-hover:text-[#118F1D]">
+                    <h3 className="mt-5 text-xl font-black leading-6 tracking-[-0.02em] text-[#212121] transition group-hover:text-[#B41B1E]">
                       {post.title}
                     </h3>
                     <p className="mt-3 text-sm leading-6 text-[#5A6070]">
                       {post.summary}
                     </p>
-                    <span className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-black uppercase tracking-[0.12em] text-[#118F1D]">
+                    <span className="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-black uppercase tracking-[0.12em] text-[#B41B1E]">
                       Leer artículo
                       <ArrowRight className="size-4 transition group-hover:translate-x-1" />
                     </span>
@@ -205,7 +206,7 @@ export default function BlogIndexPage() {
           </div>
         </section>
 
-        <section className="bg-[#FBC02D] py-14 text-[#212121]">
+        <section className="bg-[#F07070] py-14 text-[#212121]">
           <div className="container flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em]">
@@ -220,7 +221,7 @@ export default function BlogIndexPage() {
               href={quoteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-13 shrink-0 items-center justify-center gap-2 rounded-full bg-[#102414] px-7 text-sm font-black text-white transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#102414]"
+              className="inline-flex min-h-13 shrink-0 items-center justify-center gap-2 rounded-full bg-[#1C3266] px-7 text-sm font-black text-white transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C3266]"
             >
               <MessageCircle className="size-5" />
               Consultar por WhatsApp

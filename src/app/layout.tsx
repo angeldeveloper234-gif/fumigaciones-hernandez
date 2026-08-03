@@ -7,7 +7,11 @@ import { Footer } from '@/components/layout/Footer'
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { JsonLd } from '@/components/seo/JsonLd'
-import { localBusinessSchema, websiteSchema } from '@/lib/structured-data'
+import {
+  localBusinessSchema,
+  organizationSchema,
+  websiteSchema,
+} from '@/lib/structured-data'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -21,13 +25,18 @@ const inter = Inter({
   display: 'swap',
 })
 
-const title = 'Fumigación y Control de Plagas en el Sureste | Fumcon'
+/**
+ * Title de la home: 55 caracteres, con la keyword principal al inicio y el
+ * diferenciador (atención 24 h) como gancho de click. Google trunca alrededor de
+ * los 60, así que todo lo que importa va delante.
+ */
+const title = 'Fumigaciones en Tampico, Madero y Altamira | 24 h'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default: title,
-    template: '%s | Fumcon',
+    template: '%s | Fumigaciones Hernández',
   },
   description: SITE.description,
   keywords: [...SITE.keywords],
@@ -53,15 +62,23 @@ export const metadata: Metadata = {
     url: SITE.url,
     siteName: SITE.name,
     title,
-    description: SITE.description,
+    description: SITE.longDescription,
     images: [
       {
         url: SITE.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Fumcon del Sureste — control profesional de plagas',
+        alt: 'Fumigaciones Hernández — control profesional de plagas en Tampico y la zona conurbada',
       },
     ],
+  },
+  formatDetection: { telephone: true, address: true },
+  other: {
+    // Señales locales explícitas: refuerzan la asociación geográfica del dominio.
+    'geo.region': 'MX-TAM',
+    'geo.placename': SITE.address.addressLocality,
+    'geo.position': `${SITE.geo.latitude};${SITE.geo.longitude}`,
+    ICBM: `${SITE.geo.latitude}, ${SITE.geo.longitude}`,
   },
   twitter: {
     card: 'summary_large_image',
@@ -83,7 +100,13 @@ export default function RootLayout({
       className={`antialiased scroll-smooth ${montserrat.variable} ${inter.variable}`}
     >
       <body className="min-h-screen flex flex-col font-sans">
-        <JsonLd data={[websiteSchema(), localBusinessSchema()]} />
+        <JsonLd
+          data={[
+            websiteSchema(),
+            organizationSchema(),
+            localBusinessSchema(),
+          ]}
+        />
         <LanguageProvider>
           <Header />
           <main className="flex-grow">{children}</main>

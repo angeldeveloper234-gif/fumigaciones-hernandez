@@ -9,7 +9,7 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Solicitar cotización por WhatsApp"
-      className="fixed bottom-5 right-4 z-[60] inline-flex min-h-13 items-center gap-2 rounded-full bg-[#25D366] px-4 font-extrabold text-white shadow-[0_14px_36px_rgba(0,0,0,0.24)] transition hover:-translate-y-1 hover:bg-[#1EBE5D] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#102414] sm:bottom-7 sm:right-7 sm:px-5"
+      className="fixed bottom-5 right-4 z-[60] inline-flex min-h-13 items-center gap-2 rounded-full bg-[#25D366] px-4 font-extrabold text-white shadow-[0_14px_36px_rgba(0,0,0,0.24)] transition hover:-translate-y-1 hover:bg-[#1EBE5D] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C3266] sm:bottom-7 sm:right-7 sm:px-5"
     >
       <svg
         aria-hidden="true"

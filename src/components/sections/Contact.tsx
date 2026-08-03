@@ -6,18 +6,18 @@ import {
   MessageCircle,
   Phone,
 } from 'lucide-react'
-import { FUMCON_HOME } from '@/lib/translations'
+import { HERNANDEZ_HOME } from '@/lib/translations'
 import { SITE, whatsappUrl } from '@/lib/site'
 
-const copy = FUMCON_HOME.es.contact
+const copy = HERNANDEZ_HOME.es.contact
 
 export function Contact() {
   return (
-    <section id="contacto" className="bg-[#F4F7F4] py-20 md:py-28">
+    <section id="contacto" className="bg-[#F5F8FC] py-20 md:py-28">
       <div className="container">
-        <div className="overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-[0_24px_70px_rgba(16,36,20,0.1)] md:rounded-[2.5rem]">
+        <div className="overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-[0_24px_70px_rgba(28,50,102,0.1)] md:rounded-[2.5rem]">
           <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
-            <div className="bg-[#19D42B] p-7 text-[#102414] sm:p-10 lg:p-14">
+            <div className="bg-[#FFDF00] p-7 text-[#1C3266] sm:p-10 lg:p-14">
               <p className="text-xs font-black uppercase tracking-[0.18em]">
                 {copy.eyebrow}
               </p>
@@ -34,14 +34,14 @@ export function Contact() {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#102414] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#212121] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#1C3266] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#212121] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   <MessageCircle className="size-5" />
                   {copy.whatsappCta}
                 </a>
                 <a
                   href={SITE.phoneHref}
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-[#102414]/25 px-6 text-sm font-black transition hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#102414]"
+                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-[#1C3266]/25 px-6 text-sm font-black transition hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C3266]"
                 >
                   <Phone className="size-4" />
                   {copy.phoneCta}
@@ -65,12 +65,12 @@ export function Contact() {
               <ContactItem
                 icon={Clock3}
                 label="Horario"
-                value="Atención las 24 horas, los 7 días"
+                value="Lun a Sáb 8:00-17:00 · Atención 24 horas"
               />
               <ContactItem
                 icon={MapPin}
                 label="Base operativa"
-                value="Calle 44 572A x 29 y 29A, Los Pinos, Mérida, Yucatán"
+                value="Calle Malinalli M-5 LT-11, Cd. Cuauhtémoc, Tampico, Tamaulipas"
               />
             </div>
           </div>
@@ -90,7 +90,7 @@ interface ContactItemProps {
 function ContactItem({ icon: Icon, label, value, href }: ContactItemProps) {
   const content = (
     <>
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#E9FBEA] text-[#118F1D]">
+      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#FFF8DC] text-[#B41B1E]">
         <Icon className="size-5" />
       </span>
       <span className="min-w-0">
@@ -102,7 +102,7 @@ function ContactItem({ icon: Icon, label, value, href }: ContactItemProps) {
         </span>
       </span>
       {href && (
-        <ArrowRight className="ml-auto size-4 shrink-0 text-[#118F1D]" />
+        <ArrowRight className="ml-auto size-4 shrink-0 text-[#B41B1E]" />
       )}
     </>
   )
@@ -110,7 +110,7 @@ function ContactItem({ icon: Icon, label, value, href }: ContactItemProps) {
   return href ? (
     <a
       href={href}
-      className="flex items-center gap-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
+      className="flex items-center gap-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
     >
       {content}
     </a>

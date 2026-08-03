@@ -61,20 +61,20 @@ export function Technology() {
           <FadeUp>
             <div className="flex flex-col gap-6">
 
-              <div className="inline-flex items-center gap-2 text-[#19D42B] text-[0.7rem] font-bold uppercase tracking-[0.18em]">
-                <span className="w-5 h-px bg-[#19D42B]" />
+              <div className="inline-flex items-center gap-2 text-[#FFDF00] text-[0.7rem] font-bold uppercase tracking-[0.18em]">
+                <span className="w-5 h-px bg-[#FFDF00]" />
                 {c.eyebrow}
               </div>
 
               <div>
                 <h2 className="text-h2 font-black tracking-tighter uppercase leading-[1.05] text-white">
                   {c.title}{' '}
-                  <span className="text-[#19D42B]">{c.titleHighlight}</span>
+                  <span className="text-[#FFDF00]">{c.titleHighlight}</span>
                 </h2>
                 <p className="text-white/55 text-base mt-2 italic">{c.subtitle}</p>
               </div>
 
-              <div className="inline-flex items-center gap-2 bg-[#19D42B]/15 border border-[#19D42B]/30 text-[#19D42B] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md self-start">
+              <div className="inline-flex items-center gap-2 bg-[#FFDF00]/15 border border-[#FFDF00]/30 text-[#FFDF00] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md self-start">
                 <Award className="size-3.5" />
                 {c.badge}
               </div>
@@ -85,7 +85,7 @@ export function Technology() {
 
               <button
                 onClick={() => document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' })}
-                className="self-start inline-flex items-center gap-2 bg-[#19D42B] hover:bg-[#13AA23] text-white font-black text-sm px-6 py-3 rounded-md transition-all duration-200 hover:-translate-y-0.5 uppercase tracking-wide"
+                className="self-start inline-flex items-center gap-2 bg-[#FFDF00] hover:bg-[#D9BE00] text-white font-black text-sm px-6 py-3 rounded-md transition-all duration-200 hover:-translate-y-0.5 uppercase tracking-wide"
               >
                 {c.cta}
                 <ArrowRight className="size-4" />
@@ -102,7 +102,7 @@ export function Technology() {
               <div className="flex flex-col gap-4">
                 {c.features.map((feat, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="size-4 text-[#19D42B] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="size-4 text-[#FFDF00] flex-shrink-0 mt-0.5" />
                     <span className="text-white/75 text-sm leading-relaxed">{feat}</span>
                   </div>
                 ))}

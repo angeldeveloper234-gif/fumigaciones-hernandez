@@ -49,6 +49,9 @@ export async function generateMetadata({
 
   return generatePageMetadata({
     title: post.title,
+    // Los titulares de artículo ya son descriptivos; el sufijo de plantilla
+    // solo los empujaría por encima de lo que Google muestra.
+    absoluteTitle: true,
     description: post.summary,
     path: `/blog/${post.slug}`,
     image: getPostOgImage(post),
@@ -56,9 +59,9 @@ export async function generateMetadata({
     publishedTime: post.datePublished,
     keywords: [
       post.title,
-      `${post.category} en el sureste`,
+      `${post.category} en Tampico y la zona conurbada`,
       'prevención de plagas',
-      'Fumcon del Sureste',
+      'Fumigaciones Hernández',
     ],
   })
 }
@@ -99,7 +102,7 @@ export default async function BlogPostPage({
       />
 
       <article className="bg-white">
-        <header className="relative isolate overflow-hidden bg-[#102414] text-white">
+        <header className="relative isolate overflow-hidden bg-[#1C3266] text-white">
           <Image
             src={post.image}
             alt={post.imageAlt}
@@ -108,8 +111,8 @@ export default async function BlogPostPage({
             sizes="100vw"
             className="-z-20 object-cover"
           />
-          <div className="absolute inset-0 -z-10 bg-[#102414]/82" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#102414] via-[#102414]/78 to-[#102414]/42" />
+          <div className="absolute inset-0 -z-10 bg-[#1C3266]/82" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1C3266] via-[#1C3266]/78 to-[#1C3266]/42" />
 
           <div className="container py-12 md:py-18">
             <nav
@@ -124,22 +127,22 @@ export default async function BlogPostPage({
                 Blog
               </Link>
               <ArrowRight className="size-3" />
-              <span className="text-[#78ED84]">{post.category}</span>
+              <span className="text-[#FFE95C]">{post.category}</span>
             </nav>
 
             <div className="mt-10 max-w-5xl">
-              <span className="inline-flex rounded-full bg-[#FBC02D] px-4 py-2 text-xs font-black uppercase tracking-[0.13em] text-[#212121]">
+              <span className="inline-flex rounded-full bg-[#F07070] px-4 py-2 text-xs font-black uppercase tracking-[0.13em] text-[#212121]">
                 {post.category}
               </span>
               <h1 className="mt-6 max-w-5xl text-[clamp(2.35rem,6vw,4.75rem)] font-black leading-[0.96] tracking-[-0.045em]">
                 {post.title}
               </h1>
-              <p className="mt-6 max-w-3xl border-l-2 border-[#19D42B] pl-5 text-base leading-7 text-white/75 md:text-lg">
+              <p className="mt-6 max-w-3xl border-l-2 border-[#FFDF00] pl-5 text-base leading-7 text-white/75 md:text-lg">
                 {post.summary}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-5 text-xs font-bold text-white/68">
                 <span className="flex items-center gap-2">
-                  <CalendarDays className="size-4 text-[#78ED84]" />
+                  <CalendarDays className="size-4 text-[#FFE95C]" />
                   <time dateTime={post.datePublished}>
                     {dateFormatter.format(
                       new Date(`${post.datePublished}T00:00:00Z`),
@@ -147,12 +150,12 @@ export default async function BlogPostPage({
                   </time>
                 </span>
                 <span className="flex items-center gap-2">
-                  <Clock3 className="size-4 text-[#78ED84]" />
+                  <Clock3 className="size-4 text-[#FFE95C]" />
                   {post.readingTime} de lectura
                 </span>
                 <span className="flex items-center gap-2">
-                  <BookOpen className="size-4 text-[#78ED84]" />
-                  Guía de Fumcon
+                  <BookOpen className="size-4 text-[#FFE95C]" />
+                  Guía de Fumigaciones Hernández
                 </span>
               </div>
             </div>
@@ -168,7 +171,7 @@ export default async function BlogPostPage({
               >
                 {post.sections.map((section, index) => (
                   <section key={section.heading} id={`seccion-${index + 1}`}>
-                    <p className="text-xs font-black uppercase tracking-[0.16em] text-[#118F1D]">
+                    <p className="text-xs font-black uppercase tracking-[0.16em] text-[#B41B1E]">
                       Punto {String(index + 1).padStart(2, '0')}
                     </p>
                     <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.55rem)] font-black leading-[1.08] tracking-[-0.035em] text-[#212121]">
@@ -180,13 +183,13 @@ export default async function BlogPostPage({
                       ))}
                     </div>
                     {section.bullets && (
-                      <ul className="mt-6 space-y-3 rounded-[1.5rem] border border-black/8 bg-[#F4F8F4] p-6">
+                      <ul className="mt-6 space-y-3 rounded-[1.5rem] border border-black/8 bg-[#F5F8FC] p-6">
                         {section.bullets.map((bullet) => (
                           <li
                             key={bullet}
                             className="flex items-start gap-3 text-sm leading-6 text-[#4F5663]"
                           >
-                            <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#19D42B]" />
+                            <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#FFDF00]" />
                             <span>{bullet}</span>
                           </li>
                         ))}
@@ -196,7 +199,7 @@ export default async function BlogPostPage({
                 ))}
               </div>
 
-              <div className="mt-14 rounded-[2rem] bg-[#FBC02D] p-7 text-[#212121] md:p-9">
+              <div className="mt-14 rounded-[2rem] bg-[#F07070] p-7 text-[#212121] md:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.16em]">
                   Siguiente paso
                 </p>
@@ -210,7 +213,7 @@ export default async function BlogPostPage({
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href={post.serviceHref}
-                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#102414] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#102414]"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1C3266] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#1C3266]"
                   >
                     <ShieldCheck className="size-5" />
                     {post.serviceLabel}
@@ -219,7 +222,7 @@ export default async function BlogPostPage({
                     href={quoteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#102414]/25 px-6 text-sm font-black transition hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#102414]"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#1C3266]/25 px-6 text-sm font-black transition hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#1C3266]"
                   >
                     <MessageCircle className="size-5" />
                     Consultar por WhatsApp
@@ -229,8 +232,8 @@ export default async function BlogPostPage({
             </div>
 
             <aside className="self-start lg:sticky lg:top-28">
-              <div className="rounded-[1.75rem] border border-black/8 bg-[#F7F9F7] p-6">
-                <p className="text-xs font-black uppercase tracking-[0.15em] text-[#118F1D]">
+              <div className="rounded-[1.75rem] border border-black/8 bg-[#F6F9FC] p-6">
+                <p className="text-xs font-black uppercase tracking-[0.15em] text-[#B41B1E]">
                   En esta guía
                 </p>
                 <ol className="mt-5 space-y-4">
@@ -238,9 +241,9 @@ export default async function BlogPostPage({
                     <li key={section.heading}>
                       <a
                         href={`#seccion-${index + 1}`}
-                        className="group flex items-start gap-3 text-sm font-bold leading-5 text-[#545C55] hover:text-[#118F1D]"
+                        className="group flex items-start gap-3 text-sm font-bold leading-5 text-[#545C68] hover:text-[#B41B1E]"
                       >
-                        <span className="font-black text-[#19D42B]">
+                        <span className="font-black text-[#FFDF00]">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <span>{section.heading}</span>
@@ -250,10 +253,10 @@ export default async function BlogPostPage({
                 </ol>
               </div>
 
-              <div className="mt-5 rounded-[1.75rem] bg-[#102414] p-6 text-white">
-                <MessageCircle className="size-7 text-[#78ED84]" />
+              <div className="mt-5 rounded-[1.75rem] bg-[#1C3266] p-6 text-white">
+                <MessageCircle className="size-7 text-[#FFE95C]" />
                 <p className="mt-4 text-lg font-black leading-6">
-                  Atención profesional 24/7
+                  Atención 24 horas
                 </p>
                 <p className="mt-3 text-sm leading-6 text-white/62">
                   Cuéntanos qué observaste y en qué zona estás.
@@ -262,7 +265,7 @@ export default async function BlogPostPage({
                   href={quoteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#19D42B] px-5 text-sm font-black text-[#102414]"
+                  className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#FFDF00] px-5 text-sm font-black text-[#1C3266]"
                 >
                   Escribir ahora
                 </a>
@@ -271,11 +274,11 @@ export default async function BlogPostPage({
           </div>
         </div>
 
-        <section className="border-t border-black/8 bg-[#F4F8F4] py-18 md:py-24">
+        <section className="border-t border-black/8 bg-[#F5F8FC] py-18 md:py-24">
           <div className="container">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#118F1D]">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                   Sigue aprendiendo
                 </p>
                 <h2 className="mt-3 text-[clamp(2rem,5vw,3.2rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
@@ -284,7 +287,7 @@ export default async function BlogPostPage({
               </div>
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-sm font-black text-[#118F1D] hover:text-[#102414]"
+                className="inline-flex items-center gap-2 text-sm font-black text-[#B41B1E] hover:text-[#1C3266]"
               >
                 Ver todo el blog
                 <ArrowRight className="size-4" />
@@ -296,9 +299,9 @@ export default async function BlogPostPage({
                 <Link
                   key={item.slug}
                   href={`/blog/${item.slug}`}
-                  className="group overflow-hidden rounded-[1.5rem] border border-black/8 bg-white transition hover:-translate-y-1 hover:border-[#19D42B]/60 hover:shadow-[0_18px_42px_rgba(16,36,20,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
+                  className="group overflow-hidden rounded-[1.5rem] border border-black/8 bg-white transition hover:-translate-y-1 hover:border-[#FFDF00]/60 hover:shadow-[0_18px_42px_rgba(28,50,102,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-[#E9FBEA]">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-[#FFF8DC]">
                     <Image
                       src={item.image}
                       alt={item.imageAlt}
@@ -308,13 +311,13 @@ export default async function BlogPostPage({
                     />
                   </div>
                   <div className="p-5">
-                    <p className="text-xs font-black uppercase tracking-[0.12em] text-[#118F1D]">
+                    <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B41B1E]">
                       {item.category}
                     </p>
-                    <h3 className="mt-3 text-lg font-black leading-6 text-[#212121] transition group-hover:text-[#118F1D]">
+                    <h3 className="mt-3 text-lg font-black leading-6 text-[#212121] transition group-hover:text-[#B41B1E]">
                       {item.title}
                     </h3>
-                    <span className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#118F1D]">
+                    <span className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#B41B1E]">
                       Leer guía
                       <ArrowRight className="size-3.5" />
                     </span>
@@ -325,7 +328,7 @@ export default async function BlogPostPage({
 
             <Link
               href="/blog"
-              className="mt-9 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#545C55] hover:text-[#118F1D]"
+              className="mt-9 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#545C68] hover:text-[#B41B1E]"
             >
               <ArrowLeft className="size-4" />
               Volver al blog

@@ -69,18 +69,18 @@
   --card-foreground: #212121;
   --popover: #ffffff;
   --popover-foreground: #212121;
-  --primary: #19D42B;
+  --primary: #FFDF00;
   --primary-foreground: #212121;
-  --secondary: #FBC02D;
+  --secondary: #F07070;
   --secondary-foreground: #212121;
   --muted: #f5f5f5;
   --muted-foreground: #5a6070;
-  --accent: #FBC02D;
+  --accent: #F07070;
   --accent-foreground: #212121;
   --destructive: oklch(0.577 0.245 27.325);
   --border: #e5e8ec;
   --input: #e5e8ec;
-  --ring: #19D42B;
+  --ring: #FFDF00;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -88,22 +88,22 @@
   --chart-5: oklch(0.269 0 0);
   --radius: 0.75rem; /* 12px default */
 
-  /* ── Design System Tokens (Fumcon) ── */
-  --ds-brand-green: #19D42B;
-  --ds-brand-yellow: #FBC02D;
-  --ds-brand-red: #FBC02D;
+  /* ── Design System Tokens (Fumigaciones Hernández) ── */
+  --ds-brand-green: #FFDF00;
+  --ds-brand-yellow: #F07070;
+  --ds-brand-red: #F07070;
   --ds-text-main: #212121;
   --ds-bg-main: #ffffff;
   --ds-900: #212121;
   --ds-800: #1a1a1a;
-  --ds-700: #19D42B;
-  --ds-600: #13AA23;
+  --ds-700: #FFDF00;
+  --ds-600: #D9BE00;
   --ds-500: #5FE66B;
-  --ds-100: #E9FBEA;
+  --ds-100: #FFF8DC;
   --ds-50:  #F5FFF6;
-  --ds-green:    #19D42B;
-  --ds-green-dk: #13AA23;
-  --ds-green-50: #E9FBEA;
+  --ds-green:    #FFDF00;
+  --ds-green-dk: #D9BE00;
+  --ds-green-50: #FFF8DC;
   --ds-off:    #F8F8F8;
   --ds-text:   #212121;
   --ds-muted:  #5A6070;
@@ -119,12 +119,12 @@
   --fs-4xl: clamp(2.75rem,   6vw,   4rem);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: #212121;
-  --sidebar-primary: #19D42B;
+  --sidebar-primary: #FFDF00;
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: #212121;
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: #19D42B;
+  --sidebar-ring: #FFDF00;
 }
 
 .dark {

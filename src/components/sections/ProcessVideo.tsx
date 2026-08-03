@@ -46,7 +46,7 @@ export function ProcessVideo() {
             <FadeUp delay={0.2}>
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
-                  <span className="text-[#19D42B] font-black uppercase tracking-wider text-xs">
+                  <span className="text-[#FFDF00] font-black uppercase tracking-wider text-xs">
                     {isES ? 'Nuestro Método' : 'Our Method'}
                   </span>
                   <h2 className="text-[#212121] font-black text-3xl md:text-4xl leading-[1.1] tracking-tight">
@@ -61,8 +61,8 @@ export function ProcessVideo() {
 
                 <div className="flex flex-col gap-4 mt-2">
                   {steps.map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-4 bg-white rounded border border-[#E5E8EC] shadow-sm hover:border-[#19D42B] transition-colors">
-                      <div className="bg-[#E9FBEA] text-[#19D42B] rounded p-2 flex-shrink-0 mt-1">
+                    <div key={idx} className="flex items-start gap-4 p-4 bg-white rounded border border-[#E5E8EC] shadow-sm hover:border-[#FFDF00] transition-colors">
+                      <div className="bg-[#FFF8DC] text-[#FFDF00] rounded p-2 flex-shrink-0 mt-1">
                         <CheckCircle2 className="size-5" />
                       </div>
                       <div>

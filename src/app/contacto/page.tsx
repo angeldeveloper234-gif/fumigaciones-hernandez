@@ -6,15 +6,16 @@ import { generatePageMetadata } from '@/lib/seo'
 import { breadcrumbSchema } from '@/lib/structured-data'
 
 export const metadata = generatePageMetadata({
-  title: 'Contacto — Atención de Plagas 24/7',
+  title: 'Contacto y Cotización',
   description:
-    'Contacta a Fumcon del Sureste para una inspección de plagas en Yucatán y Quintana Roo. Atención por teléfono y WhatsApp las 24 horas.',
+    'Contacta a Fumigaciones Hernández para una inspección sin costo en Tampico, Madero y Altamira. Atención por teléfono y WhatsApp, atención las 24 horas.',
   path: '/contacto',
   keywords: [
-    'contacto Fumcon',
-    'fumigación 24 horas',
+    'contacto Fumigaciones Hernández',
+    'fumigación urgente a domicilio',
     'inspección de plagas',
-    'fumigadora Yucatán Quintana Roo',
+    'fumigadora Tampico',
+    'fumigación urgente a domicilio',
   ],
 })
 
@@ -27,10 +28,10 @@ export default function ContactPage() {
           { name: 'Contacto', path: '/contacto' },
         ])}
       />
-      <section className="relative overflow-hidden bg-[#102414] py-18 text-white md:py-24">
+      <section className="relative overflow-hidden bg-[#1C3266] py-18 text-white md:py-24">
         <div
           aria-hidden="true"
-          className="absolute -right-24 -top-24 size-96 rounded-full bg-[#19D42B]/12 blur-3xl"
+          className="absolute -right-24 -top-24 size-96 rounded-full bg-[#FFDF00]/12 blur-3xl"
         />
         <div className="container relative">
           <nav
@@ -41,12 +42,12 @@ export default function ContactPage() {
               Inicio
             </Link>
             <ArrowRight className="size-3" />
-            <span className="text-[#78ED84]">Contacto</span>
+            <span className="text-[#FFE95C]">Contacto</span>
           </nav>
           <div className="mt-10 max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#19D42B]/35 bg-[#19D42B]/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-[#78ED84]">
-              <Clock3 className="size-4 text-[#FBC02D]" />
-              Atención disponible 24/7
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#FFDF00]/35 bg-[#FFDF00]/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-[#FFE95C]">
+              <Clock3 className="size-4 text-[#F07070]" />
+              Atención 24 horas
             </div>
             <h1 className="mt-6 text-[clamp(2.7rem,7vw,5rem)] font-black leading-[0.95] tracking-[-0.05em]">
               Cuéntanos qué plaga viste y dónde estás

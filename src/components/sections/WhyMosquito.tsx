@@ -75,14 +75,14 @@ export function WhyMosquito() {
 
         <div className="max-w-3xl mx-auto text-center mb-14">
           <FadeUp>
-            <div className="inline-flex items-center gap-2 text-[#19D42B] text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-4">
-              <span className="w-5 h-px bg-[#19D42B]" />
+            <div className="inline-flex items-center gap-2 text-[#FFDF00] text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-4">
+              <span className="w-5 h-px bg-[#FFDF00]" />
               {c.eyebrow}
-              <span className="w-5 h-px bg-[#19D42B]" />
+              <span className="w-5 h-px bg-[#FFDF00]" />
             </div>
             <h2 className="text-h2 font-black tracking-tighter uppercase text-[#212121] leading-[1.1]">
               {c.title}{' '}
-              <span className="text-[#19D42B]">{c.titleHighlight}</span>
+              <span className="text-[#FFDF00]">{c.titleHighlight}</span>
             </h2>
             <p className="text-[#5A6070] mt-4 text-base leading-relaxed max-w-[60ch] mx-auto">
               {c.description}
@@ -98,7 +98,7 @@ export function WhyMosquito() {
                 key={i}
                 className="text-center p-6 bg-white rounded border border-[#E5E8EC] shadow-sm"
               >
-                <p className="font-black text-[#19D42B] leading-none text-[clamp(1.75rem,4vw,2.75rem)]">
+                <p className="font-black text-[#FFDF00] leading-none text-[clamp(1.75rem,4vw,2.75rem)]">
                   {s.value}
                 </p>
                 <p className="text-[#5A6070] text-xs font-medium mt-2 uppercase tracking-wide leading-tight">
@@ -114,8 +114,8 @@ export function WhyMosquito() {
           {c.problems.map((p, i) => (
             <FadeUp key={i} delay={0.15 + i * 0.1}>
               <div className="bg-white rounded p-6 border border-[#E5E8EC] shadow-sm flex flex-col gap-3 h-full">
-                <div className="size-10 rounded bg-[#E9FBEA] flex items-center justify-center flex-shrink-0">
-                  <p.Icon className="size-5 text-[#19D42B]" />
+                <div className="size-10 rounded bg-[#FFF8DC] flex items-center justify-center flex-shrink-0">
+                  <p.Icon className="size-5 text-[#FFDF00]" />
                 </div>
                 <h3 className="font-black text-[#212121] uppercase tracking-tight text-sm">
                   {p.title}

@@ -58,12 +58,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [absoluteUrl(getPostOgImage(post))],
   }))
 
+  // La prioridad refleja la estrategia real, no un valor plano: las plagas y zonas
+  // cabeza de campaña van por delante de la cola larga. Ver `hernandez_seo.md` §4.
+  const priorityByRank = { 1: 0.9, 2: 0.8, 3: 0.7 } as const
+
   const serviceRoutes: MetadataRoute.Sitemap = PEST_SERVICES.map(
     (service) => ({
       url: `${SITE.url}/servicios/${service.slug}`,
       lastModified: now,
       changeFrequency: 'monthly',
-      priority: 0.85,
+      priority: priorityByRank[service.seoPriority],
       images: [absoluteUrl(getServiceOgImage(service.slug))],
     }),
   )
@@ -72,7 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE.url}/cobertura/${area.slug}`,
     lastModified: now,
     changeFrequency: 'monthly',
-    priority: 0.8,
+    priority: priorityByRank[area.seoPriority],
     images: [absoluteUrl(getCoverageOgImage(area))],
   }))
 

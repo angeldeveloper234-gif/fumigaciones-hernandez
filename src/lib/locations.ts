@@ -6,20 +6,31 @@ import {
   type ServiceSlug,
 } from './services'
 
+/**
+ * Zonas de cobertura de Fumigaciones Hernández (Tampico, Tamaulipas).
+ *
+ * La zona conurbada del sur de Tamaulipas —Tampico, Ciudad Madero y Altamira— es un
+ * mercado continuo: la gente cruza de un municipio a otro a diario y busca indistintamente
+ * "fumigaciones Tampico" viva donde viva. Las tres son cabeza de estrategia.
+ *
+ * La base física está en Ciudad Madero (Centenario 503, Col. Obrera), lo que da ventaja
+ * de proximidad real frente a competidores que solo cubren Tampico centro.
+ *
+ * Cada zona necesita contenido genuinamente distinto. Una página por municipio que solo
+ * cambia el nombre es doorway spam y Google la trata como tal.
+ */
 export type CoverageSlug =
-  | 'merida'
-  | 'cancun'
-  | 'playa-del-carmen'
-  | 'tulum'
-  | 'chetumal'
-  | 'bacalar'
-  | 'jose-maria-morelos'
-  | 'felipe-carrillo-puerto'
+  | 'tampico'
+  | 'ciudad-madero'
+  | 'altamira'
+  | 'pueblo-viejo'
+  | 'panuco'
+  | 'aldama'
 
 export interface CoverageArea {
   slug: CoverageSlug
   name: string
-  state: 'Yucatán' | 'Quintana Roo'
+  state: 'Tamaulipas' | 'Veracruz'
   h1: string
   metaTitle: string
   metaDescription: string
@@ -29,168 +40,218 @@ export interface CoverageArea {
   commonPestSlugs: readonly ServiceSlug[]
   response: string
   relatedSlugs: readonly CoverageSlug[]
+  /** Colonias y zonas concretas: dan señal local real y capturan búsquedas de cola larga. */
+  neighborhoods: readonly string[]
+  /** 1 = cabeza de estrategia, 2 = conurbado, 3 = cola larga regional. */
+  seoPriority: 1 | 2 | 3
 }
 
 export const COVERAGE_AREAS: readonly CoverageArea[] = [
   {
-    slug: 'merida',
-    name: 'Mérida',
-    state: 'Yucatán',
-    h1: 'Fumigación y Control de Plagas en Mérida',
-    metaTitle: 'Fumigación en Mérida — Servicio 24h | Fumcon del Sureste',
+    slug: 'tampico',
+    name: 'Tampico',
+    state: 'Tamaulipas',
+    h1: 'Fumigación y Control de Plagas en Tampico',
+    metaTitle: 'Fumigaciones en Tampico | Atención 24 Horas',
     metaDescription:
-      'Fumigación profesional 24/7 en Mérida para cucarachas, alacranes, termitas y otras plagas. Inspección y cotización sin costo.',
+      'Fumigación y control de plagas en Tampico: moscos, cucarachas, termitas y ratas. Expertos en la zona conurbada, atención 24 horas y los mejores precios.',
     shortDescription:
-      'Nuestra sede operativa: respuesta para hogares y negocios de la capital yucateca.',
+      'La ciudad con más servicios que atendemos: vivienda, comercio y centro histórico.',
     localContext: [
-      'Mérida es la sede de Fumcon y el punto desde el que coordinamos servicios para hogares, oficinas y comercios de la capital yucateca. El clima cálido durante gran parte del año permite que distintas plagas encuentren alimento, humedad y refugio dentro de las propiedades.',
-      'Las consultas más frecuentes están relacionadas con cucarachas en cocinas y drenajes, alacranes que ingresan desde patios y termitas que afectan madera o mobiliario. La inspección permite distinguir la actividad real y seleccionar un tratamiento preciso para cada inmueble.',
+      'Tampico concentra la mayor parte de los servicios que realizamos. El clima cálido y húmedo del Golfo permite que moscos, cucarachas americanas y termitas mantengan actividad prácticamente todo el año, sin la pausa invernal que sí existe en el altiplano.',
+      'El centro histórico tiene una particularidad que condiciona el trabajo: mucha construcción antigua con estructura y detalles de madera, en un ambiente de humedad constante. Es el escenario ideal para termitas, y el daño suele descubrirse cuando ya es estructural.',
+      'La cercanía de la Laguna del Carpintero y del río Pánuco añade presión de moscos durante toda la temporada de lluvias. En esas zonas el control sostenido depende tanto de la nebulización como de eliminar los criaderos de agua estancada alrededor de la propiedad.',
     ],
-    propertyTypes: ['Casas y departamentos', 'Oficinas y comercios', 'Restaurantes y locales'],
-    commonPestSlugs: ['cucarachas', 'alacranes', 'termitas'],
+    propertyTypes: [
+      'Casas y departamentos',
+      'Comercios y restaurantes',
+      'Oficinas',
+      'Edificios del centro histórico',
+    ],
+    commonPestSlugs: ['moscos', 'cucarachas', 'termitas'],
     response:
-      'Al operar desde Mérida podemos organizar atención programada y solicitudes urgentes las 24 horas. Antes de aplicar, confirmamos la plaga, revisamos accesos y explicamos preparación, reingreso y seguimiento.',
-    relatedSlugs: ['cancun', 'chetumal', 'jose-maria-morelos'],
+      'Atendemos Tampico con servicio programado y urgencias las 24 horas. Antes de aplicar confirmamos la plaga, revisamos accesos y explicamos la preparación, el tiempo de reingreso y el seguimiento.',
+    relatedSlugs: ['ciudad-madero', 'altamira', 'pueblo-viejo'],
+    neighborhoods: [
+      'Zona Centro',
+      'Colonia Águila',
+      'Smith',
+      'Del Pueblo',
+      'Altavista',
+      'Laguna del Carpintero',
+      'Guadalupe',
+      'Tancol',
+    ],
+    seoPriority: 1,
   },
   {
-    slug: 'cancun',
-    name: 'Cancún',
-    state: 'Quintana Roo',
-    h1: 'Fumigación y Control de Plagas en Cancún',
-    metaTitle: 'Fumigación en Cancún — Servicio 24h | Fumcon',
+    slug: 'ciudad-madero',
+    name: 'Ciudad Madero',
+    state: 'Tamaulipas',
+    h1: 'Fumigación y Control de Plagas en Ciudad Madero',
+    metaTitle: 'Fumigaciones en Ciudad Madero | Servicio Local 24 h',
     metaDescription:
-      'Control de plagas y fumigación 24/7 en Cancún para casas, hoteles, restaurantes y comercios. Atención en Quintana Roo.',
+      'Fumigación en Ciudad Madero desde nuestra base en la Col. Obrera. Control de moscos, cucarachas, termitas y ratas con atención 24 horas y precios de la zona.',
     shortDescription:
-      'Control para zonas residenciales, hoteleras y comerciales expuestas a humedad constante.',
+      'Nuestra base: estamos en la Col. Obrera, así que aquí llegamos más rápido que nadie.',
     localContext: [
-      'Cancún combina áreas residenciales, comercios y una operación turística intensa. La humedad, las lluvias y el movimiento continuo de alimentos, equipaje y mercancías facilitan la entrada o dispersión de plagas en cocinas, bodegas, habitaciones y áreas exteriores.',
-      'Mosquitos en jardines y zonas con agua, cucarachas cerca de drenajes y roedores en áreas de almacenamiento son problemas que requieren respuesta organizada. En propiedades con atención al público, actuar pronto también ayuda a mantener limpieza, continuidad operativa y confianza.',
+      'Ciudad Madero es nuestra casa. Operamos desde Centenario 503, en la Col. Obrera, lo que nos permite atender urgencias en cualquier punto del municipio sin cargos por desplazamiento y en tiempos que ningún competidor de fuera puede igualar.',
+      'La franja cercana a Playa Miramar y a la laguna suma humedad constante y vegetación, una combinación que favorece moscos y alacranes en patios, cocheras y jardines. En vivienda con patio es donde más trabajo de control perimetral hacemos.',
+      'La actividad de la refinería y su zona de influencia genera además demanda de servicio en comercios, comedores y bodegas que necesitan mantener condiciones sanitarias verificables.',
     ],
-    propertyTypes: ['Casas y condominios', 'Hoteles y alojamientos', 'Restaurantes y comercios'],
-    commonPestSlugs: ['mosquitos', 'cucarachas', 'roedores'],
+    propertyTypes: [
+      'Casas con patio y jardín',
+      'Departamentos',
+      'Comercios y comedores',
+      'Bodegas',
+    ],
+    commonPestSlugs: ['moscos', 'cucarachas', 'alacranes'],
     response:
-      'Fumcon adapta la inspección a la actividad del inmueble para intervenir sin aplicar producto de más. Coordinamos horarios, preparación y seguimiento con responsables de vivienda, mantenimiento u operación.',
-    relatedSlugs: ['playa-del-carmen', 'tulum', 'bacalar'],
+      'Al estar basados en Ciudad Madero somos la opción más rápida del municipio. Atendemos urgencias las 24 horas y coordinamos servicio programado con la frecuencia que requiera cada propiedad.',
+    relatedSlugs: ['tampico', 'altamira', 'pueblo-viejo'],
+    neighborhoods: [
+      'Col. Obrera',
+      'Primero de Mayo',
+      'Ampliación Unidad Nacional',
+      'Playa Miramar',
+      'Las Américas',
+      'Monte Alto',
+      'Talleres',
+    ],
+    seoPriority: 1,
   },
   {
-    slug: 'playa-del-carmen',
-    name: 'Playa del Carmen',
-    state: 'Quintana Roo',
-    h1: 'Fumigación y Control de Plagas en Playa del Carmen',
-    metaTitle: 'Fumigación en Playa del Carmen — Servicio 24h | Fumcon',
+    slug: 'altamira',
+    name: 'Altamira',
+    state: 'Tamaulipas',
+    h1: 'Fumigación y Control de Plagas en Altamira',
+    metaTitle: 'Fumigaciones en Altamira | Industrial y Residencial',
     metaDescription:
-      'Fumigación 24/7 en Playa del Carmen para casas, condominios, restaurantes y alojamientos. Control profesional de ocho plagas.',
+      'Control de plagas en Altamira para industria, bodegas y vivienda. Fumigación de ratas, cucarachas y moscos en el puerto industrial y la zona urbana.',
     shortDescription:
-      'Tratamientos para casas, condominios, restaurantes y propiedades de alta rotación.',
+      'El puerto industrial y su zona residencial: control para naves, bodegas y hogares.',
     localContext: [
-      'Playa del Carmen tiene una alta concentración de viviendas, condominios, restaurantes y alojamientos con rotación frecuente de personas y suministros. Ese movimiento, junto con el clima costero, crea múltiples rutas para que una plaga llegue y encuentre refugio.',
-      'Cucarachas en áreas de preparación, roedores en almacenes y mosquitos en patios son consultas habituales. En edificios compartidos, la inspección debe considerar ductos, drenajes, cuartos de servicio y zonas comunes para no limitarse al punto donde aparece la señal.',
+      'Altamira tiene dos caras que requieren enfoques distintos. Por un lado el Puerto Industrial, uno de los complejos petroquímicos y logísticos más grandes del país, donde el control de plagas no es una fumigación puntual sino un programa continuo con monitoreo y registro documentado.',
+      'En naves, bodegas y patios de maniobras la prioridad son los roedores: la entrada y salida constante de mercancía, los contenedores y la cercanía al agua mantienen una presión que solo se contiene combinando estaciones de cebo, monitoreo y sellado de accesos.',
+      'Por otro lado, la zona urbana y los fraccionamientos de Altamira presentan el cuadro residencial típico de la región: moscos en temporada de lluvias, cucarachas y alacranes en viviendas con patio o cercanas a terreno sin construir.',
     ],
-    propertyTypes: ['Casas y departamentos', 'Condominios y alojamientos', 'Restaurantes y cocinas'],
-    commonPestSlugs: ['cucarachas', 'roedores', 'mosquitos'],
+    propertyTypes: [
+      'Naves y bodegas industriales',
+      'Patios de maniobras',
+      'Fraccionamientos',
+      'Comercios',
+    ],
+    commonPestSlugs: ['ratas', 'cucarachas', 'moscos'],
     response:
-      'Organizamos el servicio según los horarios de residentes, huéspedes o personal. El técnico identifica las áreas críticas, aplica el método correspondiente y deja recomendaciones que el equipo de mantenimiento puede sostener.',
-    relatedSlugs: ['cancun', 'tulum', 'bacalar'],
+      'Para industria diseñamos el programa a partir de un levantamiento inicial: puntos críticos, ubicación de estaciones, frecuencia de visita y formato de reporte. En vivienda atendemos con servicio programado y urgencias.',
+    relatedSlugs: ['ciudad-madero', 'tampico', 'aldama'],
+    neighborhoods: [
+      'Puerto Industrial',
+      'Altamira Centro',
+      'Miramapolis',
+      'Villas de Altamira',
+      'Esfuerzo Nacional',
+      'Arenal',
+    ],
+    seoPriority: 1,
   },
   {
-    slug: 'tulum',
-    name: 'Tulum',
-    state: 'Quintana Roo',
-    h1: 'Fumigación y Control de Plagas en Tulum',
-    metaTitle: 'Fumigación en Tulum — Servicio 24h | Fumcon',
+    slug: 'pueblo-viejo',
+    name: 'Pueblo Viejo',
+    state: 'Veracruz',
+    h1: 'Fumigación y Control de Plagas en Pueblo Viejo',
+    metaTitle: 'Fumigaciones en Pueblo Viejo, Veracruz | Zona Conurbada',
     metaDescription:
-      'Control de alacranes, arañas, mosquitos y otras plagas en Tulum. Servicio de fumigación 24/7 para casas y hospedajes.',
+      'Fumigación en Pueblo Viejo y Villa Cuauhtémoc: control de moscos, cucarachas y ratas en viviendas y comercios de la zona conurbada del Pánuco.',
     shortDescription:
-      'Protección para casas y hospedajes cercanos a vegetación y áreas de selva.',
+      'Al otro lado del Pánuco: cobertura en Villa Cuauhtémoc y alrededores.',
     localContext: [
-      'La cercanía de Tulum con vegetación abundante hace que casas, desarrollos y hospedajes mantengan contacto constante con fauna exterior. Patios, materiales naturales, techos y accesos abiertos pueden convertirse en refugios o rutas de entrada.',
-      'Alacranes ocultos en grietas, arañas en zonas altas y mosquitos en jardines son algunas de las consultas más comunes. La solución empieza con reconocer el perímetro y las condiciones del terreno, no solamente con tratar el ejemplar encontrado dentro.',
+      'Pueblo Viejo forma parte de la misma zona conurbada aunque pertenezca a Veracruz. Cruzando el Pánuco, la dinámica de plagas es prácticamente idéntica a la de Tampico: humedad alta, vegetación y cercanía al agua todo el año.',
+      'La proximidad al río y a los esteros hace que los moscos sean la consulta dominante, sobre todo entre junio y noviembre. En viviendas cercanas a zonas de agua detenida el control requiere combinar nebulización con la eliminación física de criaderos.',
+      'En la parte comercial y de vivienda de Villa Cuauhtémoc atendemos el cuadro habitual de cucarachas y roedores, con la particularidad de que muchas construcciones tienen patios amplios y vegetación abundante.',
     ],
-    propertyTypes: ['Casas y villas', 'Hoteles y hospedajes', 'Restaurantes y áreas exteriores'],
-    commonPestSlugs: ['alacranes', 'aranas', 'mosquitos'],
+    propertyTypes: [
+      'Casas con patio',
+      'Comercios locales',
+      'Bodegas pequeñas',
+      'Zonas cercanas al río',
+    ],
+    commonPestSlugs: ['moscos', 'cucarachas', 'ratas'],
     response:
-      'Fumcon combina inspección interior y exterior, barreras en puntos de ingreso y tratamientos focalizados. Coordinamos preparación y reingreso para reducir interrupciones en propiedades habitadas o con huéspedes.',
-    relatedSlugs: ['playa-del-carmen', 'cancun', 'felipe-carrillo-puerto'],
+      'Cubrimos Pueblo Viejo y Villa Cuauhtémoc desde Ciudad Madero con servicio programado y urgencias sujetas a agenda. En zonas cercanas al agua la inspección se centra en localizar criaderos.',
+    relatedSlugs: ['tampico', 'panuco', 'ciudad-madero'],
+    neighborhoods: [
+      'Villa Cuauhtémoc',
+      'Pueblo Viejo Centro',
+      'La Puntilla',
+      'Anáhuac',
+    ],
+    seoPriority: 2,
   },
   {
-    slug: 'chetumal',
-    name: 'Chetumal',
-    state: 'Quintana Roo',
-    h1: 'Fumigación y Control de Plagas en Chetumal',
-    metaTitle: 'Fumigación en Chetumal — Servicio 24h | Fumcon',
+    slug: 'panuco',
+    name: 'Pánuco',
+    state: 'Veracruz',
+    h1: 'Fumigación y Control de Plagas en Pánuco',
+    metaTitle: 'Fumigaciones en Pánuco, Veracruz | Casas y Ranchos',
     metaDescription:
-      'Fumigación profesional en Chetumal con atención 24/7 para roedores, mosquitos, cucarachas y otras plagas.',
+      'Control de plagas en Pánuco: moscos, alacranes, garrapatas y roedores en viviendas, ranchos y comercios de la región del río Pánuco.',
     shortDescription:
-      'Atención para viviendas y negocios de la capital de Quintana Roo.',
+      'Región agrícola y ganadera: control en viviendas, ranchos y comercios.',
     localContext: [
-      'Chetumal reúne zonas residenciales, oficinas, comercios y bodegas rodeadas por vegetación propia del sur de Quintana Roo. El calor, la humedad y los periodos de lluvia sostienen actividad de insectos y favorecen refugios para roedores.',
-      'Ruidos o excrementos de ratas y ratones, mosquitos en exteriores y cucarachas en áreas húmedas son señales que conviene revisar desde el inicio. Cada caso requiere reconocer accesos, alimento disponible y condiciones de almacenamiento antes de decidir el método.',
+      'Pánuco es una región agrícola y ganadera, y eso cambia el perfil de plagas respecto a la zona urbana. Aquí las garrapatas son una consulta constante por la presencia de ganado y animales de trabajo, y aparecen tanto en corrales como dentro de las viviendas.',
+      'Los alacranes son el otro motivo frecuente de llamada. La cercanía entre casa, monte y áreas de cultivo facilita que se refugien en grietas, bardas, leña y material apilado contra la construcción.',
+      'En temporada de lluvias los moscos se disparan por la crecida del río y las áreas de agua detenida en terrenos y potreros.',
     ],
-    propertyTypes: ['Viviendas', 'Oficinas y comercios', 'Bodegas y locales'],
-    commonPestSlugs: ['roedores', 'mosquitos', 'cucarachas'],
+    propertyTypes: [
+      'Viviendas rurales',
+      'Ranchos y corrales',
+      'Comercios',
+      'Bodegas de grano',
+    ],
+    commonPestSlugs: ['garrapatas', 'alacranes', 'moscos'],
     response:
-      'Atendemos Chetumal con inspección, aplicación profesional y seguimiento. Para negocios podemos coordinar la visita con responsables de operación y dejar medidas preventivas claras para el personal.',
-    relatedSlugs: ['bacalar', 'jose-maria-morelos', 'felipe-carrillo-puerto'],
+      'Atendemos Pánuco con servicio programado. En propiedades con ganado coordinamos el tratamiento del inmueble y las áreas de descanso de los animales, y damos indicaciones claras de reingreso.',
+    relatedSlugs: ['pueblo-viejo', 'tampico', 'aldama'],
+    neighborhoods: [
+      'Pánuco Centro',
+      'Ciudad Cuauhtémoc',
+      'La Camelia',
+      'Zona rural',
+    ],
+    seoPriority: 3,
   },
   {
-    slug: 'bacalar',
-    name: 'Bacalar',
-    state: 'Quintana Roo',
-    h1: 'Fumigación y Control de Plagas en Bacalar',
-    metaTitle: 'Fumigación en Bacalar — Servicio 24h | Fumcon',
+    slug: 'aldama',
+    name: 'Aldama',
+    state: 'Tamaulipas',
+    h1: 'Fumigación y Control de Plagas en Aldama',
+    metaTitle: 'Fumigaciones en Aldama, Tamaulipas | Control de Plagas',
     metaDescription:
-      'Control de mosquitos y plagas de humedad en Bacalar. Fumigación 24/7 para casas, alojamientos, restaurantes y jardines.',
+      'Fumigación en Aldama: control de alacranes, arañas, moscos y roedores en viviendas, ranchos y comercios del norte de la zona conurbada.',
     shortDescription:
-      'Control de mosquitos y plagas asociadas con humedad en la zona lacustre.',
+      'Al norte de la conurbación: viviendas, ranchos y comercios de Aldama.',
     localContext: [
-      'La zona lacustre de Bacalar mantiene condiciones de humedad y vegetación que favorecen mosquitos y otros insectos. Casas, alojamientos y restaurantes suelen integrar jardines, terrazas y espacios abiertos que necesitan revisión tanto interior como exterior.',
-      'La presencia al atardecer, los recipientes con agua y la actividad cerca de drenajes o cocinas ayudan a ubicar el origen. Una fumigación efectiva debe acompañarse con control de criaderos, limpieza y correcciones que reduzcan nuevos refugios.',
+      'Aldama queda al norte de la zona conurbada, con un entorno donde la vivienda convive de cerca con monte, terreno sin construir y actividad ganadera. Esa frontera es la que explica la presencia de alacranes y arañas dentro de las casas.',
+      'Los alacranes se refugian en grietas de muro, huecos de losa, leña y material apilado contra la construcción, y entran buscando humedad e insectos. El control efectivo combina tratamiento de refugios con sellado de accesos, no solo aplicación perimetral.',
+      'En viviendas con patio y mascotas, pulgas y garrapatas completan el cuadro de consultas más habituales.',
     ],
-    propertyTypes: ['Casas y cabañas', 'Hoteles y alojamientos', 'Restaurantes y jardines'],
-    commonPestSlugs: ['mosquitos', 'cucarachas', 'hormigas'],
-    response:
-      'Seleccionamos nebulización, aspersión, gel u otro método después de inspeccionar. El técnico explica cómo preparar áreas exteriores, proteger objetos y mantener las recomendaciones tras el servicio.',
-    relatedSlugs: ['chetumal', 'felipe-carrillo-puerto', 'tulum'],
-  },
-  {
-    slug: 'jose-maria-morelos',
-    name: 'José María Morelos',
-    state: 'Quintana Roo',
-    h1: 'Fumigación y Control de Plagas en José María Morelos',
-    metaTitle: 'Fumigación en José María Morelos — Servicio 24h | Fumcon',
-    metaDescription:
-      'Fumigación 24/7 en José María Morelos para alacranes, roedores y otras plagas en propiedades rurales y semiurbanas.',
-    shortDescription:
-      'Respuesta para propiedades rurales y semiurbanas con actividad de alacranes y roedores.',
-    localContext: [
-      'En José María Morelos conviven áreas urbanas con propiedades cercanas a terrenos, vegetación y espacios de almacenamiento. Esa transición facilita que alacranes y roedores encuentren refugio en materiales, patios, bodegas o pasos de instalaciones.',
-      'Los avistamientos nocturnos, ruidos en techos, marcas de roído y grietas abiertas son señales útiles para una inspección. El tratamiento debe considerar el interior, el perímetro y el orden del entorno para reducir la actividad actual y nuevas entradas.',
+    propertyTypes: [
+      'Viviendas con patio',
+      'Ranchos',
+      'Comercios locales',
+      'Bodegas',
     ],
-    propertyTypes: ['Casas y patios', 'Comercios locales', 'Bodegas y propiedades rurales'],
-    commonPestSlugs: ['alacranes', 'roedores', 'garrapatas'],
+    commonPestSlugs: ['alacranes', 'aranas', 'pulgas'],
     response:
-      'Fumcon define barreras, estaciones, sellado o tratamiento exterior según lo encontrado. También dejamos acciones sencillas para ordenar materiales, proteger alimentos y vigilar los puntos críticos.',
-    relatedSlugs: ['felipe-carrillo-puerto', 'chetumal', 'merida'],
-  },
-  {
-    slug: 'felipe-carrillo-puerto',
-    name: 'Felipe Carrillo Puerto',
-    state: 'Quintana Roo',
-    h1: 'Fumigación y Control de Plagas en Felipe Carrillo Puerto',
-    metaTitle: 'Fumigación en Felipe Carrillo Puerto — Servicio 24h | Fumcon',
-    metaDescription:
-      'Control de alacranes, arañas y garrapatas en Felipe Carrillo Puerto. Fumigación profesional 24/7 para hogares y negocios.',
-    shortDescription:
-      'Tratamientos para propiedades del interior de Quintana Roo rodeadas de vegetación.',
-    localContext: [
-      'Felipe Carrillo Puerto está rodeado por vegetación y mantiene una relación cercana entre áreas habitadas y entorno natural. Alacranes, arañas y garrapatas pueden desplazarse hacia patios, bodegas, zonas de mascotas y habitaciones.',
-      'Una barrera perimetral ayuda, pero debe apoyarse en la revisión de grietas, materiales acumulados, pasto y accesos. El técnico identifica dónde se concentra la actividad para intervenir puntos concretos y no aplicar producto de forma innecesaria.',
+      'Cubrimos Aldama con servicio programado desde la zona conurbada. En vivienda cercana a monte o terreno baldío el trabajo se concentra en grietas, perímetro y sellado de accesos.',
+    relatedSlugs: ['altamira', 'tampico', 'panuco'],
+    neighborhoods: [
+      'Aldama Centro',
+      'Barra del Tordo',
+      'Zona rural',
     ],
-    propertyTypes: ['Hogares y patios', 'Negocios y bodegas', 'Zonas de mascotas'],
-    commonPestSlugs: ['alacranes', 'aranas', 'garrapatas'],
-    response:
-      'Coordinamos atención interior y exterior con indicaciones claras para personas y mascotas. El seguimiento se define según la plaga, la extensión del terreno y las condiciones observadas.',
-    relatedSlugs: ['jose-maria-morelos', 'chetumal', 'tulum'],
+    seoPriority: 3,
   },
 ] as const
 
@@ -212,6 +273,11 @@ export function getRelatedAreas(area: CoverageArea) {
   return area.relatedSlugs
     .map((slug) => getCoverageArea(slug))
     .filter((related): related is CoverageArea => Boolean(related))
+}
+
+/** Zonas ordenadas por prioridad SEO — la conurbación primero. */
+export function getAreasByPriority() {
+  return [...COVERAGE_AREAS].sort((a, b) => a.seoPriority - b.seoPriority)
 }
 
 export const ALL_AREA_SERVICES = PEST_SERVICES

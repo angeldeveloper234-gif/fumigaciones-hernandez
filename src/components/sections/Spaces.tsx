@@ -84,14 +84,14 @@ export function Spaces() {
 
         <FadeUp>
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-[#19D42B] text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-4">
-              <span className="w-5 h-px bg-[#19D42B]" />
+            <div className="inline-flex items-center gap-2 text-[#FFDF00] text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-4">
+              <span className="w-5 h-px bg-[#FFDF00]" />
               {c.eyebrow}
-              <span className="w-5 h-px bg-[#19D42B]" />
+              <span className="w-5 h-px bg-[#FFDF00]" />
             </div>
             <h2 className="text-h2 font-black tracking-tighter uppercase text-[#212121] leading-[1.1]">
               {c.title}{' '}
-              <span className="text-[#19D42B]">{c.titleHighlight}</span>
+              <span className="text-[#FFDF00]">{c.titleHighlight}</span>
             </h2>
           </div>
         </FadeUp>
@@ -103,9 +103,9 @@ export function Spaces() {
               <FadeUp key={i} delay={i * 0.1}>
                 <button
                   onClick={scrollToContact}
-                  className="group w-full text-left flex flex-col gap-4 p-6 bg-white rounded border border-[#E5E8EC] shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#19D42B] transition-all duration-200 cursor-pointer h-full"
+                  className="group w-full text-left flex flex-col gap-4 p-6 bg-white rounded border border-[#E5E8EC] shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#FFDF00] transition-all duration-200 cursor-pointer h-full"
                 >
-                  <div className="text-[#19D42B] bg-[#E9FBEA] p-3 rounded self-start group-hover:bg-[#19D42B] group-hover:text-white transition-colors duration-200">
+                  <div className="text-[#FFDF00] bg-[#FFF8DC] p-3 rounded self-start group-hover:bg-[#FFDF00] group-hover:text-white transition-colors duration-200">
                     {IconComponent && <IconComponent className="size-6" />}
                   </div>
                   <div className="flex-1">
@@ -114,7 +114,7 @@ export function Spaces() {
                     </h3>
                     <p className="text-[#5A6070] text-sm leading-relaxed">{space.desc}</p>
                   </div>
-                  <div className="flex items-center gap-1.5 text-[#19D42B] text-xs font-bold uppercase tracking-wide mt-auto">
+                  <div className="flex items-center gap-1.5 text-[#FFDF00] text-xs font-bold uppercase tracking-wide mt-auto">
                     {c.cta}
                     <ArrowRight className="size-3" />
                   </div>

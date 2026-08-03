@@ -20,7 +20,7 @@ export function Logos() {
   const { t } = useLanguage()
 
   return (
-    <section className="py-[clamp(3rem,8vw,6rem)] border-y border-slate-200/60 dark:border-slate-800/60 bg-slate-50/40 dark:bg-[#04111c] overflow-hidden relative">
+    <section className="py-[clamp(3rem,8vw,6rem)] border-y border-slate-200/60 dark:border-slate-800/60 bg-slate-50/40 dark:bg-[#111F42] overflow-hidden relative">
       <div className="container relative z-10">
         <FadeUp>
           <p className="text-center text-[1rem] font-bold text-[#212121]/60 dark:text-slate-400 uppercase tracking-[0.25em] mb-[2rem]">
@@ -31,15 +31,15 @@ export function Logos() {
         {/* Marquee viewport container with fading mask overlays */}
         <div className="relative w-full overflow-hidden select-none py-[1rem]">
           {/* Fading Edge Gradients */}
-          <div className="absolute inset-y-0 left-0 w-[4rem] sm:w-[8rem] bg-gradient-to-r from-slate-50/90 dark:from-[#04111c]/95 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-[4rem] sm:w-[8rem] bg-gradient-to-l from-slate-50/90 dark:from-[#04111c]/95 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-[4rem] sm:w-[8rem] bg-gradient-to-r from-slate-50/90 dark:from-[#111F42]/95 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-[4rem] sm:w-[8rem] bg-gradient-to-l from-slate-50/90 dark:from-[#111F42]/95 to-transparent z-10 pointer-events-none" />
 
           {/* Infinite Scroll Track */}
           <div className="flex w-max animate-marquee gap-[1.5rem] md:gap-[3rem] items-center">
             {MARQUEE_LOGOS.map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex items-center justify-center px-[2rem] py-[1rem] bg-white/70 dark:bg-slate-900/40 backdrop-blur-md border border-slate-100/50 dark:border-slate-800/30 w-[10rem] md:w-[12.5rem] h-[5.625rem] md:h-[6.875rem] transition-all duration-300 group hover:border-[#19D42B]/30 dark:hover:border-[#19D42B]/30 hover:shadow-sm hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+                className="flex items-center justify-center px-[2rem] py-[1rem] bg-white/70 dark:bg-slate-900/40 backdrop-blur-md border border-slate-100/50 dark:border-slate-800/30 w-[10rem] md:w-[12.5rem] h-[5.625rem] md:h-[6.875rem] transition-all duration-300 group hover:border-[#FFDF00]/30 dark:hover:border-[#FFDF00]/30 hover:shadow-sm hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
               >
                 <div className="relative w-full h-full opacity-60 dark:opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
                   <Image

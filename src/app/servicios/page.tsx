@@ -14,15 +14,17 @@ import { generatePageMetadata } from '@/lib/seo'
 import { whatsappUrl } from '@/lib/site'
 
 export const metadata = generatePageMetadata({
-  title: 'Servicios de Control de Plagas en el Sureste',
+  title: 'Servicios de Control de Plagas',
   description:
-    'Tratamientos profesionales para cucarachas, roedores, termitas, mosquitos, alacranes, hormigas, arañas y garrapatas en Yucatán y Quintana Roo.',
+    'Tratamientos para moscos, cucarachas, termitas, ratas, hormigas, alacranes, pulgas y arañas en Tampico, Ciudad Madero y Altamira.',
   path: '/servicios',
   keywords: [
-    'servicios de fumigación Mérida',
-    'control de plagas Yucatán',
-    'fumigación Quintana Roo',
-    'Fumcon servicios',
+    'servicios de fumigación Tampico',
+    'control de plagas Tamaulipas',
+    'fumigación Ciudad Madero',
+    'eliminar chinches de cama',
+    'desratización',
+    'Fumigaciones Hernández servicios',
   ],
 })
 
@@ -41,7 +43,7 @@ export default function ServicesPage() {
       />
 
       <div>
-        <section className="relative isolate overflow-hidden bg-[#102414] py-18 text-white md:py-24">
+        <section className="relative isolate overflow-hidden bg-[#1C3266] py-18 text-white md:py-24">
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
@@ -55,28 +57,28 @@ export default function ServicesPage() {
                 Inicio
               </Link>
               <ArrowRight className="size-3" />
-              <span className="text-[#78ED84]">Servicios</span>
+              <span className="text-[#FFE95C]">Servicios</span>
             </nav>
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.58fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#78ED84]">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
                   Soluciones para hogares y negocios
                 </p>
                 <h1 className="mt-4 max-w-4xl text-[clamp(2.7rem,7vw,5.25rem)] font-black leading-[0.95] tracking-[-0.05em]">
-                  Servicios de control de plagas en el sureste
+                  Servicios de control de plagas en Tampico y la zona conurbada
                 </h1>
               </div>
               <div>
                 <p className="text-base leading-7 text-white/70">
                   Inspeccionamos el origen, elegimos el método adecuado y damos
-                  seguimiento al resultado en Yucatán y Quintana Roo.
+                  seguimiento al resultado en la zona conurbada.
                 </p>
                 <a
                   href={quoteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#19D42B] px-6 text-sm font-black text-[#102414] transition hover:-translate-y-0.5 hover:bg-[#29E43A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                  className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#FFDF00] px-6 text-sm font-black text-[#1C3266] transition hover:-translate-y-0.5 hover:bg-[#FFE94D] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   <MessageCircle className="size-5" />
                   Solicitar inspección sin costo
@@ -88,10 +90,10 @@ export default function ServicesPage() {
 
         <PestGrid />
 
-        <section className="bg-[#F4F8F4] py-18 md:py-24">
+        <section className="bg-[#F5F8FC] py-18 md:py-24">
           <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#118F1D]">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                 Diagnóstico antes de aplicar
               </p>
               <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
@@ -124,12 +126,12 @@ export default function ServicesPage() {
               ].map((step, index) => (
                 <article
                   key={step.title}
-                  className="rounded-[1.5rem] border border-black/8 bg-white p-6 shadow-[0_12px_30px_rgba(16,36,20,0.06)]"
+                  className="rounded-[1.5rem] border border-black/8 bg-white p-6 shadow-[0_12px_30px_rgba(28,50,102,0.06)]"
                 >
-                  <span className="flex size-11 items-center justify-center rounded-xl bg-[#E9FBEA] text-[#118F1D]">
+                  <span className="flex size-11 items-center justify-center rounded-xl bg-[#FFF8DC] text-[#B41B1E]">
                     <step.icon className="size-5" />
                   </span>
-                  <p className="mt-5 text-xs font-black uppercase tracking-[0.12em] text-[#118F1D]">
+                  <p className="mt-5 text-xs font-black uppercase tracking-[0.12em] text-[#B41B1E]">
                     Paso {index + 1}
                   </p>
                   <h3 className="mt-2 text-lg font-black text-[#212121]">
@@ -146,11 +148,11 @@ export default function ServicesPage() {
 
         <Methods />
 
-        <section className="bg-[#FBC02D] py-14 text-[#212121]">
+        <section className="bg-[#F07070] py-14 text-[#212121]">
           <div className="container flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.16em]">
-                Atención profesional 24/7
+                Atención 24 horas
               </p>
               <h2 className="mt-2 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
                 Protege tu propiedad antes de que la actividad aumente
@@ -160,7 +162,7 @@ export default function ServicesPage() {
               href={quoteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-13 shrink-0 items-center justify-center gap-2 rounded-full bg-[#102414] px-7 text-sm font-black text-white transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#102414]"
+              className="inline-flex min-h-13 shrink-0 items-center justify-center gap-2 rounded-full bg-[#1C3266] px-7 text-sm font-black text-white transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C3266]"
             >
               Cotizar por WhatsApp
               <ArrowRight className="size-4" />

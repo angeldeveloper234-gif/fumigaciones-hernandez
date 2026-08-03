@@ -30,24 +30,25 @@ export function Header() {
 
   return (
     <>
-      <div className="bg-[#18321D] text-white">
+      <div className="bg-[#1C3266] text-white">
         <div className="container flex min-h-10 items-center justify-between gap-4 text-xs font-semibold">
           <p className="hidden items-center gap-2 text-white/75 md:flex">
-            <span className="size-1.5 rounded-full bg-[#19D42B]" />
-            Calle 44 572A, Los Pinos, Mérida, Yucatán
+            <span className="size-1.5 rounded-full bg-[#FFDF00]" />
+            {SITE.address.neighborhood}, {SITE.address.addressLocality},{' '}
+            {SITE.address.addressRegion}
           </p>
           <p className="flex items-center gap-2 text-white/85 md:hidden">
-            <Clock3 className="size-3.5 text-[#FBC02D]" />
-            Abierto 24/7
+            <Clock3 className="size-3.5 text-[#F07070]" />
+            {SITE.openingHoursLabel}
           </p>
           <div className="flex items-center gap-4">
             <span className="hidden items-center gap-1.5 text-white/75 sm:flex">
-              <Clock3 className="size-3.5 text-[#FBC02D]" />
-              Atención 24/7
+              <Clock3 className="size-3.5 text-[#F07070]" />
+              Atención 24 horas
             </span>
             <a
               href={SITE.phoneHref}
-              className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#FBC02D] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FBC02D]"
+              className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#F07070] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F07070]"
             >
               <Phone className="size-3.5" />
               {SITE.phone}
@@ -60,14 +61,14 @@ export function Header() {
         <div className="container flex min-h-[5.25rem] items-center justify-between gap-6">
           <Link
             href="/"
-            aria-label="Fumcon del Sureste, inicio"
-            className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
+            aria-label="Fumigaciones Hernández, inicio"
+            className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
           >
             <Image
               src={SITE.logo}
-              alt="Fumcon Servicios Integrales"
-              width={1408}
-              height={293}
+              alt="Fumigaciones Hernández"
+              width={640}
+              height={640}
               priority
               className="h-11 w-auto sm:h-12"
             />
@@ -81,7 +82,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-sm text-[0.78rem] font-extrabold uppercase tracking-[0.08em] text-[#212121] transition-colors hover:text-[#118F1D] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#19D42B]"
+                className="rounded-sm text-[0.78rem] font-extrabold uppercase tracking-[0.08em] text-[#212121] transition-colors hover:text-[#B41B1E] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
               >
                 {item.label}
               </Link>
@@ -97,7 +98,7 @@ export function Header() {
                   ? 'Cambiar idioma a inglés'
                   : 'Cambiar idioma a español'
               }
-              className="inline-flex size-10 items-center justify-center rounded-full text-[#212121] transition-colors hover:bg-[#E9FBEA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#19D42B]"
+              className="inline-flex size-10 items-center justify-center rounded-full text-[#212121] transition-colors hover:bg-[#FFF8DC] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFDF00]"
             >
               <Globe2 className="size-4" />
               <span className="sr-only">{language}</span>
@@ -107,7 +108,7 @@ export function Header() {
               href={quoteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden min-h-11 items-center gap-2 rounded-full bg-[#19D42B] px-5 text-sm font-extrabold text-[#102414] shadow-[0_10px_24px_rgba(25,212,43,0.22)] transition hover:-translate-y-0.5 hover:bg-[#22E437] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#118F1D] sm:inline-flex"
+              className="hidden min-h-11 items-center gap-2 rounded-full bg-[#FFDF00] px-5 text-sm font-extrabold text-[#1C3266] shadow-[0_10px_24px_rgba(255,223,0,0.22)] transition hover:-translate-y-0.5 hover:bg-[#FFE94D] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#B41B1E] sm:inline-flex"
             >
               <MessageCircle className="size-4" />
               Cotizar ahora
@@ -119,7 +120,7 @@ export function Header() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
               aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
-              className="inline-flex size-11 items-center justify-center rounded-full border border-black/10 text-[#212121] transition-colors hover:border-[#19D42B] hover:bg-[#E9FBEA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#19D42B] lg:hidden"
+              className="inline-flex size-11 items-center justify-center rounded-full border border-black/10 text-[#212121] transition-colors hover:border-[#FFDF00] hover:bg-[#FFF8DC] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFDF00] lg:hidden"
             >
               {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -151,15 +152,15 @@ export function Header() {
                 <Image
                   src={SITE.logo}
                   alt=""
-                  width={1408}
-                  height={293}
+                  width={640}
+                  height={640}
                   className="h-10 w-auto"
                 />
                 <button
                   type="button"
                   onClick={closeMenu}
                   aria-label="Cerrar menú"
-                  className="inline-flex size-10 items-center justify-center rounded-full bg-[#F4F7F4] focus-visible:outline-2 focus-visible:outline-[#19D42B]"
+                  className="inline-flex size-10 items-center justify-center rounded-full bg-[#F5F8FC] focus-visible:outline-2 focus-visible:outline-[#FFDF00]"
                 >
                   <X className="size-5" />
                 </button>
@@ -171,7 +172,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={closeMenu}
-                    className="border-b border-black/7 py-4 text-sm font-extrabold uppercase tracking-[0.08em] text-[#212121] hover:text-[#118F1D] focus-visible:outline-2 focus-visible:outline-[#19D42B]"
+                    className="border-b border-black/7 py-4 text-sm font-extrabold uppercase tracking-[0.08em] text-[#212121] hover:text-[#B41B1E] focus-visible:outline-2 focus-visible:outline-[#FFDF00]"
                   >
                     {item.label}
                   </Link>
@@ -184,14 +185,14 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}
-                  className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#19D42B] px-5 font-extrabold text-[#102414] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#118F1D]"
+                  className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#FFDF00] px-5 font-extrabold text-[#1C3266] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B41B1E]"
                 >
                   <MessageCircle className="size-5" />
                   Cotizar por WhatsApp
                 </a>
                 <a
                   href={SITE.phoneHref}
-                  className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-black/12 px-5 font-bold text-[#212121] focus-visible:outline-2 focus-visible:outline-[#19D42B]"
+                  className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-black/12 px-5 font-bold text-[#212121] focus-visible:outline-2 focus-visible:outline-[#FFDF00]"
                 >
                   <Phone className="size-4" />
                   {SITE.phone}
