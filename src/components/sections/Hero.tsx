@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   Star,
 } from 'lucide-react'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 import { PEST_SERVICES } from '@/lib/services'
 import { whatsappUrl } from '@/lib/site'
@@ -22,6 +23,7 @@ const heroImages = [
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#1C3266] text-white">
+      <SectionBackground id="hero" />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 opacity-35 [background-image:radial-gradient(circle_at_18%_12%,rgba(255,223,0,0.3),transparent_28%),radial-gradient(circle_at_85%_82%,rgba(180,27,30,0.2),transparent_25%)]"
@@ -31,23 +33,23 @@ export function Hero() {
         className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
       />
 
-      <div className="container grid min-h-[43rem] items-center gap-12 py-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(25rem,0.92fr)] lg:gap-16 lg:py-20">
+      <div className="container grid min-h-[34rem] items-center gap-10 py-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(25rem,0.92fr)] lg:gap-14 lg:py-16">
         <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#FFDF00]/40 bg-[#FFDF00]/12 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.13em] text-[#FFF0A0]">
+          <div className="t-kicker inline-flex items-center gap-2 rounded-full border border-[#FFDF00]/40 bg-[#FFDF00]/12 px-4 py-2 text-[#FFF0A0]">
             <span className="size-2 rounded-full bg-[#F07070] shadow-[0_0_0_5px_rgba(180,27,30,0.12)]" />
             {copy.hero.eyebrow}
           </div>
 
-          <h1 className="mt-7 max-w-4xl text-[clamp(2.65rem,7vw,5rem)] font-black leading-[0.98] tracking-[-0.045em] text-white [hyphens:auto] [overflow-wrap:break-word]">
+          <h1 className="t-h1 mt-4 max-w-3xl text-white [hyphens:auto] [overflow-wrap:break-word]">
             {copy.hero.title}{' '}
             <span className="text-[#FFDF00]">{copy.hero.highlight}</span>
           </h1>
 
-          <p className="mt-7 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/72 sm:text-lg">
+          <p className="t-body mt-4 border-l-2 border-[#F07070] pl-5 text-white/80">
             {copy.hero.description}
           </p>
 
-          <div className="mt-7 inline-flex flex-wrap items-center gap-3 rounded-2xl border border-white/12 bg-white/7 px-4 py-3 backdrop-blur-sm">
+          <div className="mt-5 inline-flex flex-wrap items-center gap-3 rounded-2xl border border-white/12 bg-white/7 px-4 py-3 backdrop-blur-sm">
             <span className="flex size-9 items-center justify-center rounded-full bg-white font-black text-[#4285F4]">
               G
             </span>
@@ -60,13 +62,13 @@ export function Hero() {
                   />
                 ))}
               </div>
-              <p className="mt-0.5 text-xs font-bold text-white/78">
+              <p className="mt-0.5 text-xs font-bold text-white/80">
                 {copy.hero.review}
               </p>
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <a
               href={whatsappUrl(
                 'Hola, necesito una inspección sin costo para control de plagas.',
@@ -87,7 +89,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <ul className="mt-9 grid gap-3 text-sm text-white/72 sm:grid-cols-3">
+          <ul className="mt-7 grid gap-3 text-sm text-white/80 sm:grid-cols-3">
             {copy.hero.assurances.map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#FFDF00]" />
@@ -103,7 +105,7 @@ export function Hero() {
             className="absolute -inset-6 rounded-[3rem] bg-[#FFDF00]/12 blur-2xl"
           />
           <div className="relative grid grid-cols-[1.1fr_0.9fr] gap-3">
-            <div className="relative min-h-[31rem] overflow-hidden rounded-[2.25rem] border border-white/12 bg-white/5 shadow-2xl">
+            <div className="relative min-h-[25rem] overflow-hidden rounded-[2.25rem] border border-white/12 bg-white/5 shadow-2xl">
               <Image
                 src={heroImages[0].image}
                 alt={`${heroImages[0].name}: plaga atendida por Fumigaciones Hernández en Tampico, Madero y Altamira`}
@@ -114,10 +116,10 @@ export function Hero() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1C3266]/72 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-xs font-extrabold uppercase tracking-[0.15em] text-[#FFE95C]">
+                <p className="t-kicker text-[#FFE95C]">
                   Respuesta especializada
                 </p>
-                <p className="mt-1 text-xl font-black">
+                <p className="mt-1 text-lg font-black">
                   Control de {heroImages[0].name.toLowerCase()}
                 </p>
               </div>
@@ -127,7 +129,7 @@ export function Hero() {
               {heroImages.slice(1).map((pest) => (
                 <div
                   key={pest.slug}
-                  className="relative min-h-[15rem] overflow-hidden rounded-[1.75rem] border border-white/12 bg-white/5 shadow-xl"
+                  className="relative min-h-[12rem] overflow-hidden rounded-[1.75rem] border border-white/12 bg-white/5 shadow-xl"
                 >
                   <Image
                     src={pest.image}

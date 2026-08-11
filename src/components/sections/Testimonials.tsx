@@ -1,5 +1,6 @@
 import { Quote, Star } from 'lucide-react'
 import { FadeUp } from '@/components/animations/FadeUp'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 
 const copy = HERNANDEZ_HOME.es.testimonials
@@ -14,16 +15,13 @@ function initials(name: string) {
 
 export function Testimonials() {
   return (
-    <section className="bg-[#F5F8FC] py-20 md:py-28">
+    <section className="section-y relative isolate overflow-hidden bg-[#F5F8FC]">
+      <SectionBackground id="trust" />
       <div className="container">
-        <div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
-              {copy.eyebrow}
-            </p>
-            <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
-              {copy.title}
-            </h2>
+            <p className="t-kicker text-[#B41B1E]">{copy.eyebrow}</p>
+            <h2 className="t-h2 mt-3 text-[#212121]">{copy.title}</h2>
           </div>
           <div className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-4 py-2.5 shadow-sm">
             <span className="flex size-8 items-center justify-center rounded-full bg-[#4285F4] font-black text-white">
@@ -45,7 +43,7 @@ export function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {copy.items.map((review, index) => (
             <FadeUp key={review.name} delay={index * 0.08}>
               <article className="relative flex h-full flex-col rounded-[1.5rem] border border-black/7 bg-white p-6 shadow-[0_14px_40px_rgba(28,50,102,0.06)] sm:p-7">
@@ -61,10 +59,10 @@ export function Testimonials() {
                     />
                   ))}
                 </div>
-                <blockquote className="mt-6 flex-1 text-[0.95rem] leading-7 text-[#4F5663]">
+                <blockquote className="t-body-sm mt-5 flex-1 text-[#4F5663]">
                   “{review.text}”
                 </blockquote>
-                <div className="mt-7 flex items-center gap-3 border-t border-black/7 pt-5">
+                <div className="mt-6 flex items-center gap-3 border-t border-black/7 pt-5">
                   <span className="flex size-11 items-center justify-center rounded-full bg-[#FFDF00] text-sm font-black text-[#1C3266]">
                     {initials(review.name)}
                   </span>

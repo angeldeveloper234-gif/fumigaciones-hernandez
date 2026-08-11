@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Clock3 } from 'lucide-react'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 import { getAllPosts } from '@/lib/blog'
 
@@ -8,19 +9,15 @@ const featuredPosts = getAllPosts().slice(0, 3)
 
 export function Blog() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="section-y relative isolate overflow-hidden bg-white">
+      <SectionBackground id="blog" />
       <div className="container">
-        <div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
-              {copy.eyebrow}
-            </p>
-            <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
-              {copy.title}
-            </h2>
-            <p className="mt-5 text-base leading-7 text-[#5A6070]">
-              {copy.description}
-            </p>
+            <p className="t-kicker text-[#B41B1E]">{copy.eyebrow}</p>
+            <h2 className="t-h2 mt-3 text-[#212121]">{copy.title}</h2>
+            {/* Ver nota en PestGrid: sobre imagen, el gris claro no llega a AA. */}
+            <p className="t-body mt-4 text-[#3E4650]">{copy.description}</p>
           </div>
           <Link
             href="/blog"
@@ -31,7 +28,7 @@ export function Blog() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {featuredPosts.map((article) => (
             <article
               key={article.slug}
@@ -46,11 +43,9 @@ export function Blog() {
                   {article.readingTime}
                 </span>
               </div>
-              <BookOpen className="mt-8 size-8 text-[#B41B1E]" />
-              <h3 className="mt-5 text-xl font-black leading-6 tracking-[-0.02em] text-[#212121]">
-                {article.title}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-[#5A6070]">
+              <BookOpen className="mt-7 size-8 text-[#B41B1E]" />
+              <h3 className="t-h3 mt-4 text-[#212121]">{article.title}</h3>
+              <p className="t-body-sm mt-3 text-[#5A6070]">
                 {article.summary}
               </p>
               <Link

@@ -6,6 +6,7 @@ import {
   MessageCircle,
   Phone,
 } from 'lucide-react'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 import { SITE, whatsappUrl } from '@/lib/site'
 
@@ -13,21 +14,21 @@ const copy = HERNANDEZ_HOME.es.contact
 
 export function Contact() {
   return (
-    <section id="contacto" className="bg-[#F5F8FC] py-20 md:py-28">
+    <section
+      id="contacto"
+      className="section-y relative isolate overflow-hidden bg-[#F5F8FC]"
+    >
+      <SectionBackground id="contact" />
       <div className="container">
         <div className="overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-[0_24px_70px_rgba(28,50,102,0.1)] md:rounded-[2.5rem]">
           <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
             <div className="bg-[#FFDF00] p-7 text-[#1C3266] sm:p-10 lg:p-14">
-              <p className="text-xs font-black uppercase tracking-[0.18em]">
-                {copy.eyebrow}
-              </p>
-              <h2 className="mt-5 max-w-2xl text-[clamp(2.2rem,5vw,4rem)] font-black leading-[0.98] tracking-[-0.045em]">
-                {copy.title}
-              </h2>
-              <p className="mt-6 max-w-xl text-base font-semibold leading-7 text-[#15351A]/75">
+              <p className="t-kicker">{copy.eyebrow}</p>
+              <h2 className="t-h2 mt-4 max-w-2xl">{copy.title}</h2>
+              <p className="t-body mt-5 font-semibold text-[#15351A]/80">
                 {copy.description}
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={whatsappUrl(
                     'Hola, necesito ayuda con una plaga. Quiero coordinar una inspección.',
@@ -94,9 +95,7 @@ function ContactItem({ icon: Icon, label, value, href }: ContactItemProps) {
         <Icon className="size-5" />
       </span>
       <span className="min-w-0">
-        <span className="block text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#78817A]">
-          {label}
-        </span>
+        <span className="t-kicker block text-[#5A6070]">{label}</span>
         <span className="mt-1 block break-words text-sm font-extrabold leading-6 text-[#212121]">
           {value}
         </span>

@@ -5,6 +5,7 @@ import {
   HeartHandshake,
   ShieldCheck,
 } from 'lucide-react'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 import { SITE, whatsappUrl } from '@/lib/site'
 
@@ -38,22 +39,15 @@ const credentials = [
 
 export function About() {
   return (
-    <section className="bg-[#F5F8FC] py-20 md:py-28">
-      <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+    <section className="section-y relative isolate overflow-hidden bg-[#F5F8FC]">
+      <SectionBackground id="about" />
+      <div className="container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
-            {copy.eyebrow}
-          </p>
-          <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
-            {copy.title}
-          </h2>
-          <p className="mt-6 text-base leading-7 text-[#4F5663]">
-            {copy.description}
-          </p>
-          <p className="mt-4 text-base leading-7 text-[#4F5663]">
-            {copy.secondary}
-          </p>
-          <div className="mt-7 flex flex-wrap gap-2">
+          <p className="t-kicker text-[#B41B1E]">{copy.eyebrow}</p>
+          <h2 className="t-h2 mt-3 text-[#212121]">{copy.title}</h2>
+          <p className="t-body mt-5 text-[#4F5663]">{copy.description}</p>
+          <p className="t-body mt-4 text-[#4F5663]">{copy.secondary}</p>
+          <div className="mt-6 flex flex-wrap gap-2">
             {copy.audiences.map((audience) => (
               <span
                 key={audience}
@@ -70,7 +64,7 @@ export function About() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#212121] px-6 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#B41B1E] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
+            className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#212121] px-6 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#B41B1E] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
           >
             Hablar con un especialista
           </a>
@@ -87,10 +81,8 @@ export function About() {
               }`}
             >
               <item.icon className="size-7" />
-              <p className="mt-8 text-xs font-black uppercase tracking-[0.14em] opacity-65">
-                {item.label}
-              </p>
-              <p className="mt-2 text-lg font-black leading-6">{item.value}</p>
+              <p className="t-kicker mt-7 opacity-70">{item.label}</p>
+              <p className="mt-2 text-base font-black leading-6">{item.value}</p>
             </article>
           ))}
         </div>

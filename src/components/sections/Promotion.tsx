@@ -1,4 +1,5 @@
 import { Check, MessageCircle, Tag } from 'lucide-react'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 import { whatsappUrl } from '@/lib/site'
 
@@ -6,7 +7,8 @@ const copy = HERNANDEZ_HOME.es.promotion
 
 export function Promotion() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="section-y relative isolate overflow-hidden bg-white">
+      <SectionBackground id="promotion" />
       <div className="container">
         <div className="relative overflow-hidden rounded-[2rem] bg-[#FFDF00] px-6 py-10 text-[#1C3266] shadow-[0_24px_70px_rgba(28,50,102,0.16)] sm:px-10 md:rounded-[2.75rem] lg:px-16 lg:py-14">
           <div
@@ -20,17 +22,15 @@ export function Promotion() {
 
           <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#F07070] px-4 py-2 text-xs font-black uppercase tracking-[0.13em] text-[#212121] shadow-sm">
+              <div className="t-kicker inline-flex items-center gap-2 rounded-full bg-[#F07070] px-4 py-2 text-[#212121] shadow-sm">
                 <Tag className="size-4" />
                 {copy.badge}
               </div>
-              <h2 className="mt-7 max-w-3xl text-[clamp(2.6rem,7vw,5.5rem)] font-black leading-[0.9] tracking-[-0.055em]">
-                {copy.title}
-              </h2>
-              <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#15351A]/75 sm:text-lg">
+              <h2 className="t-h2 mt-5 max-w-3xl">{copy.title}</h2>
+              <p className="t-body mt-5 font-semibold text-[#15351A]/80">
                 {copy.description}
               </p>
-              <ul className="mt-7 grid gap-3 sm:grid-cols-3">
+              <ul className="mt-6 grid gap-3 sm:grid-cols-3">
                 {copy.benefits.map((benefit) => (
                   <li
                     key={benefit}
@@ -46,14 +46,12 @@ export function Promotion() {
             </div>
 
             <div className="rounded-[1.75rem] bg-[#1C3266] p-6 text-center text-white shadow-2xl sm:p-8">
-              <p className="text-xs font-black uppercase tracking-[0.15em] text-white/55">
-                {copy.priceLabel}
-              </p>
+              <p className="t-kicker text-white/70">{copy.priceLabel}</p>
               <div className="mt-3 flex items-baseline justify-center gap-2">
-                <span className="text-6xl font-black tracking-[-0.06em] text-[#F07070] sm:text-7xl">
+                <span className="text-5xl font-black tracking-[-0.05em] text-[#F07070] sm:text-6xl">
                   {copy.price}
                 </span>
-                <span className="text-sm font-bold text-white/55">
+                <span className="text-sm font-bold text-white/70">
                   {copy.currency}
                 </span>
               </div>
@@ -69,7 +67,7 @@ export function Promotion() {
                 <MessageCircle className="size-5" />
                 {copy.cta}
               </a>
-              <p className="mt-4 text-[0.7rem] leading-5 text-white/45">
+              <p className="mt-4 text-xs leading-5 text-white/70">
                 Aplican condiciones según inspección y tipo de plaga.
               </p>
             </div>

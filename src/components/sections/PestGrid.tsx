@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { FadeUp } from '@/components/animations/FadeUp'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 import { PEST_SERVICES } from '@/lib/services'
 
@@ -9,21 +10,23 @@ const copy = HERNANDEZ_HOME.es.pests
 
 export function PestGrid() {
   return (
-    <section id="servicios" className="bg-white py-20 md:py-28">
+    <section
+      id="servicios"
+      className="section-y relative isolate overflow-hidden bg-white"
+    >
+      <SectionBackground id="pests" />
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
-            {copy.eyebrow}
-          </p>
-          <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.05] tracking-[-0.035em] text-[#212121]">
-            {copy.title}
-          </h2>
-          <p className="mx-auto mt-5 text-base leading-7 text-[#5A6070]">
+          <p className="t-kicker text-[#B41B1E]">{copy.eyebrow}</p>
+          <h2 className="t-h2 mt-3 text-[#212121]">{copy.title}</h2>
+          {/* #3E4650 y no el #5A6070 del template: este párrafo va sobre la
+              imagen de sección y el gris claro no llega a AA ahí. */}
+          <p className="t-body mx-auto mt-4 text-[#3E4650]">
             {copy.description}
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PEST_SERVICES.map((pest, index) => (
             <FadeUp key={pest.slug} delay={Math.min(index * 0.04, 0.2)}>
               <Link
@@ -45,14 +48,12 @@ export function PestGrid() {
                 </div>
                 <div className="flex min-h-36 flex-col p-5">
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-xl font-black tracking-[-0.02em] text-[#212121]">
-                      {pest.name}
-                    </h3>
+                    <h3 className="t-h3 text-[#212121]">{pest.name}</h3>
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#FFF8DC] text-[#B41B1E] transition group-hover:bg-[#FFDF00] group-hover:text-[#1C3266]">
                       <ArrowUpRight className="size-4" />
                     </span>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-[#5A6070]">
+                  <p className="t-body-sm mt-3 text-[#5A6070]">
                     {pest.cardDescription}
                   </p>
                   <span className="mt-auto pt-4 text-xs font-black uppercase tracking-[0.12em] text-[#B41B1E]">

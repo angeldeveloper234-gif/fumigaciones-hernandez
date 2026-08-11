@@ -212,6 +212,62 @@
   button:disabled { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 }
 
+@layer components {
+  /* ── Escala tipográfica del home ────────────────────────────────────────
+     La escala vive acá y solo acá. Las secciones aplican `.t-*`; no repiten
+     utilidades sueltas ni `text-[clamp(...)]` arbitrarios. Si un nivel se
+     tiene que mover, se mueve en este bloque y cambia en todas partes.
+
+     Estas clases van en la capa `components`, que la cascada resuelve después
+     de `base`: por eso ganan sobre el `h1 { font-size: var(--text-h1) }` de
+     arriba sin necesidad de `!important`.
+
+     Todavía no se aplican fuera del home — el resto de las páginas sigue con
+     su escala heredada hasta la fase 2. */
+
+  .t-kicker {
+    @apply text-xs font-black uppercase tracking-widest;
+  }
+
+  /* `normal-case` es deliberado. La capa base pone `uppercase` en todos los
+     encabezados, herencia del template: en Montserrat Black las versalitas
+     cuestan ~15% de ancho extra y son la mitad del efecto "inflado" que hay
+     que corregir. Con mayúsculas, el H1 del hero no baja de 4 renglones a
+     360px por más que se achique la fuente.
+     Se anula acá y no en la capa base a propósito: así el cambio queda
+     acotado al home y el resto del sitio conserva su tratamiento hasta la
+     fase 2. */
+  .t-h1 {
+    @apply font-heading text-3xl font-black tracking-tight text-balance normal-case md:text-4xl lg:text-5xl;
+    line-height: 1.06;
+  }
+
+  .t-h2 {
+    @apply font-heading text-2xl font-black tracking-tight text-balance normal-case md:text-3xl;
+    line-height: 1.12;
+  }
+
+  .t-h3 {
+    @apply font-heading text-lg font-semibold tracking-tight normal-case md:text-xl;
+    line-height: 1.25;
+  }
+
+  .t-body {
+    @apply text-base leading-relaxed md:text-lg max-w-prose;
+  }
+
+  /* Cuerpo secundario: pies de tarjeta, descripciones cortas. */
+  .t-body-sm {
+    @apply text-sm leading-relaxed;
+  }
+
+  /* Ritmo vertical del home. Baja en proporción a la tipografía: si solo se
+     achican los títulos, las secciones quedan flotando. */
+  .section-y {
+    @apply py-14 md:py-20;
+  }
+}
+
 @layer utilities {
   .container {
     @apply mx-auto px-4 md:px-6;

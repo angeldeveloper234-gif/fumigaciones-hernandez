@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Navigation } from 'lucide-react'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 import { whatsappUrl } from '@/lib/site'
 import { COVERAGE_AREAS } from '@/lib/locations'
@@ -9,25 +10,20 @@ const copy = HERNANDEZ_HOME.es.coverage
 
 export function Locations() {
   return (
-    <section className="relative overflow-hidden bg-[#1C3266] py-20 text-white md:py-28">
+    <section className="section-y relative isolate overflow-hidden bg-[#1C3266] text-white">
+      <SectionBackground id="coverage" />
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:22px_22px]"
       />
-      <div className="container relative grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:items-start lg:gap-20">
+      <div className="container relative grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-start lg:gap-16">
         <div className="lg:sticky lg:top-32">
           <div className="flex size-14 items-center justify-center rounded-2xl bg-[#FFDF00] text-[#1C3266]">
             <Navigation className="size-7" />
           </div>
-          <p className="mt-7 text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
-            {copy.eyebrow}
-          </p>
-          <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.04] tracking-[-0.035em]">
-            {copy.title}
-          </h2>
-          <p className="mt-5 text-base leading-7 text-white/62">
-            {copy.description}
-          </p>
+          <p className="t-kicker mt-6 text-[#FFE95C]">{copy.eyebrow}</p>
+          <h2 className="t-h2 mt-3">{copy.title}</h2>
+          <p className="t-body mt-4 text-white/80">{copy.description}</p>
           <a
             href={whatsappUrl(
               'Hola, quiero confirmar la cobertura de Fumigaciones Hernández en mi zona.',
@@ -53,7 +49,8 @@ export function Locations() {
                   <MapPin className="size-5" />
                 </span>
                 <div className="flex min-w-0 flex-1 flex-col justify-center">
-                  <p className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-[#F07070]">
+                  {/* Ver nota en Methods: el coral no llega a AA sobre foto. */}
+                  <p className="text-[0.65rem] font-black uppercase tracking-[0.14em] text-[#FFE95C]">
                     Zona {String(index + 1).padStart(2, '0')}
                   </p>
                   <p className="mt-1 text-[clamp(0.75rem,calc(0.65rem+0.25vw),0.825rem)] font-black leading-[1.15] [hyphens:auto] [overflow-wrap:break-word]">
@@ -68,10 +65,8 @@ export function Locations() {
           <aside className="order-1 flex h-full flex-col rounded-[1.75rem] border border-white/12 bg-white p-5 text-[#1C3266] shadow-[0_24px_60px_rgba(0,0,0,0.16)] xl:order-2">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-[0.65rem] font-black uppercase tracking-[0.16em] text-[#B41B1E]">
-                  Mapa de cobertura
-                </p>
-                <h3 className="mt-2 text-xl font-black">
+                <p className="t-kicker text-[#B41B1E]">Mapa de cobertura</p>
+                <h3 className="t-h3 mt-2">
                   Presencia en Tampico y la zona conurbada
                 </h3>
               </div>

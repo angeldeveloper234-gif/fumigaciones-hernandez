@@ -6,6 +6,7 @@ import {
   Wind,
 } from 'lucide-react'
 import { FadeUp } from '@/components/animations/FadeUp'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
 
 const copy = HERNANDEZ_HOME.es.methods
@@ -19,27 +20,24 @@ const icons = {
 
 export function Methods() {
   return (
-    <section className="relative overflow-hidden bg-[#1C3266] py-20 text-white md:py-28">
+    <section className="section-y relative isolate overflow-hidden bg-[#1C3266] text-white">
+      <SectionBackground id="methods" />
       <div
         aria-hidden="true"
         className="absolute -right-32 -top-32 size-[30rem] rounded-full bg-[#FFDF00]/10 blur-3xl"
       />
       <div className="container relative">
-        <div className="grid gap-8 border-b border-white/12 pb-10 lg:grid-cols-[1fr_0.75fr] lg:items-end">
+        <div className="grid gap-8 border-b border-white/12 pb-8 lg:grid-cols-[1fr_0.75fr] lg:items-end">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
-              {copy.eyebrow}
-            </p>
-            <h2 className="mt-4 max-w-3xl text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.04] tracking-[-0.035em]">
-              {copy.title}
-            </h2>
+            <p className="t-kicker text-[#FFE95C]">{copy.eyebrow}</p>
+            <h2 className="t-h2 mt-3 max-w-3xl">{copy.title}</h2>
           </div>
-          <p className="max-w-xl text-base leading-7 text-white/65 lg:justify-self-end">
+          <p className="t-body text-white/80 lg:justify-self-end">
             {copy.description}
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
           {copy.items.map((method, index) => {
             const Icon = icons[method.icon]
             return (
@@ -48,13 +46,15 @@ export function Methods() {
                   <div className="flex size-12 items-center justify-center rounded-xl bg-[#FFDF00] text-[#1C3266]">
                     <Icon className="size-6" />
                   </div>
-                  <p className="mt-7 text-xs font-black tracking-[0.14em] text-[#F07070]">
+                  {/* Amarillo y no el coral de marca: sobre fondo oscuro con
+                      foto detrás, #F07070 se queda en 2.7:1 y no llega a AA. */}
+                  <p className="mt-6 text-xs font-black tracking-[0.14em] text-[#FFE95C]">
                     0{index + 1}
                   </p>
-                  <h3 className="mt-2 text-[clamp(0.9375rem,calc(1.05rem-0.125vw),1rem)] font-black leading-tight tracking-[-0.02em] [hyphens:auto] [overflow-wrap:break-word]">
+                  <h3 className="t-h3 mt-2 [hyphens:auto] [overflow-wrap:break-word]">
                     {method.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/60">
+                  <p className="t-body-sm mt-3 text-white/80">
                     {method.description}
                   </p>
                 </article>
