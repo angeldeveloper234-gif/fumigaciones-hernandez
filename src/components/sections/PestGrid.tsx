@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { FadeUp } from '@/components/animations/FadeUp'
 import { SectionBackground } from '@/components/ui/SectionBackground'
 import { HERNANDEZ_HOME } from '@/lib/translations'
@@ -8,6 +8,17 @@ import { PEST_SERVICES } from '@/lib/services'
 
 const copy = HERNANDEZ_HOME.es.pests
 
+/**
+ * Listado de plagas en filas horizontales, con la foto a la izquierda.
+ *
+ * El template base traía una grilla de cuatro columnas con la foto en 4:3
+ * arriba y el título debajo: el mismo patrón, clase por clase, que usa
+ * fumcon-next. Además obligaba a recortar once plagas en tarjetas cuadradas
+ * donde el nombre —lo único que la persona busca— queda diminuto.
+ *
+ * En fila el nombre manda, la foto acompaña, y el bloque se lee como un
+ * directorio de servicios y no como un catálogo de fotos de stock.
+ */
 export function PestGrid() {
   return (
     <section
@@ -16,54 +27,44 @@ export function PestGrid() {
     >
       <SectionBackground id="pests" />
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="max-w-2xl">
           <p className="t-kicker text-[#B41B1E]">{copy.eyebrow}</p>
           <h2 className="t-h2 mt-3 text-[#212121]">{copy.title}</h2>
-          {/* #3E4650 y no el #5A6070 del template: este párrafo va sobre la
-              imagen de sección y el gris claro no llega a AA ahí. */}
-          <p className="t-body mx-auto mt-4 text-[#3E4650]">
-            {copy.description}
-          </p>
+          <p className="t-body mt-4 text-[#3E4650]">{copy.description}</p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-3 lg:grid-cols-2 lg:gap-4">
           {PEST_SERVICES.map((pest, index) => (
-            <FadeUp key={pest.slug} delay={Math.min(index * 0.04, 0.2)}>
-              <Link
-                href={`/servicios/${pest.slug}`}
-                className="group block h-full overflow-hidden rounded-[1.5rem] border border-black/8 bg-[#F6F9FC] shadow-[0_12px_32px_rgba(28,50,102,0.06)] transition hover:-translate-y-1 hover:border-[#FFDF00]/60 hover:shadow-[0_18px_42px_rgba(28,50,102,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#FFF8DC]">
-                  <Image
-                    src={pest.image}
-                    alt={`${pest.name}: servicio profesional de control de plagas en Tampico y la zona conurbada`}
-                    fill
-                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-transparent" />
-                  <span className="absolute left-4 top-4 rounded-full bg-[#F07070] px-3 py-1 text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#212121]">
-                    Inspección previa
-                  </span>
-                </div>
-                <div className="flex min-h-36 flex-col p-5">
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="t-h3 text-[#212121]">{pest.name}</h3>
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#FFF8DC] text-[#B41B1E] transition group-hover:bg-[#FFDF00] group-hover:text-[#1C3266]">
-                      <ArrowUpRight className="size-4" />
-                    </span>
+            <li key={pest.slug}>
+              <FadeUp delay={Math.min(index * 0.03, 0.18)}>
+                <Link
+                  href={`/servicios/${pest.slug}`}
+                  className="group flex h-full items-stretch overflow-hidden rounded-lg border border-black/10 bg-white transition hover:border-[#1C3266] hover:shadow-[0_10px_28px_rgba(28,50,102,0.10)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3266]"
+                >
+                  <div className="relative w-28 shrink-0 self-stretch bg-[#EEF2F7] sm:w-36">
+                    <Image
+                      src={pest.image}
+                      alt={pest.imageAlt}
+                      fill
+                      sizes="(max-width: 640px) 112px, 144px"
+                      className="object-cover"
+                    />
                   </div>
-                  <p className="t-body-sm mt-3 text-[#5A6070]">
-                    {pest.cardDescription}
-                  </p>
-                  <span className="mt-auto pt-4 text-xs font-black uppercase tracking-[0.12em] text-[#B41B1E]">
-                    {copy.cta}
-                  </span>
-                </div>
-              </Link>
-            </FadeUp>
+
+                  <div className="flex min-w-0 flex-1 items-center gap-3 p-4 sm:p-5">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="t-h3 text-[#212121]">{pest.name}</h3>
+                      <p className="t-body-sm mt-1.5 text-[#3E4650]">
+                        {pest.cardDescription}
+                      </p>
+                    </div>
+                    <ArrowRight className="size-5 shrink-0 text-[#1C3266] transition group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              </FadeUp>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )

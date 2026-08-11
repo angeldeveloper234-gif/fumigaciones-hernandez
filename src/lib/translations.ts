@@ -443,7 +443,12 @@ export const HERNANDEZ_HOME = {
         'Expertos en fumigación en la zona conurbada. Eliminamos moscos, cucarachas, termitas, ratas, hormigas, pulgas y arañas en hogares, comercios e industrias.',
       primaryCta: 'Llamar ahora',
       secondaryCta: 'Ver servicios',
-      review: 'Los mejores precios de la zona',
+      /**
+       * Encabeza la ficha operativa del hero. Sustituye a `review`, que
+       * sostenía una insignia de Google con cinco estrellas que el negocio no
+       * tiene (`CLAUDE.md` §5.2).
+       */
+      cardLabel: 'Levante el teléfono',
       assurances: [
         'Atención las 24 horas',
         'El mejor equipo y productos del mercado',

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Montserrat } from 'next/font/google'
+import { Archivo, IBM_Plex_Sans } from 'next/font/google'
 import './globals.css'
 import { SITE } from '@/lib/site'
 import { Header } from '@/components/layout/Header'
@@ -13,14 +13,26 @@ import {
   websiteSchema,
 } from '@/lib/structured-data'
 
-const montserrat = Montserrat({
+/**
+ * Par tipográfico propio de Hernández.
+ *
+ * El template base venía con Montserrat + Inter, exactamente el mismo par que
+ * usa fumcon-next. Es la señal más rápida de "estos dos sitios son el mismo".
+ *
+ * Archivo es una grotesca de raíz industrial, más angosta y de terminaciones
+ * más duras que Montserrat: aguanta el peso negro sin verse publicitaria.
+ * IBM Plex Sans en cuerpo aporta la lectura técnica que Inter deliberadamente
+ * evita. No se suman fuentes: son dos y siguen siendo dos.
+ */
+const archivo = Archivo({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
 })
 
-const inter = Inter({
+const plex = IBM_Plex_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 })
@@ -97,7 +109,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`antialiased scroll-smooth ${montserrat.variable} ${inter.variable}`}
+      className={`antialiased scroll-smooth ${archivo.variable} ${plex.variable}`}
     >
       <body className="min-h-screen flex flex-col font-sans">
         <JsonLd
