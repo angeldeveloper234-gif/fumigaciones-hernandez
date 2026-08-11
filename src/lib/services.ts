@@ -9,6 +9,8 @@
  * El clima manda en la prioridad: la costa del Golfo es cálida y húmeda todo el año, así
  * que moscos, cucarachas americanas y termitas no tienen pausa invernal. Ver `hernandez_seo.md`.
  */
+import { pestMedia } from '@/config/pest-media'
+
 export type ServiceSlug =
   | 'moscos'
   | 'cucarachas'
@@ -87,9 +89,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'moscos',
     name: 'Moscos',
     cardDescription: 'Nebulización y eliminación de criaderos.',
-    image: '/images/pests/moscos.webp',
-    imageAlt:
-      'Mosco posado sobre una superficie durante una inspección de criaderos en Tampico',
+    image: pestMedia['moscos'].src,
+    imageAlt: pestMedia['moscos'].alt,
     h1: 'Fumigación de Moscos en Tampico, Madero y Altamira',
     metaTitle: 'Fumigación de Moscos en Tampico | Patios y Jardines',
     metaDescription:
@@ -150,9 +151,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'cucarachas',
     name: 'Cucarachas',
     cardDescription: 'Eliminamos la colonia, no solo lo que se ve.',
-    image: '/images/pests/cucarachas.webp',
-    imageAlt:
-      'Cucaracha americana localizada durante una inspección de control de plagas',
+    image: pestMedia['cucarachas'].src,
+    imageAlt: pestMedia['cucarachas'].alt,
     h1: 'Fumigación de Cucarachas en Tampico, Madero y Altamira',
     metaTitle: 'Fumigación de Cucarachas en Tampico | Zona Conurbada',
     metaDescription:
@@ -209,8 +209,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'termitas',
     name: 'Termitas',
     cardDescription: 'Protección de madera y estructuras.',
-    image: '/images/pests/termitas.webp',
-    imageAlt: 'Daño por termitas detectado en una estructura de madera',
+    image: pestMedia['termitas'].src,
+    imageAlt: pestMedia['termitas'].alt,
     h1: 'Control de Termitas en Tampico, Madero y Altamira',
     metaTitle: 'Control de Termitas en Tampico | Protección de Madera',
     metaDescription:
@@ -272,9 +272,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'ratas',
     name: 'Ratas y ratones',
     cardDescription: 'Estaciones seguras y sellado de accesos.',
-    image: '/images/pests/ratas.webp',
-    imageAlt:
-      'Estación de cebo cerrada instalada durante un servicio de control de ratas',
+    image: pestMedia['ratas'].src,
+    imageAlt: pestMedia['ratas'].alt,
     h1: 'Control de Ratas y Ratones en Tampico, Madero y Altamira',
     metaTitle: 'Control de Ratas en Tampico | Casas, Bodegas e Industria',
     metaDescription:
@@ -331,8 +330,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'hormigas',
     name: 'Hormigas',
     cardDescription: 'Cebo que alcanza a la reina y a la colonia.',
-    image: '/images/pests/hormigas.webp',
-    imageAlt: 'Fila de hormigas siguiendo una ruta de forrajeo en una superficie',
+    image: pestMedia['hormigas'].src,
+    imageAlt: pestMedia['hormigas'].alt,
     h1: 'Control de Hormigas en Tampico, Madero y Altamira',
     metaTitle: 'Control de Hormigas en Tampico y Zona Conurbada',
     metaDescription:
@@ -384,8 +383,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'alacranes',
     name: 'Alacranes',
     cardDescription: 'Tratamiento de grietas y sellado perimetral.',
-    image: '/images/pests/alacranes.webp',
-    imageAlt: 'Alacrán localizado durante una inspección de grietas y accesos',
+    image: pestMedia['alacranes'].src,
+    imageAlt: pestMedia['alacranes'].alt,
     h1: 'Control de Alacranes en Tampico, Madero y Altamira',
     metaTitle: 'Control de Alacranes en Tampico | Casas y Patios',
     metaDescription:
@@ -442,8 +441,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'pulgas',
     name: 'Pulgas',
     cardDescription: 'Tratamiento de pisos, textiles y mascota.',
-    image: '/images/pests/pulgas.webp',
-    imageAlt: 'Tratamiento de piso y rodapiés durante un servicio contra pulgas',
+    image: pestMedia['pulgas'].src,
+    imageAlt: pestMedia['pulgas'].alt,
     h1: 'Fumigación contra Pulgas en Tampico, Madero y Altamira',
     metaTitle: 'Eliminar Pulgas en Casa | Tampico y Zona Conurbada',
     metaDescription:
@@ -495,9 +494,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'chinches',
     name: 'Chinches de cama',
     cardDescription: 'Tratamiento de colchón, base y perímetro.',
-    image: '/images/pests/chinches.webp',
-    imageAlt:
-      'Inspección de costuras de colchón durante un tratamiento contra chinches de cama',
+    image: pestMedia['chinches'].src,
+    imageAlt: pestMedia['chinches'].alt,
     h1: 'Eliminación de Chinches de Cama en Tampico y Madero',
     metaTitle: 'Eliminar Chinches de Cama en Tampico | Servicio Urgente',
     metaDescription:
@@ -559,8 +557,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'aranas',
     name: 'Arañas',
     cardDescription: 'Control perimetral y retiro de telarañas.',
-    image: '/images/pests/aranas.webp',
-    imageAlt: 'Araña en su telaraña localizada durante una inspección perimetral',
+    image: pestMedia['aranas'].src,
+    imageAlt: pestMedia['aranas'].alt,
     h1: 'Control de Arañas en Tampico, Madero y Altamira',
     metaTitle: 'Control de Arañas en Tampico y Zona Conurbada',
     metaDescription:
@@ -612,8 +610,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'garrapatas',
     name: 'Garrapatas',
     cardDescription: 'Control en patios, grietas y zonas de mascota.',
-    image: '/images/pests/garrapatas.webp',
-    imageAlt: 'Garrapata localizada durante una inspección de patio y áreas exteriores',
+    image: pestMedia['garrapatas'].src,
+    imageAlt: pestMedia['garrapatas'].alt,
     h1: 'Control de Garrapatas en Tampico, Madero y Altamira',
     metaTitle: 'Control de Garrapatas en Tampico | Patios y Ranchos',
     metaDescription:
@@ -665,8 +663,8 @@ export const PEST_SERVICES: readonly PestService[] = [
     slug: 'moscas',
     name: 'Moscas',
     cardDescription: 'Control del foco de reproducción y trampeo.',
-    image: '/images/pests/moscas.webp',
-    imageAlt: 'Trampa de luz instalada para control de moscas en un área de alimentos',
+    image: pestMedia['moscas'].src,
+    imageAlt: pestMedia['moscas'].alt,
     h1: 'Control de Moscas en Tampico, Madero y Altamira',
     metaTitle: 'Control de Moscas en Tampico | Negocios y Casas',
     metaDescription:
@@ -753,8 +751,15 @@ export function getPestService(slug: string) {
   return PEST_SERVICES.find((service) => service.slug === slug)
 }
 
+/**
+ * Imagen de Open Graph de cada servicio.
+ *
+ * Antes apuntaba a `/images/og/pests/<slug>.webp`: once archivos que eran
+ * byte a byte los de fumcon-next. Ahora son recortes 1200x630 derivados de
+ * la foto propia de cada plaga, que es lo que declara `seo.ts`.
+ */
 export function getServiceOgImage(slug: ServiceSlug) {
-  return `/images/og/pests/${slug}.webp`
+  return `/images/og/pests/${slug}.jpg`
 }
 
 export function getRelatedServices(service: PestService) {

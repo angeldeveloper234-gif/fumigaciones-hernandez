@@ -23,14 +23,14 @@ export const SITE = {
     'Fumigación y control de plagas en Tampico, Ciudad Madero y Altamira. Expertos en exterminio de moscos, cucarachas, termitas, ratas y más. Atención 24 h.',
   /** Versión larga para OG y para la página Nosotros, donde no hay límite de truncado. */
   longDescription:
-    'Fumigaciones Hernández: expertos en fumigación y control de plagas en la zona conurbada de Tampico, Ciudad Madero y Altamira. Eliminamos moscos, cucarachas, termitas, ratas, hormigas, pulgas y arañas en hogares, comercios e industrias, con los mejores precios de la zona.',
+    'Fumigaciones Hernández atiende Tampico, Ciudad Madero y Altamira desde su oficina en la Col. Obrera. Control de moscos, cucarachas, termitas, ratas, hormigas, pulgas, alacranes y arañas en casas, comercios e industrias. Revisión y presupuesto sin costo, guardia las 24 horas.',
   slogan: 'Expertos en fumigación',
   tagline: 'Eliminamos todas las plagas',
-  /** Claim histórico del negocio, recuperado del sitio de 2018. */
-  regionalClaim: 'El mejor servicio de la zona conurbada en exterminio de plagas',
   logo: '/hernandez-logo.png',
   favicon: '/hernandez-fav.png',
-  ogImage: '/images/og/hernandez-og.webp',
+  // El anterior era byte a byte el mismo archivo que el OG de fumcon: cada vez
+  // que se compartia este sitio, la tarjeta que aparecia era la de FUMCON.
+  ogImage: '/images/og/hernandez-og.jpg',
 
   // --- Contacto -----------------------------------------------------------
   // Principal: el número del logo vigente que aportó el cliente.
@@ -85,16 +85,11 @@ export const SITE = {
   // competencia local (Del Golfo, FumiPlus y ProHigiene sí las publican).
   license: '',
   certifications: [] as string[],
-  guarantees: [
-    'Personal con años de experiencia',
-    'Los mejores precios de la zona',
-    'Satisfacción completa garantizada',
-  ],
-  productClaims: [
-    'El mejor equipo y productos del mercado',
-    'Tratamiento para hogar, negocio, oficina e industria',
-    'Ambiente limpio y saludable',
-  ],
+  // `guarantees` y `productClaims` se eliminaron: no los usaba nadie y
+  // guardaban superlativos que el negocio no puede sostener ("los mejores
+  // precios de la zona", "el mejor equipo y productos del mercado",
+  // "satisfacción completa garantizada"). Ver CLAUDE.md §5.
+  // {{PENDIENTE: garantía de servicio real — qué cubre y por cuánto tiempo}}
   // Recuperado del sitio de 2019.
   paymentAccepted: [
     'Efectivo',
