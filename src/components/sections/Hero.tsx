@@ -36,7 +36,10 @@ export function Hero() {
         className="absolute inset-0 -z-10 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:44px_44px]"
       />
 
-      <div className="container grid items-center gap-10 py-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:gap-14 lg:py-16">
+      {/* El reparto 1.25/0.75 no es estético: a 1280px deja la columna de
+          texto en ~735px, y el H1 necesita al menos 700 para entrar en dos
+          renglones, que es el límite de la fase 1. */}
+      <div className="container grid items-center gap-10 py-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(19rem,0.75fr)] lg:gap-14 lg:py-16">
         <div className="relative z-10">
           <p className="t-kicker border-l-2 border-[#FFDF00] pl-3 text-[#FFE95C]">
             {copy.hero.eyebrow}

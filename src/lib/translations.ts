@@ -27,7 +27,10 @@ export const HERNANDEZ_HOME = {
   es: {
     hero: {
       eyebrow: 'Oficina en Ciudad Madero · Atención en toda la zona conurbada',
-      title: 'Fumigación y control de plagas en Tampico,',
+      // Medido: a 360px este H1 entra en tres renglones, que es el límite que
+      // fijó la fase 1. Sumarle "Fumigación y" lo empuja a cuatro. La palabra
+      // vive igual en el <title>, en la meta description y en el cuerpo.
+      title: 'Control de plagas en Tampico,',
       highlight: 'Madero y Altamira',
       description:
         'Atendemos casas, locales, bodegas e industrias. Vamos, revisamos el inmueble y le decimos qué encontramos y cuánto cuesta antes de aplicar nada.',
