@@ -31,7 +31,7 @@ export const metadata = generatePageMetadata({
 })
 
 const quoteUrl = whatsappUrl(
-  'Hola, quiero confirmar la cobertura de Fumigaciones Hernández en mi zona.',
+  'Buen día. Quiero confirmar si llegan a mi colonia.',
 )
 
 const propertyTypes = [
@@ -86,7 +86,7 @@ export default function CoveragePage() {
                   la zona conurbada
                 </p>
                 <h1 className="mt-4 max-w-5xl text-[clamp(2.7rem,7vw,5.25rem)] font-black leading-[0.95] tracking-[-0.05em] text-[#212121]">
-                  Control de plagas cerca de tu propiedad
+                  Control de plagas cerca de su propiedad
                 </h1>
                 <p className="mt-6 max-w-2xl text-base leading-7 text-[#5A6070]">
                   Coordinamos inspección, tratamiento y seguimiento para

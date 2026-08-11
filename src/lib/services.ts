@@ -149,7 +149,7 @@ export const PEST_SERVICES: readonly PestService[] = [
   {
     slug: 'cucarachas',
     name: 'Cucarachas',
-    cardDescription: 'Eliminamos la colonia, no solo lo que ves.',
+    cardDescription: 'Eliminamos la colonia, no solo lo que se ve.',
     image: '/images/pests/cucarachas.webp',
     imageAlt:
       'Cucaracha americana localizada durante una inspección de control de plagas',
@@ -158,7 +158,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     metaDescription:
       'Elimina cucarachas en Tampico, Ciudad Madero y Altamira. Gel activo y aspersión que alcanzan a la colonia completa. Atención 24 horas.',
     intro:
-      'La cucaracha que ves de día es señal de que la colonia ya está establecida. Tratamos los refugios donde se reproduce —drenajes, registros, motores de electrodomésticos y uniones de muebles— para cortar el ciclo, no solo la actividad visible.',
+      'La cucaracha que ve de día es señal de que la colonia ya está establecida. Tratamos los refugios donde se reproduce —drenajes, registros, motores de electrodomésticos y uniones de muebles— para cortar el ciclo, no solo la actividad visible.',
     problem: [
       'El clima del Golfo favorece a la cucaracha americana, la grande que vuela y que aquí sale de drenajes, coladeras y registros. A diferencia de otras regiones donde la actividad baja en invierno, en la zona conurbada se mantiene todo el año.',
       'Su vía de entrada más común es el drenaje: suben por tuberías y coladeras, sobre todo de noche y después de lluvias fuertes, cuando el sistema se satura. Por eso una casa impecable puede tener cucarachas sin que haya nada que reprocharle a la limpieza.',
@@ -280,7 +280,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     metaDescription:
       'Exterminio de ratas y ratones en Tampico, Madero y Altamira. Estaciones de cebo seguras, sellado de accesos y monitoreo para casas, bodegas e industria.',
     intro:
-      'Controlamos ratas y ratones en casas, comercios, bodegas y naves industriales con una estrategia que reduce la población y corrige los accesos que mantienen el problema abierto.',
+      'En roedores no alcanza con bajar la población: mientras el acceso siga abierto, el hueco se vuelve a llenar desde afuera. Trabajamos las dos cosas a la vez, en casas, comercios, bodegas y naves industriales.',
     problem: [
       'La zona conurbada tiene una presión de roedores alta y constante: puerto, actividad logística, canales, drenaje antiguo y cercanía al agua. En Altamira, además, el movimiento continuo de mercancía y contenedores es una vía de entrada permanente.',
       'Un ratón pasa por una abertura del tamaño de una moneda y una rata por la de un puño. Si solo se envenena sin cerrar accesos, la población se repone en semanas desde el exterior.',
@@ -427,7 +427,7 @@ export const PEST_SERVICES: readonly PestService[] = [
       {
         question: '¿Qué hago si me pica un alacrán?',
         answer:
-          'Busca atención médica de inmediato y sigue las indicaciones del personal de salud. No hagas cortes ni succiones, y no apliques sustancias caseras. El control de plagas atiende la propiedad, pero no sustituye la valoración médica ni debe retrasarla.',
+          'Vaya al médico de inmediato y siga lo que le indiquen ahí. No corte ni succione, y no aplique sustancias caseras. El control de plagas atiende la propiedad, pero no sustituye la valoración médica ni debe retrasarla.',
       },
       {
         question: '¿Cada cuánto conviene repetir el servicio?',
@@ -449,7 +449,7 @@ export const PEST_SERVICES: readonly PestService[] = [
     metaDescription:
       'Eliminación de pulgas en viviendas de Tampico, Madero y Altamira. Tratamiento de pisos, alfombras y textiles, seguro para mascotas. Atención 24 h.',
     intro:
-      'La pulga que ves sobre la mascota es menos del 5% del problema: el resto son huevos, larvas y pupas repartidos por pisos, textiles y juntas. El tratamiento tiene que ir al inmueble, no solo al animal.',
+      'La pulga que ve sobre la mascota es la parte más chica del problema: la mayor parte son huevos, larvas y pupas repartidos por pisos, textiles y juntas. El tratamiento tiene que ir al inmueble, no solo al animal.',
     problem: [
       'Las pulgas depositan huevos que caen de la mascota y se distribuyen por toda la vivienda: tapetes, sillones, camas y juntas de piso. Ahí se desarrollan hasta convertirse en adultos que vuelven a saltar sobre personas y animales.',
       'El calor y la humedad de la región aceleran el ciclo: lo que en clima seco tarda semanas, aquí puede completarse mucho más rápido, y por eso las infestaciones crecen tan deprisa.',

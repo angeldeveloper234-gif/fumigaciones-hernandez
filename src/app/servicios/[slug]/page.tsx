@@ -227,7 +227,7 @@ export default async function ServicePage({
                 Señales de actividad
               </p>
               <h2 className="mt-3 text-2xl font-black leading-tight text-[#212121]">
-                Qué debes observar
+                Qué conviene observar
               </h2>
               <ul className="mt-6 space-y-4">
                 {service.signs.map((sign) => (

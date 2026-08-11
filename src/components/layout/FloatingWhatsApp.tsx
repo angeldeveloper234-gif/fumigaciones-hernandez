@@ -4,7 +4,7 @@ export function FloatingWhatsApp() {
   return (
     <a
       href={whatsappUrl(
-        'Hola, necesito una cotización para control de plagas.',
+        'Buen día. Quiero pedir una revisión para control de plagas.',
       )}
       target="_blank"
       rel="noopener noreferrer"

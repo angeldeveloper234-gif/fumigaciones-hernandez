@@ -6,7 +6,7 @@ import { Locations } from '@/components/sections/Locations'
 import { Methods } from '@/components/sections/Methods'
 import { PestGrid } from '@/components/sections/PestGrid'
 import { Promotion } from '@/components/sections/Promotion'
-import { Testimonials } from '@/components/sections/Testimonials'
+import { Trust } from '@/components/sections/Trust'
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Methods />
       <About />
       <Promotion />
-      <Testimonials />
+      <Trust />
       <Locations />
       <Blog />
       <Contact />

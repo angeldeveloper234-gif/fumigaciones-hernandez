@@ -54,7 +54,7 @@ export default function ContactPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
               Te orientamos, coordinamos la inspección y definimos el
-              tratamiento adecuado para tu hogar o negocio.
+              tratamiento adecuado para su casa o su negocio.
             </p>
           </div>
         </div>

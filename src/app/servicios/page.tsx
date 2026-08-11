@@ -29,7 +29,7 @@ export const metadata = generatePageMetadata({
 })
 
 const quoteUrl = whatsappUrl(
-  'Hola, necesito identificar una plaga y solicitar una inspección sin costo.',
+  'Buen día. No sé bien qué plaga es y quiero que la revisen.',
 )
 
 export default function ServicesPage() {
@@ -155,7 +155,7 @@ export default function ServicesPage() {
                 Atención 24 horas
               </p>
               <h2 className="mt-2 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
-                Protege tu propiedad antes de que la actividad aumente
+                Revise su propiedad antes de que la actividad aumente
               </h2>
             </div>
             <a

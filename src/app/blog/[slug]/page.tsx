@@ -208,7 +208,7 @@ export default async function BlogPostPage({
                 </h2>
                 <p className="mt-4 text-sm leading-6 text-[#4B421F]">
                   Un técnico puede revisar las señales y recomendar el método
-                  adecuado para tu propiedad.
+                  adecuado para su propiedad.
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Link

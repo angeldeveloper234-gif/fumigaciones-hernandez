@@ -72,17 +72,17 @@ const processSteps = [
   {
     icon: SearchCheck,
     title: 'Inspección',
-    description: 'Revisamos la señal, los accesos y el nivel de actividad.',
+    description: 'Vemos qué plaga es, por dónde entra y qué tan avanzada está.',
   },
   {
     icon: ShieldCheck,
     title: 'Tratamiento',
-    description: 'Aplicamos el método adecuado para la plaga y el inmueble.',
+    description: 'Elegimos la técnica según el tipo de inmueble y aplicamos.',
   },
   {
     icon: CheckCircle2,
     title: 'Seguimiento',
-    description: 'Verificamos resultados y dejamos medidas preventivas.',
+    description: 'Volvemos a revisar y le decimos qué cerrar para que no vuelva.',
   },
 ] as const
 
@@ -406,7 +406,7 @@ export default async function CoverageAreaPage({
                 Atención 24 horas en {area.name}
               </p>
               <h2 className="mt-3 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
-                Coordina una inspección para tu propiedad
+                Coordine una revisión para su propiedad
               </h2>
             </div>
             <a

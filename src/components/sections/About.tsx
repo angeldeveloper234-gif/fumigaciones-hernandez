@@ -11,29 +11,38 @@ import { SITE, whatsappUrl } from '@/lib/site'
 
 const copy = HERNANDEZ_HOME.es.about
 
-// Solo afirmaciones que el negocio sostiene en su propio material histórico.
-// TODO(cliente): si hay licencia sanitaria o antigüedad concreta, sustituyen a
-// las dos primeras y ganan mucha fuerza frente a la competencia local.
+/**
+ * Datos duros, no adjetivos.
+ *
+ * Las dos últimas tarjetas decían "Equipo: el mejor del mercado" y "Precios:
+ * los mejores de la zona". Son superlativos que nadie puede comprobar y que
+ * `CLAUDE.md` §5 descarta. En su lugar van la oficina y la base operativa, que
+ * son direcciones reales y además son el argumento de la sección.
+ *
+ * {{PENDIENTE: antigüedad del negocio — el dominio existe desde 2017, pero el
+ * negocio puede ser bastante anterior. Con un año concreto, esta tarjeta pesa
+ * más que cualquiera de las otras.}}
+ */
 const credentials = [
   {
     icon: Clock3,
-    label: 'Disponibilidad',
-    value: SITE.openingHoursLabel,
+    label: 'Horario',
+    value: SITE.officeHoursLabel,
   },
   {
     icon: BadgeCheck,
-    label: 'Zona de servicio',
-    value: 'Tampico, Madero y Altamira',
+    label: 'Guardia',
+    value: SITE.openingHoursLabel,
   },
   {
     icon: ShieldCheck,
-    label: 'Equipo',
-    value: 'El mejor del mercado',
+    label: 'Oficina',
+    value: `${SITE.address.streetAddress}, ${SITE.address.neighborhood}, ${SITE.address.addressLocality}`,
   },
   {
     icon: HeartHandshake,
-    label: 'Precios',
-    value: 'Los mejores de la zona',
+    label: 'Base operativa',
+    value: 'Calle Malinalli M-5 LT-11, Cd. Cuauhtémoc, Tampico',
   },
 ] as const
 
@@ -60,13 +69,13 @@ export function About() {
           </div>
           <a
             href={whatsappUrl(
-              'Hola, quiero saber qué tratamiento recomienda Fumigaciones Hernández para mi propiedad.',
+              'Buen día. Quiero contarles qué estoy viendo en mi propiedad y que me digan cómo seguimos.',
             )}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#212121] px-6 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#B41B1E] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFDF00]"
           >
-            Hablar con un especialista
+            {copy.cta}
           </a>
         </div>
 

@@ -1,448 +1,38 @@
-export const translations = {
-  es: {
-    common: {
-      bookConsultation: "Agendar Consulta",
-      bookConsultationLong: "Agendar Mi Presupuesto",
-      ourServices: "Nuestros Servicios",
-      about: "Nosotros",
-      contact: "Contacto",
-      home: "Inicio",
-      services: "Servicios",
-      submit: "Enviar Solicitud",
-    },
-    logos: {
-      title: "Empresas que confían en nosotros"
-    },
-    header: {
-      subtitle: "Expertos en Control de Plagas",
-      nav: {
-        solutions: "Soluciones",
-        autoSystem: "Sistema Automático",
-        autoSystemDesc: "Nebulización programada 24/7, sin intervención.",
-        treatment: "Tratamiento Puntual",
-        treatmentDesc: "Resultado inmediato para eventos o infestaciones.",
-        maintenance: "Mantenimiento",
-        maintenanceDesc: "Recarga y ajuste mensual del sistema.",
-        commercial: "Comercial",
-        commercialDesc: "Hoteles, restaurantes y empresas.",
-        mcsSystem: "Sistemas MCS®",
-        forYourSpace: "Para tu espacio",
-        residential: "Residencial",
-        residentialDesc: "Jardines, patios y albercas.",
-        events: "Eventos",
-        eventsDesc: "Bodas, fiestas y reuniones al aire libre.",
-        restaurants: "Restaurantes",
-        restaurantsDesc: "Terrazas y comedores exteriores.",
-        hotels: "Hoteles",
-        hotelsDesc: "Áreas comunes, albercas y jardines.",
-        blog: "Blog",
-        franchise: "Franquicias",
-        contactUs: "Contacto",
-        about: "Nosotros",
-      }
-    },
-    hero: {
-      titlePre: "Recupera tu ",
-      titleItalic: "Jardín",
-      titlePost: ". Para siempre.",
-      description: "Protegemos a tu familia de mosquitos con el sistema de nebulización automática #1 de México. Tratamientos orgánicos, seguros y con garantía de resultados.",
-    },
-    features: {
-      titlePre: "Soluciones Integrales para ",
-      titleHighlight: "Vida Exterior",
-      description: "Desde control de plagas hasta diseño de patios, en Fumigaciones Hernández somos los expertos locales.",
-      items: {
-        mosquito: {
-          title: "Control de Mosquitos",
-          desc: "Sistemas de nebulización automáticos. Líderes en el mercado desde hace más de 20 años."
-        },
-        mist: {
-          title: "Sistemas de Niebla",
-          desc: "Enfriamiento innovador y ecológico para tus espacios exteriores. Personalizado a tus necesidades."
-        },
-        spider: {
-          title: "Control de Arañas",
-          desc: "Sistemas orgánicos aprobados por la EPA para muelles y áreas cerca del agua."
-        },
-        fly: {
-          title: "Control de Moscas",
-          desc: "Mantén tus áreas de comida libres de moscas con tecnología de nebulización automática."
-        },
-        heating: {
-          title: "Calefacción Exterior",
-          desc: "Diferentes estilos y opciones portátiles o fijas para disfrutar tu patio todo el año."
-        },
-        lighting: {
-          title: "Iluminación Decorativa",
-          desc: "Crea atmósferas festivas o ambientes relajados con nuestra iluminación profesional."
-        },
-        turf: {
-          title: "Pasto Sintético",
-          desc: "Transforma tu espacio en un paisaje verde y de bajo mantenimiento con nuestros expertos."
-        },
-        kitchens: {
-          title: "Cocinas Exteriores",
-          desc: "Diseño e instalación de hubs de entretenimiento funcionales y con estilo."
-        }
-      }
-    },
-    middleCta: {
-      titlePre: "¿TU JARDÍN ESTÁ ",
-      titleHighlight: "LISTO?",
-      description: "No dejes que los mosquitos controlen tu exterior. Recupera tu espacio hoy mismo con Fumigaciones Hernández.",
-    },
-    about: {
-      titlePre: "Expertos en Vida Exterior ",
-      titleHighlight: "Desde 2003",
-      action: "Fumigaciones Hernández en Acción",
-      p1: "Establecidos en 2003, fuimos los pioneros en especializarnos en sistemas automatizados de control de insectos en exteriores.",
-      p2: "En 2010, evolucionamos para ofrecer sistemas de enfriamiento por niebla, convirtiéndonos en los líderes indiscutibles de la región. Para 2018, añadimos calefacción exterior e iluminación decorativa a nuestra lista de servicios premium.",
-      benefits: [
-        "Productos Eco-friendly seguros para mascotas",
-        "Técnicos certificados y uniformados",
-        "Equipamiento de grado industrial",
-        "Atención personalizada 24/7",
-      ]
-    },
-    testimonials: {
-      titlePre: "Por qué amamos ",
-      titleHighlight: "Fumigaciones Hernández",
-      reviews: [
-        {
-          name: "Bo Spencer",
-          role: "Cliente por 5+ años",
-          text: "He tenido este sistema por más de 5 años y lo amo. Fumigaciones Hernández hace un gran trabajo con el servicio periódico y el mantenimiento."
-        },
-        {
-          name: "Baron Von Anderson",
-          role: "Residente",
-          text: "Agregamos repelente de mosquitos y sistema de enfriamiento. Lo mejor que pudimos haber hecho. No más ser comido vivo en mi propio patio."
-        },
-        {
-          name: "Lisa Harris",
-          role: "Cliente por 20+ años",
-          text: "He sido cliente por más de veinte años. Mi patio era inhabitable por los mosquitos y ahora es perfecto. Los recomiendo ampliamente por su profesionalismo."
-        }
-      ]
-    },
-    appointment: {
-      title: "Agenda una Cita",
-      subtitle: "Déjanos tus datos y un especialista se pondrá en contacto contigo hoy mismo para una evaluación gratuita.",
-      step1: "Agendamos tu visita de inspección",
-      step2: "Evaluamos el nivel de infestation",
-      step3: "Aplicamos el tratamiento adecuado",
-      form: {
-        name: "Nombre Completo",
-        namePlaceholder: "Ej. Juan Pérez",
-        email: "Correo Electrónico",
-        emailPlaceholder: "juan@ejemplo.com",
-        phone: "Teléfono",
-        phonePlaceholder: "+52 55 ...",
-        message: "Mensaje / Detalles de la Plaga",
-        messagePlaceholder: "Cuéntanos cómo podemos ayudarte..."
-      }
-    },
-    footer: {
-      tagline: "Especialistas en control de plagas y vida exterior. Protegiendo tu hogar con sistemas de nebulización desde 2003.",
-      quickLinks: "Enlaces Rápidos",
-      ourServices: "Nuestros Servicios",
-      contact: "Contacto",
-      servicesList: {
-        misting: "Nebulización de Mosquitos",
-        spiderFly: "Control de Arañas y Moscas",
-        heating: "Calefacción Exterior",
-        patioDesign: "Diseño de Patios"
-      },
-      contactInfo: {
-        address: "Cobertura en todo México"
-      },
-      copyright: "Todos los derechos reservados.",
-      madeBy: "Hecho por"
-    },
-    blog: {
-      titlePre: "Nuestro ",
-      titleHighlight: "Blog",
-      description: "Consejos, guías y novedades para mantener tus espacios exteriores perfectos durante todo el año.",
-      readMore: "Leer Artículo",
-      viewAll: "Ver todos los artículos",
-      close: "Cerrar",
-      articles: [
-        {
-          id: "mosquito-guide",
-          title: "Guía definitiva para un jardín libre de mosquitos",
-          summary: "Descubre las claves para eliminar los criaderos y proteger tu espacio exterior de forma permanente.",
-          content: "Tener un jardín hermoso es el sueño de cualquiera, pero la presencia de mosquitos puede convertir rápidamente este oasis en una pesadilla. Los mosquitos no solo son molestos por sus picaduras constantes, sino que también representan un riesgo real para la salud al transmitir enfermedades como el Dengue, Zika y Chikungunya.\n\nPara combatir eficazmente esta plaga, el primer paso es eliminar cualquier acumulación de agua estancada, que es donde las hembras ponen sus huevos. Macetas vacías, canaletas obstruidas y juguetes en el patio son lugares comunes de reproducción. Sin embargo, en zonas húmedas o cálidas, la prevención manual no siempre es suficiente.\n\nAquí es donde entran en juego los sistemas de nebulización automática. Estos sistemas liberan de manera programada una fina niebla de repelente de alta eficacia en los perímetros de tu propiedad, creando una barrera protectora invisible pero impenetrable. Esto permite que disfrutes de tu patio, alberca y áreas de descanso sin preocuparte por ser comido vivo. La combinación de buenos hábitos de limpieza con tecnología avanzada es la única forma garantizada de reclamar tu jardín.",
-          image: "/images/blog-guide.png",
-          category: "Prevención"
-        },
-        {
-          id: "organic-misting",
-          title: "Nebulización orgánica: Seguridad total para tu familia",
-          summary: "Conoce cómo funcionan las fórmulas eco-friendly aprobadas por la EPA que cuidan a tus mascotas y plantas.",
-          content: "La preocupación por el medio ambiente y la salud de nuestros seres queridos es más alta que nunca. Al buscar soluciones para el control de plagas en exteriores, muchos se preguntan si es posible eliminar los insectos sin introducir químicos agresivos en el entorno familiar. La respuesta es un rotundo sí.\n\nLos tratamientos orgánicos de nebulización utilizan ingredientes activos derivados de fuentes naturales, como el aceite de crisantemo (piretrinas naturales) o aceites esenciales de menta y romero. Estas fórmulas están completamente aprobadas por la EPA (Agencia de Protección Ambiental) y son altamente efectivas para repeler mosquitos, moscas y arañas, pero con una ventaja crucial: son 100% seguras para niños, perros, gatos e incluso plantas delicadas.\n\nEste tipo de control biológico actúa directamente sobre el sistema nervioso de los insectos objetivo, pero se descompone rápidamente bajo la luz solar, evitando la acumulación de residuos tóxicos en el suelo o el agua. Es la opción ideal para muelles, zonas cercanas a lagos o jardines residenciales donde las mascotas juegan libremente. Protege tu hogar de forma responsable y sin comprometer el bienestar de tu familia.",
-          image: "/images/blog-organic.png",
-          category: "Ecológico"
-        },
-        {
-          id: "mist-cooling",
-          title: "Sistemas de niebla: Climatiza tu patio este verano",
-          summary: "Descubre la tecnología de nebulización de alta presión que reduce la temperatura exterior hasta 12°C.",
-          content: "El verano es la época perfecta para disfrutar de comidas al aire libre, carnes asadas y tardes junto a la piscina. Sin embargo, el calor extremo puede hacer que permanecer en el patio sea insoportable durante las horas centrales del día. Afortunadamente, existe una solución innovadora: los sistemas de enfriamiento por niebla de alta presión.\n\nEstos sistemas funcionan atomizando agua purificada a través de boquillas de precisión a presiones extremadamente altas. Esto crea una micro-niebla ultrafina cuyas gotas son tan pequeñas que se evaporan instantáneamente al entrar en contacto con el aire caliente. Este proceso físico, conocido como enfriamiento por evaporación térmica, absorbe el calor del ambiente y reduce la temperatura del aire circundante hasta en 12°C, todo esto sin mojar a las personas ni las superficies.\n\nEs la misma tecnología de lujo que se utiliza en los resorts más exclusivos del mundo y en restaurantes premium con terrazas. Además de refrescar el ambiente, la cortina de niebla actúa como un filtro natural que precipita el polvo, polen y alérgenos suspendidos en el aire, e incluso mantiene alejados a los insectos voladores. Convierte tu patio en un oasis fresco y habitable durante todo el año.",
-          image: "/images/blog-mist.png",
-          category: "Climatización"
-        },
-        {
-          id: "outdoor-heating",
-          title: "Terrazas todo el año: Calefacción y confort exterior",
-          summary: "No abandones tu patio durante el invierno. Las mejores soluciones de calefacción exterior con estilo.",
-          content: "Cuando bajan las temperaturas, la tendencia natural es refugiarse dentro de la casa y dejar el patio o la terraza en el olvido hasta la próxima primavera. Sin embargo, con el diseño y el equipamiento adecuados, el invierno puede convertirse en una de las temporadas más acogedoras para disfrutar del aire libre.\n\nLa calefacción exterior ha evolucionado enormemente en los últimos años, pasando de los ruidosos y poco estéticos calentadores de gas a sistemas infrarrojos radiantes de alta tecnología. Estos calentadores transmiten calor directamente a las personas y objetos a través de ondas electromagnéticas seguras, en lugar de calentar el aire que puede ser dispersado fácilmente por el viento. Esto asegura un confort térmico inmediato y un consumo energético altamente eficiente.\n\nPara crear una atmósfera verdaderamente premium, combina estos sistemas de calefacción con iluminación decorativa cálida en tonos ámbar y muebles de exterior confortables con mantas texturizadas. Una terraza bien iluminada y calefaccionada se convierte en el lugar ideal para disfrutar de una copa de vino por la noche o una taza de café por la mañana, expandiendo los metros cuadrados habitables de tu hogar sin importar el clima.",
-          image: "/images/blog-heating.png",
-          category: "Confort"
-        }
-      ]
-    }
-  },
-  en: {
-    common: {
-      bookConsultation: "Book Consultation",
-      bookConsultationLong: "Get My Free Quote",
-      ourServices: "Our Services",
-      about: "About Us",
-      contact: "Contact",
-      home: "Home",
-      services: "Services",
-      submit: "Submit Request",
-    },
-    logos: {
-      title: "Companies that trust us"
-    },
-    header: {
-      subtitle: "Pest Control & Outdoor Living Experts",
-      nav: {
-        solutions: "Solutions",
-        autoSystem: "Auto System",
-        autoSystemDesc: "Scheduled 24/7 misting, no intervention needed.",
-        treatment: "One-Time Treatment",
-        treatmentDesc: "Immediate results for events or infestations.",
-        maintenance: "Maintenance",
-        maintenanceDesc: "Monthly recharge and system adjustment.",
-        commercial: "Commercial",
-        commercialDesc: "Hotels, restaurants and businesses.",
-        mcsSystem: "MCS® Systems",
-        forYourSpace: "For Your Space",
-        residential: "Residential",
-        residentialDesc: "Gardens, patios, and pools.",
-        events: "Events",
-        eventsDesc: "Weddings, parties, and outdoor gatherings.",
-        restaurants: "Restaurants",
-        restaurantsDesc: "Outdoor terraces and dining areas.",
-        hotels: "Hotels",
-        hotelsDesc: "Common areas, pools, and gardens.",
-        blog: "Blog",
-        franchise: "Franchises",
-        contactUs: "Contact Us",
-        about: "About",
-      }
-    },
-    hero: {
-      titlePre: "Reclaim Your ",
-      titleItalic: "Yard",
-      titlePost: ". For Good.",
-      description: "We protect your family from mosquitoes with Mexico's #1 automatic misting system. Organic treatments, safe for the whole family, with guaranteed results.",
-    },
-    features: {
-      titlePre: "Complete Solutions for ",
-      titleHighlight: "Outdoor Living",
-      description: "From pest control to backyard design, at Fumigaciones Hernández we are your local experts.",
-      items: {
-        mosquito: {
-          title: "Mosquito Control",
-          desc: "Automatic misting systems. Industry leaders for over 20 years."
-        },
-        mist: {
-          title: "Mist Systems",
-          desc: "Innovative and eco-friendly cooling for your outdoor spaces. Custom designed."
-        },
-        spider: {
-          title: "Spider Control",
-          desc: "EPA-approved organic systems for docks and waterfront areas."
-        },
-        fly: {
-          title: "Fly Control",
-          desc: "Keep your dining areas fly-free with automatic misting technology."
-        },
-        heating: {
-          title: "Outdoor Heating",
-          desc: "Different styles and portable or fixed options to enjoy your patio year-round."
-        },
-        lighting: {
-          title: "Decorative Lighting",
-          desc: "Create festive atmospheres or relaxed environments with our professional lighting."
-        },
-        turf: {
-          title: "Synthetic Turf",
-          desc: "Transform your space into a green, low-maintenance landscape with our experts."
-        },
-        kitchens: {
-          title: "Outdoor Kitchens",
-          desc: "Design and installation of functional and stylish entertainment hubs."
-        }
-      }
-    },
-    middleCta: {
-      titlePre: "IS YOUR YARD ",
-      titleHighlight: "READY?",
-      description: "Don't let mosquitoes control your outdoors. Reclaim your space today with Fumigaciones Hernández.",
-    },
-    about: {
-      titlePre: "Outdoor Living Experts ",
-      titleHighlight: "Since 2003",
-      action: "Fumigaciones Hernández in Action",
-      p1: "Established in 2003, we were the pioneers in specializing in automated outdoor insect control systems.",
-      p2: "In 2010, we evolved to offer mist cooling systems, becoming the undisputed leaders in the region. By 2018, we added outdoor heating and decorative lighting to our list of premium services.",
-      benefits: [
-        "Pet-safe eco-friendly products",
-        "Certified and uniformed technicians",
-        "Industrial grade equipment",
-        "24/7 Personalized customer support",
-      ]
-    },
-    testimonials: {
-      titlePre: "Why we love ",
-      titleHighlight: "Fumigaciones Hernández",
-      reviews: [
-        {
-          name: "Bo Spencer",
-          role: "Customer for 5+ years",
-          text: "I have had this system for over 5 years and I love it. Fumigaciones Hernández does a great job with periodic service and maintenance."
-        },
-        {
-          name: "Baron Von Anderson",
-          role: "Resident",
-          text: "We added mosquito repellent and mist cooling system. The best thing we could have done. No more being eaten alive in my own backyard."
-        },
-        {
-          name: "Lisa Harris",
-          role: "Customer for 20+ years",
-          text: "I've been a customer for over twenty years. My yard was uninhabitable due to mosquitoes and now it's perfect. I highly recommend them for their professionalism."
-        }
-      ]
-    },
-    appointment: {
-      title: "Schedule An Appointment",
-      subtitle: "Leave us your details and a specialist will contact you today for a free assessment.",
-      step1: "We schedule your inspection visit",
-      step2: "We assess the level of infestation",
-      step3: "We apply the appropriate treatment",
-      form: {
-        name: "Full Name",
-        namePlaceholder: "e.g. John Doe",
-        email: "Email Address",
-        emailPlaceholder: "john@example.com",
-        phone: "Phone Number",
-        phonePlaceholder: "+1 (555) ...",
-        message: "Message / Pest Details",
-        messagePlaceholder: "Tell us how we can help you..."
-      }
-    },
-    footer: {
-      tagline: "Pest control and outdoor living specialists. Protecting your home with misting systems since 2003.",
-      quickLinks: "Quick Links",
-      ourServices: "Our Services",
-      contact: "Contact",
-      servicesList: {
-        misting: "Mosquito Misting",
-        spiderFly: "Spider & Fly Control",
-        heating: "Outdoor Heating",
-        patioDesign: "Patio Design"
-      },
-      contactInfo: {
-        address: "Nationwide coverage across Mexico"
-      },
-      copyright: "All rights reserved.",
-      madeBy: "Made by"
-    },
-    blog: {
-      titlePre: "Our ",
-      titleHighlight: "Blog",
-      description: "Tips, guides, and news to keep your outdoor spaces perfect all year round.",
-      readMore: "Read Article",
-      viewAll: "View all articles",
-      close: "Close",
-      articles: [
-        {
-          id: "mosquito-guide",
-          title: "Ultimate Guide to a Mosquito-Free Yard",
-          summary: "Discover the key steps to eliminate breeding sites and protect your outdoor living space permanently.",
-          content: "Having a beautiful garden is anyone's dream, but the presence of mosquitoes can quickly turn this oasis into a nightmare. Mosquitoes are not only annoying with their constant bites, but they also pose a real health risk by transmitting diseases such as Dengue, Zika, and Chikungunya.\n\nTo effectively combat this pest, the first step is to eliminate any standing water accumulation, which is where females lay their eggs. Empty pots, clogged gutters, and toys in the yard are common breeding grounds. However, in humid or warm areas, manual prevention is not always enough.\n\nThis is where automatic misting systems come in. These systems release a fine mist of highly effective repellent at scheduled intervals along the perimeter of your property, creating an invisible yet impenetrable protective barrier. This allows you to enjoy your patio, pool, and lounge areas without worrying about being eaten alive. Combining good maintenance habits with advanced technology is the only guaranteed way to reclaim your garden.",
-          image: "/images/blog-guide.png",
-          category: "Prevention"
-        },
-        {
-          id: "organic-misting",
-          title: "Organic Misting: Total Safety for Your Family",
-          summary: "Learn how EPA-approved, pet-safe organic formulas protect your home without harsh chemicals.",
-          content: "Concern for the environment and the health of our loved ones is higher than ever. When searching for outdoor pest control solutions, many wonder if it's possible to eliminate pests without introducing harsh chemicals into the family environment. The answer is a resounding yes.\n\nOrganic misting treatments use active ingredients derived from natural sources, such as chrysanthemum flower extract (natural pyrethrins) or essential oils like peppermint and rosemary. These formulas are fully EPA (Environmental Protection Agency) approved and highly effective at repelling mosquitoes, flies, and spiders, but with a crucial advantage: they are 100% safe for children, dogs, cats, and even delicate plants.\n\nThis biological control specifically targets the nervous systems of target insects but decomposes rapidly under sunlight, avoiding toxic residue accumulation in soil or water. It's the ideal choice for docks, waterfront properties, or residential lawns where pets play freely. Protect your home responsibly without compromising your family's well-being.",
-          image: "/images/blog-organic.png",
-          category: "Eco-Friendly"
-        },
-        {
-          id: "mist-cooling",
-          title: "Mist Systems: Cool Your Outdoor Living Space",
-          summary: "Explore the high-pressure mist cooling technology that lowers outdoor temperature by up to 12°C.",
-          content: "Summer is the perfect time for outdoor dining, barbecues, and poolside afternoons. However, extreme heat can make staying on the patio unbearable during peak daylight hours. Fortunately, there is an innovative solution: high-pressure mist cooling systems.\n\nThese systems work by atomizing purified water through precision nozzles at extremely high pressures. This creates an ultra-fine micro-mist whose droplets are so small that they flash-evaporate upon contact with hot air. This thermal process absorbs heat from the environment and reduces ambient temperature by up to 12°C—all without wetting people or surfaces.\n\nIt is the same luxury technology used in the world's most exclusive resorts and high-end restaurant terraces. In addition to cooling, the mist curtain acts as a natural filter that precipitates dust, pollen, and airborne allergens, and even deters flying insects. Turn your patio into a cool, livable oasis all year round.",
-          image: "/images/blog-mist.png",
-          category: "Mist Cooling"
-        },
-        {
-          id: "outdoor-heating",
-          title: "Year-Round Terraces: Outdoor Heating and Comfort",
-          summary: "Don't abandon your patio in winter. The best stylish outdoor heating solutions for cozy living.",
-          content: "When temperatures drop, the natural tendency is to retreat indoors and leave the patio or terrace forgotten until next spring. However, with the right design and equipment, winter can become one of the coziest seasons to enjoy the outdoors.\n\nOutdoor heating has evolved significantly in recent years, moving from noisy and unsightly propane heaters to high-tech radiant infrared systems. These heaters transmit warmth directly to people and objects through safe electromagnetic waves, rather than heating the air, which can easily be blown away by the wind. This ensures instant thermal comfort and highly efficient energy consumption.\n\nTo create a truly premium atmosphere, pair these heating systems with warm, amber decorative lighting and comfortable outdoor furniture adorned with textured blankets. A well-lit and heated terrace becomes the perfect spot to enjoy a glass of wine in the evening or a morning coffee, expanding your home's livable square footage regardless of the weather.",
-          image: "/images/blog-heating.png",
-          category: "Comfort"
-        }
-      ]
-    }
-  }
-}
-
 /**
- * Copy aprobado para la Home de Fumigaciones Hernández.
+ * Copy del home de Fumigaciones Hernández.
  *
- * El motor i18n se conserva, pero durante el lanzamiento solo existe la
- * variante completa en español. Cuando `language === "en"`, la interfaz usa
- * este contenido como fallback hasta que se apruebe una traducción real.
- */
-/**
- * Copy de la Home de Fumigaciones Hernández.
+ * El sitio es monolingüe: español de México, trato de usted (`CLAUDE.md` §5.1).
+ * Antes de esto el archivo cargaba además un diccionario ES/EN heredado del
+ * template de MosquitoMEX que alimentaba un selector de idioma del header. El
+ * selector cambiaba el atributo `lang` del documento pero no traducía nada,
+ * porque todas las secciones leen de acá y de ningún otro lado. Se fue el
+ * diccionario, se fue el selector.
  *
- * Construido sobre lo que el negocio declara realmente en sus propios dominios
- * (ver `hernandez_copy.md`) y optimizado para la intención de búsqueda local:
- * el H1 que forman `hero.title` + `hero.highlight` contiene la keyword principal.
+ * ── Voz ──────────────────────────────────────────────────────────────────
+ * Hernández es un negocio con domicilio, teléfono y horario. El ángulo es ese:
+ * quien contesta es quien va a ir. Nada de "soluciones integrales", nada de
+ * superlativos sin respaldo. Se dice lo que se hace, en el orden en que pasa:
+ * se revisa, se cotiza, se aplica.
  *
- * El motor i18n se conserva, pero solo existe la variante en español.
- */
-/**
- * Copy de la Home de Fumigaciones Hernández (Tampico, Tamaulipas).
+ * Los superlativos que traía el template —"el mejor equipo y productos del
+ * mercado", "los mejores precios de la zona", "personal con años de
+ * experiencia"— salieron todos. No hay forma de sostenerlos y `CLAUDE.md` §3
+ * y §5 los prohíben.
  *
- * Construido sobre el copy real del negocio recuperado de sus sitios 2017-2019
- * (`_archivo-original/wayback/`), conservando sus frases propias: "Expertos en
- * fumigación", "Eliminamos todas las plagas", "el mejor servicio de la zona conurbada"
- * y "los mejores precios de la zona".
- *
- * El H1 lo forman `hero.title` + `hero.highlight` y contiene la keyword principal.
+ * Los verbos de los CTA son propios a propósito: pedir, marcar, mandar,
+ * confirmar, contar, leer. No se cruzan con los de fumcon-next, que usa
+ * consultar, solicitar, ver, llamar y escribir.
  */
 export const HERNANDEZ_HOME = {
   es: {
     hero: {
-      eyebrow: 'Tampico · Ciudad Madero · Altamira — Atención 24 horas',
-      title: 'Fumigación y control de plagas',
-      highlight: 'en Tampico',
+      eyebrow: 'Oficina en Ciudad Madero · Atención en toda la zona conurbada',
+      title: 'Fumigación y control de plagas en Tampico,',
+      highlight: 'Madero y Altamira',
       description:
-        'Expertos en fumigación en la zona conurbada. Eliminamos moscos, cucarachas, termitas, ratas, hormigas, pulgas y arañas en hogares, comercios e industrias.',
-      primaryCta: 'Llamar ahora',
-      secondaryCta: 'Ver servicios',
+        'Atendemos casas, locales, bodegas e industrias. Vamos, revisamos el inmueble y le decimos qué encontramos y cuánto cuesta antes de aplicar nada.',
+      primaryCta: 'Pida su revisión',
+      secondaryCta: 'Qué plagas atendemos',
       /**
        * Encabeza la ficha operativa del hero. Sustituye a `review`, que
        * sostenía una insignia de Google con cinco estrellas que el negocio no
@@ -450,73 +40,23 @@ export const HERNANDEZ_HOME = {
        */
       cardLabel: 'Levante el teléfono',
       assurances: [
-        'Atención las 24 horas',
-        'El mejor equipo y productos del mercado',
-        'Personal con años de experiencia',
+        'Guardia fuera del horario de oficina',
+        'Revisión y presupuesto sin costo',
+        'Domicilio fijo, no somos un conmutador',
       ],
     },
     pests: {
-      eyebrow: 'Eliminamos todas las plagas',
-      title: 'Moscos, cucarachas, termitas y más',
+      eyebrow: 'Once plagas, un solo teléfono',
+      title: 'Lo que atendemos en la zona conurbada',
       description:
-        'Nos especializamos en controlar y exterminar plagas para que su hogar, negocio, oficina o industria se encuentre libre de plaga y pueda tener un ambiente limpio y saludable.',
-      cta: 'Ver tratamiento',
-      items: [
-        {
-          slug: 'moscos',
-          name: 'Moscos',
-          description: 'Nebulización y eliminación de criaderos.',
-          image: '/images/pests/moscos.webp',
-        },
-        {
-          slug: 'cucarachas',
-          name: 'Cucarachas',
-          description: 'Eliminamos la colonia, no solo lo que ves.',
-          image: '/images/pests/cucarachas.webp',
-        },
-        {
-          slug: 'termitas',
-          name: 'Termitas',
-          description: 'Protección de madera y estructuras.',
-          image: '/images/pests/termitas.webp',
-        },
-        {
-          slug: 'ratas',
-          name: 'Ratas y ratones',
-          description: 'Estaciones seguras y sellado de accesos.',
-          image: '/images/pests/ratas.webp',
-        },
-        {
-          slug: 'hormigas',
-          name: 'Hormigas',
-          description: 'Cebo que alcanza a la reina y a la colonia.',
-          image: '/images/pests/hormigas.webp',
-        },
-        {
-          slug: 'alacranes',
-          name: 'Alacranes',
-          description: 'Tratamiento de grietas y sellado perimetral.',
-          image: '/images/pests/alacranes.webp',
-        },
-        {
-          slug: 'pulgas',
-          name: 'Pulgas',
-          description: 'Tratamiento de pisos, textiles y mascota.',
-          image: '/images/pests/pulgas.webp',
-        },
-        {
-          slug: 'aranas',
-          name: 'Arañas',
-          description: 'Control perimetral y retiro de telarañas.',
-          image: '/images/pests/aranas.webp',
-        },
-      ],
+        'Cada plaga entra por un lado distinto y se trata distinto. Elija la suya y ahí explicamos cómo la abordamos y qué revisa el técnico cuando llega.',
+      cta: 'Cómo lo tratamos',
     },
     methods: {
-      eyebrow: 'Cómo trabajamos',
+      eyebrow: 'De qué depende el método',
       title: 'La técnica correcta para cada espacio',
       description:
-        'Contamos con el mejor equipo y productos del mercado. Aplicamos el método que corresponde según la plaga y las condiciones de la propiedad.',
+        'El método lo define la plaga y lo define el inmueble: no se trata igual una cocina de restaurante que un patio con vegetación o una bodega con tarima.',
       items: [
         {
           title: 'Aspersión dirigida',
@@ -569,69 +109,98 @@ export const HERNANDEZ_HOME = {
       ],
     },
     about: {
-      eyebrow: 'Fumigaciones Hernández',
-      title: 'Expertos en fumigación de la zona conurbada',
+      eyebrow: 'Quiénes somos',
+      title: 'Una fumigadora de aquí, no una franquicia',
       description:
-        'Somos una empresa mexicana originaria de Tampico, Tamaulipas, dedicada al control y exterminio de plagas. Personal con años de experiencia nos respalda para brindarle el mejor servicio y su completa satisfacción.',
+        'Fumigaciones Hernández trabaja la zona conurbada del sur de Tamaulipas. La oficina está en la Col. Obrera, en Ciudad Madero, y la base operativa en Cd. Cuauhtémoc, Tampico. Quien le contesta el teléfono es quien coordina la visita.',
       secondary:
-        'Brindamos servicio en las ciudades de Tampico, Ciudad Madero, Altamira y ciudades cercanas a la región. Contamos con el mejor equipo y productos del mercado para hogares, negocios, oficinas e industrias.',
+        'Eso cambia cómo trabajamos: el técnico ve el inmueble antes de cotizar, usted sabe qué se va a aplicar y dónde, y si algo no se resolvió lo hablamos con quien tomó el servicio, sin pasar por una central de otra ciudad.',
       audiences: [
-        'Hogares',
-        'Comercios',
+        'Casas',
+        'Locales comerciales',
         'Restaurantes',
         'Oficinas',
         'Bodegas',
         'Industrias',
       ],
+      cta: 'Cuéntenos su caso',
     },
     promotion: {
       badge: 'Antes de contratar',
-      title: 'Cotización sin costo',
+      title: 'Primero la revisión, después el precio',
       description:
-        'Revisamos el inmueble, identificamos la plaga y su foco, y le decimos con claridad qué tratamiento necesita y por qué. Los mejores precios de la zona.',
+        'Nadie puede cotizar una plaga por teléfono sin ver el lugar. Vamos, identificamos qué es y por dónde entra, y recién entonces le pasamos el presupuesto. Esa visita no se cobra.',
       // TODO(cliente): en 2018 el claim era "los mejores precios de la zona" pero nunca
       // se publicó una tarifa. Un rango real convierte mejor que ocultarlo.
-      priceLabel: 'Cotización',
+      priceLabel: 'La revisión',
       price: 'Sin costo',
       currency: '',
       benefits: [
-        'Diagnóstico de la plaga y su foco',
-        'Presupuesto antes de aplicar',
-        'Atención las 24 horas',
+        'Le decimos qué plaga es y por dónde entra',
+        'Presupuesto cerrado antes de aplicar',
+        'Si no conviene tratar, se lo decimos',
       ],
-      cta: 'Solicitar cotización',
+      cta: 'Pida su presupuesto',
     },
-    // Misión, visión y valores recuperados del sitio de 2019.
-    // TODO(cliente): al reunir reseñas reales en Google, sustituir por testimonios y
-    // activar `aggregateRating` en los datos estructurados.
-    testimonials: {
-      eyebrow: 'Lo que nos define',
-      title: 'Tu satisfacción es nuestra prioridad',
-      badge: 'Franqueza · Puntualidad · Servicio · Voluntad',
+    /**
+     * Reemplaza al bloque `testimonials`, que maquetaba la misión, la visión y
+     * los valores del sitio de 2019 como si fueran reseñas de clientes: cinco
+     * estrellas por bloque, comillas de cita e insignia de Google.
+     *
+     * Acá solo van hechos que el visitante puede comprobar solo: el teléfono
+     * se marca, la oficina se visita, la cotización se pide.
+     *
+     * {{PENDIENTE: garantía de servicio — ¿qué cubre y por cuánto tiempo?}}
+     * {{PENDIENTE: licencia sanitaria o registro COFEPRIS, si existe}}
+     */
+    trust: {
+      eyebrow: 'Lo comprobable',
+      title: 'Con qué respaldamos lo que decimos',
+      description:
+        'No tenemos reseñas publicadas todavía. Mientras tanto, esto es lo que sí puede verificar por su cuenta antes de contratarnos.',
       items: [
         {
-          name: 'Misión',
-          role: 'Por qué trabajamos',
-          text: 'Atender a cada uno de nuestros clientes basándonos en sus intereses y preocupaciones en fumigaciones, para que su hogar, negocio, oficina o industria se encuentre libre de plaga y pueda tener un ambiente limpio y saludable.',
+          icon: 'clock',
+          title: 'Guardia las 24 horas',
+          detail:
+            'La oficina atiende de lunes a sábado, de 8:00 a 17:00. Fuera de ese horario queda una guardia para urgencias.',
         },
         {
-          name: 'Visión',
-          role: 'Hacia dónde vamos',
-          text: 'Convertirnos en referentes de la industria de la fumigación en la zona conurbada de Tampico, Ciudad Madero y Altamira, con el mejor servicio y los mejores precios de la región.',
+          icon: 'receipt',
+          title: 'La revisión no se cobra',
+          detail:
+            'Se paga el tratamiento, no el diagnóstico. Si después de ver el inmueble decide no contratar, no debe nada.',
         },
         {
-          name: 'Valores',
-          role: 'Cómo lo hacemos',
-          text: 'Franqueza, puntualidad, servicio y voluntad. Personal con años de experiencia nos respalda para brindarle el mejor servicio y su completa satisfacción en cada visita.',
+          icon: 'office',
+          title: 'Oficina con domicilio fijo',
+          detail: '{{ADDRESS}}',
+        },
+        {
+          icon: 'map',
+          title: 'Zonas que cubrimos',
+          detail: '{{AREAS}}',
+        },
+        {
+          icon: 'clipboard',
+          title: 'Presupuesto antes de aplicar',
+          detail:
+            'Sabe qué se va a aplicar, en qué áreas y cuánto cuesta antes de que el técnico abra el equipo.',
+        },
+        {
+          icon: 'shield',
+          title: 'Trato con quien hace el trabajo',
+          detail:
+            'Coordina con la misma persona que organiza la visita. No hay call center de por medio ni tickets que se pierden.',
         },
       ],
     },
     coverage: {
-      eyebrow: 'Zona de cobertura',
+      eyebrow: 'Hasta dónde llegamos',
       title: 'Tampico, Madero y Altamira',
       description:
-        'Nuestra base está en la Col. Obrera, Ciudad Madero. Brindamos servicio en toda la zona conurbada y en ciudades cercanas a la región.',
-      cta: 'Consultar disponibilidad',
+        'La base operativa está en Cd. Cuauhtémoc, Tampico, y la oficina en la Col. Obrera de Ciudad Madero. Desde ahí cubrimos la zona conurbada y las localidades vecinas.',
+      cta: 'Confirme su colonia',
       areas: [
         { name: 'Tampico', slug: 'tampico' },
         { name: 'Ciudad Madero', slug: 'ciudad-madero' },
@@ -642,17 +211,17 @@ export const HERNANDEZ_HOME = {
       ],
     },
     blog: {
-      eyebrow: 'Guías de prevención',
-      title: 'Aprende a detectarlo antes de que crezca',
+      eyebrow: 'Antes de que llegue el técnico',
+      title: 'Cómo se ve una plaga cuando recién empieza',
       description:
-        'Cómo reconocer las señales tempranas, qué hacer mientras llega el servicio y cuándo un problema ya requiere tratamiento profesional.',
-      cta: 'Ver todas las guías',
+        'Qué mirar en su casa o en su local para darse cuenta a tiempo, qué puede hacer mientras coordina la visita y en qué punto ya conviene tratar.',
+      cta: 'Leer las guías',
       articles: [
         {
           category: 'Moscos',
-          title: 'Moscos en Tampico: cómo acabar con los criaderos de tu patio',
+          title: 'Moscos en Tampico: los criaderos que tiene en su propio patio',
           summary:
-            'Dónde se esconde el agua que no ves y por qué nebulizar sin eliminar criaderos solo dura unos días.',
+            'Dónde se esconde el agua que nadie ve y por qué nebulizar sin eliminar criaderos solo dura unos días.',
         },
         {
           category: 'Termitas',
@@ -669,17 +238,12 @@ export const HERNANDEZ_HOME = {
       ],
     },
     contact: {
-      eyebrow: 'Te atendemos 24 horas',
-      title: 'Pásate o llama',
+      eyebrow: 'Para empezar',
+      title: 'Dígale a alguien qué está viendo',
       description:
-        'Cuéntanos qué plaga viste y en qué zona estás. Estamos en Centenario 503, Col. Obrera, Ciudad Madero, y atendemos toda la zona conurbada.',
-      whatsappCta: 'Escribir por WhatsApp',
-      phoneCta: 'Llamar ahora',
+        'Con saber qué plaga notó, en qué parte del inmueble y en qué colonia, ya podemos decirle cómo seguimos. Si prefiere pasar, la oficina está en Centenario 503, Col. Obrera, Ciudad Madero.',
+      whatsappCta: 'Mándenos un mensaje',
+      phoneCta: 'Marque directo',
     },
   },
 } as const
-
-export function getHernandezHomeCopy(language: 'es' | 'en') {
-  // Inglés queda como fallback al español hasta contar con copy aprobado.
-  return language === 'es' ? HERNANDEZ_HOME.es : HERNANDEZ_HOME.es
-}

@@ -4,8 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Clock3, Globe2, Menu, MessageCircle, Phone, X } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
+import { Clock3, Menu, MessageCircle, Phone, X } from 'lucide-react'
 import { SITE, whatsappUrl } from '@/lib/site'
 
 const NAV_ITEMS = [
@@ -18,15 +17,13 @@ const NAV_ITEMS = [
 ] as const
 
 const quoteUrl = whatsappUrl(
-  'Hola, necesito una inspección sin costo para control de plagas.',
+  'Buen día. Quiero pedir la revisión sin costo.',
 )
 
 export function Header() {
-  const { language, setLanguage } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const closeMenu = () => setMobileOpen(false)
-  const toggleLanguage = () => setLanguage(language === 'es' ? 'en' : 'es')
 
   return (
     <>
@@ -90,20 +87,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              type="button"
-              onClick={toggleLanguage}
-              aria-label={
-                language === 'es'
-                  ? 'Cambiar idioma a inglés'
-                  : 'Cambiar idioma a español'
-              }
-              className="inline-flex size-10 items-center justify-center rounded-full text-[#212121] transition-colors hover:bg-[#FFF8DC] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFDF00]"
-            >
-              <Globe2 className="size-4" />
-              <span className="sr-only">{language}</span>
-            </button>
-
             <a
               href={quoteUrl}
               target="_blank"

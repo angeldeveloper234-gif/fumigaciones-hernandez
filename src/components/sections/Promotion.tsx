@@ -58,7 +58,7 @@ export function Promotion() {
               <div className="mx-auto my-6 h-px max-w-64 bg-white/12" />
               <a
                 href={whatsappUrl(
-                  'Hola, quiero aprovechar la promoción de 3 sesiones al precio de 2 desde $750 MXN.',
+                  'Buen día. Quiero pedir la revisión sin costo y que me pasen el presupuesto.',
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

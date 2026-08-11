@@ -51,9 +51,9 @@ export function getPostOgImage(post: BlogPost) {
 export const BLOG_POSTS: readonly BlogPost[] = [
   {
     slug: 'moscos-en-tampico-criaderos',
-    title: 'Moscos en Tampico: cómo acabar con los criaderos de tu patio',
+    title: 'Moscos en Tampico: los criaderos que tiene en su propio patio',
     summary:
-      'Dónde se esconde el agua que no ves, por qué nebulizar sin eliminar criaderos solo dura unos días y qué revisar después de cada lluvia.',
+      'Dónde se esconde el agua que nadie ve, por qué nebulizar sin eliminar criaderos solo dura unos días y qué revisar después de cada lluvia.',
     image: pestImage('moscos'),
     imageAlt: 'Inspección de un patio en busca de criaderos de moscos',
     category: 'Moscos',
@@ -72,7 +72,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
         ],
       },
       {
-        heading: 'El agua que no ves',
+        heading: 'El agua que no está a la vista',
         paragraphs: [
           'Cuando pedimos a un cliente que revise su patio, casi siempre dice que no hay agua estancada. Y casi siempre encontramos varios criaderos activos. Estos son los que más se repiten:',
         ],
@@ -111,7 +111,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
         heading: 'Cuándo llamar a un profesional',
         paragraphs: [
           'Si la actividad es constante pese a haber eliminado el agua visible, si hay vegetación densa donde los moscos pasan el día, o si el patio es amplio y colinda con terreno baldío o zonas de agua, el tratamiento profesional marca la diferencia.',
-          'Aplicamos termonebulización o nebulización en frío según el espacio, tratamos la vegetación y las zonas de reposo, y durante la inspección señalamos cada criadero que encontramos para que puedas eliminarlo. Atendemos Tampico, Ciudad Madero, Altamira y la zona conurbada las 24 horas.',
+          'Aplicamos termonebulización o nebulización en frío según el espacio, tratamos la vegetación y las zonas de reposo, y durante la inspección señalamos cada criadero que encontramos para que pueda eliminarlo. Atendemos Tampico, Ciudad Madero, Altamira y la zona conurbada las 24 horas.',
         ],
       },
     ],
@@ -136,9 +136,9 @@ export const BLOG_POSTS: readonly BlogPost[] = [
     serviceLabel: 'Fumigación profesional de cucarachas',
     sections: [
       {
-        heading: 'Lo primero: no es culpa de tu limpieza',
+        heading: 'Lo primero: no es culpa de su limpieza',
         paragraphs: [
-          'Es la frase que más repetimos en las visitas. La cucaracha americana —la grande, la que vuela— no vive dentro de la casa: vive en el drenaje, y sube. Puedes tener la cocina impecable y aun así encontrarte una en la tarja a medianoche.',
+          'Es la frase que más repetimos en las visitas. La cucaracha americana —la grande, la que vuela— no vive dentro de la casa: vive en el drenaje, y sube. Puede tener la cocina impecable y aun así encontrarte una en la tarja a medianoche.',
           'El sistema de drenaje le ofrece exactamente lo que necesita: humedad, calor, materia orgánica y oscuridad. Y en la zona conurbada, con el clima que tenemos y buena parte de la red con años encima, esas condiciones son permanentes.',
           'Por eso el problema no se resuelve limpiando más. Se resuelve cerrando la vía de entrada y tratando el punto por donde suben.',
         ],
@@ -236,7 +236,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       {
         heading: 'Un error que conviene evitar',
         paragraphs: [
-          'Si encuentras túneles de tierra sobre un muro, la reacción natural es limpiarlos. Es mejor no hacerlo antes de la inspección: esos túneles indican por dónde se desplazan y hacia dónde van, y son información útil para localizar el foco.',
+          'Si ve túneles de tierra sobre un muro, la reacción natural es limpiarlos. Es mejor no hacerlo antes de la inspección: esos túneles indican por dónde se desplazan y hacia dónde van, y son información útil para localizar el foco.',
           'Lo mismo con las alas desprendidas tras un enjambre: dicen que hay una colonia madura cerca y ayudan a orientar la revisión.',
         ],
       },
@@ -245,7 +245,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
         paragraphs: [
           'Primero una inspección estructural que determine la extensión real: marcos, rodapiés, vigas y puntos de contacto con el suelo. A partir de ahí se define si basta el tratamiento dirigido o hay que contemplar reparación.',
           'El tratamiento combina inyección puntual con jeringa en la madera afectada, aspersión dirigida y barrera perimetral en los puntos de contacto con el suelo. Se aplica mediante orificios milimétricos, sin manchar ni afectar el acabado.',
-          'Atendemos Tampico, Ciudad Madero, Altamira y la zona conurbada. Si sospechas de termitas, la inspección temprana es lo que evita una reparación cara.',
+          'Atendemos Tampico, Ciudad Madero, Altamira y la zona conurbada. Si sospecha que hay termitas, la inspección temprana es lo que evita una reparación cara.',
         ],
       },
     ],
@@ -273,7 +273,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       {
         heading: 'Las señales que confirman actividad',
         paragraphs: [
-          'Las ratas son nocturnas y discretas: cuando ves una de día, la población suele llevar tiempo establecida. Las señales indirectas aparecen mucho antes y permiten actuar a tiempo.',
+          'Las ratas son nocturnas y discretas: cuando se ve una de día, la población suele llevar tiempo establecida. Las señales indirectas aparecen mucho antes y permiten actuar a tiempo.',
         ],
         bullets: [
           'Excremento oscuro con forma de grano de arroz junto a muros o tras electrodomésticos.',
@@ -300,7 +300,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
         ],
       },
       {
-        heading: 'Qué puedes hacer desde hoy',
+        heading: 'Qué puede hacer desde hoy',
         paragraphs: [
           'Reducir alimento y refugio disponible mejora mucho el resultado del tratamiento y a veces evita que la población llegue a establecerse.',
         ],
@@ -313,9 +313,9 @@ export const BLOG_POSTS: readonly BlogPost[] = [
         ],
       },
       {
-        heading: 'Cuándo dejar de intentarlo por tu cuenta',
+        heading: 'Cuándo dejar de intentarlo por su cuenta',
         paragraphs: [
-          'Si escuchas actividad en plafones, si encuentras excremento en más de una habitación, si hay cableado roído o si aparece un ejemplar de día, la población ya está establecida y las trampas de supermercado no van a alcanzarla.',
+          'Si escucha actividad en el plafón, si aparece excremento en más de una habitación, si hay cableado roído o si aparece un ejemplar de día, la población ya está establecida y las trampas de supermercado no van a alcanzarla.',
           'El servicio profesional combina estaciones de cebo cerradas y rotuladas sobre las rutas detectadas, trampeo para medir la actividad real y sellado de accesos, que es lo que evita que vuelva a formarse. Atendemos casas, comercios, bodegas y naves industriales en toda la zona conurbada.',
         ],
       },
@@ -352,7 +352,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       {
         heading: 'Los factores que acortan el intervalo',
         paragraphs: [
-          'Si tu vivienda cumple varios de estos puntos, conviene acercarse a los 3 meses en lugar de los 4:',
+          'Si su vivienda cumple varios de estos puntos, conviene acercarse a los 3 meses en lugar de los 4:',
         ],
         bullets: [
           'Cercanía a lagunas, esteros, canales o el río: presión constante de moscos.',
@@ -390,7 +390,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
     slug: 'alacranes-en-tamaulipas',
     title: 'Alacranes en Tamaulipas: cómo prevenirlos en casa',
     summary:
-      'Dónde se refugian, qué revisar cada semana y cómo reducir el riesgo para niños y mascotas sin depender de remedios improvisados.',
+      'Por dónde se meten en las colonias de la conurbación, qué mirar antes de acostarse y en qué momento el problema deja de resolverse ordenando el patio.',
     image: pestImage('alacranes'),
     imageAlt:
       'Alacrán localizado durante una inspección preventiva de grietas y accesos',
@@ -404,44 +404,45 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       {
         heading: 'Por qué entran a la vivienda',
         paragraphs: [
-          'El alacrán no busca a las personas. Entra porque encuentra tres cosas: refugio, humedad e insectos de los que alimentarse. Un hueco bajo la puerta, una grieta alrededor de una tubería o material apilado contra el muro conectan el exterior con el interior.',
+          'El alacrán no anda buscando gente. Entra porque adentro hay tres cosas que afuera escasean: sombra, humedad y bichos que comer. Y entra por donde puede: la luz que queda debajo de la puerta, el hueco que dejó el plomero al pasar un caño, la pila de material recostada contra la pared.',
           'En la periferia de la conurbación, en Altamira, Aldama y las zonas donde la vivienda colinda con monte o terreno sin construir, la probabilidad de ingreso es bastante mayor. Las obras en curso y el escombro acumulado aceleran el proceso.',
           'Durante el día permanece oculto y sale de noche a cazar. Por eso un avistamiento en el baño o la recámara no indica necesariamente dónde está el refugio.',
         ],
       },
       {
-        heading: 'Los puntos que conviene revisar cada semana',
+        heading: 'La vuelta de cinco minutos, antes de acostarse',
         paragraphs: [
-          'Una rutina breve permite detectar las condiciones antes de encontrarte un ejemplar. Hazla con buena iluminación y calzado cerrado, y no metas las manos en huecos que no puedas ver. Si mueves objetos almacenados, usa guantes resistentes.',
+          'No hace falta una revisión exhaustiva ni todos los días. Alcanza con una recorrida corta al caer la tarde, que es cuando el alacrán empieza a moverse. Hágala con linterna y calzado cerrado; si va a mover cosas guardadas, póngase guantes de trabajo y levante los objetos desde arriba, nunca metiendo la mano en un hueco a ciegas.',
         ],
         bullets: [
-          'Sacude zapatos, toallas y ropa que hayan quedado sobre el piso.',
-          'Revisa zoclos, marcos, pasos de instalaciones y grietas visibles.',
-          'Mantén despejados registros, bodegas y cuartos de lavado.',
-          'Retira escombro, madera, piedra y macetas pegadas a la construcción.',
-          'Comprueba que los sellos inferiores de las puertas estén completos.',
+          'Voltee el calzado que quedó afuera o en el piso antes de ponérselo.',
+          'Pase la linterna por el rodapié, el marco de las puertas y el paso de las tuberías.',
+          'Despeje el cuarto de lavado, la bodega y el registro del patio.',
+          'Separe del muro el escombro, la leña, la piedra y las macetas.',
+          'Fíjese si el burlete de la puerta de calle sigue tocando el piso.',
         ],
       },
       {
-        heading: 'Cómo proteger a niños y mascotas',
+        heading: 'La recámara de los niños es lo primero',
         paragraphs: [
-          'En hogares con niños pequeños, evita dejar juguetes, cobijas o calzado sobre el piso durante la noche. Las camas y cunas no deben quedar pegadas a muros con grietas, y conviene retirar los faldones que lleguen al suelo: son un puente de acceso.',
-          'Enseña a los niños a no tocar un alacrán aunque parezca inmóvil, y ten una linterna a mano para revisar antes de recoger objetos en el patio.',
-          'Con las mascotas, mantén limpias sus zonas de descanso y evita que jueguen entre material acumulado. No apliques insecticidas domésticos en su cama ni mezcles productos.',
+          'Lo más útil que puede hacer en una casa con chicos es dejar el piso libre de noche: nada de peluches, cobijas ni zapatos tirados. La cama separada del muro unos centímetros, y sin faldón que llegue hasta abajo, porque la tela es una rampa.',
+          'Vale la pena explicarles que un alacrán quieto no está muerto y que no se toca ni con un palo. Deje una linterna en el buró: sirve más que cualquier producto para revisar antes de pisar.',
+          'Con perros y gatos, el punto es la cama y el rincón donde duermen. Manténgalos despejados y no use insecticida de supermercado ahí: no resuelve el problema y sí puede intoxicar al animal.',
         ],
       },
       {
-        heading: 'Qué hacer ante un hallazgo o una picadura',
+        heading: 'Si aparece uno, y si alguien resulta picado',
         paragraphs: [
-          'Si encuentras un alacrán, mantén distancia y no lo captures con las manos. Aísla el área, aleja a niños y mascotas, y anota dónde y a qué hora apareció: esa información orienta la inspección posterior.',
-          'Ante una picadura, busca atención médica de inmediato y sigue las indicaciones del personal de salud. No hagas cortes ni succiones, y no apliques sustancias caseras sobre la zona. El control de plagas atiende la propiedad, pero no sustituye la valoración médica ni debe retrasarla.',
+          'Ante un ejemplar a la vista, lo primero es no acercar la mano. Cubra la zona, saque de la habitación a los chicos y a las mascotas, y apunte en qué parte de la casa fue y a qué hora. Ese dato le sirve al técnico más de lo que parece: le dice por dónde está entrando.',
+          'Si hay picadura, vaya al médico de una vez y haga lo que le indiquen ahí. No corte, no succione y no le ponga nada encima. Conviene ser claro en esto: nuestro trabajo es sobre el inmueble. No reemplaza la atención médica y no es motivo para demorarla.',
         ],
       },
       {
-        heading: 'Cuándo conviene el control profesional',
+        heading: 'Cuándo el orden ya no alcanza',
         paragraphs: [
-          'Un avistamiento recurrente, la presencia en habitaciones o cualquier hallazgo en una vivienda con niños pequeños justifica una inspección. El técnico revisa refugios, accesos y actividad de otros insectos, y aplica polvos residuales en grietas seleccionadas junto con tratamiento perimetral.',
-          'La aplicación rinde mucho más acompañada de orden, retiro de material acumulado y sellado de accesos. El objetivo no es rociar la casa entera, sino eliminar las condiciones que permiten que el alacrán entre y se quede.',
+          'Ordenar y sellar resuelve buena parte de los casos. Deja de alcanzar cuando el hallazgo se repite, cuando aparecen dentro de las habitaciones y no en el patio, o cuando hay bebés en la casa. Ahí conviene que alguien revise.',
+          'En la visita se busca el refugio y la vía de entrada, y se mira también qué otros insectos hay, porque el alacrán vino detrás de su comida. Se aplica polvo residual en las grietas que lo justifican y se trata el perímetro.',
+          'Aun así, el tratamiento rinde el doble si va acompañado de sacar el material apilado y cerrar los accesos. No se trata de rociar la casa entera: se trata de que el lugar deje de servirle.',
         ],
       },
     ],

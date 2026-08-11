@@ -31,7 +31,7 @@ export function Contact() {
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={whatsappUrl(
-                    'Hola, necesito ayuda con una plaga. Quiero coordinar una inspección.',
+                    'Buen día. Le cuento qué plaga vi y en qué colonia estoy.',
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -66,12 +66,12 @@ export function Contact() {
               <ContactItem
                 icon={Clock3}
                 label="Horario"
-                value="Lun a Sáb 8:00-17:00 · Atención 24 horas"
+                value={`${SITE.officeHoursLabel} · ${SITE.openingHoursLabel}`}
               />
               <ContactItem
                 icon={MapPin}
-                label="Base operativa"
-                value="Calle Malinalli M-5 LT-11, Cd. Cuauhtémoc, Tampico, Tamaulipas"
+                label="Oficina"
+                value={`${SITE.address.streetAddress}, ${SITE.address.neighborhood}, ${SITE.address.addressLocality}, ${SITE.address.addressRegion}`}
               />
             </div>
           </div>

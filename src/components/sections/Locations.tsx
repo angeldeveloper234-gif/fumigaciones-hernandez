@@ -26,7 +26,7 @@ export function Locations() {
           <p className="t-body mt-4 text-white/80">{copy.description}</p>
           <a
             href={whatsappUrl(
-              'Hola, quiero confirmar la cobertura de Fumigaciones Hernández en mi zona.',
+              'Buen día. Quiero confirmar si llegan a mi colonia.',
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -71,7 +71,7 @@ export function Locations() {
                 </h3>
               </div>
               <span className="shrink-0 rounded-full bg-[#FFF8DC] px-3 py-1 text-xs font-black text-[#B41B1E]">
-                8 ciudades
+                {COVERAGE_AREAS.length} zonas
               </span>
             </div>
 
@@ -106,9 +106,10 @@ export function Locations() {
               ))}
             </ol>
 
-            <p className="mt-auto pt-4 text-xs leading-5 text-[#5A6070]">
-              la zona conurbada concentran nuestras zonas de atención
-              local.
+            <p className="mt-auto pt-4 text-xs leading-5 text-[#3E4650]">
+              Tampico, Ciudad Madero y Altamira concentran el grueso del
+              servicio. Pueblo Viejo, Pánuco y Aldama se atienden coordinando
+              la visita.
             </p>
           </aside>
         </div>

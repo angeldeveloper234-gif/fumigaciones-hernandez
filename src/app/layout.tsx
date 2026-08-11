@@ -5,7 +5,6 @@ import { SITE } from '@/lib/site'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp'
-import { LanguageProvider } from '@/context/LanguageContext'
 import { JsonLd } from '@/components/seo/JsonLd'
 import {
   localBusinessSchema,
@@ -119,12 +118,10 @@ export default function RootLayout({
             localBusinessSchema(),
           ]}
         />
-        <LanguageProvider>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <FloatingWhatsApp />
-        </LanguageProvider>
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   )

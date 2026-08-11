@@ -62,7 +62,7 @@ export default function AboutPage() {
               </p>
               <a
                 href={whatsappUrl(
-                  'Hola, quiero conocer el tratamiento recomendado para mi propiedad.',
+                  'Buen día. Quiero contarles qué estoy viendo en mi propiedad.',
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

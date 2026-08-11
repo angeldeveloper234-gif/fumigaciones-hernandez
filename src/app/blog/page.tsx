@@ -16,7 +16,7 @@ import { whatsappUrl } from '@/lib/site'
 export const metadata = generatePageMetadata({
   title: 'Blog de Prevención de Plagas',
   description:
-    'Guías prácticas sobre alacranes, cucarachas, mosquitos, termitas y fumigación preventiva para hogares y negocios del Valle de México.',
+    'Cómo detectar moscos, cucarachas, termitas y roedores antes de que se instalen, en el clima del Golfo. Para casas y negocios de la zona conurbada.',
   path: '/blog',
   keywords: [
     'blog control de plagas',
@@ -35,7 +35,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-MX', {
 })
 
 const quoteUrl = whatsappUrl(
-  'Hola, leí una guía de Fumigaciones Hernández y quiero solicitar una inspección.',
+  'Buen día. Leí una de sus guías y quiero que revisen mi caso.',
 )
 
 export default function BlogIndexPage() {

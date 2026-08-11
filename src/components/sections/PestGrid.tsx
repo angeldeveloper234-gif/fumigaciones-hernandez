@@ -39,6 +39,7 @@ export function PestGrid() {
               <FadeUp delay={Math.min(index * 0.03, 0.18)}>
                 <Link
                   href={`/servicios/${pest.slug}`}
+                  aria-label={`${pest.name}: ${copy.cta.toLowerCase()}`}
                   className="group flex h-full items-stretch overflow-hidden rounded-lg border border-black/10 bg-white transition hover:border-[#1C3266] hover:shadow-[0_10px_28px_rgba(28,50,102,0.10)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3266]"
                 >
                   <div className="relative w-28 shrink-0 self-stretch bg-[#EEF2F7] sm:w-36">
