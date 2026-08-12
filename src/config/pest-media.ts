@@ -35,16 +35,16 @@ export interface PestMedia {
 }
 
 /**
- * {{PENDIENTE: foto real de alacrán}}
- * {{PENDIENTE: foto real de araña}}
+ * Alacranes y arañas no estaban en los bancos del estudio y se buscaron
+ * aparte en Pexels, aplicando el mismo filtro de autor: se descarta cualquier
+ * foto cuyo autor tenga nombre de fumigadora. Los dos autores elegidos son
+ * fotógrafos individuales.
  *
- * Ninguno de los dos bancos de imágenes del estudio cubre estas dos plagas, y
- * el vault tampoco tiene material propio. Van con placeholder de color plano
- * —distinguible del resto, para que se note que falta— en vez de quedarse con
- * la foto de fumcon.
- *
- * Alacranes pesa: es una de las ocho plagas núcleo de la fase 3, así que su
- * página de intersección va a necesitar la foto.
+ * En alacranes se eligió a propósito un Centruroides sobre madera y no una
+ * toma de desierto: Centruroides es el género que importa en México y el
+ * contexto doméstico es el que corresponde a una página que habla de grietas,
+ * muros y entretechos. En arañas, una doméstica sobre su tela, que es lo que
+ * la gente reconoce y lo que el servicio retira.
  */
 export const pestMedia = {
   moscos: {
@@ -81,9 +81,9 @@ export const pestMedia = {
   },
   alacranes: {
     src: '/images/pests/alacranes.webp',
-    alt: 'Imagen pendiente para el servicio de control de alacranes',
-    pexelsId: null,
-    isFinal: false,
+    alt: 'Alacrán del género Centruroides sobre una superficie de madera',
+    pexelsId: 20781638,
+    isFinal: true,
   },
   pulgas: {
     // El banco advierte que es una toma de microscopio, más clínica que
@@ -104,9 +104,9 @@ export const pestMedia = {
   },
   aranas: {
     src: '/images/pests/aranas.webp',
-    alt: 'Imagen pendiente para el servicio de control de arañas',
-    pexelsId: null,
-    isFinal: false,
+    alt: 'Araña doméstica sobre su tela, vista de cerca',
+    pexelsId: 37809643,
+    isFinal: true,
   },
   garrapatas: {
     src: '/images/pests/garrapatas.webp',

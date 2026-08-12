@@ -1,5 +1,6 @@
 import type { MatrixCombo, MatrixPest, MatrixZone } from '../matrix'
 import type { IntersectionContent } from './types'
+import { CIUDAD_MADERO_INTERSECTIONS } from './ciudad-madero'
 import { TAMPICO_INTERSECTIONS } from './tampico'
 
 export type { IntersectionContent } from './types'
@@ -12,10 +13,13 @@ export type { IntersectionContent } from './types'
  * contenido no genera página, así que es imposible publicar una intersección
  * vacía por olvido.
  *
- * Estado: Tampico completa (8/8). Faltan Ciudad Madero y Altamira, que se
- * escriben en las tandas 2 y 3 de la fase 3B.
+ * Estado: Tampico y Ciudad Madero completas (16/24). Falta Altamira, que se
+ * escribe en la tanda 3 de la fase 3B.
  */
-const ALL: readonly IntersectionContent[] = [...TAMPICO_INTERSECTIONS]
+const ALL: readonly IntersectionContent[] = [
+  ...TAMPICO_INTERSECTIONS,
+  ...CIUDAD_MADERO_INTERSECTIONS,
+]
 
 export const intersectionKey = (zone: string, pest: string) => `${zone}/${pest}`
 
