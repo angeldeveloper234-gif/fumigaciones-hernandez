@@ -24,6 +24,9 @@ import {
   faqSchema,
   serviceSchema,
 } from '@/lib/structured-data'
+import { getCoverageArea } from '@/lib/locations'
+import { publishedZonesForPest } from '@/data/intersections'
+import { intersectionPath } from '@/data/matrix'
 import { generatePageMetadata } from '@/lib/seo'
 import { whatsappUrl } from '@/lib/site'
 
@@ -109,6 +112,9 @@ export default async function ServicePage({
   if (!service) notFound()
 
   const related = getRelatedServices(service)
+  // Zonas con pagina de interseccion publicada para esta plaga. Vacio en las
+  // tres plagas que quedan fuera de la matriz por diseno.
+  const pestZones = publishedZonesForPest(service.slug)
   const quoteUrl = whatsappUrl(
     `Hola, necesito una inspección para control de ${service.name.toLowerCase()} en mi propiedad.`,
   )
@@ -407,12 +413,47 @@ export default async function ServicePage({
           </div>
         </section>
 
+        {pestZones.length > 0 && (
+          <section className="border-t border-black/10 bg-[#F5F8FC] py-18 md:py-24">
+            <div className="container">
+              <p className="t-kicker text-[#B41B1E]">Por ciudad</p>
+              <h2 className="t-h2 mt-3 max-w-2xl text-[#212121]">
+                {service.name} en cada ciudad de la conurbación
+              </h2>
+              <p className="t-body mt-4 text-[#3E4650]">
+                No es la misma plaga en el centro de Tampico que en una casa
+                costera de Madero o en una nave de Altamira. Estas páginas
+                explican la diferencia.
+              </p>
+              <ul className="mt-8 grid gap-3 sm:grid-cols-3">
+                {pestZones.map((zoneSlug) => {
+                  const zone = getCoverageArea(zoneSlug)
+                  if (!zone) return null
+                  return (
+                    <li key={zoneSlug}>
+                      <Link
+                        href={intersectionPath(zoneSlug, service.slug)}
+                        className="group flex h-full items-center justify-between gap-3 rounded-lg border border-black/10 bg-white p-5 transition hover:border-[#1C3266] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3266]"
+                      >
+                        <span className="t-body-sm font-semibold text-[#212121]">
+                          {service.name} en {zone.name}
+                        </span>
+                        <ArrowRight className="size-4 shrink-0 text-[#1C3266] transition group-hover:translate-x-1" />
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </section>
+        )}
+
         <section className="border-t border-black/8 bg-white py-18 md:py-24">
           <div className="container">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
-                  También podemos ayudarte con
+                  También atendemos
                 </p>
                 <h2 className="mt-3 text-[clamp(2rem,5vw,3.25rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
                   Servicios relacionados

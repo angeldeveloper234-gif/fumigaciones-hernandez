@@ -24,6 +24,9 @@ import {
   areaServiceSchema,
   breadcrumbSchema,
 } from '@/lib/structured-data'
+import { getPestService } from '@/lib/services'
+import { publishedPestsForZone } from '@/data/intersections'
+import { intersectionPath } from '@/data/matrix'
 import { generatePageMetadata } from '@/lib/seo'
 import { whatsappUrl } from '@/lib/site'
 
@@ -97,6 +100,9 @@ export default async function CoverageAreaPage({
   if (!area) notFound()
 
   const commonPests = getAreaCommonPests(area)
+  // Intersecciones publicadas de esta zona. Vacio en las zonas de cobertura
+  // secundaria, que por diseno no generan paginas hijas.
+  const zonePests = publishedPestsForZone(area.slug)
   const relatedAreas = getRelatedAreas(area)
   const quoteUrl = whatsappUrl(`Hola, necesito fumigación en ${area.name}.`)
 
@@ -280,6 +286,42 @@ export default async function CoverageAreaPage({
             </div>
           </div>
         </section>
+
+        {zonePests.length > 0 && (
+          <section className="border-t border-black/10 bg-white py-18 md:py-24">
+            <div className="container">
+              <p className="t-kicker text-[#B41B1E]">
+                Detalle por plaga
+              </p>
+              <h2 className="t-h2 mt-3 max-w-2xl text-[#212121]">
+                Cada plaga se comporta distinto en {area.name}
+              </h2>
+              <p className="t-body mt-4 text-[#3E4650]">
+                El tipo de inmueble y el entorno cambian por donde entra la
+                plaga y como se trata. Estas paginas entran en ese detalle.
+              </p>
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {zonePests.map((pestSlug) => {
+                  const pest = getPestService(pestSlug)
+                  if (!pest) return null
+                  return (
+                    <li key={pestSlug}>
+                      <Link
+                        href={intersectionPath(area.slug, pestSlug)}
+                        className="group flex h-full items-center justify-between gap-3 rounded-lg border border-black/10 bg-white p-5 transition hover:border-[#1C3266] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3266]"
+                      >
+                        <span className="t-body-sm font-semibold text-[#212121]">
+                          {pest.name} en {area.name}
+                        </span>
+                        <ArrowRight className="size-4 shrink-0 text-[#1C3266] transition group-hover:translate-x-1" />
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </section>
+        )}
 
         <section className="bg-white py-18 md:py-24">
           <div className="container">
