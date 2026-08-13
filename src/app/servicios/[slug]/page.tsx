@@ -143,7 +143,7 @@ export default async function ServicePage({
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
           />
-          <div className="container py-12 md:py-16">
+          <div className="container py-10 md:py-14">
             <nav
               aria-label="Migas de pan"
               className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/55"
@@ -159,13 +159,13 @@ export default async function ServicePage({
               <span className="text-[#FFE95C]">{service.name}</span>
             </nav>
 
-            <div className="mt-9 grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16">
+            <div className="mt-9 grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-center lg:gap-16">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#FFDF00]/40 bg-[#FFDF00]/12 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-[#FFF0A0]">
                   <span className="size-2 rounded-full bg-[#F07070]" />
                   Servicio especializado con garantía
                 </div>
-                <h1 className="mt-6 max-w-4xl text-[clamp(2.45rem,6vw,4.75rem)] font-black leading-[0.96] tracking-[-0.045em] [hyphens:auto] [overflow-wrap:break-word]">
+                <h1 className="t-h1 mt-6 max-w-4xl [hyphens:auto] [overflow-wrap:break-word]">
                   {service.h1}
                 </h1>
                 <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/72 md:text-lg">
@@ -213,13 +213,13 @@ export default async function ServicePage({
           </div>
         </header>
 
-        <div className="container py-18 md:py-24">
+        <div className="container py-14 md:py-20">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-16">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                 El problema
               </p>
-              <h2 className="mt-4 text-[clamp(2rem,5vw,3.35rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+              <h2 className="t-h2 mt-4 text-[#212121]">
                 Por qué conviene actuar desde las primeras señales
               </h2>
               <div className="mt-6 space-y-5 text-base leading-8 text-[#5A6070]">
@@ -266,7 +266,7 @@ export default async function ServicePage({
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
                   Tratamiento profesional
                 </p>
-                <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1] tracking-[-0.04em]">
+                <h2 className="t-h2 mt-4">
                   Método definido después de inspeccionar
                 </h2>
               </div>
@@ -301,13 +301,13 @@ export default async function ServicePage({
           </div>
         </section>
 
-        <section className="bg-white py-18 md:py-24">
+        <section className="bg-white py-14 md:py-20">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                 Cómo trabajamos
               </p>
-              <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+              <h2 className="t-h2 mt-4 text-[#212121]">
                 Un proceso claro de principio a fin
               </h2>
             </div>
@@ -337,7 +337,7 @@ export default async function ServicePage({
           </div>
         </section>
 
-        <section className="bg-[#F5F8FC] py-18 md:py-24">
+        <section className="bg-[#F5F8FC] py-14 md:py-20">
           <div className="container grid gap-6 lg:grid-cols-2">
             <div className="rounded-[1.75rem] border border-black/8 bg-white p-6 md:p-8">
               <p className="text-xs font-black uppercase tracking-[0.16em] text-[#B41B1E]">
@@ -381,13 +381,13 @@ export default async function ServicePage({
           </div>
         </section>
 
-        <section className="bg-white py-18 md:py-24">
+        <section className="bg-white py-14 md:py-20">
           <div className="container grid gap-10 lg:grid-cols-[0.65fr_1.35fr]">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                 Dudas frecuentes
               </p>
-              <h2 className="mt-4 text-[clamp(2rem,5vw,3.35rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+              <h2 className="t-h2 mt-4 text-[#212121]">
                 Antes del tratamiento
               </h2>
               <p className="t-body mt-5 text-[#3E4650]">
@@ -403,7 +403,7 @@ export default async function ServicePage({
         </section>
 
         {pestZones.length > 0 && (
-          <section className="border-t border-black/10 bg-[#F5F8FC] py-18 md:py-24">
+          <section className="border-t border-black/10 bg-[#F5F8FC] py-14 md:py-20">
             <div className="container">
               <p className="t-kicker text-[#B41B1E]">Por ciudad</p>
               <h2 className="t-h2 mt-3 max-w-2xl text-[#212121]">
@@ -437,14 +437,14 @@ export default async function ServicePage({
           </section>
         )}
 
-        <section className="border-t border-black/8 bg-white py-18 md:py-24">
+        <section className="border-t border-black/8 bg-white py-14 md:py-20">
           <div className="container">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                   También atendemos
                 </p>
-                <h2 className="mt-3 text-[clamp(2rem,5vw,3.25rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+                <h2 className="t-h2 mt-3 text-[#212121]">
                   Servicios relacionados
                 </h2>
               </div>
@@ -498,7 +498,7 @@ export default async function ServicePage({
               <p className="text-xs font-black uppercase tracking-[0.16em] text-[#FFE95C]">
                 Cotización e inspección sin costo
               </p>
-              <h2 className="mt-3 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
+              <h2 className="t-h2 mt-3 max-w-3xl">
                 Cuéntenos dónde vio {service.name.toLowerCase()}
               </h2>
               <p className="mt-3 text-sm leading-6 text-white/65">

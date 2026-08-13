@@ -74,7 +74,7 @@ export default function BlogIndexPage() {
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
                   Guías para la zona conurbada
                 </p>
-                <h1 className="mt-4 max-w-5xl text-[clamp(2.7rem,7vw,5.25rem)] font-black leading-[0.95] tracking-[-0.05em]">
+                <h1 className="t-h1 mt-4 max-w-5xl">
                   Prevención de plagas, explicada sin rodeos
                 </h1>
               </div>
@@ -87,7 +87,7 @@ export default function BlogIndexPage() {
         </section>
 
         {featured && (
-          <section className="bg-[#F5F8FC] py-18 md:py-24">
+          <section className="bg-[#F5F8FC] py-14 md:py-20">
             <div className="container">
               <Link
                 href={`/blog/${featured.slug}`}
@@ -124,7 +124,7 @@ export default function BlogIndexPage() {
                       {featured.readingTime}
                     </span>
                   </div>
-                  <h2 className="mt-6 text-[clamp(2rem,4vw,3.5rem)] font-black leading-[1.02] tracking-[-0.04em] text-[#212121]">
+                  <h2 className="t-h2 mt-6 text-[#212121]">
                     {featured.title}
                   </h2>
                   <p className="mt-5 text-base leading-7 text-[#5A6070]">
@@ -140,14 +140,14 @@ export default function BlogIndexPage() {
           </section>
         )}
 
-        <section className="bg-white py-18 md:py-24">
+        <section className="bg-white py-14 md:py-20">
           <div className="container">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                   Biblioteca Fumigaciones Hernández
                 </p>
-                <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+                <h2 className="t-h2 mt-4 text-[#212121]">
                   Todas las guías
                 </h2>
               </div>
@@ -213,7 +213,7 @@ export default function BlogIndexPage() {
                 <BookOpen className="size-4" />
                 ¿Reconociste alguna señal?
               </p>
-              <h2 className="mt-3 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
+              <h2 className="t-h2 mt-3 max-w-3xl">
                 Confirma el problema con una inspección
               </h2>
             </div>

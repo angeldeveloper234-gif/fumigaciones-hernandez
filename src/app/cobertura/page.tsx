@@ -63,51 +63,51 @@ export default function CoveragePage() {
       />
 
       <div>
-        <section className="relative isolate overflow-hidden bg-[#F5F8FC] py-18 md:py-24">
+        {/* Era el unico hero claro de las seis paginas, sin criterio que lo
+            justificara. Pasa a oscuro como el resto. */}
+        <section className="relative isolate overflow-hidden bg-[#1C3266] py-14 text-white md:py-20">
           <div
             aria-hidden="true"
-            className="absolute right-[-8rem] top-[-12rem] -z-10 size-[34rem] rounded-full bg-[#FFDF00]/12 blur-3xl"
+            className="absolute inset-0 -z-10 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:44px_44px]"
           />
           <div className="container">
             <nav
               aria-label="Migas de pan"
-              className="flex items-center gap-2 text-xs font-bold text-[#727A73]"
+              className="flex items-center gap-2 text-xs font-bold text-white/70"
             >
-              <Link href="/" className="hover:text-[#B41B1E]">
+              <Link href="/" className="hover:text-[#FFDF00]">
                 Inicio
               </Link>
               <ArrowRight className="size-3" />
-              <span className="text-[#B41B1E]">Cobertura</span>
+              <span className="text-[#FFE95C]">Cobertura</span>
             </nav>
 
-            <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.45fr] lg:items-end">
+            <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_0.45fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
-                  la zona conurbada
-                </p>
-                <h1 className="mt-4 max-w-5xl text-[clamp(2.7rem,7vw,5.25rem)] font-black leading-[0.95] tracking-[-0.05em] text-[#212121]">
+                <p className="t-kicker text-[#FFE95C]">La zona conurbada</p>
+                <h1 className="t-h1 mt-3 max-w-3xl">
                   Control de plagas cerca de su propiedad
                 </h1>
-                <p className="mt-6 max-w-2xl text-base leading-7 text-[#5A6070]">
+                <p className="t-body mt-4 text-white/80">
                   Coordinamos inspección, tratamiento y seguimiento para
                   hogares y negocios en las seis zonas que cubrimos de la zona
                   conurbada del sur de Tamaulipas.
                 </p>
               </div>
 
-              <div className="rounded-[2rem] bg-[#1C3266] p-7 text-white shadow-[0_24px_60px_rgba(28,50,102,0.16)]">
+              <div className="rounded-lg border border-white/15 bg-[#16294F]/85 p-7 backdrop-blur-sm">
                 <div className="flex items-start justify-between">
-                  <span className="flex size-12 items-center justify-center rounded-2xl bg-[#FFDF00] text-[#1C3266]">
+                  <span className="flex size-12 items-center justify-center rounded-md bg-[#FFDF00] text-[#1C3266]">
                     <MapPinned className="size-6" />
                   </span>
-                  <span className="text-5xl font-black text-[#F07070]">
+                  <span className="font-heading text-5xl font-bold text-[#FFDF00]">
                     {COVERAGE_AREAS.length}
                   </span>
                 </div>
-                <p className="mt-7 text-xs font-black uppercase tracking-[0.15em] text-[#FFE95C]">
+                <p className="t-kicker mt-7 text-[#FFE95C]">
                   Zonas con página local
                 </p>
-                <p className="mt-2 text-sm leading-6 text-white/65">
+                <p className="t-body-sm mt-2 text-white/80">
                   Información, plagas frecuentes y contacto directo para cada
                   ciudad.
                 </p>
@@ -118,14 +118,14 @@ export default function CoveragePage() {
 
         <Locations />
 
-        <section className="bg-white py-18 md:py-24">
+        <section className="bg-white py-14 md:py-20">
           <div className="container">
             <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                   Atención adaptable
                 </p>
-                <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+                <h2 className="t-h2 mt-4 text-[#212121]">
                   Un servicio para cada tipo de espacio
                 </h2>
               </div>
@@ -166,7 +166,7 @@ export default function CoveragePage() {
                 <Clock3 className="size-4" />
                 Atención 24 horas
               </p>
-              <h2 className="mt-3 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
+              <h2 className="t-h2 mt-3 max-w-3xl">
                 Confirme la disponibilidad para su ubicación
               </h2>
             </div>

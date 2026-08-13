@@ -60,12 +60,12 @@ export default function ServicesPage() {
               <span className="text-[#FFE95C]">Servicios</span>
             </nav>
 
-            <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.58fr] lg:items-end">
+            <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.42fr] lg:items-end">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
                   Soluciones para hogares y negocios
                 </p>
-                <h1 className="mt-4 max-w-4xl text-[clamp(2.7rem,7vw,5.25rem)] font-black leading-[0.95] tracking-[-0.05em]">
+                <h1 className="t-h1 mt-4 max-w-4xl">
                   Servicios de control de plagas en Tampico y la zona conurbada
                 </h1>
               </div>
@@ -90,13 +90,13 @@ export default function ServicesPage() {
 
         <PestGrid />
 
-        <section className="bg-[#F5F8FC] py-18 md:py-24">
+        <section className="bg-[#F5F8FC] py-14 md:py-20">
           <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                 Diagnóstico antes de aplicar
               </p>
-              <h2 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+              <h2 className="t-h2 mt-4 text-[#212121]">
                 ¿No sabes qué plaga está entrando?
               </h2>
               <p className="mt-5 text-base leading-7 text-[#5A6070]">
@@ -154,7 +154,7 @@ export default function ServicesPage() {
               <p className="text-xs font-black uppercase tracking-[0.16em]">
                 Atención 24 horas
               </p>
-              <h2 className="mt-2 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
+              <h2 className="t-h2 mt-2 max-w-3xl">
                 Revise su propiedad antes de que la actividad aumente
               </h2>
             </div>

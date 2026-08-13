@@ -134,7 +134,7 @@ export default async function BlogPostPage({
               <span className="inline-flex rounded-full bg-[#F07070] px-4 py-2 text-xs font-black uppercase tracking-[0.13em] text-[#212121]">
                 {post.category}
               </span>
-              <h1 className="mt-6 max-w-5xl text-[clamp(2.35rem,6vw,4.75rem)] font-black leading-[0.96] tracking-[-0.045em]">
+              <h1 className="t-h1 mt-6 max-w-5xl">
                 {post.title}
               </h1>
               <p className="mt-6 max-w-3xl border-l-2 border-[#FFDF00] pl-5 text-base leading-7 text-white/75 md:text-lg">
@@ -162,7 +162,7 @@ export default async function BlogPostPage({
           </div>
         </header>
 
-        <div className="container py-18 md:py-24">
+        <div className="container py-14 md:py-20">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
             <div className="max-w-[48rem]">
               <div
@@ -174,7 +174,7 @@ export default async function BlogPostPage({
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-[#B41B1E]">
                       Punto {String(index + 1).padStart(2, '0')}
                     </p>
-                    <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.55rem)] font-black leading-[1.08] tracking-[-0.035em] text-[#212121]">
+                    <h2 className="t-h2 mt-3 text-[#212121]">
                       {section.heading}
                     </h2>
                     <div className="mt-5 space-y-5">
@@ -274,14 +274,14 @@ export default async function BlogPostPage({
           </div>
         </div>
 
-        <section className="border-t border-black/8 bg-[#F5F8FC] py-18 md:py-24">
+        <section className="border-t border-black/8 bg-[#F5F8FC] py-14 md:py-20">
           <div className="container">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                   Sigue aprendiendo
                 </p>
-                <h2 className="mt-3 text-[clamp(2rem,5vw,3.2rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+                <h2 className="t-h2 mt-3 text-[#212121]">
                   Guías relacionadas
                 </h2>
               </div>

@@ -48,12 +48,14 @@ export default function AboutPage() {
             <ArrowRight className="size-3" />
             <span className="text-[#FFE95C]">Nosotros</span>
           </nav>
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+          {/* Reparto medido: deja la columna de texto por encima de los 800px
+              que el H1 necesita para entrar en dos renglones a 1280px. */}
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.45fr] lg:items-end">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
                 Fumigaciones Hernández
               </p>
-              <h1 className="mt-4 max-w-4xl text-[clamp(2.7rem,7vw,5rem)] font-black leading-[0.95] tracking-[-0.05em]">
+              <h1 className="t-h1 mt-4 max-w-5xl">
                 Oficio, método y responsabilidad en cada servicio
               </h1>
             </div>

@@ -150,7 +150,7 @@ export default async function IntersectionPage({
           </div>
         </header>
 
-        <section className="container py-12 md:py-16">
+        <section className="container py-10 md:py-14">
           <div className="max-w-prose space-y-4">
             {content.intro.slice(1).map((p) => (
               <p key={p} className="t-body text-[#3E4650]">

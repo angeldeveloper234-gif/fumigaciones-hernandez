@@ -133,7 +133,7 @@ export default async function CoverageAreaPage({
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
           />
-          <div className="container py-12 md:py-16">
+          <div className="container py-10 md:py-14">
             <nav
               aria-label="Migas de pan"
               className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/55"
@@ -155,7 +155,7 @@ export default async function CoverageAreaPage({
                   <MapPin className="size-4" />
                   {area.state} · Atención 24 horas
                 </div>
-                <h1 className="mt-6 max-w-4xl text-[clamp(2.4rem,6vw,4.65rem)] font-black leading-[0.96] tracking-[-0.045em]">
+                <h1 className="t-h1 mt-6 max-w-4xl">
                   {area.h1}
                 </h1>
                 <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/72 md:text-lg">
@@ -212,13 +212,13 @@ export default async function CoverageAreaPage({
           </div>
         </header>
 
-        <section className="py-18 md:py-24">
+        <section className="py-14 md:py-20">
           <div className="container grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-16">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                 Contexto local
               </p>
-              <h2 className="mt-4 text-[clamp(2rem,5vw,3.35rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+              <h2 className="t-h2 mt-4 text-[#212121]">
                 Control pensado para propiedades de {area.name}
               </h2>
               <div className="mt-6 space-y-5 text-base leading-8 text-[#5A6070]">
@@ -250,13 +250,13 @@ export default async function CoverageAreaPage({
           </div>
         </section>
 
-        <section className="bg-[#F5F8FC] py-18 md:py-24">
+        <section className="bg-[#F5F8FC] py-14 md:py-20">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                 Actividad frecuente en la zona
               </p>
-              <h2 className="mt-4 text-[clamp(2rem,5vw,3.35rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+              <h2 className="t-h2 mt-4 text-[#212121]">
                 Plagas comunes en {area.name}
               </h2>
             </div>
@@ -296,7 +296,7 @@ export default async function CoverageAreaPage({
         </section>
 
         {zonePests.length > 0 && (
-          <section className="border-t border-black/10 bg-white py-18 md:py-24">
+          <section className="border-t border-black/10 bg-white py-14 md:py-20">
             <div className="container">
               <p className="t-kicker text-[#B41B1E]">
                 Detalle por plaga
@@ -331,14 +331,14 @@ export default async function CoverageAreaPage({
           </section>
         )}
 
-        <section className="bg-white py-18 md:py-24">
+        <section className="bg-white py-14 md:py-20">
           <div className="container">
             <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                   Solución completa
                 </p>
-                <h2 className="mt-4 text-[clamp(2rem,5vw,3.35rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+                <h2 className="t-h2 mt-4 text-[#212121]">
                   Los ocho servicios disponibles
                 </h2>
               </div>
@@ -379,7 +379,7 @@ export default async function CoverageAreaPage({
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
                 Proceso Fumigaciones Hernández
               </p>
-              <h2 className="mt-4 text-[clamp(2rem,5vw,3.35rem)] font-black leading-[1] tracking-[-0.04em]">
+              <h2 className="t-h2 mt-4">
                 De la primera señal al seguimiento
               </h2>
             </div>
@@ -405,14 +405,14 @@ export default async function CoverageAreaPage({
           </div>
         </section>
 
-        <section className="border-b border-black/8 bg-white py-18 md:py-24">
+        <section className="border-b border-black/8 bg-white py-14 md:py-20">
           <div className="container">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B41B1E]">
                   Cobertura cercana
                 </p>
-                <h2 className="mt-3 text-[clamp(2rem,5vw,3.2rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
+                <h2 className="t-h2 mt-3 text-[#212121]">
                   Otras zonas de atención
                 </h2>
               </div>
@@ -452,7 +452,7 @@ export default async function CoverageAreaPage({
             —si se llega, cómo se coordina, qué cambia según el inmueble— y no
             sobre una plaga concreta, que es lo que responden las páginas de
             intersección. Por eso ninguna se repite entre unas y otras. */}
-        <section className="border-t border-black/10 bg-white py-18 md:py-24">
+        <section className="border-t border-black/10 bg-white py-14 md:py-20">
           <div className="container">
             <p className="t-kicker text-[#B41B1E]">Antes de llamar</p>
             <h2 className="t-h2 mt-3 max-w-2xl text-[#212121]">
@@ -469,7 +469,7 @@ export default async function CoverageAreaPage({
                 <Clock3 className="size-4" />
                 Atención 24 horas en {area.name}
               </p>
-              <h2 className="mt-3 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
+              <h2 className="t-h2 mt-3 max-w-3xl">
                 Coordine una revisión para su propiedad
               </h2>
             </div>

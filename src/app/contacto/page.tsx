@@ -49,7 +49,7 @@ export default function ContactPage() {
               <Clock3 className="size-4 text-[#F07070]" />
               Atención 24 horas
             </div>
-            <h1 className="mt-6 text-[clamp(2.7rem,7vw,5rem)] font-black leading-[0.95] tracking-[-0.05em]">
+            <h1 className="t-h1 mt-6">
               Cuéntenos qué plaga vio y dónde está
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
