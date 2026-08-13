@@ -6,7 +6,17 @@ import {
   COVERAGE_AREAS,
   getCoverageOgImage,
 } from '@/lib/locations'
+import { publishedIntersections } from '@/data/intersections'
+import { intersectionPath } from '@/data/matrix'
 
+/**
+ * Sitemap generado desde los mismos datos que alimentan las rutas.
+ *
+ * Ninguna URL está escrita a mano: si mañana se agrega una plaga a
+ * `PEST_SERVICES` o una combinación a la matriz de intersecciones, aparece
+ * acá sola. Es la única forma de que el sitemap no se desincronice del sitio,
+ * que es el defecto habitual de los sitemaps mantenidos a mano.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
@@ -80,10 +90,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [absoluteUrl(getCoverageOgImage(area))],
   }))
 
+  /**
+   * Intersecciones zona × plaga. Salen de `publishedIntersections()`, que es
+   * la misma fuente que usa `generateStaticParams`: una combinación declarada
+   * pero sin contenido no genera página y tampoco entra al sitemap, así que es
+   * imposible listar una URL que devuelva 404.
+   *
+   * Prioridad 0.85: por debajo del índice de servicios y de las zonas núcleo,
+   * por encima de la cola larga. Son páginas de intención comercial alta pero
+   * dependen de sus padres para tener contexto.
+   */
+  const intersectionRoutes: MetadataRoute.Sitemap = publishedIntersections().map(
+    ({ zone, pest }) => ({
+      url: `${SITE.url}${intersectionPath(zone, pest)}`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+      images: [absoluteUrl(`/images/og/pests/${pest}.jpg`)],
+    }),
+  )
+
   return [
     ...staticRoutes,
     ...serviceRoutes,
     ...coverageRoutes,
+    ...intersectionRoutes,
     ...blogRoutes,
   ]
 }
