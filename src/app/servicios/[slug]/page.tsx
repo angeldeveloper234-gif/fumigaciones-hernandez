@@ -499,7 +499,7 @@ export default async function ServicePage({
                 Cotización e inspección sin costo
               </p>
               <h2 className="mt-3 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
-                Cuéntanos dónde viste {service.name.toLowerCase()}
+                Cuéntenos dónde vio {service.name.toLowerCase()}
               </h2>
               <p className="mt-3 text-sm leading-6 text-white/65">
                 Atendemos hogares, negocios e industrias en Tampico, Ciudad

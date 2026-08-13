@@ -9,7 +9,9 @@ import { whatsappUrl } from '@/lib/site'
 import { breadcrumbSchema } from '@/lib/structured-data'
 
 export const metadata = generatePageMetadata({
-  title: 'Nosotros — +30 Años en Plagas',
+  // {{PENDIENTE: confirmar antigüedad con el cliente}} — el título decía
+  // "+30 Años en Plagas", un dato que ninguna fuente respalda (CLAUDE.md §5.3).
+  title: 'Nosotros — Fumigadora de la zona conurbada',
   description:
     'Conoce a Fumigaciones Hernández: expertos en fumigación originarios de Tampico, con servicio en toda la zona conurbada de Tamaulipas.',
   path: '/nosotros',

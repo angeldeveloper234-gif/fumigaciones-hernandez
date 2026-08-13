@@ -420,7 +420,7 @@ export default async function CoverageAreaPage({
                 href="/cobertura"
                 className="inline-flex items-center gap-2 text-sm font-black text-[#B41B1E] hover:text-[#1C3266]"
               >
-                Ver las ocho zonas
+                Ver las seis zonas
                 <ArrowRight className="size-4" />
               </Link>
             </div>

@@ -259,7 +259,7 @@ export default async function BlogPostPage({
                   Atención 24 horas
                 </p>
                 <p className="mt-3 text-sm leading-6 text-white/62">
-                  Cuéntanos qué observaste y en qué zona estás.
+                  Cuéntenos qué observó y en qué zona está.
                 </p>
                 <a
                   href={quoteUrl}

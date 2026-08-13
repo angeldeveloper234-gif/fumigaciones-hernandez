@@ -90,7 +90,8 @@ export default function CoveragePage() {
                 </h1>
                 <p className="mt-6 max-w-2xl text-base leading-7 text-[#5A6070]">
                   Coordinamos inspección, tratamiento y seguimiento para
-                  hogares y negocios en ocho zonas del Valle de México.
+                  hogares y negocios en las seis zonas que cubrimos de la zona
+                  conurbada del sur de Tamaulipas.
                 </p>
               </div>
 
@@ -166,7 +167,7 @@ export default function CoveragePage() {
                 Atención 24 horas
               </p>
               <h2 className="mt-3 max-w-3xl text-[clamp(1.8rem,4vw,3rem)] font-black leading-[1.05] tracking-[-0.035em]">
-                Confirma disponibilidad para tu ubicación
+                Confirme la disponibilidad para su ubicación
               </h2>
             </div>
             <a

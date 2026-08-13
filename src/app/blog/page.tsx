@@ -72,14 +72,14 @@ export default function BlogIndexPage() {
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.55fr] lg:items-end">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
-                  Guías para el Valle de México
+                  Guías para la zona conurbada
                 </p>
                 <h1 className="mt-4 max-w-5xl text-[clamp(2.7rem,7vw,5.25rem)] font-black leading-[0.95] tracking-[-0.05em]">
                   Prevención de plagas, explicada sin rodeos
                 </h1>
               </div>
               <p className="text-base leading-7 text-white/68">
-                Aprende a reconocer señales, reducir riesgos y decidir cuándo
+                Cómo reconocer las señales, reducir el riesgo y decidir cuándo
                 una inspección profesional puede evitar que el problema crezca.
               </p>
             </div>

@@ -100,7 +100,7 @@ export default function ServicesPage() {
                 ¿No sabes qué plaga está entrando?
               </h2>
               <p className="mt-5 text-base leading-7 text-[#5A6070]">
-                Cuéntanos qué observaste. Un técnico puede orientar la
+                Cuéntenos qué observó. Un técnico puede orientar la
                 inspección y definir si se necesita tratamiento interior,
                 exterior o ambos.
               </p>
