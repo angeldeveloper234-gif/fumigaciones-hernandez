@@ -15,6 +15,11 @@
 
 export type SectionId =
   | 'hero'
+  | 'hero-nosotros'
+  | 'hero-servicios'
+  | 'hero-cobertura'
+  | 'hero-blog'
+  | 'hero-contacto'
   | 'pests'
   | 'methods'
   | 'about'
@@ -30,7 +35,17 @@ export type SectionId =
  *  - `light` → texto oscuro encima (gradiente blanco)
  *  - `none`  → sin velo; usar solo si la sección no lleva texto sobre la imagen
  */
-export type SectionOverlay = 'dark' | 'light' | 'none'
+/**
+ * Velo que se pinta sobre la imagen.
+ *
+ * `hero` no es un `dark` mas oscuro: es un gradiente lateral, de izquierda a
+ * derecha, en vez del velo de arriba hacia abajo que usan las secciones. Esa
+ * es la diferenciacion elegida frente al sitio hermano del estudio, que apoya
+ * el hero en una foto a sangre con velo negro parejo y color de marca encima.
+ * Aca el texto descansa sobre una banda casi solida a la izquierda y la foto
+ * respira a la derecha, y el hero es una franja compacta, no full-height.
+ */
+export type SectionOverlay = 'dark' | 'light' | 'hero' | 'none'
 
 export interface SectionMedia {
   /** Ruta local o URL absoluta de un host declarado en `next.config.ts`. */
@@ -51,7 +66,38 @@ export const sectionMedia = {
   hero: {
     src: '/images/placeholders/hero.png',
     alt: '',
-    overlay: 'dark',
+    overlay: 'hero',
+    focal: 'center',
+  },
+  // Heroes de las cinco paginas estaticas restantes.
+  'hero-nosotros': {
+    src: '/images/placeholders/hero-nosotros.png',
+    alt: '',
+    overlay: 'hero',
+    focal: 'center',
+  },
+  'hero-servicios': {
+    src: '/images/placeholders/hero-servicios.png',
+    alt: '',
+    overlay: 'hero',
+    focal: 'center',
+  },
+  'hero-cobertura': {
+    src: '/images/placeholders/hero-cobertura.png',
+    alt: '',
+    overlay: 'hero',
+    focal: 'center',
+  },
+  'hero-blog': {
+    src: '/images/placeholders/hero-blog.png',
+    alt: '',
+    overlay: 'hero',
+    focal: 'center',
+  },
+  'hero-contacto': {
+    src: '/images/placeholders/hero-contacto.png',
+    alt: '',
+    overlay: 'hero',
     focal: 'center',
   },
   // 2 · "Moscos, cucarachas, termitas y más"
@@ -111,3 +157,38 @@ export const sectionMedia = {
     focal: 'center',
   },
 } satisfies Record<SectionId, SectionMedia>
+
+/**
+ * Heroes de las rutas dinámicas.
+ *
+ * Resuelven por slug con fallback: una zona o una plaga sin imagen cargada no
+ * rompe la página ni queda sin fondo, cae al genérico. Es la diferencia entre
+ * una config que soporta que agreguen una zona mañana y una que hay que
+ * recordar actualizar.
+ */
+const HERO_ZONE_FALLBACK: SectionMedia = {
+  src: '/images/placeholders/hero-zona-fallback.png',
+  alt: '',
+  overlay: 'hero',
+  focal: 'center',
+}
+
+const zoneHeroMedia: Readonly<Record<string, SectionMedia>> = {
+  tampico: { ...HERO_ZONE_FALLBACK, src: '/images/placeholders/hero-zona-tampico.png' },
+  'ciudad-madero': { ...HERO_ZONE_FALLBACK, src: '/images/placeholders/hero-zona-ciudad-madero.png' },
+  altamira: { ...HERO_ZONE_FALLBACK, src: '/images/placeholders/hero-zona-altamira.png' },
+  'pueblo-viejo': { ...HERO_ZONE_FALLBACK, src: '/images/placeholders/hero-zona-pueblo-viejo.png' },
+  panuco: { ...HERO_ZONE_FALLBACK, src: '/images/placeholders/hero-zona-panuco.png' },
+  aldama: { ...HERO_ZONE_FALLBACK, src: '/images/placeholders/hero-zona-aldama.png' },
+}
+
+export const resolveZoneHero = (slug: string): SectionMedia =>
+  zoneHeroMedia[slug] ?? HERO_ZONE_FALLBACK
+
+/**
+ * En plagas no hace falta un placeholder aparte: cada una ya tiene su foto
+ * propia en `pest-media.ts`. El hero la reusa como fondo, y si el slug no
+ * existiera cae al genérico de zona.
+ */
+export const resolvePestHero = (src?: string): SectionMedia =>
+  src ? { src, alt: '', overlay: 'hero', focal: 'center' } : HERO_ZONE_FALLBACK

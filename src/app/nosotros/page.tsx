@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { ArrowRight, MessageCircle } from 'lucide-react'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { About } from '@/components/sections/About'
@@ -32,7 +33,8 @@ export default function AboutPage() {
           { name: 'Nosotros', path: '/nosotros' },
         ])}
       />
-      <section className="relative overflow-hidden bg-[#1C3266] py-18 text-white md:py-24">
+      <section className="relative isolate overflow-hidden bg-[#1C3266] py-14 text-white md:py-20">
+        <SectionBackground id="hero-nosotros" />
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:24px_24px]"
@@ -40,7 +42,7 @@ export default function AboutPage() {
         <div className="container relative">
           <nav
             aria-label="Migas de pan"
-            className="flex items-center gap-2 text-xs font-bold text-white/55"
+            className="flex items-center gap-2 text-xs font-bold text-white/75"
           >
             <Link href="/" className="hover:text-white">
               Inicio
@@ -60,7 +62,7 @@ export default function AboutPage() {
               </h1>
             </div>
             <div>
-              <p className="text-base leading-7 text-white/65">
+              <p className="text-base leading-7 text-white/80">
                 Controlamos plagas en hogares y negocios con inspección,
                 aplicación precisa y seguimiento profesional.
               </p>

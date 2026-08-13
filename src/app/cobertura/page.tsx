@@ -11,6 +11,7 @@ import {
 import { Locations } from '@/components/sections/Locations'
 import { PestGrid } from '@/components/sections/PestGrid'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { breadcrumbSchema } from '@/lib/structured-data'
 import { generatePageMetadata } from '@/lib/seo'
 import { COVERAGE_AREAS } from '@/lib/locations'
@@ -66,6 +67,7 @@ export default function CoveragePage() {
         {/* Era el unico hero claro de las seis paginas, sin criterio que lo
             justificara. Pasa a oscuro como el resto. */}
         <section className="relative isolate overflow-hidden bg-[#1C3266] py-14 text-white md:py-20">
+          <SectionBackground id="hero-cobertura" />
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:44px_44px]"

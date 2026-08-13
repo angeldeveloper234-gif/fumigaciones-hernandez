@@ -20,6 +20,8 @@ import {
 import { generatePageMetadata } from '@/lib/seo'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { articleSchema, breadcrumbSchema } from '@/lib/structured-data'
+import { SectionBackground } from '@/components/ui/SectionBackground'
+import { resolvePestHero } from '@/config/section-media'
 import { whatsappUrl } from '@/lib/site'
 
 type Params = { slug: string }
@@ -103,21 +105,15 @@ export default async function BlogPostPage({
 
       <article className="bg-white">
         <header className="relative isolate overflow-hidden bg-[#1C3266] text-white">
-          <Image
-            src={post.image}
-            alt={post.imageAlt}
-            fill
-            priority
-            sizes="100vw"
-            className="-z-20 object-cover"
-          />
-          <div className="absolute inset-0 -z-10 bg-[#1C3266]/82" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1C3266] via-[#1C3266]/78 to-[#1C3266]/42" />
+          {/* Ya tenia foto de fondo con el mismo gradiente lateral; pasa al
+              componente para que el mecanismo sea uno solo en todo el sitio.
+              La imagen sale de la plaga que trata el post. */}
+          <SectionBackground media={resolvePestHero(post.image)} priority />
 
-          <div className="container py-12 md:py-18">
+          <div className="container py-12 md:py-14">
             <nav
               aria-label="Migas de pan"
-              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/55"
+              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/75"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -140,7 +136,7 @@ export default async function BlogPostPage({
               <p className="mt-6 max-w-3xl border-l-2 border-[#FFDF00] pl-5 text-base leading-7 text-white/75 md:text-lg">
                 {post.summary}
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-5 text-xs font-bold text-white/68">
+              <div className="mt-8 flex flex-wrap items-center gap-5 text-xs font-bold text-white/80">
                 <span className="flex items-center gap-2">
                   <CalendarDays className="size-4 text-[#FFE95C]" />
                   <time dateTime={post.datePublished}>
@@ -258,7 +254,7 @@ export default async function BlogPostPage({
                 <p className="mt-4 text-lg font-black leading-6">
                   Atención 24 horas
                 </p>
-                <p className="mt-3 text-sm leading-6 text-white/62">
+                <p className="mt-3 text-sm leading-6 text-white/78">
                   Cuéntenos qué observó y en qué zona está.
                 </p>
                 <a

@@ -10,6 +10,7 @@ import {
 import { getAllPosts } from '@/lib/blog'
 import { generatePageMetadata } from '@/lib/seo'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { breadcrumbSchema } from '@/lib/structured-data'
 import { whatsappUrl } from '@/lib/site'
 
@@ -52,7 +53,8 @@ export default function BlogIndexPage() {
       />
 
       <div>
-        <section className="relative isolate overflow-hidden bg-[#1C3266] py-18 text-white md:py-24">
+        <section className="relative isolate overflow-hidden bg-[#1C3266] py-14 text-white md:py-20">
+          <SectionBackground id="hero-blog" />
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
@@ -60,7 +62,7 @@ export default function BlogIndexPage() {
           <div className="container">
             <nav
               aria-label="Migas de pan"
-              className="flex items-center gap-2 text-xs font-bold text-white/55"
+              className="flex items-center gap-2 text-xs font-bold text-white/75"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -78,7 +80,7 @@ export default function BlogIndexPage() {
                   Prevención de plagas, explicada sin rodeos
                 </h1>
               </div>
-              <p className="text-base leading-7 text-white/68">
+              <p className="text-base leading-7 text-white/80">
                 Cómo reconocer las señales, reducir el riesgo y decidir cuándo
                 una inspección profesional puede evitar que el problema crezca.
               </p>
@@ -98,7 +100,6 @@ export default function BlogIndexPage() {
                     src={featured.image}
                     alt={featured.imageAlt}
                     fill
-                    priority
                     sizes="(max-width: 1023px) 100vw, 52vw"
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />

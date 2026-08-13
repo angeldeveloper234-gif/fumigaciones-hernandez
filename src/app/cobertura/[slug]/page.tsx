@@ -27,6 +27,8 @@ import {
 } from '@/lib/structured-data'
 import { getPestService } from '@/lib/services'
 import { Faq } from '@/components/ui/Faq'
+import { SectionBackground } from '@/components/ui/SectionBackground'
+import { resolveZoneHero } from '@/config/section-media'
 import { publishedPestsForZone } from '@/data/intersections'
 import { intersectionPath } from '@/data/matrix'
 import { getZoneFaqs } from '@/data/zone-faqs'
@@ -129,6 +131,9 @@ export default async function CoverageAreaPage({
 
       <article className="bg-white">
         <header className="relative isolate overflow-hidden bg-[#1C3266] text-white">
+          {/* Resuelve por slug de zona; sin imagen cargada cae al generico en
+              vez de quedarse sin fondo. */}
+          <SectionBackground media={resolveZoneHero(area.slug)} priority />
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
@@ -136,7 +141,7 @@ export default async function CoverageAreaPage({
           <div className="container py-10 md:py-14">
             <nav
               aria-label="Migas de pan"
-              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/55"
+              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/75"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -158,7 +163,7 @@ export default async function CoverageAreaPage({
                 <h1 className="t-h1 mt-6 max-w-4xl">
                   {area.h1}
                 </h1>
-                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/72 md:text-lg">
+                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/80 md:text-lg">
                   {area.shortDescription}
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -193,7 +198,6 @@ export default async function CoverageAreaPage({
                       src={pest.image}
                       alt={`${pest.name}: plaga frecuente atendida por Fumigaciones Hernández en ${area.name}`}
                       fill
-                      priority={index === 0}
                       sizes={
                         index === 0
                           ? '(max-width: 1023px) 55vw, 28vw'
@@ -373,7 +377,7 @@ export default async function CoverageAreaPage({
           </div>
         </section>
 
-        <section className="bg-[#1C3266] py-18 text-white md:py-24">
+        <section className="bg-[#1C3266] py-14 text-white md:py-20">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FFE95C]">
@@ -396,7 +400,7 @@ export default async function CoverageAreaPage({
                     </span>
                   </div>
                   <h3 className="mt-5 text-xl font-black">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-white/65">
+                  <p className="mt-3 text-sm leading-6 text-white/80">
                     {step.description}
                   </p>
                 </li>

@@ -25,6 +25,8 @@ import {
   serviceSchema,
 } from '@/lib/structured-data'
 import { Faq } from '@/components/ui/Faq'
+import { SectionBackground } from '@/components/ui/SectionBackground'
+import { resolvePestHero } from '@/config/section-media'
 import { getCoverageArea } from '@/lib/locations'
 import { publishedZonesForPest } from '@/data/intersections'
 import { intersectionPath } from '@/data/matrix'
@@ -139,6 +141,9 @@ export default async function ServicePage({
 
       <article className="bg-white">
         <header className="relative isolate overflow-hidden bg-[#1C3266] text-white">
+          {/* La plaga ya tiene foto propia en pest-media: el hero la reusa en
+              vez de pedir un placeholder aparte. */}
+          <SectionBackground media={resolvePestHero(service.image)} priority />
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
@@ -146,7 +151,7 @@ export default async function ServicePage({
           <div className="container py-10 md:py-14">
             <nav
               aria-label="Migas de pan"
-              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/55"
+              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/75"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -168,7 +173,7 @@ export default async function ServicePage({
                 <h1 className="t-h1 mt-6 max-w-4xl [hyphens:auto] [overflow-wrap:break-word]">
                   {service.h1}
                 </h1>
-                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/72 md:text-lg">
+                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/80 md:text-lg">
                   {service.intro}
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -195,7 +200,6 @@ export default async function ServicePage({
                   src={service.image}
                   alt={service.imageAlt}
                   fill
-                  priority
                   sizes="(max-width: 1023px) 100vw, 46vw"
                   className="object-cover"
                 />
@@ -259,7 +263,7 @@ export default async function ServicePage({
           </div>
         </div>
 
-        <section className="bg-[#1C3266] py-18 text-white md:py-24">
+        <section className="bg-[#1C3266] py-14 text-white md:py-20">
           <div className="container">
             <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
@@ -270,7 +274,7 @@ export default async function ServicePage({
                   Método definido después de inspeccionar
                 </h2>
               </div>
-              <p className="text-base leading-7 text-white/68">
+              <p className="text-base leading-7 text-white/80">
                 {service.treatmentIntro}
               </p>
             </div>
@@ -292,7 +296,7 @@ export default async function ServicePage({
                   <h3 className="mt-6 text-2xl font-black [hyphens:auto] [overflow-wrap:break-word]">
                     {method}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/65">
+                  <p className="mt-3 text-sm leading-6 text-white/80">
                     {CONTROL_METHODS[method]}
                   </p>
                 </article>
@@ -501,7 +505,7 @@ export default async function ServicePage({
               <h2 className="t-h2 mt-3 max-w-3xl">
                 Cuéntenos dónde vio {service.name.toLowerCase()}
               </h2>
-              <p className="mt-3 text-sm leading-6 text-white/65">
+              <p className="mt-3 text-sm leading-6 text-white/80">
                 Atendemos hogares, negocios e industrias en Tampico, Ciudad
                 Madero y Altamira, con atención las 24 horas.
               </p>

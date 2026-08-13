@@ -9,6 +9,7 @@ import {
 import { PestGrid } from '@/components/sections/PestGrid'
 import { Methods } from '@/components/sections/Methods'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { SectionBackground } from '@/components/ui/SectionBackground'
 import { breadcrumbSchema } from '@/lib/structured-data'
 import { generatePageMetadata } from '@/lib/seo'
 import { whatsappUrl } from '@/lib/site'
@@ -43,7 +44,8 @@ export default function ServicesPage() {
       />
 
       <div>
-        <section className="relative isolate overflow-hidden bg-[#1C3266] py-18 text-white md:py-24">
+        <section className="relative isolate overflow-hidden bg-[#1C3266] py-14 text-white md:py-20">
+          <SectionBackground id="hero-servicios" />
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:42px_42px]"
@@ -51,7 +53,7 @@ export default function ServicesPage() {
           <div className="container">
             <nav
               aria-label="Migas de pan"
-              className="flex items-center gap-2 text-xs font-bold text-white/55"
+              className="flex items-center gap-2 text-xs font-bold text-white/75"
             >
               <Link href="/" className="hover:text-white">
                 Inicio

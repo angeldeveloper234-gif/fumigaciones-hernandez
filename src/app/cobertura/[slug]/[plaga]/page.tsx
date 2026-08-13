@@ -11,6 +11,8 @@ import {
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Breadcrumb, type Crumb } from '@/components/ui/Breadcrumb'
 import { Faq } from '@/components/ui/Faq'
+import { SectionBackground } from '@/components/ui/SectionBackground'
+import { resolvePestHero } from '@/config/section-media'
 import {
   getIntersection,
   hasIntersection,
@@ -107,6 +109,8 @@ export default async function IntersectionPage({
 
       <article className="bg-white">
         <header className="relative isolate overflow-hidden bg-[#1C3266] text-white">
+          {/* Fondo de hero resuelto desde la foto de la plaga. */}
+          <SectionBackground media={resolvePestHero(media.src)} priority />
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:44px_44px]"
@@ -142,7 +146,6 @@ export default async function IntersectionPage({
                 src={media.src}
                 alt={media.alt}
                 fill
-                priority
                 sizes="(max-width: 1023px) 100vw, 32vw"
                 className="object-cover"
               />

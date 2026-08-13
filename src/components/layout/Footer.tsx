@@ -19,7 +19,7 @@ export function Footer() {
               height={640}
               className="h-16 w-auto"
             />
-            <p className="mt-5 max-w-sm text-sm leading-6 text-white/68">
+            <p className="mt-5 max-w-sm text-sm leading-6 text-white/80">
               Control de plagas en la zona conurbada del sur de Tamaulipas.
               Oficina en la Col. Obrera de Ciudad Madero y base operativa en
               Cd. Cuauhtémoc, Tampico. Revisión y presupuesto sin costo antes
@@ -48,7 +48,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFDF00]"
+                    className="text-white/80 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFDF00]"
                   >
                     {label}
                   </Link>
@@ -66,7 +66,7 @@ export function Footer() {
                 <li key={pest.slug}>
                   <Link
                     href={`/servicios/${pest.slug}`}
-                    className="text-white/68 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFDF00]"
+                    className="text-white/80 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFDF00]"
                   >
                     {pest.name}
                   </Link>
@@ -87,7 +87,7 @@ export function Footer() {
             <h2 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#F07070]">
               Contacto
             </h2>
-            <ul className="mt-5 space-y-4 text-sm text-white/68">
+            <ul className="mt-5 space-y-4 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 size-4 shrink-0 text-[#FFDF00]" />
                 <a href={SITE.phoneHref} className="hover:text-white">

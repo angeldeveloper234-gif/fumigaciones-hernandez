@@ -2,6 +2,7 @@ import Image from 'next/image'
 import {
   sectionMedia,
   type SectionId,
+  type SectionMedia,
   type SectionOverlay,
 } from '@/config/section-media'
 import { cn } from '@/lib/utils'
@@ -35,13 +36,33 @@ import { cn } from '@/lib/utils'
 const OVERLAY: Record<SectionOverlay, string> = {
   dark: 'bg-gradient-to-b from-black/74 via-black/62 to-black/76',
   light: 'bg-gradient-to-b from-white/86 via-white/80 to-white/88',
+  /**
+   * Velo de hero: lateral, no de arriba hacia abajo.
+   *
+   * El texto descansa sobre la banda casi sólida de la izquierda y la foto
+   * respira a la derecha. En el peor caso —foto blanca— el punto más claro
+   * bajo el texto es el azul de marca al 88%, y ahí el blanco supera 8:1.
+   */
+  hero: 'bg-gradient-to-r from-[#1C3266] via-[#1C3266]/88 to-[#1C3266]/45',
   none: '',
 }
 
-interface SectionBackgroundProps {
-  id: SectionId
+type SectionBackgroundProps = {
   className?: string
-}
+} & (
+  | { id: SectionId; media?: never }
+  | {
+      /**
+       * Media ya resuelta. La usan las rutas dinámicas, que eligen su imagen
+       * por slug con `resolveZoneHero` o `resolvePestHero` y por lo tanto no
+       * tienen un `SectionId` fijo.
+       */
+      media: SectionMedia
+      id?: never
+      /** El hero de la página es su LCP: precarga. */
+      priority?: boolean
+    }
+)
 
 /**
  * Fondo de sección. Va como primer hijo de un `<section>` con `relative isolate`.
@@ -49,13 +70,16 @@ interface SectionBackgroundProps {
  * Se apoya en `fill` dentro de un contenedor absoluto, así que no reserva
  * espacio ni desplaza nada al cargar (CLS 0).
  */
-export function SectionBackground({ id, className }: SectionBackgroundProps) {
-  const media = sectionMedia[id]
+export function SectionBackground(props: SectionBackgroundProps) {
+  const { className } = props
+  const media: SectionMedia = props.id ? sectionMedia[props.id] : props.media
   // Fondo sin `alt` = puramente decorativo: se oculta del árbol de accesibilidad.
   const decorative = media.alt.trim() === ''
-  // El hero es el LCP del home. Es el único que precarga; regla de la fase, no
-  // dato de configuración, por eso vive acá y no en `section-media.ts`.
-  const isLcp = id === 'hero'
+  // Un solo `priority` por página, y siempre el hero: es el LCP. Las secciones
+  // que no son hero nunca precargan.
+  const isLcp = props.id
+    ? props.id === 'hero' || props.id.startsWith('hero-')
+    : (props as { priority?: boolean }).priority === true
   // Se consulta la clase, no el literal: `satisfies` conserva el tipo exacto de
   // cada entrada, así que comparar contra `'none'` sería código muerto para
   // TypeScript mientras ninguna sección lo use. `none` mapea a cadena vacía.
