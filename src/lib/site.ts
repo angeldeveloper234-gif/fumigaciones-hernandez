@@ -62,12 +62,10 @@ export const SITE = {
 
   // --- Operación ----------------------------------------------------------
   // El sitio de 2019 declaraba "Te atendemos 24 Horas".
-  // TODO(cliente): confirmar que sigue siendo 24 h y no un horario de oficina.
-  // FIXME(fase 3C): este valor declara apertura 24/7 en el JSON-LD, pero
-  // CLAUDE.md §3 fija "Lunes a sábado 8:00-17:00 · Atención 24 horas", que es
-  // oficina más guardia. Corregir `openingHoursSpecification` al revisar el
-  // structured-data.
-  openingHours: 'Mo-Su 00:00-23:59',
+  // El FIXME que había acá era una falsa alarma mía: este string no lo usaba
+  // nadie. El `openingHoursSpecification` del JSON-LD ya declaraba lunes a
+  // sábado de 8 a 17, que es lo correcto según CLAUDE.md §3. Se elimina el
+  // campo en vez de arrastrar un dato muerto que contradice al resto.
   /** Horario de atención en oficina (CLAUDE.md §3). */
   officeHoursLabel: 'Lunes a sábado, 8:00 a 17:00',
   /** Guardia fuera del horario de oficina. */

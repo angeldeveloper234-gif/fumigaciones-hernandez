@@ -23,10 +23,13 @@ import {
 import {
   areaServiceSchema,
   breadcrumbSchema,
+  faqSchema,
 } from '@/lib/structured-data'
 import { getPestService } from '@/lib/services'
+import { Faq } from '@/components/ui/Faq'
 import { publishedPestsForZone } from '@/data/intersections'
 import { intersectionPath } from '@/data/matrix'
+import { getZoneFaqs } from '@/data/zone-faqs'
 import { generatePageMetadata } from '@/lib/seo'
 import { whatsappUrl } from '@/lib/site'
 
@@ -104,7 +107,10 @@ export default async function CoverageAreaPage({
   // secundaria, que por diseno no generan paginas hijas.
   const zonePests = publishedPestsForZone(area.slug)
   const relatedAreas = getRelatedAreas(area)
-  const quoteUrl = whatsappUrl(`Hola, necesito fumigación en ${area.name}.`)
+  const zoneFaqs = getZoneFaqs(area.slug)
+  const quoteUrl = whatsappUrl(
+    `Buen día. Necesito control de plagas en ${area.name}.`,
+  )
 
   return (
     <>
@@ -116,6 +122,8 @@ export default async function CoverageAreaPage({
             { name: 'Cobertura', path: '/cobertura' },
             { name: area.name, path: `/cobertura/${area.slug}` },
           ]),
+          // Espeja exactamente el texto del acordeón visible de más abajo.
+          faqSchema(zoneFaqs),
         ]}
       />
 
@@ -437,6 +445,20 @@ export default async function CoverageAreaPage({
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* FAQ propia de la zona: responde sobre la logística de atenderla
+            —si se llega, cómo se coordina, qué cambia según el inmueble— y no
+            sobre una plaga concreta, que es lo que responden las páginas de
+            intersección. Por eso ninguna se repite entre unas y otras. */}
+        <section className="border-t border-black/10 bg-white py-18 md:py-24">
+          <div className="container">
+            <p className="t-kicker text-[#B41B1E]">Antes de llamar</p>
+            <h2 className="t-h2 mt-3 max-w-2xl text-[#212121]">
+              Preguntas frecuentes sobre {area.name}
+            </h2>
+            <Faq items={zoneFaqs} className="mt-6 max-w-3xl" />
           </div>
         </section>
 

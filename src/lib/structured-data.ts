@@ -26,7 +26,10 @@ export function localBusinessSchema() {
     logo: absoluteUrl(SITE.logo),
     description: SITE.description,
     slogan: SITE.slogan,
-    foundingDate: String(SITE.foundedYear),
+    // `foundedYear` es null hasta que el cliente confirme la antigüedad, y
+    // `String(null)` emitía literalmente "foundingDate":"null" en el JSON-LD,
+    // que no es una fecha válida. Se omite la propiedad hasta tener el dato.
+    ...(SITE.foundedYear ? { foundingDate: String(SITE.foundedYear) } : {}),
     telephone: SITE.phone,
     email: SITE.email,
     address: {
@@ -104,7 +107,10 @@ export function organizationSchema() {
       width: 692,
       height: 577,
     },
-    foundingDate: String(SITE.foundedYear),
+    // `foundedYear` es null hasta que el cliente confirme la antigüedad, y
+    // `String(null)` emitía literalmente "foundingDate":"null" en el JSON-LD,
+    // que no es una fecha válida. Se omite la propiedad hasta tener el dato.
+    ...(SITE.foundedYear ? { foundingDate: String(SITE.foundedYear) } : {}),
     contactPoint: [
       {
         '@type': 'ContactPoint',

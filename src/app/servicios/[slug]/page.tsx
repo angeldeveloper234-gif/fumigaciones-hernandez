@@ -24,6 +24,7 @@ import {
   faqSchema,
   serviceSchema,
 } from '@/lib/structured-data'
+import { Faq } from '@/components/ui/Faq'
 import { getCoverageArea } from '@/lib/locations'
 import { publishedZonesForPest } from '@/data/intersections'
 import { intersectionPath } from '@/data/matrix'
@@ -389,27 +390,15 @@ export default async function ServicePage({
               <h2 className="mt-4 text-[clamp(2rem,5vw,3.35rem)] font-black leading-[1] tracking-[-0.04em] text-[#212121]">
                 Antes del tratamiento
               </h2>
-              <p className="mt-5 text-base leading-7 text-[#5A6070]">
+              <p className="t-body mt-5 text-[#3E4650]">
                 Cada propiedad es diferente. Estas respuestas ayudan a
-                prepararte; el técnico confirmará las indicaciones después de
+                prepararse; el técnico confirma las indicaciones después de
                 inspeccionar.
               </p>
             </div>
-            <div className="space-y-4">
-              {service.faqs.map((faq) => (
-                <section
-                  key={faq.question}
-                  className="rounded-[1.5rem] border border-black/8 bg-[#F6F9FC] p-6"
-                >
-                  <h3 className="text-lg font-black leading-snug text-[#212121]">
-                    {faq.question}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-[#5A6070]">
-                    {faq.answer}
-                  </p>
-                </section>
-              ))}
-            </div>
+            {/* Mismo acordeón que las páginas de zona e intersección, para que
+                el `FAQPage` de las tres espeje una presentación única. */}
+            <Faq items={service.faqs} className="max-w-3xl" />
           </div>
         </section>
 
