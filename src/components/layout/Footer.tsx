@@ -20,10 +20,10 @@ export function Footer() {
               className="h-16 w-auto"
             />
             <p className="mt-5 max-w-sm text-sm leading-6 text-white/68">
-              Somos una empresa mexicana originaria de Tampico, Tamaulipas,
-              dedicada al control y exterminio de plagas. Personal con años de
-              experiencia nos respalda para brindarle el mejor servicio y su
-              completa satisfacción.
+              Control de plagas en la zona conurbada del sur de Tamaulipas.
+              Oficina en la Col. Obrera de Ciudad Madero y base operativa en
+              Cd. Cuauhtémoc, Tampico. Revisión y presupuesto sin costo antes
+              de aplicar nada.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#FFDF00]/35 bg-[#FFDF00]/10 px-3 py-1.5 text-xs font-bold text-[#FFE95C]">
               {SITE.license

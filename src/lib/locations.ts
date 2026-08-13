@@ -54,7 +54,7 @@ export const COVERAGE_AREAS: readonly CoverageArea[] = [
     h1: 'Fumigación y Control de Plagas en Tampico',
     metaTitle: 'Fumigaciones en Tampico | Atención 24 Horas',
     metaDescription:
-      'Fumigación y control de plagas en Tampico: moscos, cucarachas, termitas y ratas. Expertos en la zona conurbada, atención 24 horas y los mejores precios.',
+      'Fumigación y control de plagas en Tampico: moscos, cucarachas, termitas y ratas. Centro, locales y vivienda antigua. Revisión sin costo y guardia 24 h.',
     shortDescription:
       'La ciudad con más servicios que atendemos: vivienda, comercio y centro histórico.',
     localContext: [
@@ -91,7 +91,7 @@ export const COVERAGE_AREAS: readonly CoverageArea[] = [
     h1: 'Fumigación y Control de Plagas en Ciudad Madero',
     metaTitle: 'Fumigaciones en Ciudad Madero | Servicio Local 24 h',
     metaDescription:
-      'Fumigación en Ciudad Madero desde nuestra base en la Col. Obrera. Control de moscos, cucarachas, termitas y ratas con atención 24 horas y precios de la zona.',
+      'Fumigación en Ciudad Madero desde la oficina de la Col. Obrera. Moscos, cucarachas, termitas y ratas en casa y patio. Revisión sin costo, guardia 24 h.',
     shortDescription:
       'Nuestra base: estamos en la Col. Obrera, así que aquí llegamos más rápido que nadie.',
     localContext: [

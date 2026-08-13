@@ -51,7 +51,9 @@ export function getPostOgImage(post: BlogPost) {
 export const BLOG_POSTS: readonly BlogPost[] = [
   {
     slug: 'moscos-en-tampico-criaderos',
-    title: 'Moscos en Tampico: los criaderos que tiene en su propio patio',
+    // El title de la pagina lo arma `%s | Fumigaciones Hernández`, asi que un
+    // titulo largo aca empuja el <title> por encima de los 60 caracteres.
+    title: 'Moscos en Tampico: los criaderos de su propio patio',
     summary:
       'Dónde se esconde el agua que nadie ve, por qué nebulizar sin eliminar criaderos solo dura unos días y qué revisar después de cada lluvia.',
     image: pestImage('moscos'),
