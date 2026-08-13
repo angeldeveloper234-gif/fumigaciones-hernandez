@@ -53,7 +53,7 @@ export default function ServicesPage() {
           <div className="container">
             <nav
               aria-label="Migas de pan"
-              className="flex items-center gap-2 text-xs font-bold text-white/75"
+              className="flex items-center gap-2 text-xs font-bold text-white/90"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -72,7 +72,7 @@ export default function ServicesPage() {
                 </h1>
               </div>
               <div>
-                <p className="text-base leading-7 text-white/70">
+                <p className="text-base leading-7 text-white/90">
                   Inspeccionamos el origen, elegimos el método adecuado y damos
                   seguimiento al resultado en la zona conurbada.
                 </p>

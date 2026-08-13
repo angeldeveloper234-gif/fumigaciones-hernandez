@@ -62,7 +62,7 @@ export default function BlogIndexPage() {
           <div className="container">
             <nav
               aria-label="Migas de pan"
-              className="flex items-center gap-2 text-xs font-bold text-white/75"
+              className="flex items-center gap-2 text-xs font-bold text-white/90"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -80,7 +80,7 @@ export default function BlogIndexPage() {
                   Prevención de plagas, explicada sin rodeos
                 </h1>
               </div>
-              <p className="text-base leading-7 text-white/80">
+              <p className="text-base leading-7 text-white/90">
                 Cómo reconocer las señales, reducir el riesgo y decidir cuándo
                 una inspección profesional puede evitar que el problema crezca.
               </p>

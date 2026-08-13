@@ -75,7 +75,7 @@ export default function CoveragePage() {
           <div className="container">
             <nav
               aria-label="Migas de pan"
-              className="flex items-center gap-2 text-xs font-bold text-white/70"
+              className="flex items-center gap-2 text-xs font-bold text-white/90"
             >
               <Link href="/" className="hover:text-[#FFDF00]">
                 Inicio
@@ -90,7 +90,7 @@ export default function CoveragePage() {
                 <h1 className="t-h1 mt-3 max-w-3xl">
                   Control de plagas cerca de su propiedad
                 </h1>
-                <p className="t-body mt-4 text-white/80">
+                <p className="t-body mt-4 text-white/90">
                   Coordinamos inspección, tratamiento y seguimiento para
                   hogares y negocios en las seis zonas que cubrimos de la zona
                   conurbada del sur de Tamaulipas.
@@ -109,7 +109,7 @@ export default function CoveragePage() {
                 <p className="t-kicker mt-7 text-[#FFE95C]">
                   Zonas con página local
                 </p>
-                <p className="t-body-sm mt-2 text-white/80">
+                <p className="t-body-sm mt-2 text-white/90">
                   Información, plagas frecuentes y contacto directo para cada
                   ciudad.
                 </p>

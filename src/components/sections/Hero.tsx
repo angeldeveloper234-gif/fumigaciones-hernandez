@@ -30,7 +30,7 @@ const copy = HERNANDEZ_HOME.es
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#1C3266] text-white">
-      <SectionBackground id="hero" />
+      <SectionBackground id="hero-home" />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:44px_44px]"
@@ -50,7 +50,7 @@ export function Hero() {
             <span className="text-[#FFDF00]">{copy.hero.highlight}</span>
           </h1>
 
-          <p className="t-body mt-4 text-white/80">{copy.hero.description}</p>
+          <p className="t-body mt-4 text-white/90">{copy.hero.description}</p>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
@@ -73,7 +73,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <ul className="mt-7 grid gap-3 text-sm text-white/80 sm:grid-cols-3">
+          <ul className="mt-7 grid gap-3 text-sm text-white/90 sm:grid-cols-3">
             {copy.hero.assurances.map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#FFDF00]" />
@@ -103,7 +103,7 @@ export function Hero() {
               <Clock3 className="mt-0.5 size-4 shrink-0 text-[#FFE95C]" />
               <div>
                 <dt className="font-semibold text-white">Horario</dt>
-                <dd className="mt-0.5 text-white/80">
+                <dd className="mt-0.5 text-white/90">
                   {SITE.officeHoursLabel} · {SITE.openingHoursLabel}
                 </dd>
               </div>
@@ -112,7 +112,7 @@ export function Hero() {
               <MapPin className="mt-0.5 size-4 shrink-0 text-[#FFE95C]" />
               <div>
                 <dt className="font-semibold text-white">Oficina</dt>
-                <dd className="mt-0.5 text-white/80">
+                <dd className="mt-0.5 text-white/90">
                   {SITE.address.streetAddress}, {SITE.address.neighborhood},{' '}
                   {SITE.address.addressLocality}
                 </dd>

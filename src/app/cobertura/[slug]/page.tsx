@@ -141,7 +141,7 @@ export default async function CoverageAreaPage({
           <div className="container py-10 md:py-14">
             <nav
               aria-label="Migas de pan"
-              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/75"
+              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/90"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -163,7 +163,7 @@ export default async function CoverageAreaPage({
                 <h1 className="t-h1 mt-6 max-w-4xl">
                   {area.h1}
                 </h1>
-                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/80 md:text-lg">
+                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/90 md:text-lg">
                   {area.shortDescription}
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -400,7 +400,7 @@ export default async function CoverageAreaPage({
                     </span>
                   </div>
                   <h3 className="mt-5 text-xl font-black">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-white/80">
+                  <p className="mt-3 text-sm leading-6 text-white/90">
                     {step.description}
                   </p>
                 </li>

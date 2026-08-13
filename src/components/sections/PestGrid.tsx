@@ -24,14 +24,14 @@ export function PestGrid() {
   return (
     <section
       id="servicios"
-      className="section-y relative isolate overflow-hidden bg-white"
+      className="section-y relative isolate overflow-hidden bg-[#1C3266] text-white"
     >
-      <SectionBackground id="pests" />
+      <SectionBackground id="sec-plagas" />
       <div className="container">
         <div className="max-w-2xl">
-          <p className="t-kicker text-[#B41B1E]">{copy.eyebrow}</p>
-          <h2 className="t-h2 mt-3 text-[#212121]">{copy.title}</h2>
-          <p className="t-body mt-4 text-[#3E4650]">{copy.description}</p>
+          <p className="t-kicker text-[#FFE95C]">{copy.eyebrow}</p>
+          <h2 className="t-h2 mt-3">{copy.title}</h2>
+          <p className="t-body mt-4 text-white/90">{copy.description}</p>
         </div>
 
         <ul className="mt-10 grid gap-3 lg:grid-cols-2 lg:gap-4">

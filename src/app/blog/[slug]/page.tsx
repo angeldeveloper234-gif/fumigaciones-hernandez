@@ -113,7 +113,7 @@ export default async function BlogPostPage({
           <div className="container py-12 md:py-14">
             <nav
               aria-label="Migas de pan"
-              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/75"
+              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/90"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -133,10 +133,10 @@ export default async function BlogPostPage({
               <h1 className="t-h1 mt-6 max-w-5xl">
                 {post.title}
               </h1>
-              <p className="mt-6 max-w-3xl border-l-2 border-[#FFDF00] pl-5 text-base leading-7 text-white/75 md:text-lg">
+              <p className="mt-6 max-w-3xl border-l-2 border-[#FFDF00] pl-5 text-base leading-7 text-white/90 md:text-lg">
                 {post.summary}
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-5 text-xs font-bold text-white/80">
+              <div className="mt-8 flex flex-wrap items-center gap-5 text-xs font-bold text-white/90">
                 <span className="flex items-center gap-2">
                   <CalendarDays className="size-4 text-[#FFE95C]" />
                   <time dateTime={post.datePublished}>
@@ -254,7 +254,7 @@ export default async function BlogPostPage({
                 <p className="mt-4 text-lg font-black leading-6">
                   Atención 24 horas
                 </p>
-                <p className="mt-3 text-sm leading-6 text-white/78">
+                <p className="mt-3 text-sm leading-6 text-white/90">
                   Cuéntenos qué observó y en qué zona está.
                 </p>
                 <a

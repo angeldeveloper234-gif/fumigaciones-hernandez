@@ -48,21 +48,21 @@ const credentials = [
 
 export function About() {
   return (
-    <section className="section-y relative isolate overflow-hidden bg-[#F5F8FC]">
-      <SectionBackground id="about" />
+    <section className="section-y relative isolate overflow-hidden bg-[#1C3266] text-white">
+      <SectionBackground id="sec-expertos" />
       <div className="container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div>
-          <p className="t-kicker text-[#B41B1E]">{copy.eyebrow}</p>
-          <h2 className="t-h2 mt-3 text-[#212121]">{copy.title}</h2>
-          <p className="t-body mt-5 text-[#4F5663]">{copy.description}</p>
-          <p className="t-body mt-4 text-[#4F5663]">{copy.secondary}</p>
+          <p className="t-kicker text-[#FFE95C]">{copy.eyebrow}</p>
+          <h2 className="t-h2 mt-3">{copy.title}</h2>
+          <p className="t-body mt-5 text-white/90">{copy.description}</p>
+          <p className="t-body mt-4 text-white/90">{copy.secondary}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {copy.audiences.map((audience) => (
               <span
                 key={audience}
-                className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-2 text-xs font-bold text-[#333A44]"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs font-bold text-white"
               >
-                <Building2 className="size-3.5 text-[#B41B1E]" />
+                <Building2 className="size-3.5 text-[#FFE95C]" />
                 {audience}
               </span>
             ))}

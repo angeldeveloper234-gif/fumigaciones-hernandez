@@ -7,8 +7,8 @@ const copy = HERNANDEZ_HOME.es.promotion
 
 export function Promotion() {
   return (
-    <section className="section-y relative isolate overflow-hidden bg-white">
-      <SectionBackground id="promotion" />
+    <section className="section-y relative isolate overflow-hidden bg-[#1C3266]">
+      <SectionBackground id="sec-cotizacion" />
       <div className="container">
         <div className="relative overflow-hidden rounded-[2rem] bg-[#FFDF00] px-6 py-10 text-[#1C3266] shadow-[0_24px_70px_rgba(28,50,102,0.16)] sm:px-10 md:rounded-[2.75rem] lg:px-16 lg:py-14">
           <div

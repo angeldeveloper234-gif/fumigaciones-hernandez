@@ -8,43 +8,50 @@ import {
 import { cn } from '@/lib/utils'
 
 /**
- * Gradientes de velo.
+ * Los dos velos de la dirección de arte.
  *
- * Se usa gradiente y no un velo plano para que el fondo respire en el centro y
- * siga cerrando arriba y abajo, donde suele caer el texto. Las opacidades están
- * elegidas para el peor caso —foto blanca bajo `dark`, foto negra bajo `light`—
- * y en ese peor caso el contraste del texto sigue por encima de 4.5:1.
- */
-/**
- * Opacidades calculadas, no elegidas a ojo. Se miden en el punto más
- * transparente del gradiente (`via-`), que es el que manda, y contra el peor
- * caso admitido para cada velo:
+ * Los dos son del azul de marca y laterales, de izquierda a derecha: el texto
+ * descansa sobre la banda densa de la izquierda y la foto respira a la
+ * derecha. Lo que cambia entre ellos es cuánta foto dejan pasar.
  *
- *  - `dark`  · peor caso foto blanca ⇒ fondo #616161. El texto más flojo que
- *              el home pone sobre imagen es `text-white/80` ⇒ 4.7:1.
- *  - `light` · peor caso foto de luminancia media-baja (≈ #404040) ⇒ fondo
- *              #D9D9D9. El texto más flojo es #B41B1E ⇒ 4.8:1.
+ * La versión anterior de este archivo fallaba justamente acá. Tenía un velo
+ * claro al 80-86% y uno oscuro al 62-76%, calibrados para garantizar AA
+ * contra la peor foto imaginable. El resultado era correcto y también
+ * invisible: un color plano bajo un velo al 80% da otro color plano, y las
+ * secciones se veían igual que antes de tener imagen.
  *
- * El velo claro cubre fotos hasta media-oscuras, no fotos negras: para una
- * foto oscura corresponde `overlay: 'dark'`, que es la decisión que existe
- * justamente para eso. Subir más el blanco sí llegaría a la foto negra, pero
- * aplana los fondos entre sí —a /90 dos secciones claras quedaban a 3 unidades
- * RGB de distancia— y el ritmo por sección se pierde.
+ * Ahora la cuenta se hace al revés: primero cuánta foto tiene que verse, y
+ * después se garantiza el contraste ubicando el texto en la banda densa.
  *
- * Si estas opacidades cambian, hay que rehacer la cuenta.
+ *  - `protagonista` · 90% a la izquierda, 42% a la derecha. Sobre la peor foto
+ *    posible (blanca), la banda de texto queda en #37497A o más oscuro y el
+ *    blanco supera 7:1. La mitad derecha muestra la foto de verdad.
+ *  - `textura` · 94% a 80%. La foto solo aporta grano y profundidad; el bloque
+ *    se lee como color de marca. Blanco por encima de 9:1 en todo el ancho.
  */
 const OVERLAY: Record<SectionOverlay, string> = {
-  dark: 'bg-gradient-to-b from-black/74 via-black/62 to-black/76',
-  light: 'bg-gradient-to-b from-white/86 via-white/80 to-white/88',
   /**
-   * Velo de hero: lateral, no de arriba hacia abajo.
+   * Hero: el más generoso con la imagen, ~26% de foto en el centro.
    *
-   * El texto descansa sobre la banda casi sólida de la izquierda y la foto
-   * respira a la derecha. En el peor caso —foto blanca— el punto más claro
-   * bajo el texto es el azul de marca al 88%, y ahí el blanco supera 8:1.
+   * Se intentó primero con gradiente lateral —velo denso a la izquierda, foto
+   * respirando a la derecha— y hubo que descartarlo tras medirlo: el texto de
+   * los heroes se extiende más allá de la banda densa (el `<span>` de color
+   * del H1, la insignia, la columna derecha) y caía en zonas al 45%, con
+   * contrastes de 2:1. Vertical y parejo sostiene AA en todo el ancho.
    */
-  hero: 'bg-gradient-to-r from-[#1C3266] via-[#1C3266]/88 to-[#1C3266]/45',
-  none: '',
+  hero: 'bg-gradient-to-b from-[#1C3266]/88 via-[#1C3266]/74 to-[#1C3266]/88',
+  /**
+   * Sección protagonista: ~20% de foto. La imagen se reconoce y no compite con
+   * las grillas de tarjetas que llevan estas secciones.
+   */
+  protagonista:
+    'bg-gradient-to-b from-[#1C3266]/90 via-[#1C3266]/80 to-[#1C3266]/90',
+  /**
+   * Textura: ~12%. La foto solo aporta grano y profundidad; el bloque se lee
+   * como color de marca, que es lo que corresponde a los CTA y al bloque de
+   * señales de confianza.
+   */
+  textura: 'bg-gradient-to-b from-[#1C3266]/94 via-[#1C3266]/88 to-[#1C3266]/94',
 }
 
 type SectionBackgroundProps = {
@@ -78,11 +85,8 @@ export function SectionBackground(props: SectionBackgroundProps) {
   // Un solo `priority` por página, y siempre el hero: es el LCP. Las secciones
   // que no son hero nunca precargan.
   const isLcp = props.id
-    ? props.id === 'hero' || props.id.startsWith('hero-')
+    ? props.id.startsWith('hero-')
     : (props as { priority?: boolean }).priority === true
-  // Se consulta la clase, no el literal: `satisfies` conserva el tipo exacto de
-  // cada entrada, así que comparar contra `'none'` sería código muerto para
-  // TypeScript mientras ninguna sección lo use. `none` mapea a cadena vacía.
   const overlayClass = OVERLAY[media.overlay]
 
   return (
@@ -102,7 +106,7 @@ export function SectionBackground(props: SectionBackgroundProps) {
         style={{ objectPosition: media.focal }}
         className="object-cover"
       />
-      {overlayClass && <div className={cn('absolute inset-0', overlayClass)} />}
+      <div className={cn('absolute inset-0', overlayClass)} />
     </div>
   )
 }

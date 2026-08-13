@@ -21,7 +21,7 @@ const icons = {
 export function Methods() {
   return (
     <section className="section-y relative isolate overflow-hidden bg-[#1C3266] text-white">
-      <SectionBackground id="methods" />
+      <SectionBackground id="sec-tecnica" />
       <div
         aria-hidden="true"
         className="absolute -right-32 -top-32 size-[30rem] rounded-full bg-[#FFDF00]/10 blur-3xl"
@@ -32,7 +32,7 @@ export function Methods() {
             <p className="t-kicker text-[#FFE95C]">{copy.eyebrow}</p>
             <h2 className="t-h2 mt-3 max-w-3xl">{copy.title}</h2>
           </div>
-          <p className="t-body text-white/80 lg:justify-self-end">
+          <p className="t-body text-white/90 lg:justify-self-end">
             {copy.description}
           </p>
         </div>
@@ -54,7 +54,7 @@ export function Methods() {
                   <h3 className="t-h3 mt-2 [hyphens:auto] [overflow-wrap:break-word]">
                     {method.title}
                   </h3>
-                  <p className="t-body-sm mt-3 text-white/80">
+                  <p className="t-body-sm mt-3 text-white/90">
                     {method.description}
                   </p>
                 </article>

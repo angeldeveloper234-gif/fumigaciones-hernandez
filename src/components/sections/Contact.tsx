@@ -16,9 +16,9 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="section-y relative isolate overflow-hidden bg-[#F5F8FC]"
+      className="section-y relative isolate overflow-hidden bg-[#1C3266]"
     >
-      <SectionBackground id="contact" />
+      <SectionBackground id="sec-contacto" />
       <div className="container">
         <div className="overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-[0_24px_70px_rgba(28,50,102,0.1)] md:rounded-[2.5rem]">
           <div className="grid lg:grid-cols-[1.08fr_0.92fr]">

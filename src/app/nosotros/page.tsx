@@ -42,7 +42,7 @@ export default function AboutPage() {
         <div className="container relative">
           <nav
             aria-label="Migas de pan"
-            className="flex items-center gap-2 text-xs font-bold text-white/75"
+            className="flex items-center gap-2 text-xs font-bold text-white/90"
           >
             <Link href="/" className="hover:text-white">
               Inicio
@@ -62,7 +62,7 @@ export default function AboutPage() {
               </h1>
             </div>
             <div>
-              <p className="text-base leading-7 text-white/80">
+              <p className="text-base leading-7 text-white/90">
                 Controlamos plagas en hogares y negocios con inspección,
                 aplicación precisa y seguimiento profesional.
               </p>

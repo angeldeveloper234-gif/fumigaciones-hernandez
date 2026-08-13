@@ -11,7 +11,7 @@ const copy = HERNANDEZ_HOME.es.coverage
 export function Locations() {
   return (
     <section className="section-y relative isolate overflow-hidden bg-[#1C3266] text-white">
-      <SectionBackground id="coverage" />
+      <SectionBackground id="sec-zonas" />
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:22px_22px]"
@@ -23,7 +23,7 @@ export function Locations() {
           </div>
           <p className="t-kicker mt-6 text-[#FFE95C]">{copy.eyebrow}</p>
           <h2 className="t-h2 mt-3">{copy.title}</h2>
-          <p className="t-body mt-4 text-white/80">{copy.description}</p>
+          <p className="t-body mt-4 text-white/90">{copy.description}</p>
           <a
             href={whatsappUrl(
               'Buen día. Quiero confirmar si llegan a mi colonia.',

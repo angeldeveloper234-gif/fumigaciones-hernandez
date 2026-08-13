@@ -38,7 +38,7 @@ export default function ContactPage() {
         <div className="container relative">
           <nav
             aria-label="Migas de pan"
-            className="flex items-center gap-2 text-xs font-bold text-white/75"
+            className="flex items-center gap-2 text-xs font-bold text-white/90"
           >
             <Link href="/" className="hover:text-white">
               Inicio
@@ -54,7 +54,7 @@ export default function ContactPage() {
             <h1 className="t-h1 mt-6">
               Cuéntenos qué plaga vio y dónde está
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-white/80 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
               Lo orientamos, coordinamos la revisión y definimos el
               tratamiento adecuado para su casa o su negocio.
             </p>

@@ -151,7 +151,7 @@ export default async function ServicePage({
           <div className="container py-10 md:py-14">
             <nav
               aria-label="Migas de pan"
-              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/75"
+              className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/90"
             >
               <Link href="/" className="hover:text-white">
                 Inicio
@@ -173,7 +173,7 @@ export default async function ServicePage({
                 <h1 className="t-h1 mt-6 max-w-4xl [hyphens:auto] [overflow-wrap:break-word]">
                   {service.h1}
                 </h1>
-                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/80 md:text-lg">
+                <p className="mt-6 max-w-2xl border-l-2 border-[#F07070] pl-5 text-base leading-7 text-white/90 md:text-lg">
                   {service.intro}
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -208,7 +208,7 @@ export default async function ServicePage({
                   <p className="text-xs font-black uppercase tracking-[0.13em] text-[#FFE95C]">
                     Fumigaciones Hernández
                   </p>
-                  <p className="mt-1 text-sm font-bold text-white/78">
+                  <p className="mt-1 text-sm font-bold text-white/90">
                     Tampico · Madero · Altamira · Atención 24 horas
                   </p>
                 </div>
@@ -274,7 +274,7 @@ export default async function ServicePage({
                   Método definido después de inspeccionar
                 </h2>
               </div>
-              <p className="text-base leading-7 text-white/80">
+              <p className="text-base leading-7 text-white/90">
                 {service.treatmentIntro}
               </p>
             </div>
@@ -296,7 +296,7 @@ export default async function ServicePage({
                   <h3 className="mt-6 text-2xl font-black [hyphens:auto] [overflow-wrap:break-word]">
                     {method}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/80">
+                  <p className="mt-3 text-sm leading-6 text-white/90">
                     {CONTROL_METHODS[method]}
                   </p>
                 </article>
@@ -505,7 +505,7 @@ export default async function ServicePage({
               <h2 className="t-h2 mt-3 max-w-3xl">
                 Cuéntenos dónde vio {service.name.toLowerCase()}
               </h2>
-              <p className="mt-3 text-sm leading-6 text-white/80">
+              <p className="mt-3 text-sm leading-6 text-white/90">
                 Atendemos hogares, negocios e industrias en Tampico, Ciudad
                 Madero y Altamira, con atención las 24 horas.
               </p>

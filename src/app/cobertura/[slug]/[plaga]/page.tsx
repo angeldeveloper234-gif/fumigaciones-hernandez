@@ -119,7 +119,7 @@ export default async function IntersectionPage({
             <div>
               <Breadcrumb items={crumbs} tone="dark" />
               <h1 className="t-h1 mt-5 text-white">{content.h1}</h1>
-              <p className="t-body mt-4 text-white/80">{content.intro[0]}</p>
+              <p className="t-body mt-4 text-white/90">{content.intro[0]}</p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -279,7 +279,7 @@ export default async function IntersectionPage({
             <h2 className="t-h2 max-w-xl">
               Le decimos qué encontramos antes de cobrar nada
             </h2>
-            <p className="t-body mt-4 text-white/80">
+            <p className="t-body mt-4 text-white/90">
               La revisión y el presupuesto no se cobran. Marque al{' '}
               {SITE.phone} o mándenos un mensaje contando qué está viendo y en
               qué colonia de {area.name}.
