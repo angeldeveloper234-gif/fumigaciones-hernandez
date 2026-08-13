@@ -4,13 +4,26 @@
  * Punto único de verdad: cambiar una foto es editar la `src` de su entrada y
  * nada más. Ningún componente conoce rutas de imagen.
  *
- * Las `src` de hoy son placeholders autodescriptivos: llevan el `SectionId`
- * escrito encima, un color propio y un patrón diagonal. Están así a propósito,
- * para que se vea de un vistazo qué sección tomó qué imagen. Cuando lleguen
- * las fotos definitivas se reemplaza el archivo con el mismo nombre en
- * `public/images/secciones/` y no hay que tocar código.
+ * Los 6 heroes ya tienen foto real: técnicos de control de plagas trabajando.
+ * Las secciones del home siguen con placeholders autodescriptivos —llevan el
+ * `SectionId` escrito encima, un color propio y un patrón diagonal— para que
+ * se vea de un vistazo qué sección tomó qué imagen. Cuando lleguen sus fotos
+ * se reemplaza el archivo con el mismo nombre en `public/images/secciones/`
+ * y no hay que tocar código.
  *
  * Formato esperado: horizontal 16:9, 1600px de ancho, comprimido al ~70%.
+ *
+ * Sobre las fotos de los heroes, tres cosas que conviene no perder:
+ *
+ * 1. Son ilustrativas, de Pexels, no del equipo de Hernández. Por eso ningún
+ *    `alt` dice «nuestro equipo» ni «nuestro trabajo»: sería una afirmación
+ *    falsa del mismo tipo que un testimonio inventado.
+ * 2. Se descartaron las que mostraban marca legible de otra fumigadora. Dos
+ *    candidatas fuertes de la misma sesión (Pexels 16851694 y 19789837) traían
+ *    «GARDA PEST CONTROL» impreso en el tanque y en el uniforme, y otra traía
+ *    el escudo municipal de Daca. No entran, por buenas que sean.
+ * 3. El `pexelsId` queda anotado para poder rastrear licencia y autor. Licencia
+ *    Pexels: uso comercial, sin atribución obligatoria.
  */
 
 export type SectionId =
@@ -59,44 +72,64 @@ export interface SectionMedia {
   overlay: SectionOverlay
   /** `object-position`: qué parte se conserva al recortar. */
   focal: string
+  /**
+   * ID de Pexels de origen, para rastrear licencia y autor. Ausente en los
+   * slots que todavía tienen placeholder.
+   */
+  pexelsId?: number
 }
 
 export const sectionMedia = {
+  /**
+   * El técnico queda a la izquierda del centro, así que el recorte se ancla
+   * en 35%: en móvil el hero se vuelve vertical y un `center` lo dejaría
+   * fuera, con la nube de humo sola ocupando todo.
+   */
   'hero-home': {
-    src: '/images/secciones/hero-home.png',
-    alt: 'Técnico de control de plagas aplicando tratamiento en un inmueble',
+    src: '/images/secciones/hero-home.webp',
+    alt: 'Técnico de control de plagas nebulizando el exterior de una vivienda',
     overlay: 'hero',
-    focal: 'center right',
+    focal: '35% center',
+    pexelsId: 19789841,
   },
+  /** Equipo y oficio, sin cara mirando a cámara: es la página de quiénes son. */
   'hero-nosotros': {
-    src: '/images/secciones/hero-nosotros.png',
-    alt: 'Manos de un técnico preparando el equipo de aplicación',
+    src: '/images/secciones/hero-nosotros.webp',
+    alt: 'Mochila aspersora al hombro de un técnico de control de plagas',
     overlay: 'hero',
     focal: 'center',
+    pexelsId: 9246012,
   },
+  /** Nebulización dentro de una bodega: dice que atienden industria, no solo casas. */
   'hero-servicios': {
-    src: '/images/secciones/hero-servicios.png',
-    alt: 'Equipo profesional de aplicación para control de plagas',
+    src: '/images/secciones/hero-servicios.webp',
+    alt: 'Técnico nebulizando el interior de una bodega',
     overlay: 'hero',
     focal: 'center',
+    pexelsId: 36302077,
   },
+  /** Técnico recorriendo el exterior de una vivienda, que es de lo que habla cobertura. */
   'hero-cobertura': {
-    src: '/images/secciones/hero-cobertura.png',
-    alt: 'Vista de una zona residencial de la costa del Golfo',
+    src: '/images/secciones/hero-cobertura.webp',
+    alt: 'Técnico con equipo de protección caminando por el exterior de una vivienda',
     overlay: 'hero',
     focal: 'center',
+    pexelsId: 4732346,
   },
   'hero-blog': {
-    src: '/images/secciones/hero-blog.png',
-    alt: 'Inspección de una vivienda en busca de señales de plaga',
-    overlay: 'hero',
-    focal: 'center left',
-  },
-  'hero-contacto': {
-    src: '/images/secciones/hero-contacto.png',
-    alt: 'Atención telefónica de servicio de control de plagas',
+    src: '/images/secciones/hero-blog.webp',
+    alt: 'Técnico aplicando tratamiento en una nave de almacenaje',
     overlay: 'hero',
     focal: 'center',
+    pexelsId: 32055757,
+  },
+  /** La cara queda a la derecha del centro; el recorte la sigue. */
+  'hero-contacto': {
+    src: '/images/secciones/hero-contacto.webp',
+    alt: 'Técnico de control de plagas con equipo de aplicación listo',
+    overlay: 'hero',
+    focal: '58% center',
+    pexelsId: 9245158,
   },
 
   'sec-plagas': {
