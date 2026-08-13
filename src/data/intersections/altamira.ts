@@ -18,10 +18,15 @@ import type { IntersectionContent } from './types'
  *   se lo audita su propio cliente. Eso cambia el entregable, no solo el
  *   tratamiento.
  *
- * {{PENDIENTE: confirmar con el cliente qué documentación emite hoy para
- * auditoría de proveedores — bitácora de visitas, fichas técnicas de producto,
- * plano de ubicación de estaciones. Las páginas describen lo que la auditoría
- * pide, sin afirmar un formato propio que no esté confirmado.}}
+ * {{PENDIENTE: qué documentación entrega el negocio para auditoría de
+ * proveedores.}}
+ *
+ * Estas páginas describen qué suele pedir una auditoría y invitan a acordarlo
+ * en la visita. No afirman que el negocio emita bitácora, fichas técnicas ni
+ * plano de estaciones, porque eso no está confirmado y no nos corresponde
+ * decidirlo: el sitio es el medio para que ofrezcan su servicio, no la fuente
+ * de lo que ese servicio incluye. Cuando el cliente confirme qué entrega, se
+ * redacta en afirmativo.
  */
 
 const moscos: IntersectionContent = {
@@ -63,7 +68,7 @@ const moscos: IntersectionContent = {
     paragraphs: [
       'El recorrido se hace por sectores y se levanta un inventario de puntos con agua, porque en una propiedad industrial la memoria no alcanza: hay que anotarlos para poder verificar después que se eliminaron. Se revisan patio, andén, cubierta, canalones y áreas de lavado.',
       'Sobre los adultos aplicamos termonebulización en exteriores y vegetación perimetral, que es lo que cubre superficie, y nebulización en frío en interiores y áreas techadas. La aspersión dirigida va sobre la franja de vegetación del perímetro, que es donde el mosco pasa el día y desde donde entra al patio al atardecer.',
-      'En cliente industrial el trabajo se coordina con paro de línea, con el área de seguridad y con el horario que menos interfiera, y se deja constancia de qué se aplicó, dónde y con qué producto. Esa documentación es parte del servicio, no un extra: es lo que después le piden en la auditoría.',
+      'En cliente industrial el trabajo se coordina con paro de línea, con el área de seguridad y con el horario que menos interfiera. Si su operación necesita que quede registro de la aplicación para una revisión posterior, conviene plantearlo al pedir la visita para acordarlo desde el principio.',
       'Cuando el foco está en un predio vecino se lo decimos con claridad. Se puede tratar el propio perímetro y bajar mucho la presión, pero conviene saber que ahí el resultado es de contención y no de eliminación.',
     ],
     checks: [
@@ -148,7 +153,7 @@ const cucarachas: IntersectionContent = {
       'El trabajo arranca en recepción y no en el fondo del almacén. Se revisa cómo entra la mercancía, dónde se estaciona antes de acomodarse, en qué estado están las tarimas y qué se hace con el cartón. Muchas veces la medida que más rinde no es un producto: es cambiar el punto donde se desarma el cartón y sacarlo el mismo día.',
       'La aplicación principal contra la alemana es gel en cebo, colocado en el ángulo del rack, detrás de equipos y en el comedor. La colonia lo transporta y alcanza a los ejemplares que nunca salen. Nebulizar un almacén con alemana instalada sirve de poco y además la dispersa a más pasillos.',
       'Se agrega monitoreo con trampas de captura en puntos fijos, que es lo que permite decir si la población está bajando y detectar una entrada nueva antes de que se instale. En cliente industrial eso importa doble, porque es la evidencia que sostiene el control ante una auditoría.',
-      'De cada visita queda constancia de qué se aplicó, dónde y con qué producto, y las trampas se identifican por posición. Es lo que se suele pedir en una revisión de proveedor y conviene tenerlo armado antes de que lo pidan, no después.',
+      'Si su cliente lo audita como proveedor, dígalo al pedir la visita. Una revisión de ese tipo suele mirar la posición de las trampas y el registro de lo aplicado, y es mucho más simple acordar cómo se documenta desde la primera visita que reconstruirlo cuando ya se lo están pidiendo.',
     ],
     checks: [
       'Andén de recepción, área de estacionamiento de tarima y manejo de cartón.',
@@ -166,9 +171,9 @@ const cucarachas: IntersectionContent = {
         'Eliminarlo del todo no, pero se reduce mucho con tres cosas: revisar la tarima en el andén antes de acomodarla, desarmar y sacar el cartón el mismo día en lugar de acumularlo, y no guardar tarima de madera a la intemperie. En la inspección le decimos cuál de esas tres está fallando, porque casi siempre es una en concreto.',
     },
     {
-      question: '¿Qué documentación queda del servicio?',
+      question: 'Mi cliente me audita como proveedor. ¿Cómo lo coordinamos?',
       answer:
-        'De cada visita queda registro de las áreas atendidas, el producto aplicado y la posición de las trampas de monitoreo, que es lo que se suele solicitar en una revisión de proveedor. Si su cliente le exige un formato específico, dígalo antes de contratar para acordarlo desde la primera visita en vez de reconstruirlo después.',
+        'Coménteselo al técnico en la visita y, si tiene el requisito por escrito, compártalo. Estas revisiones suelen mirar las áreas atendidas, los productos aplicados y la ubicación de las trampas de monitoreo. Definir eso antes de empezar evita el problema típico: tener que reconstruir información cuando la auditoría ya está encima.',
     },
     {
       question: 'Aparecen siempre en la misma posición del rack. ¿Qué significa?',
@@ -282,7 +287,7 @@ const ratas: IntersectionContent = {
   h1: 'Ratas en Altamira: nave, andén y patio de maniobras',
   metaTitle: 'Control de ratas en Altamira | Naves y almacenes',
   metaDescription:
-    'Desratización en Altamira: perímetro de nave, andén, racks y patio de maniobras. Estaciones cerradas, plano de ubicación y bitácora de visitas.',
+    'Desratización en Altamira: perímetro de nave, andén, racks y patio de maniobras. Estaciones cerradas y sellado de accesos. Revisión sin costo.',
   intro: [
     'En una nave de Altamira el roedor no es solo un problema de plaga: es un problema de continuidad. Un cable roído en un tablero puede parar una línea, y un hallazgo en almacén puede frenar un embarque si el cliente audita a sus proveedores.',
     'La ventaja frente a una casa es que en industria el control se puede plantear en serio: perímetro definido, cerco, accesos contables y posibilidad de monitorear con método. La desventaja es la escala y la presión del entorno, que en el corredor industrial es alta y constante.',
@@ -316,7 +321,7 @@ const ratas: IntersectionContent = {
       'Se empieza por el perímetro: se recorre el cerco, se define la ubicación de las estaciones y se levanta un plano con la posición de cada una. Ese plano no es burocracia: es lo que permite leer dónde está entrando la presión, porque el consumo concentrado en un tramo señala el sector por donde llegan.',
       'Adentro se trabaja con monitoreo y trampeo, no con cebo suelto. En almacén de alimento o de producto terminado no corresponde otra cosa, y además el trampeo interior es lo que da la lectura de si algo pasó la barrera perimetral.',
       'El sellado y las condiciones cierran el esquema: cortinas que ajusten al ras, burletes en andén, pasos de instalación sellados, tarima levantada del suelo y separada del muro, y la franja del cerco despejada. Sin eso, las estaciones bajan la población pero el sitio sigue siendo habitable.',
-      'De cada visita queda registro de lo revisado, el consumo por estación y las recomendaciones pendientes. En el corredor industrial esa bitácora es lo que sostiene el control frente a una auditoría de proveedor, y conviene tenerla desde la primera visita.',
+      'En el corredor industrial es habitual que el control tenga que poder mostrarse ante una revisión del cliente final. Si ese es su caso, plantéelo al pedir la visita: qué se registra de cada recorrido y con qué detalle se acuerda al inicio del esquema, no cuando llega la auditoría.',
     ],
     checks: [
       'Cerco perimetral, franja sin pavimentar y ubicación de estaciones.',
@@ -329,9 +334,9 @@ const ratas: IntersectionContent = {
   },
   faqs: [
     {
-      question: '¿Qué necesito para pasar una auditoría de proveedor?',
+      question: '¿Qué suele revisar una auditoría de proveedor?',
       answer:
-        'Lo que se suele revisar es que exista un plano con la ubicación de las estaciones, un registro de visitas con el consumo de cada una, y la información de los productos aplicados. Nosotros dejamos constancia de eso en cada visita. Si su cliente exige un formato particular, conviene decirlo antes de empezar para armarlo así desde el principio.',
+        'Por lo general, que se sepa dónde está cada estación, qué consumo tuvo y qué producto se aplicó. Si su cliente le exige un formato particular, tráigalo a la visita: es la forma de acordar desde el arranque cómo se va a documentar el esquema en su caso concreto.',
     },
     {
       question: '¿Se puede usar cebo dentro del almacén?',
@@ -651,7 +656,7 @@ const hormigas: IntersectionContent = {
     paragraphs: [
       'En casa nueva se sigue la fila hasta el punto donde entra al piso, al muro o al jardín, y se observa qué está comiendo: si va a lo dulce o a lo graso cambia el cebo. Esa lectura de cinco minutos decide si el tratamiento funciona a la primera. La aplicación es gel en cebo cerca del acceso, para que la obrera lo lleve al nido, que está afuera.',
       'Cuando el nido está en el jardín o en el relleno, se trata directamente el punto del nido además del recorrido. En jardín nuevo conviene revisar además el riego: tierra permanentemente saturada mantiene el sitio atractivo por más que se trate, y eso es una decisión de mantenimiento, no de fumigación.',
-      'En almacén el planteo cambia: se ubican los accesos por juntas constructivas y andén, se trata el recorrido con cebo y se sella lo que se pueda. En almacén de alimento no se aplica cebo suelto: se trabaja con formulaciones y ubicaciones compatibles con producto, y se deja registro de qué se aplicó y dónde.',
+      'En almacén el planteo cambia: se ubican los accesos por juntas constructivas y andén, se trata el recorrido con cebo y se sella lo que se pueda. En almacén de alimento no se aplica cebo suelto: se trabaja con formulaciones y ubicaciones compatibles con producto. Si el almacén se audita, conviene acordar en la visita qué queda registrado de cada aplicación.',
       'En los dos escenarios pedimos lo mismo: no rociar la fila. Un insecticida de contacto corta el transporte del cebo justo antes de que haga efecto y, en algunas especies, parte la colonia en varios nidos.',
     ],
     checks: [
@@ -677,7 +682,7 @@ const hormigas: IntersectionContent = {
     {
       question: '¿Se puede usar cebo en un almacén de alimento?',
       answer:
-        'No cebo suelto. En almacén de alimento se trabaja con formulaciones y ubicaciones compatibles con producto, en puntos definidos y registrados, y se refuerza el sellado de accesos. De cada visita queda constancia de qué se aplicó y dónde, que es lo que se suele revisar en una auditoría de proveedor.',
+        'No cebo suelto. En almacén de alimento se trabaja con formulaciones y ubicaciones compatibles con producto, en puntos definidos, y se refuerza el sellado de accesos. Si el almacén está sujeto a auditoría, indíquelo al pedir la visita para acordar qué se documenta de cada aplicación.',
     },
     {
       question: 'En la nave el rastro cruza todo el pasillo. ¿Es normal?',
