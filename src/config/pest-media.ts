@@ -4,14 +4,15 @@ import type { ServiceSlug } from '@/lib/services'
  * Foto de cada plaga. Punto único de verdad.
  *
  * Existe por una razón concreta: las once imágenes que traía el repo eran
- * byte a byte las mismas que usa `fumcon-next`, y encima adentro se repetían
+ * byte a byte las mismas que usa el sitio hermano del estudio, y encima
+ * adentro se repetían
  * —`chinches`, `garrapatas` y `pulgas` apuntaban al mismo archivo, igual que
  * `moscas` y `moscos`—. Once plagas con seis fotos, todas prestadas.
  *
  * Las de acá salen del banco de Pexels del estudio (licencia Pexels, uso
  * comercial sin atribución obligatoria) y se verificó que ninguna coincida
- * con las de fumcon: se compararon por hash perceptual las 41 candidatas
- * contra las 8 de fumcon y no hubo una sola colisión.
+ * con las de aquel: se compararon por hash perceptual las 41 candidatas
+ * contra las 8 suyas y no hubo una sola colisión.
  *
  * Los archivos están descargados al repo, no enlazados a Pexels. Si el CDN
  * cambia una URL o baja una foto, el sitio no se entera.

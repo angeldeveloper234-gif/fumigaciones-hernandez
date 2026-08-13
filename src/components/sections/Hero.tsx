@@ -24,8 +24,8 @@ const copy = HERNANDEZ_HOME.es
  *
  * El segundo es de oficio: quien llega acá con una plaga encima busca a quién
  * llamar y si cubren su zona. Un teléfono grande y verificable convierte más
- * que tres macros de insectos, y de paso aleja la composición de la de
- * fumcon-next, que apoya todo el hero sobre una foto a sangre.
+ * que tres macros de insectos, y de paso aleja la composición de la del sitio
+ * hermano del estudio, que apoya todo el hero sobre una foto a sangre.
  */
 export function Hero() {
   return (

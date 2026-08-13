@@ -20,8 +20,8 @@
  * y §5 los prohíben.
  *
  * Los verbos de los CTA son propios a propósito: pedir, marcar, mandar,
- * confirmar, contar, leer. No se cruzan con los de fumcon-next, que usa
- * consultar, solicitar, ver, llamar y escribir.
+ * confirmar, contar, leer. Ninguno se cruza con los del sitio hermano del
+ * estudio, que usa consultar, solicitar, ver, llamar y escribir.
  */
 export const HERNANDEZ_HOME = {
   es: {

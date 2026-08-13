@@ -13,7 +13,8 @@ const copy = HERNANDEZ_HOME.es.pests
  *
  * El template base traía una grilla de cuatro columnas con la foto en 4:3
  * arriba y el título debajo: el mismo patrón, clase por clase, que usa
- * fumcon-next. Además obligaba a recortar once plagas en tarjetas cuadradas
+ * el sitio hermano. Además obligaba a recortar once plagas en tarjetas
+ * cuadradas
  * donde el nombre —lo único que la persona busca— queda diminuto.
  *
  * En fila el nombre manda, la foto acompaña, y el bloque se lee como un

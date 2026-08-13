@@ -16,7 +16,8 @@ import {
  * Par tipográfico propio de Hernández.
  *
  * El template base venía con Montserrat + Inter, exactamente el mismo par que
- * usa fumcon-next. Es la señal más rápida de "estos dos sitios son el mismo".
+ * usa el sitio hermano del estudio. Es la señal más rápida de "estos dos
+ * sitios son el mismo".
  *
  * Archivo es una grotesca de raíz industrial, más angosta y de terminaciones
  * más duras que Montserrat: aguanta el peso negro sin verse publicitaria.

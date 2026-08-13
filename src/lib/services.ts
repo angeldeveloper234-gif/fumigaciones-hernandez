@@ -755,7 +755,7 @@ export function getPestService(slug: string) {
  * Imagen de Open Graph de cada servicio.
  *
  * Antes apuntaba a `/images/og/pests/<slug>.webp`: once archivos que eran
- * byte a byte los de fumcon-next. Ahora son recortes 1200x630 derivados de
+ * byte a byte los del sitio hermano. Ahora son recortes 1200x630 derivados de
  * la foto propia de cada plaga, que es lo que declara `seo.ts`.
  */
 export function getServiceOgImage(slug: ServiceSlug) {

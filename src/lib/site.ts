@@ -28,8 +28,8 @@ export const SITE = {
   tagline: 'Eliminamos todas las plagas',
   logo: '/hernandez-logo.png',
   favicon: '/hernandez-fav.png',
-  // El anterior era byte a byte el mismo archivo que el OG de fumcon: cada vez
-  // que se compartia este sitio, la tarjeta que aparecia era la de FUMCON.
+  // El anterior era byte a byte el mismo archivo que el OG del sitio hermano
+  // del estudio: al compartir este sitio aparecia la tarjeta del otro cliente.
   ogImage: '/images/og/hernandez-og.jpg',
 
   // --- Contacto -----------------------------------------------------------
